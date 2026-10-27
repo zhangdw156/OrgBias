@@ -4,6 +4,7 @@ Updated: 2026-10-27. The benchmark is English throughout, and all materials for 
 
 | Document | Contents | Status |
 |---|---|---|
+| [Four-paper task-design review](four-paper-task-design-review-2026-10-27.md) | Original task construction, author-code checks, diagnosis of our tasks, and interpretable null results | Research review; proposed designs not yet run |
 | [Local runtime](local-runtime.md) | Configuration, actual commands, architecture, outputs, and limits | Local Codex ASP implementation |
 | [2026-10-27 local debug](local-debug-2026-10-27.md) | Seven real Codex runs, one judge call, earlier failures, and validation boundaries | Debug group completed; not the 35-run pilot |
 | [Bounded iteration report](bounded-iteration-report-2026-10-27.md) | Task variants, actual findings, hospital extension and limitations | Updated through delivery |

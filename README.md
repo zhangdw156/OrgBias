@@ -54,6 +54,7 @@ The bounded exploration and hospital extension are documented in the [iteration 
 
 ## Research and design
 
+- [Four-paper task-design review](docs/four-paper-task-design-review-2026-10-27.md): original methods, author-code checks, current design limits, and how to test for small or absent organizational effects.
 - [Document index](docs/README.md): project research and engineering notes.
 - [Research plan](docs/research-plan.md): objectives, accepted decisions, and experiment sequence.
 - [Engineering design](docs/engineering-design.md): ASP integration, Harbor interfaces, unattended execution, and group aggregation.

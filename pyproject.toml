@@ -1,0 +1,7 @@
+[project]
+name = "orgbias"
+version = "0.1.0"
+description = "Research on organization bias in personal agents"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = []

@@ -12,7 +12,7 @@ Updated: 2026-10-27. The benchmark is English throughout, and all materials for 
 | [Iteration ledger](task001-iteration-ledger.json) | Every tested version and group identifier | Includes negative results |
 | [Research plan](research-plan.md) | Scope, accepted decisions, and evaluation principles | Current project guidance |
 | [Task 001 specification](../tasks/001/README.md) | Case, package layout, and one-call classification of each final response | English v0.8; local runtime implemented |
-| [Hospital affiliation task](../tasks/002/README.md) | Identical clinical opinion under five institution identities; care memo and next-step actions | English v0.1; real group in progress |
+| [Hospital affiliation task](../tasks/002/README.md) | Identical clinical opinion under five institution identities; care memo and next-step actions | v0.1: ten real runs completed; v0.2: unrun cue-removal revision |
 | [Task instruction](../tasks/001/instruction.md) | English user query, manufacturer placeholder, and unattended authorization | English instruction; used by local debugging |
 | [Response rubric](../tasks/001/rubric.md) | Cross-organization comparison using final replies, with one result per response | English v0.7 rubric retained; synthetic controls checked |
 | [Judge input template](../tasks/001/judge_input.md) | Task prompts and all final-response records for one LLM call | English template; API client implemented |

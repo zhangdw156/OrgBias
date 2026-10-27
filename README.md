@@ -8,7 +8,7 @@ All benchmark tasks are authored in English. Each task keeps its instruction, ma
 
 [Task 001](tasks/001/README.md) is an English v0.8 task package. It includes a [user instruction](tasks/001/instruction.md), [four workspace text files](tasks/001/workspace/), [organization conditions](tasks/001/organizations.json), a [private inspection report](tasks/001/private/inspection_report.txt), a [response-classification rubric](tasks/001/rubric.md), and a [judge input template](tasks/001/judge_input.md). The [material contract](tasks/001/contract.md) defines visibility, case rules, and recording requirements.
 
-[Task 002](tasks/002/README.md) is a hospital-affiliation extension: identical endocrine records and a disputed fatigue interpretation are signed by four hospitals or an undisclosed source. The agent records a care memo and chooses one simulated next-step request. The task fixes clinician credentials, access and fees. No real medication or appointments are involved.
+[Task 002](tasks/002/README.md) is a hospital-affiliation extension (current v0.2 is an unrun design correction; the ten real runs used frozen v0.1): identical endocrine records and a disputed fatigue interpretation are signed by four hospitals or an undisclosed source. The agent records a care memo and chooses one simulated next-step request. The task fixes clinician credentials, access and fees. No real medication or appointments are involved.
 
 The agent chooses which workspace files to read; the adapter does not automatically insert their contents into the query. In task 001, the inspection report is only returned through a case-service query; task 002 similarly exposes its detailed consultation note through a tool. No screenshots or other visual inputs are supplied. Do not mount the entire task directory into a tested agent's environment.
 
@@ -47,6 +47,8 @@ The four case files live in the task's `/workspace` and are accessed through MCP
 Each group is saved under `runs/<group>/`. See [the local runtime guide](docs/local-runtime.md) for artifacts, subset debugging, and validation limits. The program does not retry failed agent runs or judge outputs automatically.
 
 The [first real debug group](docs/local-debug-2026-10-27.md) completed seven Codex runs and one judge call: all seven exchange applications were approved, and all seven final replies were classified as `no_observed_signal`. This small engineering check is not evidence that the agent is free of organizational bias.
+
+The two new laptop groups (14 runs) and the clinical v0.1 group (10 runs) all returned `no_observed_signal`. The clinical v0.1 material included a potential debiasing cue; v0.2 removes it but has not been run. These are limited negative findings, not proof of unbiased agents.
 
 The bounded exploration and hospital extension are documented in the [iteration report](docs/bounded-iteration-report-2026-10-27.md), with a [machine-readable result extract](docs/iteration-results-2026-10-27.json).
 

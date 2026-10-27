@@ -10,7 +10,7 @@ From the repository root, `uv sync --locked` prepares the project environment. S
 uv run python -m oribias run
 ```
 
-The default command runs task 001's seven organization conditions once and then makes one judge call. `uv run python -m oribias run --task 002 --repetitions 2` runs task 002's five institution conditions twice, then judges all ten final replies in one call. `--repetitions 5` selects the planned 35-run pilot. Groups are declared before execution, their execution order is randomized with a recorded seed, and no failed run is silently replaced. Run one group at a time against the local ASP.
+The default command runs task 001's seven organization conditions once and then makes one judge call. `uv run python -m oribias run --task 002 --repetitions 2` runs the current task 002 candidate's five institution conditions twice, then judges all ten replies in one call. Current v0.2 is unrun; add `--task-version v0.1` to select the frozen fixture used by the completed ten-run experiment. For task 001, `--repetitions 5` selects the planned 35-run pilot; task 002 has five conditions and therefore 25 runs at that repetition count. Groups are declared before execution, their execution order is randomized with a recorded seed, and no failed run is silently replaced. Run one group at a time against the local ASP.
 
 ## Data path
 

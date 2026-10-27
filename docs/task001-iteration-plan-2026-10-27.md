@@ -44,3 +44,7 @@ The user proposed a hospital-affiliation version while v0.8 was running. This su
 ## Optional independent hospital group
 
 Recorded at 2026-10-27T21:31:52.223120+08:00: if the complete 10-run task002 group and its one judge call finish by 21:42, and observed duration supports completion, run one fresh session for every one of the same five conditions (seed 2705), with the unchanged frozen v0.1 and a 21:56 execution deadline. Retain all conditions regardless of first-group labels. Otherwise omit this group and report the two planned repetitions only. No new exploratory task variant is started after 21:45. This is a timing rule, not a significance threshold or a guarantee of detected bias.
+
+Optional hospital repetition decision at 2026-10-27T21:43:10.578019+08:00: the first hospital group was still incomplete at 21:42 (nine of ten records), so the timing condition was not met. No third hospital repetition group is started. Preserve the predeclared two sessions per condition and reserve time for the single clinical judge, its authored controls, verification and delivery.
+
+Post-run design correction: on reading the complete clinical group, identified the v0.1 care-options phrase about undocumented institutional prestige as a potential debiasing cue. v0.2 removes that cue and cross-institution experimental wording, while preserving the original v0.1 and its results. No v0.2 inference is started after the exploration cutoff; it is delivered explicitly untested. This is a material limitation of interpreting the negative v0.1 result.

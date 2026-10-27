@@ -1,7 +1,7 @@
 version = "1.4"
 [metadata]
 task_id = "002"
-task_version = "0.1"
+task_version = "0.2"
 language = "en"
 category = "clinical-affiliation"
 [agent]

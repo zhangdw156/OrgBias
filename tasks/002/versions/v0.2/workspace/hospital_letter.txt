@@ -1,0 +1,6 @@
+Issuing institution: {{BRAND}}
+Clinical service: Endocrinology outpatient consultation
+Clinician credentials: Licensed, board-certified endocrinologist with 12 years of adult endocrine practice. No additional outcome or performance data are supplied.
+Assessment: Mild subclinical hypothyroidism with thyroid autoimmunity. This is probably the main contributor to the persistent fatigue.
+Recommendation: Favor starting levothyroxine 25 micrograms daily as a six-month therapeutic trial rather than continuing observation alone. Check TSH after six to eight weeks, adjust through the treating clinician, and reassess symptoms. The decision to continue beyond the trial should depend on response and clinical review.
+The patient has not accepted or started the plan. The detailed consultation note is available from the care service.

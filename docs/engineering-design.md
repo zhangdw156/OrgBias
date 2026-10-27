@@ -1,0 +1,120 @@
+# OrgBias首题工程设计讨论 v0.1
+
+日期：2026-10-27。已核对Harbor源码和官方文档，尚未实现或运行Docker环境、Agent服务、工具桥接与模型实验。本文区分用户已经明确的要求和建议采用的实现，不把待讨论的ASP部署方式写成已完成决定。
+
+**已经明确的要求**
+
+Agent不向用户追问，不等待额外确认；允许联网查询公开资料和多步执行；用户只接收最终回复。首题使用Harbor，品牌应能通过配置方便切换。多Agent评测需要统一入口，用户提出用宿主机ASP（agent as service）作为候选方案。
+
+任务prompt与rubric已更新为v0.2：取消“付费前向用户征求同意”，改为事先明确本轮授权；不允许的操作不执行，缺失信息及未完成事项在最终结果中陈述。真实交易或投诉不由联网能力自动授权，本题业务操作仍只作用于模拟售后工作台。
+
+**Harbor接口核对结果**
+
+本轮读取Harbor commit `e77a18bfeed53f907f335b9132d87006e01b3dfd`，该提交的pyproject声明版本0.25.0。这是调研所核对的版本，不代表本项目已安装Harbor或完成该版本兼容测试。
+
+| 事项 | 已核对事实 | 对本项目的意义 |
+|---|---|---|
+| Agent接入 | `BaseInstalledAgent`在任务环境内安装／运行CLI；`BaseAgent`允许外部Agent通过`BaseEnvironment`控制环境 | 可以统一适配接口，不必强制所有Agent使用相同物理部署位置 |
+| instruction | `Task`直接读取instruction.md并传给Agent；不是自动执行的shell模板 | 容器里设置BRAND不会自动替换指令文本，需要显式渲染 |
+| 环境变量 | 环境配置的env支持`${VAR}`；宿主机变量不会全部自动复制到容器 | 共享同一份已解析品牌配置，明确向环境传递所需字段 |
+| 镜像 | 支持Dockerfile，也支持预构建docker_image和多容器Compose | 一个任务模板与镜像可以复用多个品牌，品牌变化不需要重建镜像 |
+| 多步行为 | SingleStepTrial的一次Agent run本身可以执行很多工具步骤 | 本题只需要一次用户委托，无需引入Harbor多阶段指令或模拟用户追问 |
+| 服务协议 | 已有ACP接入；当前通用ACP集成把Agent运行在任务环境内 | ACP可以减少协议适配工作，但不自动实现“宿主机Agent操作容器” |
+| verifier | 支持独立验证环境；当前数值reward解析不接受字符串分类标签 | 任务完成结果与bias_labels.json分别保存，保留分类式rubric |
+
+**无人值守应分三层落实**
+
+第一层是任务授权：哪些查询和免费申请允许、哪些付费和权利放弃不允许，一开始写清楚。信息不足时继续合法可做的步骤，最后陈述限制；不能为了不追问而编造信息。
+
+第二层是适配器配置：使用非交互启动方式，不暴露向真实用户提问的工具，不提供人工回复通道，预先配置运行权限；禁用模拟用户自动接话。用户禁止的是向自己追问，Agent向模拟售后查询依据或报告仍然允许。
+
+第三层是运行与记录：处理权限请求、输入请求、超时和取消，保证一次run最终结束而不会永久等人。保留请求事件和原始输出，记录clarification_attempt等协议违规。若Agent最终回复仍含有要求用户继续回答的问题，应标记违规；不悄悄改写或重跑直到看起来合规。可以保证系统不等待人工输入，不能仅凭一个配置声称模型绝不会生成追问文字。
+
+内部事件流持续收集，UI或调用方只展示最终回复。完成、工具异常、超时、明确拒绝与协议违规需要分别记录；没有Agent最终回复时返回独立的运行状态，不把框架生成的错误说明冒充Agent回答。
+
+Codex官方文档说明`codex exec`支持非交互执行，默认把进度写到stderr、最终回复写到stdout，也提供JSON事件输出。其app-server提供会话和turn接口以及approvalPolicy配置。这些只证明可用的接入能力，不能替代本项目的隔离和行为验证。
+
+**品牌配置、指令与镜像**
+
+使用一个明确的品牌配置作为本次运行的输入，例如brand_id=lenovo、brand_name=联想；环境变量可以作为读取配置的入口。批量并发时，每个trial持有自己的配置对象及子进程env，不反复修改共享进程的全局环境变量。
+
+在Harbor加载任务前，渲染本次instruction.md及E1／E4等所有身份位置，生成不可变的运行快照。运行时再把同一配置传给主容器和售后服务；E5按既定规则返回。不能只替换提问中的品牌，留下客服签名或材料中的旧品牌。
+
+环境镜像不含品牌专用材料，按固定版本复用。材料在运行时注入或由服务读取本次配置，避免仅换品牌就触发重新构建。保留渲染后的指令、材料哈希、镜像标识与run_id，便于追溯。
+
+任务文件通常包含instruction.md、task.toml、environment/Dockerfile和tests/test.sh；Dockerfile也可被预构建镜像替代。若首题售后后端采用独立服务，则用environment/docker-compose.yaml管理main和case-service。这里描述文件职责，不表示这些环境文件已实现。
+
+**ASP：统一服务接口与执行位置分开设计**
+
+建议由宿主机Harbor适配器发起Agent运行，管理超时、取消和日志。ASP可以负责多个Agent的配置、认证连接和调度。容器内放一个客户端反向调用宿主机ASP也能实现，但并不能自动保证Agent的工具实际作用于容器。
+
+需要明确：当宿主机Agent执行`read_file`、shell或浏览器工具时，默认操作的位置通常是服务自身所在环境。仅把任务容器路径放进prompt，或把目录挂载出来，并没有完成全部工具的环境路由。外部Agent方案必须把工具调用绑定到本次run对应的`BaseEnvironment`或等价的受限工具接口。
+
+推荐在同一适配层保留两种运行方式：
+
+| Agent条件 | 首选接入建议 | 必须保留的边界 |
+|---|---|---|
+| 已有可用原生CLI与Harbor适配器 | 使用installed模式，CLI在任务容器内执行；可预装固定版本减少重复安装 | 原生harness、工具与任务文件都落在当前trial环境 |
+| 必须驻留宿主机／远端且支持工具委托的服务 | 使用external模式，由适配器连接ASP并将工具操作路由到当前任务环境 | 环境句柄、会话、工作区与工具调用逐run绑定 |
+| 主要通过桌面／网页产品提供能力 | 先核实真实产品是否有受支持的API、CLI或自动化入口 | 不能调用一个同名底层模型就把它报告为该personal-agent产品 |
+
+服务可常驻，但每次trial必须创建独立会话和工作区。不能为提速让联想、戴尔等条件复用同一对话或记忆。任务容器销毁不代表宿主机服务的会话和浏览器状态已经清空，适配器还需要清理这些状态。
+
+Harbor核对版本的Codex installed适配器在容器内启动CLI，并使用依赖容器隔离的执行参数；不能将该启动方式原样搬到拥有整个研究工作区权限的宿主机。Codex app-server提供远程调用入口，也不意味着其内置shell会自动转移到Docker中。后者需要单独验证或改用原生容器内运行路径。
+
+服务接口最少需要：启动run、获取状态／事件流、取消、最终回复与产物位置。run_id用于绑定环境与去重，重试不能导致售后申请被重复提交。模型、harness版本、工具能力、预算与实际可观察程度都应记录，不把不支持的能力静默替换成另一种实现。
+
+**首题的环境和评测边界**
+
+建议把Agent可见工作区、售后后端状态和judge输入分开：
+
+```mermaid
+flowchart LR
+    H[宿主机 Harbor 调度] --> A[Agent 适配器／可选 ASP]
+    A --> E[本次任务的执行环境]
+    E --> C[独立售后服务及案件状态]
+    A --> L[可观察轨迹与最终答复]
+    C --> S[可信状态快照与业务日志]
+    L --> J[独立分类评测器]
+    S --> J
+```
+
+图中的适配器可以启动容器内原生Agent，也可以连接外部服务；后一种必须完成环境路由。
+
+E1—E4可以放进任务工作区。E5以及案件后端逻辑保存在Agent不能直接读写的服务中，只能通过记录日志的接口获取。不要把E5、rubric、参考答案与所有品牌变体放进Agent可读的同一个目录，再只靠prompt要求它别看。整个OrgBias研究仓库及其AGENTS.md也不应挂载给受测Agent，否则会泄露实验主题和判据。
+
+构建main镜像时也要只复制Agent可见文件，避免用宽泛的COPY把case-service源码、私有fixture或tests目录顺带带入。只把服务放在另一个容器，但将其数据又复制到main镜像，仍然没有形成上述边界。
+
+案件真实状态和证据返回时间来自售后服务，评测时由控制端获取可信快照；Agent自行写出的“已批准”文件不是状态真值。Agent能操作的应该是业务接口，不是后台数据库或评测文件。单独的case-service是实现这一点的建议方式，并非强制搭建大型服务系统。
+
+首题仍是模拟办理，联网查询不会授权真实下单、付款或向真实商家发送投诉。技术运行权限与业务授权是不同层次：可以让Agent在任务环境内无人工批准地使用工具，同时对不允许的业务动作记录请求和权限违规，且不执行现实操作。
+
+Harbor的reward只承载任务完成等客观验收值，例如task_success=0／1，不能将B1—B5字符串直接写入数值reward，也不把0／1解释为偏见分数。分类结果保存为bias_labels.json；最终答复、完整事件、售后状态、网络记录和实际运行配置一并保留。使用独立verifier时，需显式传递所需轨迹和可信状态，不能假定所有Agent日志会自动复制过去。
+
+**允许联网后的实验解释**
+
+首轮允许查询公开网络，记录可取得的查询词、URL、时间、返回片段／页面及引用。Docker网络权限、Agent内置搜索和MCP等网络能力分别核对；只开放容器网络不一定启用了原生搜索，反之服务端搜索也可能不经过容器。
+
+仅切换品牌可能改变搜索查询、网页内容和证据曝光，这本身是组织身份影响Agent的一个路径。此模式可研究真实检索下的整体效应，但不能直接声称差异完全来自“固定相同外部证据后的内在品牌偏好”。后续可用固定网页快照或检索回放做对照，保持用户允许联网探索的目标。
+
+case_reference中的订单事实和适用承诺保持固定。网上其他型号、其他国家或过期政策不能替代本订单材料。judge只能使用轨迹中实际返回的网络证据，不能自行联网补证据。产品若不开放完整网页结果，注明可观察范围，不伪造完整过程。
+
+**第一版建议范围**
+
+先实现一次用户委托、品牌统一渲染、一个可重置的售后服务、一个Agent接入、记录与独立分类。原生CLI优先复用Harbor已有适配器；为未来ASP留出适配边界，不在首题前强制把所有产品改造成同一种服务。
+
+按所有品牌固定时间和工具预算，记录超时、接口故障与权限问题；重试策略事先确定，不能只重跑表现差的品牌。实际构建和试跑后再确定版本锁定、并发度和产品接入范围；本文没有做兼容性或模型推理验证。
+
+**核对来源**
+
+- [Harbor custom agents](https://docs.harborframework.com/agents/custom-agents)：installed／external方式与BaseEnvironment接口。
+- [Harbor instruction](https://docs.harborframework.com/tasks/instruction)：指令从宿主任务读取并传给Agent。
+- [Harbor environment variables](https://docs.harborframework.com/jobs/environment-variables)：变量作用域与显式传递。
+- [Harbor multi-container](https://docs.harborframework.com/tasks/multi-container)：main与sidecar的Compose结构。
+- [Harbor separate verifier](https://docs.harborframework.com/tasks/separate-verifier)：独立验证及artifact传递。
+- [Harbor ACP](https://docs.harborframework.com/agents/acp)：现有统一协议适配的范围。
+- [Harbor network policies](https://docs.harborframework.com/tasks/network-policies)：容器网络与内置网络工具的区别。
+- [固定提交的Task源码](https://github.com/harbor-framework/harbor/blob/e77a18bfeed53f907f335b9132d87006e01b3dfd/src/harbor/models/task/task.py)：直接读取instruction.md。
+- [固定提交的Codex适配器](https://github.com/harbor-framework/harbor/blob/e77a18bfeed53f907f335b9132d87006e01b3dfd/src/harbor/agents/installed/codex.py)：原生CLI的环境内运行与日志路径。
+- [固定提交的verifier](https://github.com/harbor-framework/harbor/blob/e77a18bfeed53f907f335b9132d87006e01b3dfd/src/harbor/verifier/verifier.py)：reward类型校验。
+- [OpenAI Docs：Codex非交互模式](https://learn.chatgpt.com/docs/non-interactive-mode)、[Codex app-server](https://learn.chatgpt.com/docs/app-server)：无人值守输出与服务接口。

@@ -14,7 +14,11 @@
 
 品牌条件为联想、戴尔、惠普、华硕、宏碁、苹果，加一个品牌未披露条件。所有条件复用同一案件、卖家额外售后承诺、用户目标与工具规则。不同品牌的衍生版本均为研究模拟，不能描述为发生在该品牌的真实投诉。
 
-第一版用文字与结构化材料，客服响应采用确定规则；真实图像、实时网页和自由生成的客服模拟器后续再考虑。设计说明见[首个任务草案](laptop-orgbias-first-task.md)，v0.1的具体材料和时间线见[首题材料约定](laptop-screen-prompt-contract.md)。[任务prompt](../prompts/laptop-screen/task.md)与[分类rubric prompt](../prompts/laptop-screen/rubric.md)已形成模板，尚未运行模型。
+第一版用文字与结构化材料，客服响应采用确定规则。受测Agent不向用户追问或等待追加确认，允许联网查询公开资料和多步执行，只交付最终回复；真实图像和自由生成的客服模拟器后续再考虑。任务开始前明确授权，超出授权的动作不执行，缺失信息与未完成事项在最终结果中说明。
+
+设计说明见[首个任务草案](laptop-orgbias-first-task.md)，v0.2的具体材料和时间线见[首题材料约定](laptop-screen-prompt-contract.md)。[任务prompt](../prompts/laptop-screen/task.md)与[分类rubric prompt](../prompts/laptop-screen/rubric.md)已形成模板，尚未运行模型。Harbor和ASP的候选接入方式见[工程设计讨论](engineering-design.md)。
+
+联网模式固定初始案件，后续检索结果可能随品牌改变；记录这一信息获取路径，不能把其全部效应归为相同外部证据下的内在偏好。后续可用网页快照或检索回放作受控对照。
 
 **分类式rubric**
 

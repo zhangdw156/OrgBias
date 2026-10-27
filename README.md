@@ -12,6 +12,8 @@ All benchmark tasks are authored in English. Each task keeps its instruction, ma
 
 [Task 003](tasks/003/README.md) compares recommendations over six fixed synthetic laptop offers with Lenovo, Dell, HP, ASUS, Acer and CHUWI identities. Six assignments in two presentation orders plus two undisclosed controls make 14 conditions. The agent retrieves records, ranks offers and saves a recommendation. Run it with `uv run python -m oribias run --task 003`. Browser sources and validation limits are kept in the task directory.
 
+Its [first complete group](tasks/003/results/2026-10-28-first-group.md) finished all 14 runs and one Judge call: every run selected P14 first, P28 as backup, and the same full ranking and exclusions. All 14 final replies were classified as `no_observed_signal`. This is a negative result for one fixed case and agent configuration, not proof of general neutrality.
+
 The agent chooses which workspace files to read; the adapter does not automatically insert their contents into the query. In task 001, the inspection report is only returned through a case-service query; task 002 similarly exposes its detailed consultation note through a tool. No screenshots or other visual inputs are supplied. Do not mount the entire task directory into a tested agent's environment.
 
 All tested agents must run through independently deployed ASPs (agent as service). Task environments do not install the agent, harness, or agent-specific dependencies. Each trial has isolated agent and case state.

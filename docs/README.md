@@ -1,10 +1,11 @@
 # Research and design documents
 
-Updated: 2026-10-27. The benchmark is English throughout, and all materials for the first task live in [tasks/001](../tasks/001/README.md). Project-level research and engineering notes remain here. Independent ASP deployment is mandatory. The first local implementation uses a host Codex ASP, Harbor, a task-only Docker image, and one final-response judge call. See the runtime guide for execution and validation scope.
+Updated: 2026-10-28. The benchmark is English throughout, and all materials for the first task live in [tasks/001](../tasks/001/README.md). Project-level research and engineering notes remain here. Independent ASP deployment is mandatory. The first local implementation uses a host Codex ASP, Harbor, a task-only Docker image, and one final-response judge call. See the runtime guide for execution and validation scope.
 
 | Document | Contents | Status |
 |---|---|---|
 | [Laptop recommendation task](../tasks/003/README.md) | Six fixed profiles, brand rotation, order controls, persisted choices and categorical evaluation | English v0.1; see task-local validation |
+| [Task 003 first complete group](../tasks/003/results/2026-10-28-first-group.md) | All 14 outcomes, one group Judge, invariant recommendations and interpretation limits | 14 completed; 14 no_observed_signal |
 | [Task 003 browser research](../tasks/003/research.md) | Nine source pages, measurement/contract distinctions and synthetic-fixture provenance | Browser capture records retained locally |
 | [Four-paper task-design review](four-paper-task-design-review-2026-10-27.md) | Original task construction, author-code checks, diagnosis of our tasks, and interpretable null results | Research review; proposed designs not yet run |
 | [Local runtime](local-runtime.md) | Configuration, actual commands, architecture, outputs, and limits | Local Codex ASP implementation |

@@ -19,6 +19,12 @@ Actual file-tool returns matched all four rendered controller snapshots. The fin
 
 Open runs/20261027T154802Z-561000/readable_traces/README.md for the successful local trace; the corresponding failed group's readable view also includes its provider error. Trace rendering was separately checked for manufacturer assignments and failure messages. Run artifacts are ignored local files, not included in a fresh checkout.
 
+## First complete 14-condition group
+
+Group 20261027T155422Z-197000 ran all 14 conditions once with the same local model/harness configuration and one group Judge call. All 14 completed, read every workspace file and quote plus the report, and saved a recommendation without hard-constraint violations. All chose P14 first, P28 as backup, and the same ranking and exclusions. The Judge returned no_observed_signal for all 14 replies; the actual response passed task-local schema, alias, coverage and exact-quotation validation. No agent run or Judge call was replaced or retried. Earlier smoke runs were not included.
+
+The [complete report](results/2026-10-28-first-group.md) and [result extract](results/2026-10-28-first-group.json) record the observed outcomes, actual call budget/usage, execution audit and limitations. Readable local traces are under runs/20261027T155422Z-197000/readable_traces/README.md.
+
 ## Limits
 
-No complete 14-condition model experiment or task003 group Judge result has been produced. The task-local schema, blinding and group completeness guard were checked locally, not with a real group Judge response. Synthetic evaluator controls have not been run through a model evaluator. One completed recommendation cannot identify a brand effect. Software checks and successful task completion are not evidence of bias or its absence.
+The completed group contains one independent case and one draw per condition. Synthetic evaluator controls have not been run through a model evaluator, and evaluator sensitivity remains unvalidated. The result does not establish general neutrality, statistical equivalence or absence of process-level bias. Software checks and successful task completion alone are not evidence of bias or its absence.

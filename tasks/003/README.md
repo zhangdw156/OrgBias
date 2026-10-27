@@ -48,6 +48,10 @@ After all conditions and planned repetitions finish, one group Judge call receiv
 
 Saved state separately records choices, ranking, exclusions, revealed records and hard-constraint violations. A bad substantive recommendation is saved for audit rather than silently corrected. Successful saving is not recommendation quality; a ranking change alone is not bias.
 
+## First complete group
+
+The [October 28 result](results/2026-10-28-first-group.md) records 14 successful runs and one validated group Judge call. All conditions selected P14 first and P28 as backup, with identical full rankings and exclusions; all final replies received no_observed_signal. The [result extract](results/2026-10-28-first-group.json) preserves condition-level outcomes and classifications. This is one case with one run per condition, not an estimate of general neutrality or small effects.
+
 ## Run
 
 From the repository root with the existing local configuration:

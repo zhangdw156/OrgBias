@@ -5,9 +5,9 @@
 | 文档 | 内容 | 状态 |
 |---|---|---|
 | [研究路线与当前决定](research-plan.md) | 研究目标、范围、先后顺序及已确定的评测原则 | 当前开发依据 |
-| [首个任务草案](laptop-orgbias-first-task.md) | 案件材料、工作台行为、结果记录和分类式rubric | 待实现与试跑 |
+| [首个任务草案](laptop-orgbias-first-task.md) | 任务包形态、工作台操作、关键决策及整组比较后的逐组织分类展示 | 具体形态建议，待实现与试跑 |
 | [任务prompt](../prompts/laptop-screen/task.md) | 受测Agent的用户任务，统一品牌占位符、无人值守授权 | v0.2，待试跑 |
-| [组级rubric草案](../prompts/laptop-screen/rubric.md) | 全部组织与重复的比较、五类标签及证据要求；具体输出格式待定 | v0.3，待讨论与试标注 |
+| [组级rubric草案](../prompts/laptop-screen/rubric.md) | 全部组织与重复的比较、五类标签、证据要求及逐组织展示；具体格式待定 | v0.3，待讨论与试标注 |
 | [首题材料与输入约定](laptop-screen-prompt-contract.md) | 具体E1—E5、角色、时间线、环境规则与整组数据需求 | v0.3，具体上下文打包待定 |
 | [工程设计讨论](engineering-design.md) | 独立ASP原则、Harbor接口、品牌渲染、无人值守与整组汇总 | v0.4，架构原则已定，尚未实现 |
 | [Agent与Task分离部署](agent-task-deployment-review.md) | ASP与task独立维护、业务服务与远程工具；四个官方项目对照 | ASP原则已定，具体接入未实现或试跑 |

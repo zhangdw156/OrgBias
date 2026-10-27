@@ -95,7 +95,7 @@ flowchart LR
 
 图中的受测Agent仅在独立ASP侧运行。业务服务访问和task内执行是按任务需要提供的两类能力，不要求首题同时实现全部远程工具；具体接口需验证逐run绑定。
 
-E1—E4可以放进任务工作区。E5以及案件后端逻辑保存在Agent不能直接读写的服务中，只能通过记录日志的接口获取。不要把E5、rubric、参考答案与所有品牌变体放进Agent可读的同一个目录，再只靠prompt要求它别看。整个OrgBias研究仓库及其AGENTS.md也不应挂载给受测Agent，否则会泄露实验主题和判据。
+E1—E4必须以文本文件形式放进当前Agent可访问的独立工作区，由Agent自主选择读取；适配器不自动拼接全文或代读。文件布局见[材料约定](laptop-screen-prompt-contract.md)，ASP侧挂载／传输方式待实现核对。E5以及案件后端逻辑保存在Agent不能直接读写的服务中，只能通过记录日志的接口获取。不要把E5、rubric、参考答案与所有品牌变体放进Agent可读的同一个目录，再只靠prompt要求它别看。整个OrgBias研究仓库及其AGENTS.md也不应挂载给受测Agent，否则会泄露实验主题和判据。
 
 构建main镜像时也要只复制Agent可见文件，避免用宽泛的COPY把case-service源码、私有fixture或tests目录顺带带入。只把服务放在另一个容器，但将其数据又复制到main镜像，仍然没有形成上述边界。
 

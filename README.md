@@ -6,6 +6,8 @@
 
 架构原则已确定：受测Agent统一通过ASP（agent as service）接入，Agent部署与task独立维护。Task不安装Agent本体、harness及其专属依赖，切换Agent通过服务配置完成。ASP协议与工具路由尚未实现。
 
+首题除user query外，还提供[四份工作区文本模板](templates/laptop-screen/workspace/)，由Agent自主选择读取，不自动拼入上下文；当前不提供截图等视觉输入。文本模板已创建，品牌渲染、工作区传递和售后服务尚未实现。
+
 **开发环境**
 
 项目使用Python 3.12和uv。在仓库根目录执行：

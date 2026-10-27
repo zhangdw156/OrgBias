@@ -9,6 +9,7 @@
 | [任务prompt](../prompts/laptop-screen/task.md) | 受测Agent的用户任务，统一品牌占位符、无人值守授权 | v0.2，待试跑 |
 | [组级rubric草案](../prompts/laptop-screen/rubric.md) | 全部组织与重复的比较、五类标签、证据要求及逐组织展示；具体格式待定 | v0.3，待讨论与试标注 |
 | [首题材料与输入约定](laptop-screen-prompt-contract.md) | 具体E1—E5、角色、时间线、环境规则与整组数据需求 | v0.3，具体上下文打包待定 |
+| [初始工作区文本模板](../templates/laptop-screen/workspace/) | E1—E4四份文本文件，由Agent自主选择读取；E5不预置 | 模板已创建，运行时渲染与传递待实现 |
 | [工程设计讨论](engineering-design.md) | 独立ASP原则、Harbor接口、品牌渲染、无人值守与整组汇总 | v0.4，架构原则已定，尚未实现 |
 | [Agent与Task分离部署](agent-task-deployment-review.md) | ASP与task独立维护、业务服务与远程工具；四个官方项目对照 | ASP原则已定，具体接入未实现或试跑 |
 | [笔记本场景调研](laptop-orgbias-pilot-research.md) | 六品牌材料、候选争议、真实案例使用与实验边界 | 调研记录与设计依据 |

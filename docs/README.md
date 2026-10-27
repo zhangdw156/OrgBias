@@ -1,20 +1,22 @@
-# 文档索引
+# Research and design documents
 
-项目文档整理日期：2026-10-27。部署原则已确定为独立ASP，task不安装Agent本体；任务prompt保持v0.2的无人值守与允许联网协议，rubric及材料约定更新为v0.3组级评判。ASP具体协议、Judge形态及上下文组织待确定，当前没有已完成的环境实现或模型实验结果。
+Updated: 2026-10-27. The benchmark is English throughout, and all materials for the first task live in [tasks/001](../tasks/001/README.md). Project-level research and engineering notes remain here. Independent ASP deployment is mandatory. The task environment and model experiments have not been implemented or run.
 
-| 文档 | 内容 | 状态 |
+| Document | Contents | Status |
 |---|---|---|
-| [研究路线与当前决定](research-plan.md) | 研究目标、范围、先后顺序及已确定的评测原则 | 当前开发依据 |
-| [首个任务草案](laptop-orgbias-first-task.md) | 任务包形态、工作台操作、关键决策及整组比较后的逐组织分类展示 | 具体形态建议，待实现与试跑 |
-| [任务prompt](../prompts/laptop-screen/task.md) | 受测Agent的用户任务，统一品牌占位符、无人值守授权 | v0.2，待试跑 |
-| [组级rubric草案](../prompts/laptop-screen/rubric.md) | 全部组织与重复的比较、五类标签、证据要求及逐组织展示；具体格式待定 | v0.3，待讨论与试标注 |
-| [首题材料与输入约定](laptop-screen-prompt-contract.md) | 具体E1—E5、角色、时间线、环境规则与整组数据需求 | v0.3，具体上下文打包待定 |
-| [初始工作区文本模板](../templates/laptop-screen/workspace/) | E1—E4四份文本文件，由Agent自主选择读取；E5不预置 | 模板已创建，运行时渲染与传递待实现 |
-| [工程设计讨论](engineering-design.md) | 独立ASP原则、Harbor接口、品牌渲染、无人值守与整组汇总 | v0.4，架构原则已定，尚未实现 |
-| [Agent与Task分离部署](agent-task-deployment-review.md) | ASP与task独立维护、业务服务与远程工具；四个官方项目对照 | ASP原则已定，具体接入未实现或试跑 |
-| [笔记本场景调研](laptop-orgbias-pilot-research.md) | 六品牌材料、候选争议、真实案例使用与实验边界 | 调研记录与设计依据 |
-| [Personal agent相关工作](personal-agent-orgbias-review.md) | 来源偏好、购物代理与用户利益相关论文 | 文献调研；发表状态按文内核对范围说明 |
+| [Research plan](research-plan.md) | Scope, accepted decisions, and evaluation principles | Current project guidance |
+| [Task 001 specification](../tasks/001/README.md) | Case, package layout, task behavior, and organization-level reporting after group review | English v0.4; runtime pending |
+| [Task instruction](../tasks/001/instruction.md) | English user query, manufacturer placeholder, and unattended authorization | English v0.4; not evaluated |
+| [Group rubric](../tasks/001/rubric.md) | Cross-organization comparison, categories, directions, and evidence | English v0.4; calibration and final schema pending |
+| [Material contract](../tasks/001/contract.md) | Visibility, rendering, service rules, and group records | English v0.4; implementation pending |
+| [Initial workspace](../tasks/001/workspace/) | Four text documents for voluntary agent reading | Templates available |
+| [Private inspection report](../tasks/001/private/inspection_report.txt) | Report returned only by the case service | Fixture available; not an initial agent input |
+| [Organization conditions](../tasks/001/organizations.json) | English brand values and the undisclosed control | Configuration available; runner pending |
+| [Engineering design](engineering-design.md) | ASP boundary, Harbor interfaces, environment isolation, and group aggregation | v0.4 design; not implemented |
+| [Agent/task deployment review](agent-task-deployment-review.md) | Independent ASP deployment and official project comparisons | Source review only |
+| [Laptop scenario research](laptop-orgbias-pilot-research.md) | Brand-related source material, candidate cases, and evidence limits | Research record |
+| [Personal-agent literature review](personal-agent-orgbias-review.md) | Source preference, shopping agents, and user-interest studies | Publication status is qualified within the review |
 
-先读研究路线和首个任务草案，再使用任务prompt。首题具体材料与环境语义以材料约定为准，组级分类原则以rubric草案为准；Judge实现、上下文打包及最终输出schema待进一步确定。修改规则时同步更新相关说明，避免旧评分方案或单轨迹正式评判方案继续作为当前流程使用。
+Read the research plan and task specification before using the task. The material contract defines case behavior; the rubric defines formal group classification. Judge implementation, context packaging, and the final machine-readable output schema remain undecided.
 
-调研文档来自项目初始化前的讨论，保留原始核对日期和证据限制。原始网页抓取、私人材料、PDF及既往临时工作目录没有随本次初始化迁入仓库。
+Keep links and current instructions synchronized when decisions change. Do not revive numerical bias scores, independent per-run bias judgments, or task-local agent installation. Historical research notes retain their original source dates and verification limits. Raw captures, private source material, and runtime artifacts are not task inputs.

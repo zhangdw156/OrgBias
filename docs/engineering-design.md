@@ -6,9 +6,9 @@
 
 Agent不向用户追问，不等待额外确认；允许联网查询公开资料和多步执行；用户只接收最终回复。首题使用Harbor，品牌应能通过配置方便切换。所有受测Agent通过ASP（agent as service）接入，Agent本体、harness与专属依赖由独立服务维护；task镜像和运行容器不安装Agent，只保留任务环境及必要的轻量客户端／工具接口。切换Agent通过服务配置完成，第一版即遵守此边界。
 
-任务prompt保持v0.2的无人值守协议：取消“付费前向用户征求同意”，改为事先明确本轮授权；不允许的操作不执行，缺失信息及未完成事项在最终结果中陈述。真实交易或投诉不由联网能力自动授权，本题业务操作仍只作用于模拟售后工作台。
+任务prompt、rubric及材料约定为v0.4英文任务包，集中在tasks/001。无人值守协议保持不变：任务开始时明确授权；不允许的操作不执行，缺失信息及未完成事项在最终结果中陈述。真实交易或投诉不由联网能力自动授权，本题业务操作仍只作用于模拟售后工作台。
 
-新增已确定要求：正式bias评判在同一task、同一Agent配置及评测条件的全部组织与计划重复运行结束后统一进行。单条轨迹只整理事实，rubric更新为v0.3组级草案；LLM-as-Judge或Agent-as-Judge及上下文组织方式仍待讨论。
+新增已确定要求：正式bias评判在同一task、同一Agent配置及评测条件的全部组织与计划重复运行结束后统一进行。单条轨迹只整理事实，rubric更新为v0.4组级草案；LLM-as-Judge或Agent-as-Judge及上下文组织方式仍待讨论。
 
 **Harbor接口核对结果**
 
@@ -38,7 +38,7 @@ Codex官方文档说明`codex exec`支持非交互执行，默认把进度写到
 
 **品牌配置、指令与镜像**
 
-使用一个明确的品牌配置作为本次运行的输入，例如brand_id=lenovo、brand_name=联想；环境变量可以作为读取配置的入口。批量并发时，每个trial持有自己的配置对象及子进程env，不反复修改共享进程的全局环境变量。
+使用一个明确的品牌配置作为本次运行的输入，例如organizations.json中的org_id=lenovo、brand=Lenovo；环境变量可以作为读取配置的入口。所有组织显示名采用任务配置中的英文值，匿名条件为not disclosed。批量并发时，每个trial持有自己的配置对象及子进程env，不反复修改共享进程的全局环境变量。
 
 在Harbor加载任务前，渲染本次instruction.md及E1／E4等所有身份位置，生成不可变的运行快照。运行时再把同一配置传给主容器和售后服务；E5按既定规则返回。不能只替换提问中的品牌，留下客服签名或材料中的旧品牌。
 
@@ -46,7 +46,7 @@ Codex官方文档说明`codex exec`支持非交互执行，默认把进度写到
 
 Agent服务与task环境分别维护镜像和依赖，运行时通过ASP连接，不构建task×agent组合镜像，也不在task启动后下载或安装Agent。多个案件可以共用同一个任务服务镜像。镜像复用不改变每次运行的会话、工作区和案件状态隔离。具体边界及官方项目依据见[Agent与Task分离部署调研](agent-task-deployment-review.md)。
 
-任务文件通常包含instruction.md、task.toml、environment/Dockerfile和tests/test.sh；Dockerfile也可被预构建镜像替代。若首题售后后端采用独立服务，则用environment/docker-compose.yaml管理main任务执行环境和case-service；Agent本体部署在独立ASP侧。Harbor将main称作Agent容器不意味着本项目必须在其中安装Agent，它可由external适配器控制。这里描述文件职责，不表示这些环境文件已实现。
+首题统一位于tasks/001；已有instruction.md、rubric.md、organizations.json、workspace文本文件、private检测报告及英文任务文档。后续Harbor配置、environment/Dockerfile、tests/test.sh及服务实现也放在此task目录下；Dockerfile可被预构建镜像替代。若售后后端采用独立服务，则用environment/docker-compose.yaml管理main任务执行环境和case-service；Agent本体部署在独立ASP侧。Harbor将main称作Agent容器不意味着本项目必须在其中安装Agent，它可由external适配器控制。Harbor环境文件尚未实现。
 
 **ASP：已确定的独立服务边界**
 
@@ -95,7 +95,7 @@ flowchart LR
 
 图中的受测Agent仅在独立ASP侧运行。业务服务访问和task内执行是按任务需要提供的两类能力，不要求首题同时实现全部远程工具；具体接口需验证逐run绑定。
 
-E1—E4必须以文本文件形式放进当前Agent可访问的独立工作区，由Agent自主选择读取；适配器不自动拼接全文或代读。文件布局见[材料约定](laptop-screen-prompt-contract.md)，ASP侧挂载／传输方式待实现核对。E5以及案件后端逻辑保存在Agent不能直接读写的服务中，只能通过记录日志的接口获取。不要把E5、rubric、参考答案与所有品牌变体放进Agent可读的同一个目录，再只靠prompt要求它别看。整个OrgBias研究仓库及其AGENTS.md也不应挂载给受测Agent，否则会泄露实验主题和判据。
+E1—E4必须以文本文件形式放进当前Agent可访问的独立工作区，由Agent自主选择读取；适配器不自动拼接全文或代读。文件布局见[材料约定](../tasks/001/contract.md)，ASP侧挂载／传输方式待实现核对。E5以及案件后端逻辑保存在Agent不能直接读写的服务中，只能通过记录日志的接口获取。不要把E5、rubric、参考答案与所有品牌变体放进Agent可读的同一个目录，再只靠prompt要求它别看。整个OrgBias研究仓库及其AGENTS.md也不应挂载给受测Agent，否则会泄露实验主题和判据。
 
 构建main镜像时也要只复制Agent可见文件，避免用宽泛的COPY把case-service源码、私有fixture或tests目录顺带带入。只把服务放在另一个容器，但将其数据又复制到main镜像，仍然没有形成上述边界。
 

@@ -1,38 +1,43 @@
 # OrgBias
 
-研究组织身份如何影响personal agent的证据判断、行动和用户结果。组织范围包括公司、品牌、平台、医院等；首个实验聚焦笔记本售后争议。
+OrgBias studies how organizational identity changes personal agents' evidence assessment, decisions, actions, and user outcomes. Organizations may include manufacturers, platforms, hospitals, and financial institutions. The first task concerns a laptop after-sales dispute.
 
-当前阶段：任务prompt为v0.2，采用无人值守、允许联网、多步执行、只交付最终回复的协议；rubric及材料约定为v0.3，正式bias评判在同一任务对应的全部组织与计划重复结束后统一进行。Judge形态和上下文组织待讨论；售后工作台、Harbor集成、模型评测与专用评测器尚未实现或运行。
+All benchmark tasks are authored in English. Each task keeps its instruction, materials, organization conditions, private fixtures, rubric, and task documentation under one directory in `tasks/`.
 
-架构原则已确定：受测Agent统一通过ASP（agent as service）接入，Agent部署与task独立维护。Task不安装Agent本体、harness及其专属依赖，切换Agent通过服务配置完成。ASP协议与工具路由尚未实现。
+## Current task
 
-首题除user query外，还提供[四份工作区文本模板](templates/laptop-screen/workspace/)，由Agent自主选择读取，不自动拼入上下文；当前不提供截图等视觉输入。文本模板已创建，品牌渲染、工作区传递和售后服务尚未实现。
+[Task 001](tasks/001/README.md) is an English v0.4 task package. It includes a [user instruction](tasks/001/instruction.md), [four workspace text files](tasks/001/workspace/), [organization conditions](tasks/001/organizations.json), a [private inspection report](tasks/001/private/inspection_report.txt), and a [group-level rubric](tasks/001/rubric.md). The [material contract](tasks/001/contract.md) defines visibility, case rules, and recording requirements.
 
-**开发环境**
+The agent chooses which workspace files to read; the adapter does not automatically insert their contents into the query. The inspection report is only returned through a case-service query. No screenshots or other visual inputs are supplied. Do not mount the entire task directory into a tested agent's environment.
 
-项目使用Python 3.12和uv。在仓库根目录执行：
+All tested agents must run through independently deployed ASPs (agent as service). Task environments do not install the agent, harness, or agent-specific dependencies. Each trial has isolated agent and case state.
+
+Formal bias classification happens only after every planned organization condition and repetition for the same task and agent configuration has ended and the required records have been collected. Results cover every organization, with multiple labels and evidence where justified; task success and protocol compliance are reported separately.
+
+Task materials are available, but the case service, ASP connection, Harbor environment, renderer, model evaluation, and specialized evaluator have not been implemented or run. Judge type, context packaging, and final output schema remain open.
+
+## Development environment
+
+Use Python 3.12 and uv. From the repository root:
 
 ```bash
 uv sync --locked
 ```
 
-该命令按 `uv.lock` 准备项目自己的 `.venv`，无需手动激活。后续项目命令使用 `uv run`。当前尚无实验运行入口，也尚未加入Harbor或模型SDK等运行依赖。
+This prepares the project's own `.venv` from `uv.lock`; no manual activation is needed. Use `uv run` for project commands. There is currently no experiment entry point or Harbor/model SDK dependency.
 
-**研究与任务文档**
+## Research and design
 
-- [文档索引](docs/README.md)：阅读顺序与文档状态。
-- [研究路线与当前决定](docs/research-plan.md)：目标、范围、实验和评测原则。
-- [首题任务prompt](prompts/laptop-screen/task.md)与[组级rubric草案](prompts/laptop-screen/rubric.md)：分别用于单次执行和全组织运行组的正式评审。
-- [首题材料与输入约定](docs/laptop-screen-prompt-contract.md)：E1—E5、角色、时间线、工作台规则与judge输入。
-- [工程设计讨论](docs/engineering-design.md)：ASP架构原则、Harbor接口、品牌渲染、无人值守与环境隔离。
-- [Agent与Task分离部署](docs/agent-task-deployment-review.md)：独立ASP部署、任务服务、远程工具与官方项目实现对照。
-- [首个任务草案](docs/laptop-orgbias-first-task.md)：售后取证、模拟工具、申请状态和分类式rubric。
-- [笔记本场景调研](docs/laptop-orgbias-pilot-research.md)：品牌材料、真实案例、场景选择和证据边界。
-- [Personal agent相关工作](docs/personal-agent-orgbias-review.md)：直接相关研究及相邻工作的区别。
+- [Document index](docs/README.md): project research and engineering notes.
+- [Research plan](docs/research-plan.md): objectives, accepted decisions, and experiment sequence.
+- [Engineering design](docs/engineering-design.md): ASP integration, Harbor interfaces, unattended execution, and group aggregation.
+- [Agent/task deployment review](docs/agent-task-deployment-review.md): independent services, task environments, and official framework implementations.
+- [Laptop scenario research](docs/laptop-orgbias-pilot-research.md): source cases, candidate disputes, and evidence limits.
+- [Personal-agent literature review](docs/personal-agent-orgbias-review.md): directly related and adjacent research.
 
-**贡献约定**
+## Contributions
 
-遵守 [AGENTS.md](AGENTS.md)。Commit message必须使用Angular style，例如：
+Follow [AGENTS.md](AGENTS.md). Commit messages must use Angular style, for example:
 
 ```text
 feat(tasks): add laptop warranty dispute task

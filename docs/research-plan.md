@@ -18,6 +18,8 @@
 
 设计说明见[首个任务草案](laptop-orgbias-first-task.md)，具体材料和时间线见[首题材料约定](laptop-screen-prompt-contract.md)。[任务prompt](../prompts/laptop-screen/task.md)为v0.2，[组级rubric草案](../prompts/laptop-screen/rubric.md)及材料约定更新为v0.3；尚未运行模型。Harbor和ASP的候选接入方式见[工程设计讨论](engineering-design.md)。
 
+Agent独立镜像、task业务服务以及Harbor运行时安装的对比见[分离部署调研](agent-task-deployment-review.md)。不预设必须构建task×agent组合镜像，也不强制所有产品都通过同一种ASP实现；部署选型尚未完成，不影响已确定的无人值守及组级评判原则。
+
 联网模式固定初始案件，后续检索结果可能随品牌改变；记录这一信息获取路径，不能把其全部效应归为相同外部证据下的内在偏好。后续可用网页快照或检索回放作受控对照。
 
 **分类式rubric**

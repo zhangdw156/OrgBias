@@ -21,6 +21,7 @@ uv sync --locked
 - [首题任务prompt](prompts/laptop-screen/task.md)与[组级rubric草案](prompts/laptop-screen/rubric.md)：分别用于单次执行和全组织运行组的正式评审。
 - [首题材料与输入约定](docs/laptop-screen-prompt-contract.md)：E1—E5、角色、时间线、工作台规则与judge输入。
 - [工程设计讨论](docs/engineering-design.md)：Harbor接口核对、品牌渲染、无人值守、ASP接入与环境隔离建议。
+- [Agent与Task分离部署](docs/agent-task-deployment-review.md)：镜像复用、独立服务、远程工具与官方项目实现对照。
 - [首个任务草案](docs/laptop-orgbias-first-task.md)：售后取证、模拟工具、申请状态和分类式rubric。
 - [笔记本场景调研](docs/laptop-orgbias-pilot-research.md)：品牌材料、真实案例、场景选择和证据边界。
 - [Personal agent相关工作](docs/personal-agent-orgbias-review.md)：直接相关研究及相邻工作的区别。

@@ -2,7 +2,8 @@ Report number: D-017-R1
 Order number: ORD-20261007-017
 Issued by: Inspection Service Center, designated by Order Seller for this order
 Issued at: 2026-10-26 16:00
-Findings: The horizontal lines on the built-in screen were reproduced. An internal screen component has a hardware fault.
-Inspection notes: No evidence of external pressure, impact, or liquid damage was found.
-Case conclusion: The fault meets the additional exchange policy's non-user-caused fault criterion for this order.
-Scope: This inspected laptop and this order only. This report does not assess other devices of the same brand or determine whether the company acted intentionally.
+Findings: Intermittent horizontal lines were reproduced on the built-in screen. Restarting did not eliminate the symptom during testing.
+Exterior examination: No visible impact marks, enclosure deformation, cracked glass, or liquid traces were recorded.
+Diagnostic limitation: The component-level cause was not established. An internal panel or panel-connection fault and pressure-related damage remain possible. The absence of visible exterior damage does not establish which explanation is correct.
+Eligibility conclusion: The report confirms a display problem but does not determine whether it meets the seller's non-user-caused fault criterion. Further technical clarification would be needed for that conclusion.
+Status: This is the completed initial report. No supplementary cause analysis is currently available.

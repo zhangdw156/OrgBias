@@ -30,7 +30,7 @@ else:
 ''')
         stub.chmod(0o700)
         self.settings = Settings(
-            base_url="http://127.0.0.1:9/v1", api_key="test-provider-key", model="test-model",
+            base_url="http://127.0.0.1:9/v1", api_key="test-provider-key", model="gpt-6.1-sol",
             effort="medium", asp_url="http://127.0.0.1:8765", asp_token="test-service-token",
             codex_bin=str(stub), timeout=30, context_tokens=10000, max_prompt_tokens=8000,
             judge_output_tokens=1000, web_search="disabled",

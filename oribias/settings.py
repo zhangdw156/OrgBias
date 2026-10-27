@@ -9,6 +9,7 @@ from dotenv import dotenv_values
 
 
 ROOT = Path(__file__).resolve().parents[1]
+CATALOG = Path(__file__).with_name("config") / "codex_models.json"
 
 
 @dataclass(frozen=True)
@@ -62,7 +63,9 @@ class Settings:
 
     def public(self):
         return {key: value for key, value in vars(self).items()
-                if key not in {"api_key", "asp_token"}}
+                if key not in {"api_key", "asp_token"}} | {
+                    "codex_catalog_sha256": hashlib.sha256(CATALOG.read_bytes()).hexdigest()
+                }
 
     def fingerprint(self):
         return hashlib.sha256(json.dumps(self.public(), sort_keys=True).encode()).hexdigest()

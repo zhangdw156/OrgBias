@@ -6,7 +6,7 @@ import tempfile
 import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
-TASK = ROOT / "tasks/001"
+TASK = ROOT / "tasks/001/versions/v0.6"
 spec = importlib.util.spec_from_file_location("case_service", TASK / "environment/service.py")
 service = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(service)

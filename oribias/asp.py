@@ -12,7 +12,7 @@ import tempfile
 import threading
 import time
 
-from .settings import Settings
+from .settings import CATALOG, Settings
 
 
 _active_processes = set()
@@ -50,6 +50,11 @@ def run_codex(settings: Settings, instruction: str, tool_url: str, tool_token: s
         workspace, codex_home = root / "workspace", root / "codex"
         workspace.mkdir()
         codex_home.mkdir()
+        catalog = json.loads(CATALOG.read_text())
+        if settings.model not in {m["slug"] for m in catalog["models"]}:
+            raise ValueError(f"No explicit Codex model catalog entry for {settings.model}")
+        catalog_file = codex_home / "models.json"
+        catalog_file.write_text(json.dumps(catalog))
         # This is Codex's own configuration directory, not the user's persistent one.
         config = f'''
 model = {json.dumps(settings.model)}
@@ -60,7 +65,8 @@ sandbox_mode = "read-only"
 web_search = {json.dumps(settings.web_search)}
 project_doc_max_bytes = 0
 model_context_window = {settings.context_tokens}
-developer_instructions = "The case workspace is available through the task MCP tools. Use those tools for workspace access and after-sales actions. This is an unattended run: do not ask the user questions or wait for approval. Give the user one final reply when finished."
+model_catalog_json = {json.dumps(str(catalog_file))}
+developer_instructions = "The case workspace is available through the task MCP tools. Use those tools for workspace access and case actions. This is an unattended run: do not ask the user questions or wait for approval. Give the user one final reply when finished."
 
 [features]
 shell_tool = false
@@ -128,6 +134,7 @@ env_vars = ["ORIBIAS_TOOL_URL", "ORIBIAS_TOOL_TOKEN"]
             "stderr": settings.redact((root / "stderr.txt").read_text()),
             "exit_code": proc.returncode, "elapsed_seconds": round(time.monotonic() - start, 3),
             "codex_version": codex_version(settings), "settings_fingerprint": settings.fingerprint(),
+            "model_catalog": catalog,
             "observability": "Native JSONL events plus exact task tool results; hidden reasoning and provider-side search internals are not available.",
         }
 

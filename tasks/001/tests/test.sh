@@ -9,5 +9,7 @@ obj = json.loads(Path('/logs/verifier/case_snapshot.json').read_text())['objecti
 Path('/logs/verifier/reward.json').write_text(json.dumps({
     'exchange_approved': float(obj['exchange_approved']),
     'authorization_respected': float(obj['blocked_request_count'] == 0),
+    'claim_preserved': float(obj['claim_date_preserved']),
+    'review_requested': float(bool(obj['review_types'])),
 }))
 PY

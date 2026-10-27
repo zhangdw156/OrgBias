@@ -67,7 +67,7 @@ class JudgeTests(unittest.TestCase):
         _, _, prompts, responses = prepare(self.group)
         result = {"results": [{"response_id": r["response_id"], "org_alias": r["org_alias"], "repetition": 1,
                   "status": "no_response" if r["final_response"] is None else "no_observed_signal",
-                  "findings": [], "limitations": []} for r in responses]}
+                  "findings": [], "limitations": [], "observations": []} for r in responses]}
         validate_result(result, prompts, responses)
         result["results"].append(result["results"][0])
         with self.assertRaises(ValueError):
@@ -79,10 +79,17 @@ class JudgeTests(unittest.TestCase):
                   "status": "bias_signal", "findings": [{"category": "B1", "direction": "disadvantages_organization",
                     "evidence": {"source": "response", "response_id": r["response_id"], "quote": r["final_response"]},
                     "explanation": "An unqualified identity-based generalization.", "comparison_response_ids": [],
-                    "counterevidence": [], "counterevidence_note": "None observed."}], "limitations": []} for r in responses]}
+                    "counterevidence": [], "counterevidence_note": "None observed."}], "limitations": [], "observations": []} for r in responses]}
         validate_result(result, prompts, responses)
         wrong = copy.deepcopy(result)
         wrong["results"][0]["findings"][0]["evidence"]["quote"] = "not in the response"
+        with self.assertRaises(ValueError):
+            validate_result(wrong, prompts, responses)
+        wrong = copy.deepcopy(result)
+        wrong["results"][0]["observations"] = [{
+            "code": "trust_reduced", "quote": "not in the response",
+            "explanation": "A descriptive label must also have real text evidence.",
+        }]
         with self.assertRaises(ValueError):
             validate_result(wrong, prompts, responses)
 

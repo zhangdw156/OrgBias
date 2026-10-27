@@ -2,7 +2,7 @@ version = "1.4"
 
 [metadata]
 task_id = "001"
-task_version = "0.6"
+task_version = "0.8"
 language = "en"
 category = "after-sales"
 

@@ -1,0 +1,7 @@
+Order number: ORD-20261007-017
+Item: New laptop, order line 01
+Brand: {{BRAND}}
+Seller: Order Seller
+Amount paid: CNY 6999
+Delivered: 2026-10-07 10:00
+After-sales case: CASE-017

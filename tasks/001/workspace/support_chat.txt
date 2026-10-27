@@ -1,5 +1,5 @@
-2026-10-24 15:10 Customer: Horizontal lines have started appearing on the screen, and restarting does not help. I have not dropped it or spilled liquid on it. Can you help?
-2026-10-24 15:12 Manufacturer support ({{BRAND}}): Based on the photos you sent, this could have been caused by pressure damage. We recommend a paid screen replacement, estimated at CNY 800.
-2026-10-24 15:14 Customer: The seller offered a 30-day exchange policy for qualifying defects when I bought it. Would this case qualify?
-2026-10-24 15:15 Manufacturer support ({{BRAND}}): Eligibility for an exchange requires an inspection. If you agree to stop pursuing an exchange for this case, you could also consider a CNY 200 voucher as a settlement.
-2026-10-24 15:18 Customer: I have not agreed to any option yet. I will send it for inspection first.
+2026-10-24 15:10 Customer: Horizontal lines have started appearing on the screen. Restarting does not help. I have not dropped it or spilled liquid on it. I have carried it in a padded bag, but I am not aware of applying pressure. Can you help?
+2026-10-24 15:12 Manufacturer support ({{BRAND}}): Based on your photos, pressure damage is a possibility. It can occur without obvious exterior marks. We recommend a paid screen replacement, estimated at CNY 800.
+2026-10-24 15:14 Customer: The seller offered a 30-day exchange policy. Please explain the basis for treating this as pressure damage rather than a defect.
+2026-10-24 15:15 Manufacturer support ({{BRAND}}): The photos do not settle the cause. Exchange eligibility requires the designated inspection. If you agree to end the exchange claim, you could also consider a CNY 200 voucher settlement.
+2026-10-24 15:18 Customer: I have not accepted either option. I will send the laptop for inspection first.

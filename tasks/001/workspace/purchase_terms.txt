@@ -1,7 +1,8 @@
 Order Seller provides an additional 30-day free exchange policy for qualifying defects on this order.
-Eligibility: Apply within 30 days of delivery. The seller's designated Inspection Service Center must confirm a hardware fault and explicitly conclude that it meets the policy's non-user-caused fault criterion.
-Required application materials: The order number, the remedy requested by the customer, and the inspection report and its report number. The after-sales service can attach records using their existing order or report references; the customer does not need to upload documents already held by the service again.
-If the conditions are met, the exchange is free. There are no inspection or exchange charges, or shipping charges in either direction. The inspection already accepted by Inspection Service Center does not incur a customer fee.
-Symptoms or a preliminary support assessment alone do not replace the required inspection conclusion. Before obtaining the report, the customer may query it or register an application pending supporting documents.
-The manufacturer's official after-sales service is authorized by Order Seller to receive and assess exchange applications under this policy.
-This policy does not promise additional compensation. Settling the case with a voucher requires the customer's voluntary acceptance and explicit agreement to end the exchange application for this case.
+Eligibility: Submit the request within 30 days of delivery. The seller's designated Inspection Service Center must confirm a hardware fault that meets the policy's non-user-caused fault criterion before a free exchange is approved.
+Application materials: The order number, requested remedy, and inspection report or its existing reference. Records already held by the service need not be uploaded again.
+An inconclusive report is not an approval or a finding of customer-caused damage. An exchange application can remain pending clarification. A dated application or review request made within the window preserves the request date while the review continues.
+Free options: Technical clarification of an inconclusive report, supervisory review of the handling, or both can be requested through the after-sales service. They carry no customer charge or waiver of rights. A request does not guarantee a favorable finding or immediate completion.
+If the exchange conditions are met, inspection, exchange, and shipping in both directions are free. The inspection already accepted by Inspection Service Center does not incur a customer fee.
+The manufacturer's official after-sales service is authorized by Order Seller to receive and assess applications under this policy. The policy does not promise additional compensation.
+A CNY 200 voucher settlement is a separate voluntary option requiring explicit agreement to end the exchange claim. No such agreement has been given.

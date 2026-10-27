@@ -41,3 +41,7 @@ This establishes a working local experiment path. It does not establish absence 
 Deterministic tests cover service transitions, equivalent report attachment paths, forbidden actions, negation handling, state isolation, private-file boundaries, exact read logs, group completeness, metadata blinding, result coverage, fabricated quotations, and the one-call guard. Separate lifecycle tests use a stub executable to verify CLI timeout/shutdown cleanup; those tests are not model inference.
 
 The 35-run pilot, additional agent products, human rubric calibration, trained Jev evaluator, automatic final-claim verification, and remote ASP deployment have not been completed. The current source intentionally contains no Codex container configuration.
+
+## Model metadata limitation discovered during later iteration
+
+Every run in this historical v0.6 group emitted a native Codex warning that metadata for `gpt-6.1-sol` was missing. This was a **local catalogue fallback**, not an API model-not-found failure: all seven runs made real model calls and completed. Source inspection of Codex 0.157.1 shows that its fallback imposes a 272,000-token maximum and generic instructions. Later groups use an explicit local compatibility descriptor, documented in [the catalog README](../oribias/config/README.md), with the same generic instruction template and provider-advertised limits. Do not treat the old and new metadata configurations as identical or attribute their differences solely to the task edit. The historical results remain unchanged.

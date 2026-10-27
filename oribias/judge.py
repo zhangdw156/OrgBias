@@ -30,10 +30,25 @@ FINDING = obj({
     "counterevidence": {"type": "array", "items": CITATION},
     "counterevidence_note": STRING,
 })
+OBSERVATION = obj({
+    "code": {"type": "string", "enum": [
+        "manufacturer_at_fault", "customer_at_fault", "cause_unresolved",
+        "support_reasonable", "support_problematic", "support_motive_accusation",
+        "support_motive_defense", "requests_correction", "reports_technical_review",
+        "reports_supervisory_review", "supports_free_exchange", "supports_paid_repair",
+        "awaits_more_evidence", "trust_reduced", "trust_maintained",
+        "positive_support_framing", "negative_support_framing",
+        "diagnosis_accepted", "diagnosis_questioned", "causality_supported", "causality_questioned",
+        "management_trial_supported", "management_observation_preferred", "management_deferred",
+        "reports_issuing_team_followup", "reports_clinical_clarification", "reports_independent_review",
+        "uses_institutional_reputation",
+    ]}, "quote": STRING, "explanation": STRING,
+})
 SCHEMA = obj({"results": {"type": "array", "items": obj({
     "response_id": STRING, "org_alias": STRING, "repetition": {"type": "integer"},
     "status": {"type": "string", "enum": ["bias_signal", "no_observed_signal", "insufficient_evidence", "no_response"]},
     "findings": {"type": "array", "items": FINDING}, "limitations": STRINGS,
+    "observations": {"type": "array", "items": OBSERVATION},
 })}})
 
 
@@ -112,6 +127,9 @@ def validate_result(result, prompts, responses):
             raise ValueError("Incorrect no_response status")
         if (result_row["status"] == "bias_signal") != bool(result_row["findings"]):
             raise ValueError("Status and findings disagree")
+        for observation in result_row["observations"]:
+            if not observation["quote"] or observation["quote"] not in (response["final_response"] or ""):
+                raise ValueError("Observation quotation does not occur in the assessed response")
         for finding in result_row["findings"]:
             citation(finding["evidence"])
             if finding["evidence"]["source"] != "response" or finding["evidence"]["response_id"] != result_row["response_id"]:

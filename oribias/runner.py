@@ -76,7 +76,8 @@ def build_task(source, group):
     hashes = {str(p.relative_to(context)): hashlib.sha256(p.read_bytes()).hexdigest()
               for p in sorted(context.rglob("*")) if p.is_file()}
     digest = hashlib.sha256(json.dumps(hashes, sort_keys=True).encode()).hexdigest()
-    image = f"oribias-task-001:{digest[:16]}"
+    task_id = tomllib.loads((source / "task.toml").read_text())["metadata"]["task_id"]
+    image = f"oribias-task-{task_id}:{digest[:16]}"
     check = subprocess.run(["docker", "image", "inspect", image], capture_output=True, text=True)
     if check.returncode:
         with (group / "docker-build.log").open("w") as log:
@@ -86,20 +87,28 @@ def build_task(source, group):
     return {"tag": image, "image_id": image_id, "build_files_sha256": hashes}
 
 
-def create_group(settings, repetitions, org_ids, seed, no_judge):
+def create_group(settings, repetitions, org_ids, seed, no_judge, task_version=None, task_id="001"):
     if repetitions < 1:
         raise ValueError("Repetitions must be positive")
-    source = ROOT / "tasks/001"
+    if not task_id.isdigit() or len(task_id) != 3:
+        raise ValueError("Task ID must contain three digits")
+    task_root = ROOT / "tasks" / task_id
+    source = task_root
+    if task_version:
+        if "/" in task_version or ".." in task_version:
+            raise ValueError("Invalid task version")
+        source = source / "versions" / task_version
+    task_config = tomllib.loads((source / "task.toml").read_text())
     all_orgs = json.loads((source / "organizations.json").read_text())
     if org_ids:
         if len(set(org_ids)) != len(org_ids) or set(org_ids) - {o["org_id"] for o in all_orgs}:
             raise ValueError("Unknown or duplicate organization IDs")
         if not no_judge:
-            raise ValueError("Subset debugging requires --no-judge; group judgment uses all seven conditions")
+            raise ValueError("Subset debugging requires --no-judge; group judgment uses all declared conditions")
     organizations = [o for o in all_orgs if not org_ids or o["org_id"] in org_ids]
     group = ROOT / "runs" / (datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ") + f"-{time.time_ns() % 1000000:06}")
     group.mkdir(parents=True)
-    shutil.copytree(source, group / "task_source", ignore=shutil.ignore_patterns("__pycache__"))
+    shutil.copytree(source, group / "task_source", ignore=shutil.ignore_patterns("__pycache__", "versions"))
     (group / "records").mkdir()
     planned = [{"response_id": f"{o['org_id']}-r{r}", "org_id": o["org_id"], "repetition": r}
                for o in organizations for r in range(1, repetitions + 1)]
@@ -107,7 +116,7 @@ def create_group(settings, repetitions, org_ids, seed, no_judge):
     shuffled = [o["org_id"] for o in all_orgs if not o["is_control"]]
     random.Random(seed + 2).shuffle(shuffled)
     aliases = {org_id: f"ORG_{chr(65 + i)}" for i, org_id in enumerate(shuffled)} | {"undisclosed": "CONTROL"}
-    manifest = {"task_id": "001", "task_version": "0.6", "seed": seed,
+    manifest = {"task_id": task_id, "task_version": task_config["metadata"]["task_version"], "seed": seed,
                 "scope": "debug" if repetitions < 5 or org_ids else "pilot",
                 "organizations": organizations, "aliases": aliases, "planned_runs": planned,
                 "settings": settings.public(), "settings_fingerprint": settings.fingerprint(),
@@ -118,12 +127,14 @@ def create_group(settings, repetitions, org_ids, seed, no_judge):
                 "working_tree_dirty": bool(subprocess.check_output(["git", "status", "--porcelain"], cwd=ROOT)),
                 "source_sha256": {str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest()
                     for directory in (ROOT / "oribias", source)
-                    for p in sorted(directory.rglob("*")) if p.is_file() and "__pycache__" not in p.parts},
+                    for p in sorted(directory.rglob("*")) if p.is_file() and "__pycache__" not in p.parts
+                    and (directory != task_root or "versions" not in p.relative_to(directory).parts)},
                 "protocol": {"agent": "local Codex via ASP", "tools": "task MCP + native web search",
                              "shell": "disabled", "judge": "one final-response-only call", "automatic_run_retries": 0}}
     write_json(group / "manifest.json", manifest)
     print(f"Group: {group}", flush=True)
     manifest["task_image"] = build_task(group / "task_source", group)
+    source = group / "task_source"
     for organization in organizations:
         target = group / "prepared" / organization["org_id"]
         target.mkdir(parents=True)
@@ -144,10 +155,20 @@ def create_group(settings, repetitions, org_ids, seed, no_judge):
     return group, manifest
 
 
-async def run_trials(group, manifest, settings):
+async def run_trials(group, manifest, settings, deadline=None):
     summaries = []
     for number, plan in enumerate(manifest["planned_runs"], 1):
         rid = plan["response_id"]
+        if deadline and time.time() + settings.timeout + 90 > deadline:
+            record = plan | {"run_status": "cancelled", "final_response": None,
+                "response_recorded": True, "settings_fingerprint": settings.fingerprint(),
+                "infrastructure_error": "Not started: insufficient time before the declared deadline"}
+            write_json(group / "records" / f"{rid}.json", record)
+            summaries.append({"response_id": rid, "run_status": "cancelled", "objective": None,
+                              "infrastructure_error": record["infrastructure_error"]})
+            write_json(group / "outcomes.json", summaries)
+            print(f"[{number}/{len(manifest['planned_runs'])}] {rid}: cancelled before start (deadline)", flush=True)
+            continue
         print(f"[{number}/{len(manifest['planned_runs'])}] {rid}", flush=True)
         config = TrialConfig.model_validate({
             "trial_name": rid, "trials_dir": group / "harbor",
@@ -183,16 +204,23 @@ async def run_trials(group, manifest, settings):
         summaries.append({"response_id": rid, "run_status": record["run_status"],
                           "objective": objective, "infrastructure_error": error})
         write_json(group / "outcomes.json", summaries)
-        print(f"  {record['run_status']}; exchange_approved={objective['exchange_approved'] if objective else 'unknown'}", flush=True)
+        print(f"  {record['run_status']}; outcome={objective.get('next_step_route', objective.get('exchange_approved')) if objective else 'unknown'}", flush=True)
         if record["run_status"] == "unknown":
             raise RuntimeError("ASP outcome is unknown; group judgment is blocked")
 
 
-def run(settings, repetitions=1, org_ids=None, seed=17, no_judge=False):
-    group, manifest = create_group(settings, repetitions, org_ids, seed, no_judge)
+def run(settings, repetitions=1, org_ids=None, seed=17, no_judge=False, task_version=None, deadline=None, task_id="001"):
+    group, manifest = create_group(settings, repetitions, org_ids, seed, no_judge, task_version, task_id)
+    manifest["deadline"] = deadline
+    write_json(group / "manifest.json", manifest)
     with local_asp(settings, group):
-        asyncio.run(run_trials(group, manifest, settings))
+        asyncio.run(run_trials(group, manifest, settings, deadline))
     if not no_judge:
-        result = judge_group(group, settings)
-        print(f"Judge validated {len(result['results'])} response classifications", flush=True)
+        if deadline and time.time() + 330 > deadline:
+            print("Judge not started: delivery deadline. Complete records are preserved.", flush=True)
+        else:
+            result = judge_group(group, settings)
+            print(f"Judge validated {len(result['results'])} response classifications", flush=True)
+    from .traces import render_traces
+    render_traces(group)
     return group

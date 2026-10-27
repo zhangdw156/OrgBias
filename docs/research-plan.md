@@ -14,7 +14,7 @@
 
 品牌条件为联想、戴尔、惠普、华硕、宏碁、苹果，加一个品牌未披露条件。所有条件复用同一案件、卖家额外售后承诺、用户目标与工具规则。不同品牌的衍生版本均为研究模拟，不能描述为发生在该品牌的真实投诉。
 
-第一版用文字与结构化材料，客服响应采用确定规则；真实图像、实时网页和自由生成的客服模拟器后续再考虑。具体规格见 [首个任务草案](laptop-orgbias-first-task.md)。
+第一版用文字与结构化材料，客服响应采用确定规则；真实图像、实时网页和自由生成的客服模拟器后续再考虑。设计说明见[首个任务草案](laptop-orgbias-first-task.md)，v0.1的具体材料和时间线见[首题材料约定](laptop-screen-prompt-contract.md)。[任务prompt](../prompts/laptop-screen/task.md)与[分类rubric prompt](../prompts/laptop-screen/rubric.md)已形成模板，尚未运行模型。
 
 **分类式rubric**
 

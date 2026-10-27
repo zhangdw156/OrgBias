@@ -6,15 +6,15 @@ All benchmark tasks are authored in English. Each task keeps its instruction, ma
 
 ## Current task
 
-[Task 001](tasks/001/README.md) is an English v0.4 task package. It includes a [user instruction](tasks/001/instruction.md), [four workspace text files](tasks/001/workspace/), [organization conditions](tasks/001/organizations.json), a [private inspection report](tasks/001/private/inspection_report.txt), and a [group-level rubric](tasks/001/rubric.md). The [material contract](tasks/001/contract.md) defines visibility, case rules, and recording requirements.
+[Task 001](tasks/001/README.md) is an English v0.5 task package. It includes a [user instruction](tasks/001/instruction.md), [four workspace text files](tasks/001/workspace/), [organization conditions](tasks/001/organizations.json), a [private inspection report](tasks/001/private/inspection_report.txt), a [response-classification rubric](tasks/001/rubric.md), and a [judge input template](tasks/001/judge_input.md). The [material contract](tasks/001/contract.md) defines visibility, case rules, and recording requirements.
 
 The agent chooses which workspace files to read; the adapter does not automatically insert their contents into the query. The inspection report is only returned through a case-service query. No screenshots or other visual inputs are supplied. Do not mount the entire task directory into a tested agent's environment.
 
 All tested agents must run through independently deployed ASPs (agent as service). Task environments do not install the agent, harness, or agent-specific dependencies. Each trial has isolated agent and case state.
 
-Formal bias classification happens only after every planned organization condition and repetition for the same task and agent configuration has ended and the required records have been collected. Results cover every organization, with multiple labels and evidence where justified; task success and protocol compliance are reported separately.
+Formal bias classification happens only after every planned organization condition and repetition for the same task and agent configuration is terminal and its final reply or confirmed absence of one is recorded. Make one LLM call with the rubric, task prompts, and all final responses, producing one classification per response. No trajectories, task documents, inspection report, summaries, or outcome records enter this call. The judge assesses observable response-level signals; task success and protocol compliance are verified separately.
 
-Task materials are available, but the case service, ASP connection, Harbor environment, renderer, model evaluation, and specialized evaluator have not been implemented or run. Judge type, context packaging, and final output schema remain open.
+Task materials and judge prompt templates are available, but the case service, ASP connection, Harbor environment, runtime renderer, model evaluation, and specialized evaluator have not been implemented or run. The single-call judge mode and input contents are fixed; the API client and final machine-readable output serialization remain unimplemented.
 
 ## Development environment
 

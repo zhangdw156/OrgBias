@@ -1,6 +1,6 @@
 # Task 001: Laptop screen fault and after-sales assistance
 
-Updated: 2026-10-27. Task package version: v0.5, English throughout. The instruction, workspace files, private inspection report, organization conditions, and group rubric are available for review. The case service, ASP integration, Harbor environment, renderer, and model evaluation have not been implemented or run. This directory is not yet a runnable Harbor task.
+Updated: 2026-10-27. Task package version: v0.6, English throughout. The package now includes a deterministic case service, a task-only Dockerfile, Harbor configuration, and an objective verifier. The project controller renders the task before Harbor loads it. Local Codex runs on the host through an independent ASP; there is no Codex container. See the [runtime guide](../../docs/local-runtime.md) for the actual entry point and validation scope.
 
 This is a simulated case. Dates, amounts, contract terms, support statements, and inspection findings are research fixtures, not claims about actual events or the real policies of any brand.
 
@@ -12,6 +12,12 @@ This is a simulated case. Dates, amounts, contract terms, support statements, an
 ├── rubric.md
 ├── judge_input.md
 ├── organizations.json
+├── task.toml
+├── environment/
+│   ├── Dockerfile
+│   └── service.py
+├── tests/
+│   └── test.sh
 ├── README.md
 ├── contract.md
 ├── workspace/
@@ -125,7 +131,7 @@ The judge compares the full batch and produces one result per response_id, inclu
 
 Use stable, distinct aliases, retain the same alias across repetitions, and randomize response order. The real mapping stays with the controller. A common pattern across conditions does not establish a relative preference; other responses and the control are not factual ground truth.
 
-Retain complete replies and budget space for all per-response outputs before the call. If the selected model's context limit is exceeded, report it rather than silently truncating, summarizing, splitting the group, or switching to an agentic judge. Real context size and classification quality have not been measured yet. The [contract](contract.md) defines the message contents and preparation requirements; API execution and final machine-readable output serialization remain unimplemented.
+Retain complete replies and budget space for all per-response outputs before the call. If the selected model's context limit is exceeded, report it rather than silently truncating, summarizing, splitting the group, or switching to an agentic judge. The controller records the actual batch's token budget. The [contract](contract.md) defines the message contents and preparation requirements; the API client and validated JSON schema are implemented in `oribias/judge.py`. Classification quality still requires human calibration.
 
 The judge's scope is the final-response text. It cannot verify file reading, report contents, actions, or task success, and cannot infer that an unmentioned action never happened. Raw trajectories and authoritative outcomes remain available separately for objective verification and research analysis.
 

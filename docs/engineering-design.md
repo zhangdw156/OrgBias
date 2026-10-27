@@ -1,18 +1,18 @@
-# OrgBias首题工程设计讨论 v0.5
+# OrgBias首题工程设计讨论 v0.6
 
-日期：2026-10-27。ASP及Agent／task独立部署已确定为架构原则；具体调用入口、传输协议和工具路由待实现核对。已核对Harbor源码和官方文档，尚未实现或运行Docker环境、Agent服务、工具桥接与模型实验。
+日期：2026-10-27。已实现宿主机本地Codex ASP、Harbor external适配器、任务Docker环境及MCP工具桥接。当前使用本地Codex调试，不包含Codex容器部署。实际入口、配置与验证记录见[本地运行说明](local-runtime.md)。
 
 **已经明确的要求**
 
 Agent不向用户追问，不等待额外确认；允许联网查询公开资料和多步执行；用户只接收最终回复。首题使用Harbor，品牌应能通过配置方便切换。所有受测Agent通过ASP（agent as service）接入，Agent本体、harness与专属依赖由独立服务维护；task镜像和运行容器不安装Agent，只保留任务环境及必要的轻量客户端／工具接口。切换Agent通过服务配置完成，第一版即遵守此边界。
 
-任务包与评测约定更新为v0.5，集中在tasks/001。英文任务prompt及无人值守协议保持不变：任务开始时明确授权；不允许的操作不执行，缺失信息及未完成事项在最终结果中陈述。真实交易或投诉不由联网能力自动授权，本题业务操作仍只作用于模拟售后工作台。
+任务包与评测约定更新为v0.6，集中在tasks/001。英文任务prompt及无人值守协议保持不变：任务开始时明确授权；不允许的操作不执行，缺失信息及未完成事项在最终结果中陈述。真实交易或投诉不由联网能力自动授权，本题业务操作仍只作用于模拟售后工作台。
 
-正式bias评判在同一task、同一Agent配置及评测条件的全部组织与计划重复运行结束后，用一次LLM call完成。输入是rubric、各组织任务提示词及全组最终responses，输出对每条response分别分类；不输入轨迹、材料或状态真值，也不使用Agent-as-Judge。Judge调用尚未实现或运行。
+正式bias评判在同一task、同一Agent配置及评测条件的全部组织与计划重复运行结束后，用一次LLM call完成。输入是rubric、各组织任务提示词及全组最终responses，输出对每条response分别分类；不输入轨迹、材料或状态真值，也不使用Agent-as-Judge。单次Judge调用及JSON分类校验已实现；实际实验记录另行列出。
 
 **Harbor接口核对结果**
 
-本轮读取Harbor commit `e77a18bfeed53f907f335b9132d87006e01b3dfd`，该提交的pyproject声明版本0.25.0。这是调研所核对的版本，不代表本项目已安装Harbor或完成该版本兼容测试。
+本轮读取Harbor commit `e77a18bfeed53f907f335b9132d87006e01b3dfd`，该提交的pyproject声明版本0.25.0。项目现已安装并锁定Harbor 0.25.0；实际运行验证见本地运行记录。
 
 | 事项 | 已核对事实 | 对本项目的意义 |
 |---|---|---|
@@ -46,11 +46,11 @@ Codex官方文档说明`codex exec`支持非交互执行，默认把进度写到
 
 Agent服务与task环境分别维护镜像和依赖，运行时通过ASP连接，不构建task×agent组合镜像，也不在task启动后下载或安装Agent。多个案件可以共用同一个任务服务镜像。镜像复用不改变每次运行的会话、工作区和案件状态隔离。具体边界及官方项目依据见[Agent与Task分离部署调研](agent-task-deployment-review.md)。
 
-首题统一位于tasks/001；已有instruction.md、rubric.md、organizations.json、workspace文本文件、private检测报告及英文任务文档。后续Harbor配置、environment/Dockerfile、tests/test.sh及服务实现也放在此task目录下；Dockerfile可被预构建镜像替代。若售后后端采用独立服务，则用environment/docker-compose.yaml管理main任务执行环境和case-service；Agent本体部署在独立ASP侧。Harbor将main称作Agent容器不意味着本项目必须在其中安装Agent，它可由external适配器控制。Harbor环境文件尚未实现。
+首题统一位于tasks/001；已有instruction.md、rubric.md、organizations.json、workspace文本文件、private检测报告及英文任务文档。Harbor配置、environment/Dockerfile、tests/test.sh及服务实现也已放在此task目录下；Dockerfile可被预构建镜像替代。若售后后端采用独立服务，则用environment/docker-compose.yaml管理main任务执行环境和case-service；Agent本体部署在独立ASP侧。Harbor将main称作Agent容器不意味着本项目必须在其中安装Agent，它可由external适配器控制。当前通过轻量任务服务入口实现案件工具，无需另建长期运行的售后HTTP服务。
 
 **ASP：已确定的独立服务边界**
 
-Harbor负责trial调度，ASP负责调用和管理独立部署的Agent。建议由Harbor的external适配器调用ASP；也可由task内轻量客户端调用ASP，入口待实现核对。两种方式都不把Agent本体放入task，且都需要管理超时、取消、事件和最终结果。原生CLI可以封装在ASP内部，认证及专属依赖由服务侧维护。
+Harbor负责trial调度，ASP负责调用和管理独立部署的Agent。当前由Harbor的external适配器通过HTTP调用宿主机ASP；本地Codex经stdio MCP访问每个trial独立的工具网关，网关通过environment.exec进入任务环境。Agent本体不放入task，模型密钥留在宿主机。原生CLI可以封装在ASP内部，认证及专属依赖由服务侧维护。
 
 需要明确：当宿主机或独立容器中的Agent执行`read_file`、shell或浏览器工具时，默认操作的位置通常是服务自身所在环境。若任务要求直接操作task容器内的文件或程序，仅把路径放进prompt，或把目录挂载出来，并没有完成全部工具的环境路由；这些操作必须绑定到本次run对应的`BaseEnvironment`或等价的受限工具接口。
 
@@ -97,7 +97,7 @@ flowchart LR
 
 图中的受测Agent仅在独立ASP侧运行。业务服务访问和task内执行是按任务需要提供的两类能力，不要求首题同时实现全部远程工具；具体接口需验证逐run绑定。
 
-E1—E4必须以文本文件形式放进当前Agent可访问的独立工作区，由Agent自主选择读取；适配器不自动拼接全文或代读。文件布局见[材料约定](../tasks/001/contract.md)，ASP侧挂载／传输方式待实现核对。E5以及案件后端逻辑保存在Agent不能直接读写的服务中，只能通过记录日志的接口获取。不要把E5、rubric、参考答案与所有品牌变体放进Agent可读的同一个目录，再只靠prompt要求它别看。整个OrgBias研究仓库及其AGENTS.md也不应挂载给受测Agent，否则会泄露实验主题和判据。
+E1—E4必须以文本文件形式放进当前Agent可访问的独立工作区，由Agent自主选择读取；适配器不自动拼接全文或代读。文件布局见[材料约定](../tasks/001/contract.md)，当前四份文件位于任务容器的/workspace，Codex通过list_workspace/read_file工具主动访问；不映射研究仓库。E5以及案件后端逻辑保存在Agent不能直接读写的服务中，只能通过记录日志的接口获取。不要把E5、rubric、参考答案与所有品牌变体放进Agent可读的同一个目录，再只靠prompt要求它别看。整个OrgBias研究仓库及其AGENTS.md也不应挂载给受测Agent，否则会泄露实验主题和判据。
 
 构建main镜像时也要只复制Agent可见文件，避免用宽泛的COPY把case-service源码、私有fixture或tests目录顺带带入。只把服务放在另一个容器，但将其数据又复制到main镜像，仍然没有形成上述边界。
 
@@ -117,7 +117,7 @@ Harbor每个trial的reward只承载任务完成等客观验收值，例如task_s
 
 调用结构固定为两条消息：system读取tasks/001/rubric.md；user按tasks/001/judge_input.md填入按组织去重的任务提示词与全部最终回复记录。每条记录包含response_id、org_alias、repetition、run_status和final_response。不给Judge工具，不做预摘要、逐条Judge或追加模型修复调用。材料、报告、轨迹、网络结果和业务真值不进入此上下文；回复引用这些内容时仍仅视作Agent陈述。
 
-调用前检查完整输入token与输出预算，超限明确报错，不静默截断、删样本、拆组调用或切换Agent-as-Judge。输出覆盖所有response_id一次，缺失、重复、未知ID或不能回溯到输入的引文均为校验问题；API封装和最终输出序列化尚未实现。Judge只检测回复中可见的偏见线索，不能验证读文件、执行动作或业务成功；客观验收仍使用独立记录。
+调用前检查完整输入token与输出预算，超限明确报错，不静默截断、删样本、拆组调用或切换Agent-as-Judge。输出覆盖所有response_id一次，缺失、重复、未知ID或不能回溯到输入的引文均为校验问题；API封装和JSON输出校验位于oribias/judge.py。Judge只检测回复中可见的偏见线索，不能验证读文件、执行动作或业务成功；客观验收仍使用独立记录。
 
 **允许联网后的实验解释**
 
@@ -129,7 +129,7 @@ Harbor每个trial的reward只承载任务完成等客观验收值，例如task_s
 
 **第一版建议范围**
 
-先实现一次用户委托、品牌统一渲染、一个可重置的售后服务、一个独立ASP Agent接入及Harbor external适配器，保存逐次记录，再汇总全组任务提示词和最终回复进行一次LLM评审。第一版只接一个Agent也必须遵守ASP边界；不采用task内安装Agent作为过渡。服务后端可逐个增加，Judge方式已固定，调用实现待完成。
+先实现一次用户委托、品牌统一渲染、一个可重置的售后服务、一个独立ASP Agent接入及Harbor external适配器，保存逐次记录，再汇总全组任务提示词和最终回复进行一次LLM评审。第一版只接一个Agent也必须遵守ASP边界；不采用task内安装Agent作为过渡。当前已实现这一范围，服务后端可逐个增加；默认七个条件各一次用于工程调试，35次可行性pilot仍需单独执行。
 
 按所有品牌固定时间和工具预算，记录超时、接口故障与权限问题；重试策略事先确定，不能只重跑表现差的品牌。实际构建和试跑后再确定版本锁定、并发度和产品接入范围；本文没有做兼容性或模型推理验证。
 

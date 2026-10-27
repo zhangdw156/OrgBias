@@ -16,9 +16,9 @@
 
 Benchmark统一使用英文，首题全部任务材料集中在tasks/001。第一版材料均为文本，文件不添加首行资料编号。除user query外，四份初始文件放在本次Agent工作区，由Agent自主选择是否读取及读取顺序，适配器不自动拼接全文；检测报告通过工作台查询获取。内部文档的E1—E5仅是作者引用。客服响应采用确定规则和英文文本。受测Agent不向用户追问或等待追加确认，允许联网查询公开资料和多步执行，只交付英文最终回复；真实图像和自由生成的客服模拟器后续再考虑。任务开始前明确授权，超出授权的动作不执行，缺失信息与未完成事项在最终结果中说明。
 
-设计说明见[首个任务草案](../tasks/001/README.md)，具体材料和时间线见[首题材料约定](../tasks/001/contract.md)。[任务prompt](../tasks/001/instruction.md)保持英文委托不变，任务包、[rubric](../tasks/001/rubric.md)及材料约定更新为v0.5，并增加[单次Judge输入模板](../tasks/001/judge_input.md)；尚未运行模型。Harbor和ASP的接入设计见[工程设计讨论](engineering-design.md)。
+设计说明见[首个任务草案](../tasks/001/README.md)，具体材料和时间线见[首题材料约定](../tasks/001/contract.md)。[任务prompt](../tasks/001/instruction.md)保持英文委托不变，任务包、[rubric](../tasks/001/rubric.md)及材料约定更新为v0.6，并增加[单次Judge输入模板](../tasks/001/judge_input.md)。本地Codex、4141模型和Docker的调试实现见[本地运行说明](local-runtime.md)；调试不等于完成35次pilot。Harbor和ASP的接入设计见[工程设计讨论](engineering-design.md)。
 
-部署原则已确定为ASP：Agent本体、harness和专属依赖独立部署，task只保留任务环境和必要的轻量接口；切换Agent通过服务配置完成。第一版也遵守此边界，不在task容器内安装Agent。各产品可使用不同服务后端，通过统一ASP接入约定提供能力；具体调用入口、传输协议和工具路由待实现核对。依据见[分离部署调研](agent-task-deployment-review.md)。
+部署原则已确定为ASP：Agent本体、harness和专属依赖独立部署，task只保留任务环境和必要的轻量接口；切换Agent通过服务配置完成。第一版也遵守此边界，不在task容器内安装Agent。各产品可使用不同服务后端，通过统一ASP接入约定提供能力；当前以宿主机本地Codex ASP和Harbor external适配器实现，通过HTTP及stdio MCP路由到任务工具；暂不涉及Agent容器。依据见[分离部署调研](agent-task-deployment-review.md)。
 
 联网模式固定初始案件，后续检索结果可能随品牌改变；记录这一信息获取路径，不能把其全部效应归为相同外部证据下的内在偏好。后续可用网页快照或检索回放作受控对照。
 
@@ -34,7 +34,7 @@ Benchmark统一使用英文，首题全部任务材料集中在tasks/001。第�
 
 即使单条轨迹含有明确品牌概括，也先保留为证据，不提前出正式偏见结论。组织身份的影响通过整组比较、重复运行与后续独立案件验证。盲化时为不同组织使用稳定且不同的编号，同一组织的重复保持同一编号；不能全部替换成同一个ORG_TARGET而丢失对照关系。
 
-Judge方案已固定：system为rubric，user为按组织去重的任务提示词与全组最终responses，只附对应ID、组织编号、重复编号和终止状态等最小信息。全文不摘要、不截断，不加材料、检测报告、轨迹、工具记录或状态真值；无工具、无Agent-as-Judge或多轮核验。证据使用response_id与原文引用。调用前核对输入token与输出预算；超限不静默拆分或删减。API调用实现及最终输出序列化仍待完成。
+Judge方案已固定：system为rubric，user为按组织去重的任务提示词与全组最终responses，只附对应ID、组织编号、重复编号和终止状态等最小信息。全文不摘要、不截断，不加材料、检测报告、轨迹、工具记录或状态真值；无工具、无Agent-as-Judge或多轮核验。证据使用response_id与原文引用。调用前核对输入token与输出预算；超限不静默拆分或删减。API调用和JSON输出校验现已实现，保留单次调用标记并禁止自动重试。
 
 **实验顺序**
 

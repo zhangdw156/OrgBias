@@ -4,4 +4,11 @@ version = "0.1.0"
 description = "Research on organization bias in personal agents"
 readme = "README.md"
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "harbor==0.25.0",
+    "httpx>=0.28,<1",
+    "jsonschema>=4.23,<5",
+    "python-dotenv>=1.1,<2",
+    "tiktoken>=0.14,<1",
+    "toml>=0.10,<1",
+]

@@ -6,7 +6,7 @@ All benchmark tasks are authored in English. Each task keeps its instruction, ma
 
 ## Current task
 
-[Task 001](tasks/001/README.md) is an English v0.5 task package. It includes a [user instruction](tasks/001/instruction.md), [four workspace text files](tasks/001/workspace/), [organization conditions](tasks/001/organizations.json), a [private inspection report](tasks/001/private/inspection_report.txt), a [response-classification rubric](tasks/001/rubric.md), and a [judge input template](tasks/001/judge_input.md). The [material contract](tasks/001/contract.md) defines visibility, case rules, and recording requirements.
+[Task 001](tasks/001/README.md) is an English v0.6 task package. It includes a [user instruction](tasks/001/instruction.md), [four workspace text files](tasks/001/workspace/), [organization conditions](tasks/001/organizations.json), a [private inspection report](tasks/001/private/inspection_report.txt), a [response-classification rubric](tasks/001/rubric.md), and a [judge input template](tasks/001/judge_input.md). The [material contract](tasks/001/contract.md) defines visibility, case rules, and recording requirements.
 
 The agent chooses which workspace files to read; the adapter does not automatically insert their contents into the query. The inspection report is only returned through a case-service query. No screenshots or other visual inputs are supplied. Do not mount the entire task directory into a tested agent's environment.
 
@@ -14,7 +14,7 @@ All tested agents must run through independently deployed ASPs (agent as service
 
 Formal bias classification happens only after every planned organization condition and repetition for the same task and agent configuration is terminal and its final reply or confirmed absence of one is recorded. Make one LLM call with the rubric, task prompts, and all final responses, producing one classification per response. No trajectories, task documents, inspection report, summaries, or outcome records enter this call. The judge assesses observable response-level signals; task success and protocol compliance are verified separately.
 
-Task materials and judge prompt templates are available, but the case service, ASP connection, Harbor environment, runtime renderer, model evaluation, and specialized evaluator have not been implemented or run. The single-call judge mode and input contents are fixed; the API client and final machine-readable output serialization remain unimplemented.
+The first local implementation is in [oribias/](oribias/): organization scheduling, rendering, an ASP wrapping the **locally installed Codex CLI**, a Harbor external-agent adapter, and a single-call judge. Docker runs only the task environment and deterministic case service. There is no Codex Dockerfile or agent-container deployment in this version. A specialized trained evaluator remains future work.
 
 ## Development environment
 
@@ -24,7 +24,25 @@ Use Python 3.12 and uv. From the repository root:
 uv sync --locked
 ```
 
-This prepares the project's own `.venv` from `uv.lock`; no manual activation is needed. Use `uv run` for project commands. There is currently no experiment entry point or Harbor/model SDK dependency.
+This prepares the project's own `.venv` from `uv.lock`; no manual activation is needed. Local Codex and a working Docker daemon must already be installed.
+
+## Local debug experiment
+
+Configure the provider URL, key, model, and ASP token in `.env`, using [.env.example](.env.example) for a new checkout. The development machine's ignored `.env` is already configured for `http://localhost:4141/v1`, `gpt-6.1-sol`, and `medium`. The native Codex harness and judge share these model settings. Credentials stay on the host.
+
+From the repository root:
+
+```bash
+uv run python -m oribias run
+```
+
+This builds/reuses one task image, automatically starts a local ASP when needed, and runs all seven conditions once in randomized order through Harbor. Each run has a new task container, case state, Codex configuration directory, and session. After the whole group terminates, the judge receives all final replies in one call. This is a **seven-run debug group**, not the planned 35-run pilot. Use `--repetitions 5` for that pilot.
+
+The four case files live in the task's `/workspace` and are accessed through MCP file tools. They are never automatically inserted into the user prompt. The native Codex shell, host skills, plugins, and memory are disabled for this controlled task; native web search is enabled by default. This is a documented local Codex configuration, not an untouched product-default comparison. The protocol prevents interactive approval waits and instructs the agent not to ask questions; a question written in its final reply remains a possible violation, not something the runner rewrites.
+
+Each group is saved under `runs/<group>/`. See [the local runtime guide](docs/local-runtime.md) for artifacts, subset debugging, and validation limits. The program does not retry failed agent runs or judge outputs automatically.
+
+The [first real debug group](docs/local-debug-2026-10-27.md) completed seven Codex runs and one judge call: all seven exchange applications were approved, and all seven final replies were classified as `no_observed_signal`. This small engineering check is not evidence that the agent is free of organizational bias.
 
 ## Research and design
 

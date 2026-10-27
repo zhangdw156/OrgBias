@@ -16,9 +16,9 @@
 
 第一版用文字与结构化材料，客服响应采用确定规则。受测Agent不向用户追问或等待追加确认，允许联网查询公开资料和多步执行，只交付最终回复；真实图像和自由生成的客服模拟器后续再考虑。任务开始前明确授权，超出授权的动作不执行，缺失信息与未完成事项在最终结果中说明。
 
-设计说明见[首个任务草案](laptop-orgbias-first-task.md)，具体材料和时间线见[首题材料约定](laptop-screen-prompt-contract.md)。[任务prompt](../prompts/laptop-screen/task.md)为v0.2，[组级rubric草案](../prompts/laptop-screen/rubric.md)及材料约定更新为v0.3；尚未运行模型。Harbor和ASP的候选接入方式见[工程设计讨论](engineering-design.md)。
+设计说明见[首个任务草案](laptop-orgbias-first-task.md)，具体材料和时间线见[首题材料约定](laptop-screen-prompt-contract.md)。[任务prompt](../prompts/laptop-screen/task.md)为v0.2，[组级rubric草案](../prompts/laptop-screen/rubric.md)及材料约定更新为v0.3；尚未运行模型。Harbor和ASP的接入设计见[工程设计讨论](engineering-design.md)。
 
-Agent独立镜像、task业务服务以及Harbor运行时安装的对比见[分离部署调研](agent-task-deployment-review.md)。不预设必须构建task×agent组合镜像，也不强制所有产品都通过同一种ASP实现；部署选型尚未完成，不影响已确定的无人值守及组级评判原则。
+部署原则已确定为ASP：Agent本体、harness和专属依赖独立部署，task只保留任务环境和必要的轻量接口；切换Agent通过服务配置完成。第一版也遵守此边界，不在task容器内安装Agent。各产品可使用不同服务后端，通过统一ASP接入约定提供能力；具体调用入口、传输协议和工具路由待实现核对。依据见[分离部署调研](agent-task-deployment-review.md)。
 
 联网模式固定初始案件，后续检索结果可能随品牌改变；记录这一信息获取路径，不能把其全部效应归为相同外部证据下的内在偏好。后续可用网页快照或检索回放作受控对照。
 
@@ -36,7 +36,7 @@ Agent独立镜像、task业务服务以及Harbor运行时安装的对比见[分�
 
 **实验顺序**
 
-1. 实现并手动走通一个任务，核对材料、工具状态与分类判据。
+1. 实现一个独立ASP Agent接入与首个任务，手动走通材料、工具状态和分类判据；task环境不安装Agent本体。
 2. 选一个可统一工具入口的Agent配置，做七个条件各5次的可行性试跑，共35次。保留失败与无差异结果；该规模不用于宣称广泛偏见。
 3. 等整组35次计划运行结束并采集齐记录后进行组级人工评审，再选择和验证自动Judge方案；修订类别边界和证据要求。任务失败也保留，基础设施异常与缺失明确记录，不能只取成功样本。
 4. 增加不同证据条件及独立案例，再扩展Agent、领域和多模态材料。

@@ -3,6 +3,7 @@
 - **所有 commit message 必须使用 Angular style**：`<type>(<scope>): <subject>`，scope 可省略。type 使用 `feat`、`fix`、`docs`、`style`、`refactor`、`perf`、`test`、`build`、`ci`、`chore` 或 `revert`；subject 使用简洁的英文祈使句，末尾不加句号。例如：`feat(tasks): add laptop warranty dispute task`。必要时在正文解释原因，在 footer 记录 `BREAKING CHANGE:`。
 - 开发前先阅读 `README.md`、`docs/research-plan.md` 和对应任务文档。保留已经确认的研究决定；修改实现时同步修正文档与正常使用步骤。
 - 当前里程碑是用 Harbor 跑通一个组织身份可控替换的售后任务，再逐步扩展。尚未实现或运行的功能、模型推理与实验结果必须明确标为未完成。
+- **受测Agent必须通过ASP（agent as service）接入，与task独立部署。** Agent本体、harness及专属依赖由ASP侧维护，task镜像和运行容器只包含任务环境及必要的轻量客户端／工具接口。切换Agent通过服务配置完成；不采用在task内安装Agent的installed模式，也不以先跑通为由推迟ASP。ASP会话与任务状态逐run隔离，具体调用入口和传输协议可在此原则下确定。
 - 受测Agent采用无人值守协议：允许联网查询公开资料和多步执行，不向用户追问、不等待追加确认，只交付最终回复。任务提前明确授权；缺失信息和未执行事项在最终结果中陈述。内部事件仍完整记录，协议违规与bias类别分别处理。
 - Rubric用于多标签分类。保留类别、方向、证据和无法判断的情况，不自行恢复0／1／2等级或单一偏见总分。任务成功、费用、权限与状态单独记录；一次失败不能直接归因为组织偏见。
 - 正式bias评判单元是同一task版本、同一Agent／模型配置及评测条件下的全部组织和计划重复。单条运行只整理事实；整组运行结束并采集齐结果后才统一分类，不在每个task×org结束时独立判bias。上下文组织方式及LLM-as-Judge／Agent-as-Judge选型尚未确定。

@@ -4,6 +4,8 @@
 
 本草案解释任务设计；[任务prompt](../prompts/laptop-screen/task.md)保持v0.2，[组级rubric草案](../prompts/laptop-screen/rubric.md)与[材料约定](laptop-screen-prompt-contract.md)更新为v0.3。正式bias评判等待同一任务、同一Agent配置的全部组织和计划重复结束后统一进行，Judge形态与上下文组织待讨论。执行协议仍为无人值守、允许联网、多步执行、只交付最终回复；环境和模型调用尚未实现。
 
+部署遵守[工程设计](engineering-design.md)中的ASP原则：Agent本体和专属依赖在独立服务侧运行，task不安装Agent；第一题即通过ASP接入。Task提供材料及售后工作台，具体服务入口和工具连接尚未实现。
+
 **目标**
 
 测量同样的案件事实和可用行动下，制造商品牌是否影响 personal agent 的证据标准、合理售后行动和最终用户结果。第一版仅操纵制造商品牌，不同时改变卖家、平台、用户身份、技术配置或客服态度。

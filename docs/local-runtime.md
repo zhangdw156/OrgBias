@@ -1,6 +1,6 @@
 # Local runtime
 
-The `oribias` package implements the first local debug path. Agent deployment is a host ASP that invokes the installed `codex exec`; no agent container is involved. Harbor 0.25.0 manages the task containers. The same runner supports task 001 (laptop dispute) and task 002 (hospital affiliation and a clinical care plan).
+The `oribias` package implements the local debug path. Agent deployment is a host ASP that invokes the installed `codex exec`; no agent container is involved. Harbor 0.25.0 manages the task containers. The same runner supports task 001 (laptop dispute), task 002 (hospital affiliation and a clinical care plan), and task 003 (laptop recommendations with rotating manufacturer identities).
 
 ## Normal use
 
@@ -12,14 +12,16 @@ uv run python -m oribias run
 
 The default command runs task 001's seven organization conditions once and then makes one judge call. `uv run python -m oribias run --task 002 --repetitions 2` runs the current task 002 candidate's five institution conditions twice, then judges all ten replies in one call. Current v0.2 is unrun; add `--task-version v0.1` to select the frozen fixture used by the completed ten-run experiment. For task 001, `--repetitions 5` selects the planned 35-run pilot; task 002 has five conditions and therefore 25 runs at that repetition count. Groups are declared before execution, their execution order is randomized with a recorded seed, and no failed run is silently replaced. Run one group at a time against the local ASP.
 
+`uv run python -m oribias run --task 003` runs six manufacturer assignments in forward and reverse order plus two undisclosed controls: 14 conditions, followed by one group judge call. Each condition contains all six fixed offers; `--repetitions N` repeats every condition N times. This is one user case, not 14 independent consumer scenarios.
+
 ## Data path
 
-1. The controller snapshots the task, renders each organization's actual user query, and builds/reuses one task image. Unrendered workspace templates are inside the image. `BRAND` initializes four case files separately in each container; changing the brand does not require rebuilding the image.
+1. The controller snapshots the task, renders each condition's actual user query, and builds/reuses one task image. Unrendered workspace templates are inside the image. Declared variables initialize the files separately in each container; changing a brand does not require rebuilding the image. Tasks 001/002 use `BRAND`; task 003 uses `BRAND_P14` through `BRAND_P63`, `OFFER_ORDER`, and `SHORTLIST` for the manufacturer assignment and presentation order.
 2. Harbor's external `LocalASPAgent` starts a loopback tool gateway bound to that one environment and calls the independent ASP over authenticated HTTP.
 3. The ASP starts the local Codex CLI with a fresh configuration directory and session. Its MCP transport forwards permitted task-tool requests to the gateway. The gateway uses Harbor's `environment.exec` to invoke the task service; it does not accept arbitrary shell commands.
 4. The service returns requested file content or business results and records exact tool requests and results. Its private report and state are inaccessible through the file-reading API. The tested agent receives no repository, rubric, organization list, raw Docker access, or judge artifacts.
-5. Codex's final reply and observable JSONL events are retained. The trusted service snapshot provides task-specific outcomes independently of agent claims: exchange/review state for task 001, and the saved categorical memo and pending next-step request for task 002, plus charges and blocked requests. Harbor's numerical verifier rewards only summarize those business facts; they are not bias scores.
-6. Once every planned final response or confirmed absence is recorded, the controller blinds names, randomizes response order, checks context capacity, and sends the rubric and final-response batch to the configured Responses endpoint. JSON Schema, ID coverage, status consistency, and exact quotations are validated locally.
+5. Codex's final reply and observable JSONL events are retained. The trusted service snapshot provides task-specific outcomes independently of agent claims: exchange/review state for task 001; the saved categorical memo and pending next-step request for task 002; and saved choices, ranking, exclusions, retrieved records, and hard-constraint violations for task 003. Charges and invalid requests are recorded separately. Harbor's numerical verifier rewards only summarize business facts; they are not bias scores. Task 003 has no gold ranking among eligible offers.
+6. Once every task-declared condition and planned repetition has a final response or confirmed absence recorded, the controller blinds names, randomizes response order, checks context capacity, and sends the rubric and final-response batch to the configured Responses endpoint. A subset debug group cannot be judged, including through the manual judge command. JSON Schema, ID coverage, status consistency, and exact quotations are validated locally. Task 003 supplies its own schema; tasks 001/002 retain the existing schema.
 
 There is no model-generated support simulator. Tool responses are deterministic and the case time is fixed. Live native web search can introduce different evidence across brands; its internal retrieval is only observable to the extent exposed by Codex events. The current tool protocol disables the native shell and other host integrations. A future remote terminal tool or another product's ASP is separate implementation work.
 
@@ -59,6 +61,8 @@ The actual `.env` is ignored and should never be committed. Model credentials ar
 | `judge/budget.json`, `judge/raw_response.txt`, `judge/result.json` | Context check, raw provider result, validated classifications |
 
 Judge metadata uses neutral response IDs such as `R0001`; raw run IDs containing a brand never enter the judge input. `judge/implementation.json` records the judge implementation hash and non-secret settings separately from the agent-run manifest.
+
+Task 003 separates conditions from organizations: response-level `org_alias` contains a `LAYOUT_*` or `CONTROL_*` condition alias, while `ORG_*` aliases in the text identify manufacturers consistently across layouts. Each finding and observation identifies its target manufacturer and quote ID. `manifest.json` retains the separate condition and entity mappings, and readable traces show each run's manufacturer assignment.
 
 Final-only classification cannot verify reading, actual execution, correctness of completion claims, or absence of process bias. Business facts are separate. Final-claim accuracy, final-text follow-up questions, and language compliance still require review; the service does not pretend to verify them automatically. No final response is synthesized from progress messages.
 

@@ -7,9 +7,10 @@ def render_traces(group):
     output.mkdir(exist_ok=True)
     manifest = json.loads((group / "manifest.json").read_text())
     brands = {o["org_id"]: o["brand"] for o in manifest["organizations"]}
+    conditions = {o["org_id"]: o for o in manifest["organizations"]}
     index = ["# Readable trajectories", "", f"Group: `{group.name}`; task: `{manifest['task_id']}`; version: `{manifest['task_version']}`.", "",
              "These files reproduce existing tool events and final replies. They do not reconstruct unobserved reasoning or rerun the model.", "",
-             "| Run | Organization | Status | Open |", "|---|---|---|---|"]
+             "| Run | Condition | Status | Open |", "|---|---|---|---|"]
     for plan in manifest["planned_runs"]:
         rid = plan["response_id"]
         record_path = group / "records" / f"{rid}.json"
@@ -19,17 +20,29 @@ def render_traces(group):
         directory = group / "harbor" / rid / "agent"
         lines = [f"# {brands[plan['org_id']]} — repetition {plan['repetition']}", "",
                  f"Status: `{record['run_status']}`", "", "## Final response", "",
-                 record["final_response"] if record["final_response"] is not None else "No final response was recorded.", "",
-                 "## Runtime messages", ""]
+                 record["final_response"] if record["final_response"] is not None else "No final response was recorded.", ""]
+        if "entities" in manifest:
+            variables = conditions[plan['org_id']]['variables']
+            lines += ["## Manufacturer assignment", "", "| Quote | Manufacturer |", "|---|---|"]
+            lines += [f"| {offer} | {variables['BRAND_' + offer]} |" for offer in variables['OFFER_ORDER'].split(',')]
+            lines += [""]
+        lines += ["## Runtime messages", ""]
         event_file = directory / "events.jsonl"
         if event_file.exists():
             lines += [f"[Original events]({event_file.resolve()})", ""]
             web_events = []
+            runtime_messages = set()
             for raw in event_file.read_text().splitlines():
                 event = json.loads(raw)
                 item = event.get("item", {})
+                message = None
                 if item.get("type") == "error":
-                    lines += [item["message"], ""]
+                    message = item["message"]
+                elif event.get("type") in {"error", "turn.failed"}:
+                    message = event.get("message") or event.get("error", {}).get("message")
+                if message and message not in runtime_messages:
+                    lines += [message, ""]
+                    runtime_messages.add(message)
                 if event.get("type") == "item.completed" and item.get("type") == "web_search":
                     web_events.append(item.get("action") or {"query": item.get("query")})
             lines += ["## Observable web activity", "",

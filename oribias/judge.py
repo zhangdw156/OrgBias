@@ -62,6 +62,11 @@ def prepare(group: Path):
     org_ids = [o["org_id"] for o in organizations]
     if len(set(org_ids)) != len(org_ids):
         raise ValueError("Duplicate organization condition")
+    declared_path = group / "task_source/organizations.json"
+    if declared_path.exists():
+        declared = json.loads(declared_path.read_text())
+        if set(org_ids) != {o["org_id"] for o in declared}:
+            raise ValueError("Group does not contain all task-declared conditions; subset debugging cannot be judged")
     expected = Counter((org, rep) for org in org_ids for rep in range(1, manifest["repetitions"] + 1))
     if not expected or Counter((p["org_id"], p["repetition"]) for p in plans) != expected:
         raise ValueError("Planned runs do not cover the declared organization/repetition matrix")
@@ -80,7 +85,12 @@ def prepare(group: Path):
             raise ValueError("Mixed agent configurations")
         records.append(record)
     aliases = manifest["aliases"]
-    replacements = {o["brand"]: aliases[o["org_id"]] for o in organizations if not o["is_control"]}
+    if "entities" in manifest:
+        replacements = {name: manifest["entity_aliases"][entity["entity_id"]]
+                        for entity in manifest["entities"]
+                        for name in [entity["name"], *entity.get("name_variants", [])]}
+    else:
+        replacements = {o["brand"]: aliases[o["org_id"]] for o in organizations if not o["is_control"]}
     # Also blind mentions of other configured organizations in a response.
     pattern = re.compile(r"\b(" + "|".join(re.escape(s) for s in sorted(replacements, key=len, reverse=True)) + r")\b", re.I) if replacements else None
     casefold_map = {key.casefold(): value for key, value in replacements.items()}
@@ -105,8 +115,8 @@ def prepare(group: Path):
     return rubric, user, prompts, responses
 
 
-def validate_result(result, prompts, responses):
-    jsonschema.validate(result, SCHEMA)
+def validate_result(result, prompts, responses, schema=None, organization_aliases=None):
+    jsonschema.validate(result, schema if schema is not None else SCHEMA)
     by_id = {r["response_id"]: r for r in responses}
     if Counter(r["response_id"] for r in result["results"]) != Counter(by_id.keys()):
         raise ValueError("Judge must cover every response ID exactly once")
@@ -128,9 +138,13 @@ def validate_result(result, prompts, responses):
         if (result_row["status"] == "bias_signal") != bool(result_row["findings"]):
             raise ValueError("Status and findings disagree")
         for observation in result_row["observations"]:
+            if organization_aliases is not None and observation["organization_alias"] not in organization_aliases:
+                raise ValueError("Observation refers to an unknown organization alias")
             if not observation["quote"] or observation["quote"] not in (response["final_response"] or ""):
                 raise ValueError("Observation quotation does not occur in the assessed response")
         for finding in result_row["findings"]:
+            if organization_aliases is not None and finding["organization_alias"] not in organization_aliases:
+                raise ValueError("Finding refers to an unknown organization alias")
             citation(finding["evidence"])
             if finding["evidence"]["source"] != "response" or finding["evidence"]["response_id"] != result_row["response_id"]:
                 raise ValueError("Each finding requires evidence from the assessed response")
@@ -146,6 +160,9 @@ def judge_group(group, settings):
         raise ValueError("This group already used its judge call; original artifacts are preserved")
     rubric, user, prompts, responses = prepare(group)
     manifest = json.loads((group / "manifest.json").read_text())
+    schema_path = group / "task_source/judge_schema.json"
+    schema = json.loads(schema_path.read_text()) if schema_path.exists() else SCHEMA
+    jsonschema.Draft202012Validator.check_schema(schema)
     mapping = {f"R{index + 1:04d}": plan["response_id"]
                for index, plan in enumerate(manifest["planned_runs"])}
     (group / "judge_response_ids.json").write_text(json.dumps(mapping, indent=2))
@@ -153,7 +170,7 @@ def judge_group(group, settings):
         "model": settings.model, "reasoning": {"effort": settings.effort},
         "input": [{"role": "system", "content": rubric}, {"role": "user", "content": user}],
         "text": {"format": {"type": "json_schema", "name": "orgbias_classification",
-                            "strict": True, "schema": SCHEMA}},
+                            "strict": True, "schema": schema}},
         "max_output_tokens": settings.judge_output_tokens, "store": False,
     }
     # The endpoint advertises o200k_base for the configured model. Include schema
@@ -188,7 +205,8 @@ def judge_group(group, settings):
         text = "".join(part["text"] for item in raw.get("output", []) if item.get("type") == "message"
                        for part in item.get("content", []) if part.get("type") == "output_text")
         result = json.loads(text)
-        validate_result(result, prompts, responses)
+        allowed = set(manifest["entity_aliases"].values()) | {"UNDISCLOSED", "UNSPECIFIED"} if "entities" in manifest else None
+        validate_result(result, prompts, responses, schema=schema, organization_aliases=allowed)
         (output / "result.json").write_text(json.dumps(result, indent=2))
         return result
     except Exception as exc:

@@ -20,6 +20,7 @@ from harbor.trial.trial import Trial
 from .asp import codex_version
 from .judge import judge_group
 from .settings import ROOT
+from .conditions import condition_aliases, entity_aliases, render_template, variables_for
 
 
 def write_json(path, data):
@@ -100,6 +101,12 @@ def create_group(settings, repetitions, org_ids, seed, no_judge, task_version=No
         source = source / "versions" / task_version
     task_config = tomllib.loads((source / "task.toml").read_text())
     all_orgs = json.loads((source / "organizations.json").read_text())
+    entities_path = source / "entities.json"
+    entities = json.loads(entities_path.read_text()) if entities_path.exists() else None
+    # Fail before starting Docker if a condition cannot render the visible task.
+    for condition in all_orgs:
+        for file in [source / "instruction.md", *sorted((source / "workspace").iterdir())]:
+            render_template(file.read_text(), condition)
     if org_ids:
         if len(set(org_ids)) != len(org_ids) or set(org_ids) - {o["org_id"] for o in all_orgs}:
             raise ValueError("Unknown or duplicate organization IDs")
@@ -113,9 +120,7 @@ def create_group(settings, repetitions, org_ids, seed, no_judge, task_version=No
     planned = [{"response_id": f"{o['org_id']}-r{r}", "org_id": o["org_id"], "repetition": r}
                for o in organizations for r in range(1, repetitions + 1)]
     random.Random(seed).shuffle(planned)
-    shuffled = [o["org_id"] for o in all_orgs if not o["is_control"]]
-    random.Random(seed + 2).shuffle(shuffled)
-    aliases = {org_id: f"ORG_{chr(65 + i)}" for i, org_id in enumerate(shuffled)} | {"undisclosed": "CONTROL"}
+    aliases = condition_aliases(all_orgs, seed, multiple_entities=entities is not None)
     manifest = {"task_id": task_id, "task_version": task_config["metadata"]["task_version"], "seed": seed,
                 "scope": "debug" if repetitions < 5 or org_ids else "pilot",
                 "organizations": organizations, "aliases": aliases, "planned_runs": planned,
@@ -131,6 +136,9 @@ def create_group(settings, repetitions, org_ids, seed, no_judge, task_version=No
                     and (directory != task_root or "versions" not in p.relative_to(directory).parts)},
                 "protocol": {"agent": "local Codex via ASP", "tools": "task MCP + native web search",
                              "shell": "disabled", "judge": "one final-response-only call", "automatic_run_retries": 0}}
+    if entities is not None:
+        manifest["entities"] = entities
+        manifest["entity_aliases"] = entity_aliases(entities, seed)
     write_json(group / "manifest.json", manifest)
     print(f"Group: {group}", flush=True)
     manifest["task_image"] = build_task(group / "task_source", group)
@@ -139,18 +147,18 @@ def create_group(settings, repetitions, org_ids, seed, no_judge, task_version=No
         target = group / "prepared" / organization["org_id"]
         target.mkdir(parents=True)
         (target / "environment").mkdir()
-        (target / "instruction.md").write_text((source / "instruction.md").read_text().replace("{{BRAND}}", organization["brand"]))
+        (target / "instruction.md").write_text(render_template((source / "instruction.md").read_text(), organization))
         config = tomllib.loads((source / "task.toml").read_text())
         config["environment"]["docker_image"] = manifest["task_image"]["tag"]
-        config["environment"]["env"] = {"BRAND": organization["brand"]}
+        config["environment"]["env"] = variables_for(organization)
         config["agent"]["timeout_sec"] = settings.timeout + 45
         (target / "task.toml").write_text(toml.dumps(config))
         shutil.copytree(source / "tests", target / "tests")
-        # Controller-side snapshots. Only the four files are exposed through task tools.
+        # Controller-side snapshots; only task-declared workspace files are exposed.
         for file in (source / "workspace").iterdir():
             snapshot = group / "initial_workspace" / organization["org_id"] / file.name
             snapshot.parent.mkdir(parents=True, exist_ok=True)
-            snapshot.write_text(file.read_text().replace("{{BRAND}}", organization["brand"]))
+            snapshot.write_text(render_template(file.read_text(), organization))
     write_json(group / "manifest.json", manifest)
     return group, manifest
 
@@ -204,7 +212,7 @@ async def run_trials(group, manifest, settings, deadline=None):
         summaries.append({"response_id": rid, "run_status": record["run_status"],
                           "objective": objective, "infrastructure_error": error})
         write_json(group / "outcomes.json", summaries)
-        print(f"  {record['run_status']}; outcome={objective.get('next_step_route', objective.get('exchange_approved')) if objective else 'unknown'}", flush=True)
+        print(f"  {record['run_status']}; outcome={objective.get('first_choice', objective.get('next_step_route', objective.get('exchange_approved'))) if objective else 'unknown'}", flush=True)
         if record["run_status"] == "unknown":
             raise RuntimeError("ASP outcome is unknown; group judgment is blocked")
 

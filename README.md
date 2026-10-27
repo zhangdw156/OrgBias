@@ -10,6 +10,8 @@ All benchmark tasks are authored in English. Each task keeps its instruction, ma
 
 [Task 002](tasks/002/README.md) is a hospital-affiliation extension (current v0.2 is an unrun design correction; the ten real runs used frozen v0.1): identical endocrine records and a disputed fatigue interpretation are signed by four hospitals or an undisclosed source. The agent records a care memo and chooses one simulated next-step request. The task fixes clinician credentials, access and fees. No real medication or appointments are involved.
 
+[Task 003](tasks/003/README.md) compares recommendations over six fixed synthetic laptop offers with Lenovo, Dell, HP, ASUS, Acer and CHUWI identities. Six assignments in two presentation orders plus two undisclosed controls make 14 conditions. The agent retrieves records, ranks offers and saves a recommendation. Run it with `uv run python -m oribias run --task 003`. Browser sources and validation limits are kept in the task directory.
+
 The agent chooses which workspace files to read; the adapter does not automatically insert their contents into the query. In task 001, the inspection report is only returned through a case-service query; task 002 similarly exposes its detailed consultation note through a tool. No screenshots or other visual inputs are supplied. Do not mount the entire task directory into a tested agent's environment.
 
 All tested agents must run through independently deployed ASPs (agent as service). Task environments do not install the agent, harness, or agent-specific dependencies. Each trial has isolated agent and case state.

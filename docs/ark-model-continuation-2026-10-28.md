@@ -2,6 +2,8 @@
 
 Registered on October 28, 2026 after the user supplied a replacement Coding Plan credential and described its quota as five times larger. The quota multiplier is user-provided, not independently measured. The credential is stored only in ignored `.env`; the exhausted credential is retained locally without automatic fallback. The Agent Plan account is unchanged.
 
+**Current status:** the serial continuation stopped at 22:44 Beijing time after a further HTTP429. A subsequent diagnostic returned `RequestBurstTooFast`. It added four classified Seed Evolving replies; the earlier two Mini replies remain unclassified. No new full-coverage groups or running continuation. See the [serial result and rate-limit diagnosis](ark-model-serial-results-2026-10-28.md).
+
 ## Scope fixed before execution
 
 Continue the [remaining 41 model/task pairs](ark-model-pending-2026-10-28.json): 366 new agent runs. Existing observations and missing-response records remain immutable. The earlier four full-coverage Pro/Lite groups are retained; no additional repetitions are added to them. The 11 earlier Pro recommendation replies remain separate observations and are not patched with selected replacement conditions.

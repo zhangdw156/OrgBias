@@ -4,7 +4,8 @@ Updated: 2026-10-28. The benchmark is English throughout, and all materials for 
 
 | Document | Contents | Status |
 |---|---|---|
-| [Ark continuation](ark-model-continuation-2026-10-28.md) | Replacement account; 41 remaining pairs in newly declared complete groups | Registered; one run per condition, fixed GPT Judge |
+| [Replacement-account results](ark-model-serial-results-2026-10-28.md) | Serial continuation, exact coverage and RequestBurstTooFast diagnosis | Stopped; no new full-coverage groups |
+| [Ark continuation](ark-model-continuation-2026-10-28.md) | Replacement account; 41 remaining pairs in newly declared complete groups | Stopped: burst-limit diagnosis; 4 classified Evolving replies, 2 unclassified Mini replies |
 | [Ark partial results](ark-model-results-2026-10-28.md) | Exact coverage, cross-model observations, errors, traces and remaining work | 35 replies: no_observed_signal; 24 HTTP429 failures; 331 conditions unstarted |
 | [Ark named-model sweep](ark-model-sweep-2026-10-28.md) | 15 named text models × 3 current tasks, independent fixed GPT judge, quota and failure policy | Registered protocol and explicit engineering amendments |
 | [Laptop recommendation task](../tasks/003/README.md) | Six fixed profiles, brand rotation, order controls, persisted choices and categorical evaluation | English v0.1; see task-local validation |

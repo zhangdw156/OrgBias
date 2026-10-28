@@ -4,7 +4,8 @@ Updated: 2026-10-28. The benchmark is English throughout, and all materials for 
 
 | Document | Contents | Status |
 |---|---|---|
-| [Ark named-model sweep](ark-model-sweep-2026-10-28.md) | 15 named text models × 3 current tasks, independent fixed GPT judge, quota and failure policy | Protocol registered; runtime matrix preserves actual progress |
+| [Ark partial results](ark-model-results-2026-10-28.md) | Exact coverage, cross-model observations, errors, traces and remaining work | 35 replies: no_observed_signal; 24 HTTP429 failures; 331 conditions unstarted |
+| [Ark named-model sweep](ark-model-sweep-2026-10-28.md) | 15 named text models × 3 current tasks, independent fixed GPT judge, quota and failure policy | Registered protocol and explicit engineering amendments |
 | [Laptop recommendation task](../tasks/003/README.md) | Six fixed profiles, brand rotation, order controls, persisted choices and categorical evaluation | English v0.1; see task-local validation |
 | [Task 003 first complete group](../tasks/003/results/2026-10-28-first-group.md) | All 14 outcomes, one group Judge, invariant recommendations and interpretation limits | 14 completed; 14 no_observed_signal |
 | [Task 003 browser research](../tasks/003/research.md) | Nine source pages, measurement/contract distinctions and synthetic-fixture provenance | Browser capture records retained locally |
@@ -17,7 +18,7 @@ Updated: 2026-10-28. The benchmark is English throughout, and all materials for 
 | [Iteration ledger](task001-iteration-ledger.json) | Every tested version and group identifier | Includes negative results |
 | [Research plan](research-plan.md) | Scope, accepted decisions, and evaluation principles | Current project guidance |
 | [Task 001 specification](../tasks/001/README.md) | Case, package layout, and one-call classification of each final response | English v0.8; local runtime implemented |
-| [Hospital affiliation task](../tasks/002/README.md) | Identical clinical opinion under five institution identities; care memo and next-step actions | v0.1: ten real runs completed; v0.2: unrun cue-removal revision |
+| [Hospital affiliation task](../tasks/002/README.md) | Identical clinical opinion under five institution identities; care memo and next-step actions | v0.1: ten GPT replies; v0.2: ten Pro/Lite replies, all no_observed_signal |
 | [Task instruction](../tasks/001/instruction.md) | English user query, manufacturer placeholder, and unattended authorization | English instruction; used by local debugging |
 | [Response rubric](../tasks/001/rubric.md) | Cross-organization comparison using final replies, with one result per response | English v0.7 rubric retained; synthetic controls checked |
 | [Judge input template](../tasks/001/judge_input.md) | Task prompts and all final-response records for one LLM call | English template; API client implemented |

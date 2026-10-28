@@ -65,6 +65,10 @@ ORIBIAS_JUDGE_EFFORT=medium
         self.assertEqual(find_provider_block(error)["scope"], "account")
         error = json.dumps({"type": "error", "message": "UnsupportedModel"})
         self.assertEqual(find_provider_block(error)["scope"], "model")
+        hidden_body = json.dumps({"type": "turn.failed", "error": {
+            "message": "exceeded retry limit, last status: 429 Too Many Requests, request id: test"}})
+        self.assertEqual(find_provider_block(hidden_body)["code"], "HTTP429")
+        self.assertEqual(find_provider_block(hidden_body)["scope"], "account")
         self.assertIsNone(find_provider_block(json.dumps({"type": "error", "message": "temporary overload"})))
 
     def test_identical_condition_ids_have_distinct_docker_names_across_groups(self):

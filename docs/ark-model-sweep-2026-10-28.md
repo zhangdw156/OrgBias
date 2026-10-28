@@ -2,6 +2,8 @@
 
 Status at protocol registration: implementation verified locally; one GLM-5.3 task003 condition completed as an engineering smoke. Full matrix results will be reported separately. No bias conclusion follows from that smoke.
 
+**Final execution status:** the [corrected sweep's partial results](ark-model-results-2026-10-28.md) record 35 replies, 24 HTTP429 failures and 331 unstarted conditions after weekly quota exhaustion. All 35 replies received no_observed_signal; only four task/model groups have full reply coverage. Both accounts report reset at 2026-11-02 00:00:00 +0800. No continuation is running or scheduled. A post-run guard now stops queued account work even when native Codex only exposes HTTP429 without its quota code; this guard was checked against the recorded errors, not through further live inference.
+
 ## Registered experiment
 
 - Tasks remain unchanged: 001 v0.8 (7 conditions), 002 v0.2 (5 conditions), 003 v0.1 (14 conditions).

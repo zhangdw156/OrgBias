@@ -1,0 +1,297 @@
+{
+  "source_matrix": "runs/matrix-20261028T122426Z-836000",
+  "reason": "Both supplied accounts exhausted weekly quota. Reset reported as 2026-11-02 00:00:00 +0800.",
+  "status": "not_started",
+  "group_count": 41,
+  "new_runs_if_resumed_as_complete_groups": 366,
+  "policy": "Create new explicitly declared complete groups after quota recovery; preserve all original attempts and missing responses. This file does not schedule or execute any reruns.",
+  "jobs": [
+    {
+      "model": "doubao-seed-2.1-pro",
+      "task": "003",
+      "new_complete_group_runs": 14,
+      "previous_group": "runs/20261028T123510Z-181000",
+      "reason": "HTTP429_prevented_complete_response_coverage"
+    },
+    {
+      "model": "doubao-seed-2.1-lite",
+      "task": "003",
+      "new_complete_group_runs": 14,
+      "previous_group": "runs/20261028T125706Z-009000",
+      "reason": "HTTP429_prevented_complete_response_coverage"
+    },
+    {
+      "model": "doubao-seed-2.0-mini",
+      "task": "001",
+      "new_complete_group_runs": 7,
+      "previous_group": "runs/20261028T125922Z-352000",
+      "reason": "HTTP429_prevented_complete_response_coverage"
+    },
+    {
+      "model": "doubao-seed-2.0-mini",
+      "task": "002",
+      "new_complete_group_runs": 5,
+      "previous_group": null,
+      "reason": "not_started_due_to_account_quota"
+    },
+    {
+      "model": "doubao-seed-2.0-mini",
+      "task": "003",
+      "new_complete_group_runs": 14,
+      "previous_group": null,
+      "reason": "not_started_due_to_account_quota"
+    },
+    {
+      "model": "doubao-seed-evolving",
+      "task": "001",
+      "new_complete_group_runs": 7,
+      "previous_group": null,
+      "reason": "not_started_due_to_account_quota"
+    },
+    {
+      "model": "doubao-seed-evolving",
+      "task": "002",
+      "new_complete_group_runs": 5,
+      "previous_group": null,
+      "reason": "not_started_due_to_account_quota"
+    },
+    {
+      "model": "doubao-seed-evolving",
+      "task": "003",
+      "new_complete_group_runs": 14,
+      "previous_group": null,
+      "reason": "not_started_due_to_account_quota"
+    },
+    {
+      "model": "minimax-m3",
+      "task": "001",
+      "new_complete_group_runs": 7,
+      "previous_group": null,
+      "reason": "not_started_due_to_account_quota"
+    },
+    {
+      "model": "minimax-m3",
+      "task": "002",
+      "new_complete_group_runs": 5,
+      "previous_group": null,
+      "reason": "not_started_due_to_account_quota"
+    },
+    {
+      "model": "minimax-m3",
+      "task": "003",
+      "new_complete_group_runs": 14,
+      "previous_group": null,
+      "reason": "not_started_due_to_account_quota"
+    },
+    {
+      "model": "kimi-k2.7-code",
+      "task": "001",
+      "new_complete_group_runs": 7,
+      "previous_group": null,
+      "reason": "not_started_due_to_account_quota"
+    },
+    {
+      "model": "kimi-k2.7-code",
+      "task": "002",
+      "new_complete_group_runs": 5,
+      "previous_group": null,
+      "reason": "not_started_due_to_account_quota"
+    },
+    {
+      "model": "kimi-k2.7-code",
+      "task": "003",
+      "new_complete_group_runs": 14,
+      "previous_group": null,
+      "reason": "not_started_due_to_account_quota"
+    },
+    {
+      "model": "kimi-k2.8-preview",
+      "task": "001",
+      "new_complete_group_runs": 7,
+      "previous_group": null,
+      "reason": "not_started_due_to_account_quota"
+    },
+    {
+      "model": "kimi-k2.8-preview",
+      "task": "002",
+      "new_complete_group_runs": 5,
+      "previous_group": null,
+      "reason": "not_started_due_to_account_quota"
+    },
+    {
+      "model": "kimi-k2.8-preview",
+      "task": "003",
+      "new_complete_group_runs": 14,
+      "previous_group": null,
+      "reason": "not_started_due_to_account_quota"
+    },
+    {
+      "model": "kimi-k3",
+      "task": "001",
+      "new_complete_group_runs": 7,
+      "previous_group": null,
+      "reason": "not_started_due_to_account_quota"
+    },
+    {
+      "model": "kimi-k3",
+      "task": "002",
+      "new_complete_group_runs": 5,
+      "previous_group": null,
+      "reason": "not_started_due_to_account_quota"
+    },
+    {
+      "model": "kimi-k3",
+      "task": "003",
+      "new_complete_group_runs": 14,
+      "previous_group": null,
+      "reason": "not_started_due_to_account_quota"
+    },
+    {
+      "model": "kimi-k3.1-pro",
+      "task": "001",
+      "new_complete_group_runs": 7,
+      "previous_group": null,
+      "reason": "not_started_due_to_account_quota"
+    },
+    {
+      "model": "kimi-k3.1-pro",
+      "task": "002",
+      "new_complete_group_runs": 5,
+      "previous_group": null,
+      "reason": "not_started_due_to_account_quota"
+    },
+    {
+      "model": "kimi-k3.1-pro",
+      "task": "003",
+      "new_complete_group_runs": 14,
+      "previous_group": null,
+      "reason": "not_started_due_to_account_quota"
+    },
+    {
+      "model": "glm-5.3",
+      "task": "001",
+      "new_complete_group_runs": 7,
+      "previous_group": null,
+      "reason": "not_started_due_to_account_quota"
+    },
+    {
+      "model": "glm-5.3",
+      "task": "002",
+      "new_complete_group_runs": 5,
+      "previous_group": null,
+      "reason": "not_started_due_to_account_quota"
+    },
+    {
+      "model": "glm-5.3",
+      "task": "003",
+      "new_complete_group_runs": 14,
+      "previous_group": null,
+      "reason": "not_started_due_to_account_quota"
+    },
+    {
+      "model": "glm-5.3-flash",
+      "task": "001",
+      "new_complete_group_runs": 7,
+      "previous_group": null,
+      "reason": "not_started_due_to_account_quota"
+    },
+    {
+      "model": "glm-5.3-flash",
+      "task": "002",
+      "new_complete_group_runs": 5,
+      "previous_group": null,
+      "reason": "not_started_due_to_account_quota"
+    },
+    {
+      "model": "glm-5.3-flash",
+      "task": "003",
+      "new_complete_group_runs": 14,
+      "previous_group": null,
+      "reason": "not_started_due_to_account_quota"
+    },
+    {
+      "model": "deepseek-v4-flash",
+      "task": "001",
+      "new_complete_group_runs": 7,
+      "previous_group": null,
+      "reason": "not_started_due_to_account_quota"
+    },
+    {
+      "model": "deepseek-v4-flash",
+      "task": "002",
+      "new_complete_group_runs": 5,
+      "previous_group": null,
+      "reason": "not_started_due_to_account_quota"
+    },
+    {
+      "model": "deepseek-v4-flash",
+      "task": "003",
+      "new_complete_group_runs": 14,
+      "previous_group": null,
+      "reason": "not_started_due_to_account_quota"
+    },
+    {
+      "model": "deepseek-v4-pro",
+      "task": "001",
+      "new_complete_group_runs": 7,
+      "previous_group": null,
+      "reason": "not_started_due_to_account_quota"
+    },
+    {
+      "model": "deepseek-v4-pro",
+      "task": "002",
+      "new_complete_group_runs": 5,
+      "previous_group": null,
+      "reason": "not_started_due_to_account_quota"
+    },
+    {
+      "model": "deepseek-v4-pro",
+      "task": "003",
+      "new_complete_group_runs": 14,
+      "previous_group": null,
+      "reason": "not_started_due_to_account_quota"
+    },
+    {
+      "model": "deepseek-v4.1-flash",
+      "task": "001",
+      "new_complete_group_runs": 7,
+      "previous_group": null,
+      "reason": "not_started_due_to_account_quota"
+    },
+    {
+      "model": "deepseek-v4.1-flash",
+      "task": "002",
+      "new_complete_group_runs": 5,
+      "previous_group": null,
+      "reason": "not_started_due_to_account_quota"
+    },
+    {
+      "model": "deepseek-v4.1-flash",
+      "task": "003",
+      "new_complete_group_runs": 14,
+      "previous_group": null,
+      "reason": "not_started_due_to_account_quota"
+    },
+    {
+      "model": "deepseek-v4.1-flash-economy",
+      "task": "001",
+      "new_complete_group_runs": 7,
+      "previous_group": null,
+      "reason": "not_started_due_to_account_quota"
+    },
+    {
+      "model": "deepseek-v4.1-flash-economy",
+      "task": "002",
+      "new_complete_group_runs": 5,
+      "previous_group": null,
+      "reason": "not_started_due_to_account_quota"
+    },
+    {
+      "model": "deepseek-v4.1-flash-economy",
+      "task": "003",
+      "new_complete_group_runs": 14,
+      "previous_group": null,
+      "reason": "not_started_due_to_account_quota"
+    }
+  ]
+}

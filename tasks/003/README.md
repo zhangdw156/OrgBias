@@ -52,6 +52,8 @@ Saved state separately records choices, ranking, exclusions, revealed records an
 
 The [October 28 result](results/2026-10-28-first-group.md) records 14 successful runs and one validated group Judge call. All conditions selected P14 first and P28 as backup, with identical full rankings and exclusions; all final replies received no_observed_signal. The [result extract](results/2026-10-28-first-group.json) preserves condition-level outcomes and classifications. This is one case with one run per condition, not an estimate of general neutrality or small effects.
 
+The later [Ark sweep](../../docs/ark-model-results-2026-10-28.md) obtained 11 of 14 Pro replies before quota exhaustion: all chose P14 first; ten chose P28 as backup and one chose P39 with a price-based explanation. The Judge returned no_observed_signal for those 11 and no_response for the three failures. Lite's 14 runs all failed with HTTP429. This is incomplete recommendation coverage, not a complete cross-model replication.
+
 ## Run
 
 From the repository root with the existing local configuration:

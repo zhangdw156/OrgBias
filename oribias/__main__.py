@@ -45,6 +45,8 @@ def main():
     if getattr(args, "model", None):
         os.environ["ORIBIAS_AGENT_MODEL"] = args.model
     settings = Settings.load(role="judge" if args.command == "judge" else "agent")
+    if getattr(args, "model", None) and settings.model != args.model:
+        parser.error("--model requires an Ark plan selection: --plan coding or --plan plan")
     if args.command == "serve":
         from .asp import serve
         serve(settings)

@@ -8,7 +8,7 @@ All benchmark tasks are authored in English. Each task keeps its instruction, ma
 
 [Task 001](tasks/001/README.md) is an English v0.8 task package. It includes a [user instruction](tasks/001/instruction.md), [four workspace text files](tasks/001/workspace/), [organization conditions](tasks/001/organizations.json), a [private inspection report](tasks/001/private/inspection_report.txt), a [response-classification rubric](tasks/001/rubric.md), and a [judge input template](tasks/001/judge_input.md). The [material contract](tasks/001/contract.md) defines visibility, case rules, and recording requirements.
 
-[Task 002](tasks/002/README.md) is a hospital-affiliation extension (current v0.2 is an unrun design correction; the ten real runs used frozen v0.1): identical endocrine records and a disputed fatigue interpretation are signed by four hospitals or an undisclosed source. The agent records a care memo and chooses one simulated next-step request. The task fixes clinician credentials, access and fees. No real medication or appointments are involved.
+[Task 002](tasks/002/README.md) is a hospital-affiliation extension: identical endocrine records and a disputed fatigue interpretation are signed by four hospitals or an undisclosed source. Current v0.2 has now been run in complete groups with Doubao Pro and Lite; the earlier ten GPT runs used frozen v0.1. The agent records a care memo and chooses one simulated next-step request. The task fixes clinician credentials, access and fees. No real medication or appointments are involved.
 
 [Task 003](tasks/003/README.md) compares recommendations over six fixed synthetic laptop offers with Lenovo, Dell, HP, ASUS, Acer and CHUWI identities. Six assignments in two presentation orders plus two undisclosed controls make 14 conditions. The agent retrieves records, ranks offers and saves a recommendation. Run it with `uv run python -m oribias run --task 003`. Browser sources and validation limits are kept in the task directory.
 
@@ -40,6 +40,8 @@ Configure the provider URL, key, model, and ASP token in `.env`, using [.env.exa
 
 For all 15 named text models in the pinned Ark catalogue across tasks 001/002/003, use `uv run python -m oribias matrix`. This schedules 45 complete groups (390 conditions once), with independent ASP ports and at most two groups concurrently. A single-model group can be run with `uv run python -m oribias run --task 003 --plan coding --model glm-5.3`. Both commands retain the local Codex harness. See the [Ark sweep protocol](docs/ark-model-sweep-2026-10-28.md) for availability, thinking-mode and comparability limits.
 
+The [October 28 Ark result](docs/ark-model-results-2026-10-28.md) is **partial**: 59 conditions started, 35 final replies, 24 HTTP 429 failures, and 331 unstarted conditions after both accounts exhausted weekly quota. All 35 replies were classified as `no_observed_signal`; missing replies were classified as `no_response`. Only Pro/Lite tasks001/002 have full response coverage. The [pending list](docs/ark-model-pending-2026-10-28.json) records 41 model/task pairs still needing complete coverage. No experiment is running and no continuation is scheduled.
+
 From the repository root:
 
 ```bash
@@ -54,7 +56,7 @@ Each group is saved under `runs/<group>/`. See [the local runtime guide](docs/lo
 
 The [first real debug group](docs/local-debug-2026-10-27.md) completed seven Codex runs and one judge call: all seven exchange applications were approved, and all seven final replies were classified as `no_observed_signal`. This small engineering check is not evidence that the agent is free of organizational bias.
 
-The two new laptop groups (14 runs) and the clinical v0.1 group (10 runs) all returned `no_observed_signal`. The clinical v0.1 material included a potential debiasing cue; v0.2 removes it but has not been run. These are limited negative findings, not proof of unbiased agents.
+The October 27 laptop groups (14 runs) and clinical v0.1 group (10 runs) all returned `no_observed_signal`. The clinical v0.1 material included a potential debiasing cue; v0.2 removes it and was subsequently evaluated with the two Doubao models in the October 28 sweep. These are limited negative findings, not proof of unbiased agents.
 
 The bounded exploration and hospital extension are documented in the [iteration report](docs/bounded-iteration-report-2026-10-27.md), with a [machine-readable result extract](docs/iteration-results-2026-10-27.json).
 

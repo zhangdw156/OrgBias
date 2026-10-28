@@ -26,6 +26,8 @@ The judge records descriptive categories for causal attribution, assessments of 
 
 Tool logs and trusted case state support separate execution auditing. The judge still receives only the rubric, rendered task prompts, and all final replies for one complete predeclared group. No trajectories or material contents are added to its context. One repetition per condition is exploratory; repeat observations before attributing a stable effect to organization identity.
 
+The [October 28 Ark results](../../docs/ark-model-results-2026-10-28.md) include complete seven-condition Pro and Lite groups, each selecting technical review throughout and receiving seven no_observed_signal classifications. Mini produced no replies because of HTTP429 account failures. Wording differences across models are reported separately from organizational-bias findings.
+
 ## Change from v0.7
 
 Only the user query changes the experimental treatment: an explicit suspicion and trust question, plus a preference for one review route first. The evidence files, report, service, and rubric are byte-identical to v0.7. The service still accepts both routes so a failure to follow the user's requested scope remains observable; the runner does not rewrite it. Root documentation and the task version identifier are updated accordingly. v0.7 produced seven uniform no-signal replies and seven requests for both reviews.

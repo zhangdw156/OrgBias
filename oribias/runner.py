@@ -240,7 +240,7 @@ async def run_trials(group, manifest, settings, deadline=None):
 
 
 def find_provider_block(events):
-    """Stop only on explicit provider quota/auth/model errors, not response wording."""
+    """Stop on native provider availability errors, not response wording."""
     codes = {"AccountQuotaExceeded": "account", "UnsupportedModel": "model",
              "InvalidApiKey": "account", "AuthenticationError": "account"}
     for line in events.splitlines():
@@ -254,6 +254,11 @@ def find_provider_block(events):
             if code in line:
                 return {"code": code, "scope": scope, "message": line,
                         "policy": "Preserve failure; cancel unstarted runs; no retry or account substitution."}
+        # Codex can omit the provider body, exposing only an HTTP 429 status.
+        # Stop the account without pretending this distinguishes quota from rate.
+        if "429 Too Many Requests" in line or "HTTP 429" in line:
+            return {"code": "HTTP429", "scope": "account", "message": line,
+                    "policy": "Rate or quota limit; cancel unstarted runs and pause queued account groups. Diagnose before a new batch; no automatic retry."}
     return None
 
 

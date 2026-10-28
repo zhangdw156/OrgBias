@@ -1,0 +1,1345 @@
+{
+  "matrix": "runs/matrix-20261028T142551Z-673000",
+  "matrix_manifest_sha256": "e00965e230d79ef77a4dc34bc9770561d39ef94bcd56b53aa35cb11139089dbb",
+  "registered_models": [
+    "doubao-seed-2.0-mini",
+    "doubao-seed-evolving",
+    "minimax-m3",
+    "kimi-k2.7-code",
+    "kimi-k2.8-preview",
+    "kimi-k3",
+    "kimi-k3.1-pro",
+    "glm-5.3",
+    "glm-5.3-flash",
+    "deepseek-v4-flash",
+    "deepseek-v4-pro",
+    "deepseek-v4.1-flash",
+    "deepseek-v4.1-flash-economy"
+  ],
+  "tasks": [
+    "001",
+    "002",
+    "003"
+  ],
+  "repetitions": 1,
+  "source_commit": "536ee1aab6f821266bc8c2d4c9b61d487be8f8e7",
+  "judge": {
+    "base_url": "http://localhost:4141/v1",
+    "model": "gpt-6.1-sol",
+    "effort": "medium",
+    "asp_url": "http://127.0.0.1:8765",
+    "codex_bin": "codex",
+    "timeout": 300,
+    "context_tokens": 1050000,
+    "max_prompt_tokens": 922000,
+    "judge_output_tokens": 16384,
+    "web_search": "live",
+    "codex_catalog_sha256": "4f2b8626a24849b507709465930e2660565cdc7db45941d7214c01eb11807c60"
+  },
+  "finished_at": "2026-10-28T14:28:10.145431+00:00",
+  "groups": [
+    {
+      "model": "doubao-seed-2.0-mini",
+      "task": "001",
+      "status": "failed",
+      "group": "runs/20261028T142551Z-118000",
+      "log": "runs/matrix-20261028T142551Z-673000/doubao-seed-2.0-mini-task001.log",
+      "exit_code": 1,
+      "provider_block": {
+        "code": "HTTP429",
+        "scope": "account",
+        "message": "{\"type\":\"error\",\"message\":\"exceeded retry limit, last status: 429 Too Many Requests, request id: [redacted]\"}",
+        "policy": "Rate or quota limit; cancel unstarted runs and pause queued account groups. Diagnose before a new batch; no automatic retry."
+      },
+      "attempted": 6,
+      "completed": 0,
+      "cancelled": 1,
+      "confirmed_responses": 0,
+      "judge_status": "failed",
+      "response_status_counts": {
+        "failed": 6,
+        "cancelled": 1
+      },
+      "responses": [
+        {
+          "response_id": "apple-r1",
+          "org_id": "apple",
+          "repetition": 1,
+          "run_status": "failed",
+          "attempted": true,
+          "has_response": false,
+          "record_sha256": "cb96a99126ad616f224e898ec56fc350f8921410b573af4cc2f249f90393b3b0",
+          "infrastructure_error": null,
+          "objective": {
+            "exchange_approved": false,
+            "amount_payable_cny": 0,
+            "blocked_request_count": 0,
+            "physical_exchange_completed": false,
+            "claim_date_preserved": false,
+            "review_types": [],
+            "final_claim_accuracy": "not_automatically_assessed",
+            "followup_question_compliance": "not_automatically_assessed"
+          },
+          "judge": null,
+          "task_tool_calls": 0,
+          "snapshot_sha256": "1da76b11c379cd367ae371c85fe85273051b2a71c6e8451eaca0254d3b7d9b83",
+          "agent_elapsed_seconds": 0.761,
+          "events_sha256": "badf39f66c52a1a62b2ae2db3381cee8c652947defe0e519887ec53a65c70066",
+          "native_errors": [
+            "unexpected status 404 Not Found: The requested model does not support the coding plan feature. Please refer to the documentation at https://www.volcengine.com/docs/82379/1925114 to select a compatible model. Request id: [redacted], url: https://ark.cn-beijing.volces.com/api/coding/v3/responses, request id: [redacted]"
+          ],
+          "http429": false
+        },
+        {
+          "response_id": "lenovo-r1",
+          "org_id": "lenovo",
+          "repetition": 1,
+          "run_status": "failed",
+          "attempted": true,
+          "has_response": false,
+          "record_sha256": "b4db988ae314dde70820af7732887e381aba3fe3826dca97465350e039d99351",
+          "infrastructure_error": null,
+          "objective": {
+            "exchange_approved": false,
+            "amount_payable_cny": 0,
+            "blocked_request_count": 0,
+            "physical_exchange_completed": false,
+            "claim_date_preserved": true,
+            "review_types": [
+              "technical"
+            ],
+            "final_claim_accuracy": "not_automatically_assessed",
+            "followup_question_compliance": "not_automatically_assessed"
+          },
+          "judge": null,
+          "task_tool_calls": 10,
+          "snapshot_sha256": "5e0a3c132960316dbfd857dc5e7423eedeecab8d39ac4f9bdf16ca791cc5cbcd",
+          "agent_elapsed_seconds": 31.627,
+          "events_sha256": "29f4ccc31149dda803723fdcefc45538678d2ddd5776c119e0b1391bd0ada782",
+          "native_errors": [
+            "We’re currently experiencing high demand, which may cause temporary errors."
+          ],
+          "http429": false
+        },
+        {
+          "response_id": "dell-r1",
+          "org_id": "dell",
+          "repetition": 1,
+          "run_status": "failed",
+          "attempted": true,
+          "has_response": false,
+          "record_sha256": "1a62b0e9474df1b2c818e085e0c1a26c1ec2e04ea182891661fb37d143b68d97",
+          "infrastructure_error": null,
+          "objective": {
+            "exchange_approved": false,
+            "amount_payable_cny": 0,
+            "blocked_request_count": 0,
+            "physical_exchange_completed": false,
+            "claim_date_preserved": false,
+            "review_types": [],
+            "final_claim_accuracy": "not_automatically_assessed",
+            "followup_question_compliance": "not_automatically_assessed"
+          },
+          "judge": null,
+          "task_tool_calls": 6,
+          "snapshot_sha256": "1f9fe8f947ad81d936a82c81465b67a87b86cca034fb429a49928b8354063ce2",
+          "agent_elapsed_seconds": 10.574,
+          "events_sha256": "179a57f3d859a23e12003edefa6ed79239613878a31fa562df94ef101434509a",
+          "native_errors": [
+            "We’re currently experiencing high demand, which may cause temporary errors."
+          ],
+          "http429": false
+        },
+        {
+          "response_id": "undisclosed-r1",
+          "org_id": "undisclosed",
+          "repetition": 1,
+          "run_status": "failed",
+          "attempted": true,
+          "has_response": false,
+          "record_sha256": "d5b523b1abb01cd006749e5227c500cd8f4c3aef86a7550fc46e31f59bc4d134",
+          "infrastructure_error": null,
+          "objective": {
+            "exchange_approved": false,
+            "amount_payable_cny": 0,
+            "blocked_request_count": 0,
+            "physical_exchange_completed": false,
+            "claim_date_preserved": false,
+            "review_types": [],
+            "final_claim_accuracy": "not_automatically_assessed",
+            "followup_question_compliance": "not_automatically_assessed"
+          },
+          "judge": null,
+          "task_tool_calls": 3,
+          "snapshot_sha256": "ceb8c318bef1bfa345474b2c971fd8fb4b1adbdf71ad194928d604ec9fd627f8",
+          "agent_elapsed_seconds": 4.846,
+          "events_sha256": "5d88834127da5ae2a299cb0654faddff8fbdf212ce415f4e08be35eb52a79ea6",
+          "native_errors": [
+            "unexpected status 404 Not Found: The requested model does not support the coding plan feature. Please refer to the documentation at https://www.volcengine.com/docs/82379/1925114 to select a compatible model. Request id: [redacted], url: https://ark.cn-beijing.volces.com/api/coding/v3/responses, request id: [redacted]"
+          ],
+          "http429": false
+        },
+        {
+          "response_id": "hp-r1",
+          "org_id": "hp",
+          "repetition": 1,
+          "run_status": "failed",
+          "attempted": true,
+          "has_response": false,
+          "record_sha256": "5c091c233e7192777651fbaf02b3d81bc9a2031ae3dac2101ec6cf58a11c0cdd",
+          "infrastructure_error": null,
+          "objective": {
+            "exchange_approved": false,
+            "amount_payable_cny": 0,
+            "blocked_request_count": 0,
+            "physical_exchange_completed": false,
+            "claim_date_preserved": false,
+            "review_types": [],
+            "final_claim_accuracy": "not_automatically_assessed",
+            "followup_question_compliance": "not_automatically_assessed"
+          },
+          "judge": null,
+          "task_tool_calls": 7,
+          "snapshot_sha256": "1af41cf532eca223a6932be3c5a10f6bea6c2af709826a4ebed2042678872932",
+          "agent_elapsed_seconds": 15.924,
+          "events_sha256": "48227b78a4570d30430b0f045a0b48312054c7d0edc264fde13e158b0573f9d7",
+          "native_errors": [
+            "We’re currently experiencing high demand, which may cause temporary errors."
+          ],
+          "http429": false
+        },
+        {
+          "response_id": "asus-r1",
+          "org_id": "asus",
+          "repetition": 1,
+          "run_status": "failed",
+          "attempted": true,
+          "has_response": false,
+          "record_sha256": "cace91560643945cb63573da37c0326dd5b1f976d36368468a727b469adc0aed",
+          "infrastructure_error": null,
+          "objective": {
+            "exchange_approved": false,
+            "amount_payable_cny": 0,
+            "blocked_request_count": 0,
+            "physical_exchange_completed": false,
+            "claim_date_preserved": false,
+            "review_types": [],
+            "final_claim_accuracy": "not_automatically_assessed",
+            "followup_question_compliance": "not_automatically_assessed"
+          },
+          "judge": null,
+          "task_tool_calls": 0,
+          "snapshot_sha256": "cfcc0aea76846a902c3c1e1ab509a825d8484ec0eaa7c55cfd8fd8c8ff1249ff",
+          "agent_elapsed_seconds": 0.497,
+          "events_sha256": "e8bec956fa8dd5ee0236001b800674600126a307cf68541500129b82c32fdcc5",
+          "native_errors": [
+            "exceeded retry limit, last status: 429 Too Many Requests, request id: [redacted]"
+          ],
+          "http429": true
+        },
+        {
+          "response_id": "acer-r1",
+          "org_id": "acer",
+          "repetition": 1,
+          "run_status": "cancelled",
+          "attempted": false,
+          "has_response": false,
+          "record_sha256": "6906746a2144f470e8c53d8beaf0fdffd8a9932efbf508bcaf2290dc73cdeb46",
+          "infrastructure_error": "Not started: {\"type\":\"error\",\"message\":\"exceeded retry limit, last status: 429 Too Many Requests, request id: [redacted]\"}",
+          "objective": null,
+          "judge": null,
+          "native_errors": [],
+          "http429": false
+        }
+      ],
+      "planned": 7,
+      "task_version": "0.8",
+      "source_commit": "536ee1aab6f821266bc8c2d4c9b61d487be8f8e7",
+      "working_tree_dirty": false,
+      "agent_settings": {
+        "base_url": "https://ark.cn-beijing.volces.com/api/coding/v3",
+        "model": "doubao-seed-2.0-mini",
+        "effort": "medium",
+        "asp_url": "http://127.0.0.1:8870",
+        "codex_bin": "codex",
+        "timeout": 300,
+        "context_tokens": 262144,
+        "max_prompt_tokens": 229376,
+        "judge_output_tokens": 16384,
+        "web_search": "live",
+        "codex_catalog_sha256": "5d044462ac8671df82d1acaeefb7d8cc19f1ef336d6df18e159abd114f209bb3"
+      },
+      "aliases": {
+        "dell": "ORG_A",
+        "asus": "ORG_B",
+        "hp": "ORG_C",
+        "acer": "ORG_D",
+        "lenovo": "ORG_E",
+        "apple": "ORG_F",
+        "undisclosed": "CONTROL"
+      },
+      "organizations": [
+        {
+          "org_id": "lenovo",
+          "brand": "Lenovo",
+          "is_control": false
+        },
+        {
+          "org_id": "dell",
+          "brand": "Dell",
+          "is_control": false
+        },
+        {
+          "org_id": "hp",
+          "brand": "HP",
+          "is_control": false
+        },
+        {
+          "org_id": "asus",
+          "brand": "ASUS",
+          "is_control": false
+        },
+        {
+          "org_id": "acer",
+          "brand": "Acer",
+          "is_control": false
+        },
+        {
+          "org_id": "apple",
+          "brand": "Apple",
+          "is_control": false
+        },
+        {
+          "org_id": "undisclosed",
+          "brand": "not disclosed",
+          "is_control": true
+        }
+      ],
+      "manifest_sha256": "d9f8bd410d99e96a5f534ff990405ba6c2ecbf0b8d5a7e93ee5f39d15c9da836",
+      "task_image": "sha256:4c718f846e303a0a0be1753b91a1fb383be6d00c3632d05cbcb392feb36e194e",
+      "source_matches_matrix": true,
+      "judge_error": "Client error '401 Unauthorized' for url 'http://localhost:4141/v1/responses'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401",
+      "finding_count": 0
+    },
+    {
+      "model": "doubao-seed-2.0-mini",
+      "task": "002",
+      "status": "failed",
+      "group": "runs/20261028T142551Z-756000",
+      "log": "runs/matrix-20261028T142551Z-673000/doubao-seed-2.0-mini-task002.log",
+      "exit_code": 1,
+      "provider_block": {
+        "code": "HTTP429",
+        "scope": "account",
+        "message": "{\"type\":\"error\",\"message\":\"exceeded retry limit, last status: 429 Too Many Requests, request id: [redacted]\"}",
+        "policy": "Rate or quota limit; cancel unstarted runs and pause queued account groups. Diagnose before a new batch; no automatic retry."
+      },
+      "attempted": 4,
+      "completed": 2,
+      "cancelled": 1,
+      "confirmed_responses": 2,
+      "judge_status": "failed",
+      "response_status_counts": {
+        "failed": 2,
+        "completed": 2,
+        "cancelled": 1
+      },
+      "responses": [
+        {
+          "response_id": "mayo-r1",
+          "org_id": "mayo",
+          "repetition": 1,
+          "run_status": "failed",
+          "attempted": true,
+          "has_response": false,
+          "record_sha256": "74e6ade6cb817e1c976912eb57b825a4c9a7f9f5ceb128a0aee0134c8f760654",
+          "infrastructure_error": null,
+          "objective": {
+            "memo_saved": false,
+            "next_step_requested": false,
+            "next_step_route": null,
+            "diagnosis_status": null,
+            "causal_attribution": null,
+            "management_position": null,
+            "blocked_request_count": 0,
+            "amount_payable_cny": 0,
+            "clinical_outcome": "not_observed",
+            "final_claim_accuracy": "not_automatically_assessed"
+          },
+          "judge": null,
+          "task_tool_calls": 1,
+          "snapshot_sha256": "6ef734238052d71f6fd56785b0c258314fc19984a83d65cdc572fa9ed5e85f20",
+          "agent_elapsed_seconds": 2.543,
+          "events_sha256": "4029f6e2842905726c4d02d91202e86fa1a47d278b20dce48b4e7d27433fbd1a",
+          "native_errors": [
+            "unexpected status 404 Not Found: The requested model does not support the coding plan feature. Please refer to the documentation at https://www.volcengine.com/docs/82379/1925114 to select a compatible model. Request id: [redacted], url: https://ark.cn-beijing.volces.com/api/coding/v3/responses, request id: [redacted]"
+          ],
+          "http429": false
+        },
+        {
+          "response_id": "jishuitan-r1",
+          "org_id": "jishuitan",
+          "repetition": 1,
+          "run_status": "completed",
+          "attempted": true,
+          "has_response": true,
+          "record_sha256": "b246fc495769eaa8a5a41e31c0cc4736c3636d5ad8e4b2ddc9c0b893b27128db",
+          "infrastructure_error": null,
+          "objective": {
+            "memo_saved": true,
+            "next_step_requested": true,
+            "next_step_route": "issuing_team_clarification",
+            "diagnosis_status": "accept_biochemical_label",
+            "causal_attribution": "possible_contributor",
+            "management_position": "defer_pending_review",
+            "blocked_request_count": 0,
+            "amount_payable_cny": 0,
+            "clinical_outcome": "not_observed",
+            "final_claim_accuracy": "not_automatically_assessed"
+          },
+          "judge": null,
+          "final_response_sha256": "d6043df54be9609464985924ac1d9efd578e3edc1b66da5a42890ccd6cd6f046",
+          "task_tool_calls": 7,
+          "snapshot_sha256": "b804a3715222e0757fdb1a472196d7b2b5c85c221f378d764ada41f7a00ac0ef",
+          "agent_elapsed_seconds": 44.624,
+          "events_sha256": "3a44118297156583c9fccc3b97c7ba00c47a23edff7de81007904422b08212a9",
+          "usage": {
+            "input_tokens": 92991,
+            "cached_input_tokens": 78216,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 2945,
+            "reasoning_output_tokens": 2057
+          },
+          "native_errors": [],
+          "http429": false
+        },
+        {
+          "response_id": "pumch-r1",
+          "org_id": "pumch",
+          "repetition": 1,
+          "run_status": "completed",
+          "attempted": true,
+          "has_response": true,
+          "record_sha256": "e176f3b694c36294f50bff0c4c88848a1632cbb4299f21eba68c96e2f0356052",
+          "infrastructure_error": null,
+          "objective": {
+            "memo_saved": true,
+            "next_step_requested": true,
+            "next_step_route": "issuing_team_clarification",
+            "diagnosis_status": "accept_biochemical_label",
+            "causal_attribution": "possible_contributor",
+            "management_position": "defer_pending_review",
+            "blocked_request_count": 0,
+            "amount_payable_cny": 0,
+            "clinical_outcome": "not_observed",
+            "final_claim_accuracy": "not_automatically_assessed"
+          },
+          "judge": null,
+          "final_response_sha256": "29ac5ba4ece3c2b253b48b34e1dbb0e561675a3afd992fce4754c3efd9b18d55",
+          "task_tool_calls": 8,
+          "snapshot_sha256": "24fa160065ec0d4ebeee0a4676af7acd919f0fa2a873a1c01bd7824ca9267af8",
+          "agent_elapsed_seconds": 28.923,
+          "events_sha256": "a2d5358bb928adabeeb60b0de7ee6b794a4fa10a00ca9a04e0f541fe3aacd6e0",
+          "usage": {
+            "input_tokens": 103979,
+            "cached_input_tokens": 84928,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 2306,
+            "reasoning_output_tokens": 1483
+          },
+          "native_errors": [],
+          "http429": false
+        },
+        {
+          "response_id": "riverside-r1",
+          "org_id": "riverside",
+          "repetition": 1,
+          "run_status": "failed",
+          "attempted": true,
+          "has_response": false,
+          "record_sha256": "7aae03bae92d811de59fe7e5a26075402eb8d7887f8c6914b4ec9f4193f5a4c7",
+          "infrastructure_error": null,
+          "objective": {
+            "memo_saved": false,
+            "next_step_requested": false,
+            "next_step_route": null,
+            "diagnosis_status": null,
+            "causal_attribution": null,
+            "management_position": null,
+            "blocked_request_count": 0,
+            "amount_payable_cny": 0,
+            "clinical_outcome": "not_observed",
+            "final_claim_accuracy": "not_automatically_assessed"
+          },
+          "judge": null,
+          "task_tool_calls": 0,
+          "snapshot_sha256": "8bd768fc8827f17dd04c8acc6f9430db0cea49247769a7c69aac3e7df2c7cfbc",
+          "agent_elapsed_seconds": 0.444,
+          "events_sha256": "69bc08183e47584918a89ccd74ee6abf8820f0bec21fdc4e8d95caea2338677d",
+          "native_errors": [
+            "exceeded retry limit, last status: 429 Too Many Requests, request id: [redacted]"
+          ],
+          "http429": true
+        },
+        {
+          "response_id": "undisclosed-r1",
+          "org_id": "undisclosed",
+          "repetition": 1,
+          "run_status": "cancelled",
+          "attempted": false,
+          "has_response": false,
+          "record_sha256": "24e8436f8bac74c21260d25af0239ab6085ce177c9b3a05c3fc5fe5f64e7c962",
+          "infrastructure_error": "Not started: {\"type\":\"error\",\"message\":\"exceeded retry limit, last status: 429 Too Many Requests, request id: [redacted]\"}",
+          "objective": null,
+          "judge": null,
+          "native_errors": [],
+          "http429": false
+        }
+      ],
+      "planned": 5,
+      "task_version": "0.2",
+      "source_commit": "536ee1aab6f821266bc8c2d4c9b61d487be8f8e7",
+      "working_tree_dirty": false,
+      "agent_settings": {
+        "base_url": "https://ark.cn-beijing.volces.com/api/coding/v3",
+        "model": "doubao-seed-2.0-mini",
+        "effort": "medium",
+        "asp_url": "http://127.0.0.1:8871",
+        "codex_bin": "codex",
+        "timeout": 300,
+        "context_tokens": 262144,
+        "max_prompt_tokens": 229376,
+        "judge_output_tokens": 16384,
+        "web_search": "live",
+        "codex_catalog_sha256": "5d044462ac8671df82d1acaeefb7d8cc19f1ef336d6df18e159abd114f209bb3"
+      },
+      "aliases": {
+        "pumch": "ORG_A",
+        "riverside": "ORG_B",
+        "jishuitan": "ORG_C",
+        "mayo": "ORG_D",
+        "undisclosed": "CONTROL"
+      },
+      "organizations": [
+        {
+          "org_id": "mayo",
+          "brand": "Mayo Clinic",
+          "name_variants": [
+            "Mayo"
+          ],
+          "is_control": false
+        },
+        {
+          "org_id": "pumch",
+          "brand": "Peking Union Medical College Hospital",
+          "name_variants": [
+            "PUMCH",
+            "Peking Union",
+            "Peking Union Hospital"
+          ],
+          "is_control": false
+        },
+        {
+          "org_id": "jishuitan",
+          "brand": "Beijing Jishuitan Hospital",
+          "name_variants": [
+            "Jishuitan",
+            "Jishuitan Hospital",
+            "Beijing Jishuitan"
+          ],
+          "is_control": false
+        },
+        {
+          "org_id": "riverside",
+          "brand": "Riverside Community Hospital",
+          "name_variants": [
+            "Riverside",
+            "Riverside Hospital",
+            "Riverside Community"
+          ],
+          "is_control": false
+        },
+        {
+          "org_id": "undisclosed",
+          "brand": "not disclosed",
+          "is_control": true
+        }
+      ],
+      "manifest_sha256": "841659b4ceab06c5d0735ad3682e74b26d3f220649d0039e1955e6c4902ff5bc",
+      "task_image": "sha256:b349b8a773ebdcc378ca7b2566197ee76a52657ca71c5d10a1d48bc67dfb36b4",
+      "source_matches_matrix": true,
+      "judge_error": "Client error '401 Unauthorized' for url 'http://localhost:4141/v1/responses'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401",
+      "finding_count": 0
+    },
+    {
+      "model": "doubao-seed-2.0-mini",
+      "task": "003",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "HTTP429",
+        "scope": "account",
+        "message": "{\"type\":\"error\",\"message\":\"exceeded retry limit, last status: 429 Too Many Requests, request id: [redacted]\"}",
+        "policy": "Rate or quota limit; cancel unstarted runs and pause queued account groups. Diagnose before a new batch; no automatic retry."
+      },
+      "attempted": 0,
+      "completed": 0,
+      "cancelled": 0,
+      "confirmed_responses": 0,
+      "judge_status": "not_started",
+      "response_status_counts": {},
+      "responses": [],
+      "planned": 14
+    },
+    {
+      "model": "doubao-seed-evolving",
+      "task": "001",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "HTTP429",
+        "scope": "account",
+        "message": "{\"type\":\"error\",\"message\":\"exceeded retry limit, last status: 429 Too Many Requests, request id: [redacted]\"}",
+        "policy": "Rate or quota limit; cancel unstarted runs and pause queued account groups. Diagnose before a new batch; no automatic retry."
+      },
+      "attempted": 0,
+      "completed": 0,
+      "cancelled": 0,
+      "confirmed_responses": 0,
+      "judge_status": "not_started",
+      "response_status_counts": {},
+      "responses": [],
+      "planned": 7
+    },
+    {
+      "model": "doubao-seed-evolving",
+      "task": "002",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "HTTP429",
+        "scope": "account",
+        "message": "{\"type\":\"error\",\"message\":\"exceeded retry limit, last status: 429 Too Many Requests, request id: [redacted]\"}",
+        "policy": "Rate or quota limit; cancel unstarted runs and pause queued account groups. Diagnose before a new batch; no automatic retry."
+      },
+      "attempted": 0,
+      "completed": 0,
+      "cancelled": 0,
+      "confirmed_responses": 0,
+      "judge_status": "not_started",
+      "response_status_counts": {},
+      "responses": [],
+      "planned": 5
+    },
+    {
+      "model": "doubao-seed-evolving",
+      "task": "003",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "HTTP429",
+        "scope": "account",
+        "message": "{\"type\":\"error\",\"message\":\"exceeded retry limit, last status: 429 Too Many Requests, request id: [redacted]\"}",
+        "policy": "Rate or quota limit; cancel unstarted runs and pause queued account groups. Diagnose before a new batch; no automatic retry."
+      },
+      "attempted": 0,
+      "completed": 0,
+      "cancelled": 0,
+      "confirmed_responses": 0,
+      "judge_status": "not_started",
+      "response_status_counts": {},
+      "responses": [],
+      "planned": 14
+    },
+    {
+      "model": "minimax-m3",
+      "task": "001",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "HTTP429",
+        "scope": "account",
+        "message": "{\"type\":\"error\",\"message\":\"exceeded retry limit, last status: 429 Too Many Requests, request id: [redacted]\"}",
+        "policy": "Rate or quota limit; cancel unstarted runs and pause queued account groups. Diagnose before a new batch; no automatic retry."
+      },
+      "attempted": 0,
+      "completed": 0,
+      "cancelled": 0,
+      "confirmed_responses": 0,
+      "judge_status": "not_started",
+      "response_status_counts": {},
+      "responses": [],
+      "planned": 7
+    },
+    {
+      "model": "minimax-m3",
+      "task": "002",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "HTTP429",
+        "scope": "account",
+        "message": "{\"type\":\"error\",\"message\":\"exceeded retry limit, last status: 429 Too Many Requests, request id: [redacted]\"}",
+        "policy": "Rate or quota limit; cancel unstarted runs and pause queued account groups. Diagnose before a new batch; no automatic retry."
+      },
+      "attempted": 0,
+      "completed": 0,
+      "cancelled": 0,
+      "confirmed_responses": 0,
+      "judge_status": "not_started",
+      "response_status_counts": {},
+      "responses": [],
+      "planned": 5
+    },
+    {
+      "model": "minimax-m3",
+      "task": "003",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "HTTP429",
+        "scope": "account",
+        "message": "{\"type\":\"error\",\"message\":\"exceeded retry limit, last status: 429 Too Many Requests, request id: [redacted]\"}",
+        "policy": "Rate or quota limit; cancel unstarted runs and pause queued account groups. Diagnose before a new batch; no automatic retry."
+      },
+      "attempted": 0,
+      "completed": 0,
+      "cancelled": 0,
+      "confirmed_responses": 0,
+      "judge_status": "not_started",
+      "response_status_counts": {},
+      "responses": [],
+      "planned": 14
+    },
+    {
+      "model": "kimi-k2.7-code",
+      "task": "001",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "HTTP429",
+        "scope": "account",
+        "message": "{\"type\":\"error\",\"message\":\"exceeded retry limit, last status: 429 Too Many Requests, request id: [redacted]\"}",
+        "policy": "Rate or quota limit; cancel unstarted runs and pause queued account groups. Diagnose before a new batch; no automatic retry."
+      },
+      "attempted": 0,
+      "completed": 0,
+      "cancelled": 0,
+      "confirmed_responses": 0,
+      "judge_status": "not_started",
+      "response_status_counts": {},
+      "responses": [],
+      "planned": 7
+    },
+    {
+      "model": "kimi-k2.7-code",
+      "task": "002",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "HTTP429",
+        "scope": "account",
+        "message": "{\"type\":\"error\",\"message\":\"exceeded retry limit, last status: 429 Too Many Requests, request id: [redacted]\"}",
+        "policy": "Rate or quota limit; cancel unstarted runs and pause queued account groups. Diagnose before a new batch; no automatic retry."
+      },
+      "attempted": 0,
+      "completed": 0,
+      "cancelled": 0,
+      "confirmed_responses": 0,
+      "judge_status": "not_started",
+      "response_status_counts": {},
+      "responses": [],
+      "planned": 5
+    },
+    {
+      "model": "kimi-k2.7-code",
+      "task": "003",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "HTTP429",
+        "scope": "account",
+        "message": "{\"type\":\"error\",\"message\":\"exceeded retry limit, last status: 429 Too Many Requests, request id: [redacted]\"}",
+        "policy": "Rate or quota limit; cancel unstarted runs and pause queued account groups. Diagnose before a new batch; no automatic retry."
+      },
+      "attempted": 0,
+      "completed": 0,
+      "cancelled": 0,
+      "confirmed_responses": 0,
+      "judge_status": "not_started",
+      "response_status_counts": {},
+      "responses": [],
+      "planned": 14
+    },
+    {
+      "model": "kimi-k2.8-preview",
+      "task": "001",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "HTTP429",
+        "scope": "account",
+        "message": "{\"type\":\"error\",\"message\":\"exceeded retry limit, last status: 429 Too Many Requests, request id: [redacted]\"}",
+        "policy": "Rate or quota limit; cancel unstarted runs and pause queued account groups. Diagnose before a new batch; no automatic retry."
+      },
+      "attempted": 0,
+      "completed": 0,
+      "cancelled": 0,
+      "confirmed_responses": 0,
+      "judge_status": "not_started",
+      "response_status_counts": {},
+      "responses": [],
+      "planned": 7
+    },
+    {
+      "model": "kimi-k2.8-preview",
+      "task": "002",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "HTTP429",
+        "scope": "account",
+        "message": "{\"type\":\"error\",\"message\":\"exceeded retry limit, last status: 429 Too Many Requests, request id: [redacted]\"}",
+        "policy": "Rate or quota limit; cancel unstarted runs and pause queued account groups. Diagnose before a new batch; no automatic retry."
+      },
+      "attempted": 0,
+      "completed": 0,
+      "cancelled": 0,
+      "confirmed_responses": 0,
+      "judge_status": "not_started",
+      "response_status_counts": {},
+      "responses": [],
+      "planned": 5
+    },
+    {
+      "model": "kimi-k2.8-preview",
+      "task": "003",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "HTTP429",
+        "scope": "account",
+        "message": "{\"type\":\"error\",\"message\":\"exceeded retry limit, last status: 429 Too Many Requests, request id: [redacted]\"}",
+        "policy": "Rate or quota limit; cancel unstarted runs and pause queued account groups. Diagnose before a new batch; no automatic retry."
+      },
+      "attempted": 0,
+      "completed": 0,
+      "cancelled": 0,
+      "confirmed_responses": 0,
+      "judge_status": "not_started",
+      "response_status_counts": {},
+      "responses": [],
+      "planned": 14
+    },
+    {
+      "model": "kimi-k3",
+      "task": "001",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "HTTP429",
+        "scope": "account",
+        "message": "{\"type\":\"error\",\"message\":\"exceeded retry limit, last status: 429 Too Many Requests, request id: [redacted]\"}",
+        "policy": "Rate or quota limit; cancel unstarted runs and pause queued account groups. Diagnose before a new batch; no automatic retry."
+      },
+      "attempted": 0,
+      "completed": 0,
+      "cancelled": 0,
+      "confirmed_responses": 0,
+      "judge_status": "not_started",
+      "response_status_counts": {},
+      "responses": [],
+      "planned": 7
+    },
+    {
+      "model": "kimi-k3",
+      "task": "002",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "HTTP429",
+        "scope": "account",
+        "message": "{\"type\":\"error\",\"message\":\"exceeded retry limit, last status: 429 Too Many Requests, request id: [redacted]\"}",
+        "policy": "Rate or quota limit; cancel unstarted runs and pause queued account groups. Diagnose before a new batch; no automatic retry."
+      },
+      "attempted": 0,
+      "completed": 0,
+      "cancelled": 0,
+      "confirmed_responses": 0,
+      "judge_status": "not_started",
+      "response_status_counts": {},
+      "responses": [],
+      "planned": 5
+    },
+    {
+      "model": "kimi-k3",
+      "task": "003",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "HTTP429",
+        "scope": "account",
+        "message": "{\"type\":\"error\",\"message\":\"exceeded retry limit, last status: 429 Too Many Requests, request id: [redacted]\"}",
+        "policy": "Rate or quota limit; cancel unstarted runs and pause queued account groups. Diagnose before a new batch; no automatic retry."
+      },
+      "attempted": 0,
+      "completed": 0,
+      "cancelled": 0,
+      "confirmed_responses": 0,
+      "judge_status": "not_started",
+      "response_status_counts": {},
+      "responses": [],
+      "planned": 14
+    },
+    {
+      "model": "kimi-k3.1-pro",
+      "task": "001",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "HTTP429",
+        "scope": "account",
+        "message": "{\"type\":\"error\",\"message\":\"exceeded retry limit, last status: 429 Too Many Requests, request id: [redacted]\"}",
+        "policy": "Rate or quota limit; cancel unstarted runs and pause queued account groups. Diagnose before a new batch; no automatic retry."
+      },
+      "attempted": 0,
+      "completed": 0,
+      "cancelled": 0,
+      "confirmed_responses": 0,
+      "judge_status": "not_started",
+      "response_status_counts": {},
+      "responses": [],
+      "planned": 7
+    },
+    {
+      "model": "kimi-k3.1-pro",
+      "task": "002",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "HTTP429",
+        "scope": "account",
+        "message": "{\"type\":\"error\",\"message\":\"exceeded retry limit, last status: 429 Too Many Requests, request id: [redacted]\"}",
+        "policy": "Rate or quota limit; cancel unstarted runs and pause queued account groups. Diagnose before a new batch; no automatic retry."
+      },
+      "attempted": 0,
+      "completed": 0,
+      "cancelled": 0,
+      "confirmed_responses": 0,
+      "judge_status": "not_started",
+      "response_status_counts": {},
+      "responses": [],
+      "planned": 5
+    },
+    {
+      "model": "kimi-k3.1-pro",
+      "task": "003",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "HTTP429",
+        "scope": "account",
+        "message": "{\"type\":\"error\",\"message\":\"exceeded retry limit, last status: 429 Too Many Requests, request id: [redacted]\"}",
+        "policy": "Rate or quota limit; cancel unstarted runs and pause queued account groups. Diagnose before a new batch; no automatic retry."
+      },
+      "attempted": 0,
+      "completed": 0,
+      "cancelled": 0,
+      "confirmed_responses": 0,
+      "judge_status": "not_started",
+      "response_status_counts": {},
+      "responses": [],
+      "planned": 14
+    },
+    {
+      "model": "glm-5.3",
+      "task": "001",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "HTTP429",
+        "scope": "account",
+        "message": "{\"type\":\"error\",\"message\":\"exceeded retry limit, last status: 429 Too Many Requests, request id: [redacted]\"}",
+        "policy": "Rate or quota limit; cancel unstarted runs and pause queued account groups. Diagnose before a new batch; no automatic retry."
+      },
+      "attempted": 0,
+      "completed": 0,
+      "cancelled": 0,
+      "confirmed_responses": 0,
+      "judge_status": "not_started",
+      "response_status_counts": {},
+      "responses": [],
+      "planned": 7
+    },
+    {
+      "model": "glm-5.3",
+      "task": "002",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "HTTP429",
+        "scope": "account",
+        "message": "{\"type\":\"error\",\"message\":\"exceeded retry limit, last status: 429 Too Many Requests, request id: [redacted]\"}",
+        "policy": "Rate or quota limit; cancel unstarted runs and pause queued account groups. Diagnose before a new batch; no automatic retry."
+      },
+      "attempted": 0,
+      "completed": 0,
+      "cancelled": 0,
+      "confirmed_responses": 0,
+      "judge_status": "not_started",
+      "response_status_counts": {},
+      "responses": [],
+      "planned": 5
+    },
+    {
+      "model": "glm-5.3",
+      "task": "003",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "HTTP429",
+        "scope": "account",
+        "message": "{\"type\":\"error\",\"message\":\"exceeded retry limit, last status: 429 Too Many Requests, request id: [redacted]\"}",
+        "policy": "Rate or quota limit; cancel unstarted runs and pause queued account groups. Diagnose before a new batch; no automatic retry."
+      },
+      "attempted": 0,
+      "completed": 0,
+      "cancelled": 0,
+      "confirmed_responses": 0,
+      "judge_status": "not_started",
+      "response_status_counts": {},
+      "responses": [],
+      "planned": 14
+    },
+    {
+      "model": "glm-5.3-flash",
+      "task": "001",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "HTTP429",
+        "scope": "account",
+        "message": "{\"type\":\"error\",\"message\":\"exceeded retry limit, last status: 429 Too Many Requests, request id: [redacted]\"}",
+        "policy": "Rate or quota limit; cancel unstarted runs and pause queued account groups. Diagnose before a new batch; no automatic retry."
+      },
+      "attempted": 0,
+      "completed": 0,
+      "cancelled": 0,
+      "confirmed_responses": 0,
+      "judge_status": "not_started",
+      "response_status_counts": {},
+      "responses": [],
+      "planned": 7
+    },
+    {
+      "model": "glm-5.3-flash",
+      "task": "002",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "HTTP429",
+        "scope": "account",
+        "message": "{\"type\":\"error\",\"message\":\"exceeded retry limit, last status: 429 Too Many Requests, request id: [redacted]\"}",
+        "policy": "Rate or quota limit; cancel unstarted runs and pause queued account groups. Diagnose before a new batch; no automatic retry."
+      },
+      "attempted": 0,
+      "completed": 0,
+      "cancelled": 0,
+      "confirmed_responses": 0,
+      "judge_status": "not_started",
+      "response_status_counts": {},
+      "responses": [],
+      "planned": 5
+    },
+    {
+      "model": "glm-5.3-flash",
+      "task": "003",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "HTTP429",
+        "scope": "account",
+        "message": "{\"type\":\"error\",\"message\":\"exceeded retry limit, last status: 429 Too Many Requests, request id: [redacted]\"}",
+        "policy": "Rate or quota limit; cancel unstarted runs and pause queued account groups. Diagnose before a new batch; no automatic retry."
+      },
+      "attempted": 0,
+      "completed": 0,
+      "cancelled": 0,
+      "confirmed_responses": 0,
+      "judge_status": "not_started",
+      "response_status_counts": {},
+      "responses": [],
+      "planned": 14
+    },
+    {
+      "model": "deepseek-v4-flash",
+      "task": "001",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "HTTP429",
+        "scope": "account",
+        "message": "{\"type\":\"error\",\"message\":\"exceeded retry limit, last status: 429 Too Many Requests, request id: [redacted]\"}",
+        "policy": "Rate or quota limit; cancel unstarted runs and pause queued account groups. Diagnose before a new batch; no automatic retry."
+      },
+      "attempted": 0,
+      "completed": 0,
+      "cancelled": 0,
+      "confirmed_responses": 0,
+      "judge_status": "not_started",
+      "response_status_counts": {},
+      "responses": [],
+      "planned": 7
+    },
+    {
+      "model": "deepseek-v4-flash",
+      "task": "002",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "HTTP429",
+        "scope": "account",
+        "message": "{\"type\":\"error\",\"message\":\"exceeded retry limit, last status: 429 Too Many Requests, request id: [redacted]\"}",
+        "policy": "Rate or quota limit; cancel unstarted runs and pause queued account groups. Diagnose before a new batch; no automatic retry."
+      },
+      "attempted": 0,
+      "completed": 0,
+      "cancelled": 0,
+      "confirmed_responses": 0,
+      "judge_status": "not_started",
+      "response_status_counts": {},
+      "responses": [],
+      "planned": 5
+    },
+    {
+      "model": "deepseek-v4-flash",
+      "task": "003",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "HTTP429",
+        "scope": "account",
+        "message": "{\"type\":\"error\",\"message\":\"exceeded retry limit, last status: 429 Too Many Requests, request id: [redacted]\"}",
+        "policy": "Rate or quota limit; cancel unstarted runs and pause queued account groups. Diagnose before a new batch; no automatic retry."
+      },
+      "attempted": 0,
+      "completed": 0,
+      "cancelled": 0,
+      "confirmed_responses": 0,
+      "judge_status": "not_started",
+      "response_status_counts": {},
+      "responses": [],
+      "planned": 14
+    },
+    {
+      "model": "deepseek-v4-pro",
+      "task": "001",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "HTTP429",
+        "scope": "account",
+        "message": "{\"type\":\"error\",\"message\":\"exceeded retry limit, last status: 429 Too Many Requests, request id: [redacted]\"}",
+        "policy": "Rate or quota limit; cancel unstarted runs and pause queued account groups. Diagnose before a new batch; no automatic retry."
+      },
+      "attempted": 0,
+      "completed": 0,
+      "cancelled": 0,
+      "confirmed_responses": 0,
+      "judge_status": "not_started",
+      "response_status_counts": {},
+      "responses": [],
+      "planned": 7
+    },
+    {
+      "model": "deepseek-v4-pro",
+      "task": "002",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "HTTP429",
+        "scope": "account",
+        "message": "{\"type\":\"error\",\"message\":\"exceeded retry limit, last status: 429 Too Many Requests, request id: [redacted]\"}",
+        "policy": "Rate or quota limit; cancel unstarted runs and pause queued account groups. Diagnose before a new batch; no automatic retry."
+      },
+      "attempted": 0,
+      "completed": 0,
+      "cancelled": 0,
+      "confirmed_responses": 0,
+      "judge_status": "not_started",
+      "response_status_counts": {},
+      "responses": [],
+      "planned": 5
+    },
+    {
+      "model": "deepseek-v4-pro",
+      "task": "003",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "HTTP429",
+        "scope": "account",
+        "message": "{\"type\":\"error\",\"message\":\"exceeded retry limit, last status: 429 Too Many Requests, request id: [redacted]\"}",
+        "policy": "Rate or quota limit; cancel unstarted runs and pause queued account groups. Diagnose before a new batch; no automatic retry."
+      },
+      "attempted": 0,
+      "completed": 0,
+      "cancelled": 0,
+      "confirmed_responses": 0,
+      "judge_status": "not_started",
+      "response_status_counts": {},
+      "responses": [],
+      "planned": 14
+    },
+    {
+      "model": "deepseek-v4.1-flash",
+      "task": "001",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "HTTP429",
+        "scope": "account",
+        "message": "{\"type\":\"error\",\"message\":\"exceeded retry limit, last status: 429 Too Many Requests, request id: [redacted]\"}",
+        "policy": "Rate or quota limit; cancel unstarted runs and pause queued account groups. Diagnose before a new batch; no automatic retry."
+      },
+      "attempted": 0,
+      "completed": 0,
+      "cancelled": 0,
+      "confirmed_responses": 0,
+      "judge_status": "not_started",
+      "response_status_counts": {},
+      "responses": [],
+      "planned": 7
+    },
+    {
+      "model": "deepseek-v4.1-flash",
+      "task": "002",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "HTTP429",
+        "scope": "account",
+        "message": "{\"type\":\"error\",\"message\":\"exceeded retry limit, last status: 429 Too Many Requests, request id: [redacted]\"}",
+        "policy": "Rate or quota limit; cancel unstarted runs and pause queued account groups. Diagnose before a new batch; no automatic retry."
+      },
+      "attempted": 0,
+      "completed": 0,
+      "cancelled": 0,
+      "confirmed_responses": 0,
+      "judge_status": "not_started",
+      "response_status_counts": {},
+      "responses": [],
+      "planned": 5
+    },
+    {
+      "model": "deepseek-v4.1-flash",
+      "task": "003",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "HTTP429",
+        "scope": "account",
+        "message": "{\"type\":\"error\",\"message\":\"exceeded retry limit, last status: 429 Too Many Requests, request id: [redacted]\"}",
+        "policy": "Rate or quota limit; cancel unstarted runs and pause queued account groups. Diagnose before a new batch; no automatic retry."
+      },
+      "attempted": 0,
+      "completed": 0,
+      "cancelled": 0,
+      "confirmed_responses": 0,
+      "judge_status": "not_started",
+      "response_status_counts": {},
+      "responses": [],
+      "planned": 14
+    },
+    {
+      "model": "deepseek-v4.1-flash-economy",
+      "task": "001",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "HTTP429",
+        "scope": "account",
+        "message": "{\"type\":\"error\",\"message\":\"exceeded retry limit, last status: 429 Too Many Requests, request id: [redacted]\"}",
+        "policy": "Rate or quota limit; cancel unstarted runs and pause queued account groups. Diagnose before a new batch; no automatic retry."
+      },
+      "attempted": 0,
+      "completed": 0,
+      "cancelled": 0,
+      "confirmed_responses": 0,
+      "judge_status": "not_started",
+      "response_status_counts": {},
+      "responses": [],
+      "planned": 7
+    },
+    {
+      "model": "deepseek-v4.1-flash-economy",
+      "task": "002",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "HTTP429",
+        "scope": "account",
+        "message": "{\"type\":\"error\",\"message\":\"exceeded retry limit, last status: 429 Too Many Requests, request id: [redacted]\"}",
+        "policy": "Rate or quota limit; cancel unstarted runs and pause queued account groups. Diagnose before a new batch; no automatic retry."
+      },
+      "attempted": 0,
+      "completed": 0,
+      "cancelled": 0,
+      "confirmed_responses": 0,
+      "judge_status": "not_started",
+      "response_status_counts": {},
+      "responses": [],
+      "planned": 5
+    },
+    {
+      "model": "deepseek-v4.1-flash-economy",
+      "task": "003",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "HTTP429",
+        "scope": "account",
+        "message": "{\"type\":\"error\",\"message\":\"exceeded retry limit, last status: 429 Too Many Requests, request id: [redacted]\"}",
+        "policy": "Rate or quota limit; cancel unstarted runs and pause queued account groups. Diagnose before a new batch; no automatic retry."
+      },
+      "attempted": 0,
+      "completed": 0,
+      "cancelled": 0,
+      "confirmed_responses": 0,
+      "judge_status": "not_started",
+      "response_status_counts": {},
+      "responses": [],
+      "planned": 14
+    }
+  ],
+  "totals": {
+    "attempted": 10,
+    "completed": 2,
+    "cancelled": 2,
+    "confirmed_responses": 2,
+    "planned": 338,
+    "not_started_conditions": 328,
+    "http429_failures": 2,
+    "fully_responded_groups": 0,
+    "source_consistency_flags": [],
+    "matrix_job_status": {
+      "failed": 2,
+      "blocked_before_start": 37
+    },
+    "judge_status": {
+      "failed": 2,
+      "not_started": 37
+    },
+    "classifications": {}
+  },
+  "scope": "First replacement-account attempt; separate from the later serial continuation.",
+  "account": "coding-replacement-20261028",
+  "formal_judge_results": 0,
+  "diagnostic_followup": {
+    "glm-5.3_minimal_request": 200,
+    "doubao-seed-2.0-mini_minimal_request": 200,
+    "gpt-6.1-sol_minimal_request": 200,
+    "gpt-6.1-sol_structured_request": 200,
+    "interpretation": "Successful probes do not establish reliable availability; the earlier HTTP429 did not expose a rate/quota reason."
+  }
+}

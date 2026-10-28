@@ -254,6 +254,9 @@ def find_provider_block(events):
             if code in line:
                 return {"code": code, "scope": scope, "message": line,
                         "policy": "Preserve failure; cancel unstarted runs; no retry or account substitution."}
+        if "does not support the coding plan feature" in line:
+            return {"code": "UnsupportedModel", "scope": "model", "message": line,
+                    "policy": "Preserve provider rejection; cancel unstarted runs and block queued groups for this model; availability may change."}
         # Codex can omit the provider body, exposing only an HTTP 429 status.
         # Stop the account without pretending this distinguishes quota from rate.
         if "429 Too Many Requests" in line or "HTTP 429" in line:

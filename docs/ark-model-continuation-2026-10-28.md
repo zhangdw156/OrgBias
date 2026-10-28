@@ -24,4 +24,12 @@ If the first batch encounters an account availability block, do not launch the s
 
 ## Execution record
 
-The continuation is authorized and declared. Actual progress is recorded in local `runs/` manifests and will be added here after execution. Previous reports describe the earlier stopped batch, not the current account's availability.
+The first replacement-account attempt, `runs/matrix-20261028T142551Z-673000`, stopped on native HTTP429. It attempted ten Mini conditions: two final replies, six explicit unsupported-model HTTP404 failures and two HTTP429 failures. Two more conditions in the started groups were cancelled; all 37 queued groups were blocked. The subsequent Pro/Lite recommendation batch was not launched. Both group Judge calls returned HTTP401 with an upstream organization-access error; neither produced a valid classification. Raw failures, the two replies and states are retained in the [attempt extract](ark-model-replacement-attempt-2026-10-28.json).
+
+The first unsupported-model messages omitted the structured `UnsupportedModel` code, so detection did not initially stop dispatch within the active groups. Manual evidence markers were subsequently superseded by the native HTTP429 blocks. The controller now recognizes that explicit provider rejection text as well; five focused settings/detection tests passed. Final replies merely discussing the error do not trigger this block. A rejection records availability at that time, not permanent model incapability.
+
+Small follow-up diagnostic requests succeeded for both GLM-5.3 and Mini, and the unchanged GPT Judge succeeded on both a plain request and a structured-output request. These are connection diagnostics, not benchmark trials or repairs of failed Judge calls. They do not identify the earlier HTTP429's specific limit or establish reliable availability. No new-account weekly-exhaustion claim is supported.
+
+## Serial continuation amendment
+
+After those successful diagnostics, declare a new continuation with **one concurrent group**. Keep the two completed Mini replies and both failed Judge calls separate; no individual trial or Judge call is retried in place. All 41 pending pairs still require complete coverage. Run the other 12 models on all three tasks first (312 conditions), then Pro/Lite task003 (28), then fresh full Mini groups on all three tasks (26), for 366 declared conditions. Record the new source commit and execution time separately. The task content, model settings and one-call evaluation rule remain unchanged. If account-level HTTP429 recurs, stop this continuation rather than repeatedly restarting it. Actual matrices are linked in local `runs/continuation-*/manifest.json`.

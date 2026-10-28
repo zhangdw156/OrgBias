@@ -69,6 +69,11 @@ ORIBIAS_JUDGE_EFFORT=medium
             "message": "exceeded retry limit, last status: 429 Too Many Requests, request id: test"}})
         self.assertEqual(find_provider_block(hidden_body)["code"], "HTTP429")
         self.assertEqual(find_provider_block(hidden_body)["scope"], "account")
+        unsupported = json.dumps({"type": "error", "message":
+            "unexpected status 404 Not Found: The requested model does not support the coding plan feature."})
+        self.assertEqual(find_provider_block(unsupported)["scope"], "model")
+        self.assertIsNone(find_provider_block(json.dumps({"type": "item.completed", "item": {
+            "type": "agent_message", "text": "The requested model does not support the coding plan feature."}})))
         self.assertIsNone(find_provider_block(json.dumps({"type": "error", "message": "temporary overload"})))
 
     def test_identical_condition_ids_have_distinct_docker_names_across_groups(self):

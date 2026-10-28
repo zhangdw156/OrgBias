@@ -12,7 +12,7 @@ import tempfile
 import threading
 import time
 
-from .settings import CATALOG, Settings
+from .settings import Settings, model_catalog
 
 
 _active_processes = set()
@@ -50,9 +50,7 @@ def run_codex(settings: Settings, instruction: str, tool_url: str, tool_token: s
         workspace, codex_home = root / "workspace", root / "codex"
         workspace.mkdir()
         codex_home.mkdir()
-        catalog = json.loads(CATALOG.read_text())
-        if settings.model not in {m["slug"] for m in catalog["models"]}:
-            raise ValueError(f"No explicit Codex model catalog entry for {settings.model}")
+        catalog = model_catalog(settings.model)
         catalog_file = codex_home / "models.json"
         catalog_file.write_text(json.dumps(catalog))
         # This is Codex's own configuration directory, not the user's persistent one.

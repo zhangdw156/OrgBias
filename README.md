@@ -36,7 +36,9 @@ The current version leaves fault causation unresolved, asks whether the user's s
 
 ## Local debug experiment
 
-Configure the provider URL, key, model, and ASP token in `.env`, using [.env.example](.env.example) for a new checkout. The development machine's ignored `.env` is already configured for `http://localhost:4141/v1`, `gpt-6.1-sol`, and `medium`. The native Codex harness and judge share these model settings. Credentials stay on the host.
+Configure the provider URL, key, model, and ASP token in `.env`, using [.env.example](.env.example) for a new checkout. The development machine's ignored `.env` retains `http://localhost:4141/v1`, `gpt-6.1-sol`, and `medium` as the default agent. Separate `ORIBIAS_JUDGE_*` settings pin the rubric judge to that GPT configuration when an Ark plan changes the tested model. Credentials stay on the host.
+
+For all 15 named text models in the pinned Ark catalogue across tasks 001/002/003, use `uv run python -m oribias matrix`. This schedules 45 complete groups (390 conditions once), with independent ASP ports and at most two groups concurrently. A single-model group can be run with `uv run python -m oribias run --task 003 --plan coding --model glm-5.3`. Both commands retain the local Codex harness. See the [Ark sweep protocol](docs/ark-model-sweep-2026-10-28.md) for availability, thinking-mode and comparability limits.
 
 From the repository root:
 

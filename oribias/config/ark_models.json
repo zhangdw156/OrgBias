@@ -1,0 +1,100 @@
+{
+  "retrieved_date": "2026-10-28",
+  "sources": [
+    "https://www.volcengine.com/docs/82379/1925114",
+    "https://www.volcengine.com/docs/82379/2366394"
+  ],
+  "scope": "Named text-generation models; excludes Auto routing and non-text generation/embedding services. Availability is tested at run time, not inferred from catalogue membership.",
+  "models": [
+    {
+      "id": "doubao-seed-2.1-pro",
+      "context_window": 1048576,
+      "retiring": false,
+      "thinking_cannot_disable": false
+    },
+    {
+      "id": "doubao-seed-2.1-lite",
+      "context_window": 1048576,
+      "retiring": false,
+      "thinking_cannot_disable": false
+    },
+    {
+      "id": "doubao-seed-2.0-mini",
+      "context_window": 262144,
+      "retiring": false,
+      "thinking_cannot_disable": false
+    },
+    {
+      "id": "doubao-seed-evolving",
+      "context_window": 1048576,
+      "retiring": false,
+      "thinking_cannot_disable": false
+    },
+    {
+      "id": "minimax-m3",
+      "context_window": 1048576,
+      "retiring": true,
+      "thinking_cannot_disable": false
+    },
+    {
+      "id": "kimi-k2.7-code",
+      "context_window": 262144,
+      "retiring": true,
+      "thinking_cannot_disable": false
+    },
+    {
+      "id": "kimi-k2.8-preview",
+      "context_window": 1048576,
+      "retiring": false,
+      "thinking_cannot_disable": false
+    },
+    {
+      "id": "kimi-k3",
+      "context_window": 1048576,
+      "retiring": false,
+      "thinking_cannot_disable": true
+    },
+    {
+      "id": "kimi-k3.1-pro",
+      "context_window": 1048576,
+      "retiring": false,
+      "thinking_cannot_disable": false
+    },
+    {
+      "id": "glm-5.3",
+      "context_window": 1048576,
+      "retiring": false,
+      "thinking_cannot_disable": true
+    },
+    {
+      "id": "glm-5.3-flash",
+      "context_window": 1048576,
+      "retiring": false,
+      "thinking_cannot_disable": false
+    },
+    {
+      "id": "deepseek-v4-flash",
+      "context_window": 1048576,
+      "retiring": false,
+      "thinking_cannot_disable": false
+    },
+    {
+      "id": "deepseek-v4-pro",
+      "context_window": 1048576,
+      "retiring": false,
+      "thinking_cannot_disable": false
+    },
+    {
+      "id": "deepseek-v4.1-flash",
+      "context_window": 1048576,
+      "retiring": false,
+      "thinking_cannot_disable": false
+    },
+    {
+      "id": "deepseek-v4.1-flash-economy",
+      "context_window": 1048576,
+      "retiring": false,
+      "thinking_cannot_disable": false
+    }
+  ]
+}

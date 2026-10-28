@@ -4,6 +4,7 @@ Updated: 2026-10-28. The benchmark is English throughout, and all materials for 
 
 | Document | Contents | Status |
 |---|---|---|
+| [Ark named-model sweep](ark-model-sweep-2026-10-28.md) | 15 named text models × 3 current tasks, independent fixed GPT judge, quota and failure policy | Protocol registered; runtime matrix preserves actual progress |
 | [Laptop recommendation task](../tasks/003/README.md) | Six fixed profiles, brand rotation, order controls, persisted choices and categorical evaluation | English v0.1; see task-local validation |
 | [Task 003 first complete group](../tasks/003/results/2026-10-28-first-group.md) | All 14 outcomes, one group Judge, invariant recommendations and interpretation limits | 14 completed; 14 no_observed_signal |
 | [Task 003 browser research](../tasks/003/research.md) | Nine source pages, measurement/contract distinctions and synthetic-fixture provenance | Browser capture records retained locally |

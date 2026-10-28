@@ -19,7 +19,7 @@ from harbor.trial.trial import Trial
 
 from .asp import codex_version
 from .judge import judge_group
-from .settings import ROOT
+from .settings import ROOT, Settings
 from .conditions import condition_aliases, entity_aliases, render_template, variables_for
 
 
@@ -165,17 +165,20 @@ def create_group(settings, repetitions, org_ids, seed, no_judge, task_version=No
 
 async def run_trials(group, manifest, settings, deadline=None):
     summaries = []
+    provider_block = None
     for number, plan in enumerate(manifest["planned_runs"], 1):
         rid = plan["response_id"]
-        if deadline and time.time() + settings.timeout + 90 > deadline:
+        if provider_block or (deadline and time.time() + settings.timeout + 90 > deadline):
+            reason = ("Not started: " + provider_block["message"] if provider_block else
+                      "Not started: insufficient time before the declared deadline")
             record = plan | {"run_status": "cancelled", "final_response": None,
                 "response_recorded": True, "settings_fingerprint": settings.fingerprint(),
-                "infrastructure_error": "Not started: insufficient time before the declared deadline"}
+                "infrastructure_error": reason, "attempted": False}
             write_json(group / "records" / f"{rid}.json", record)
             summaries.append({"response_id": rid, "run_status": "cancelled", "objective": None,
                               "infrastructure_error": record["infrastructure_error"]})
             write_json(group / "outcomes.json", summaries)
-            print(f"[{number}/{len(manifest['planned_runs'])}] {rid}: cancelled before start (deadline)", flush=True)
+            print(f"[{number}/{len(manifest['planned_runs'])}] {rid}: cancelled before start", flush=True)
             continue
         print(f"[{number}/{len(manifest['planned_runs'])}] {rid}", flush=True)
         config = TrialConfig.model_validate({
@@ -206,6 +209,7 @@ async def run_trials(group, manifest, settings, deadline=None):
                              "final_response": None, "response_recorded": not uncertain,
                              "settings_fingerprint": settings.fingerprint()}
         record["infrastructure_error"] = error
+        record["attempted"] = True
         write_json(group / "records" / f"{rid}.json", record)
         snapshot_path = logs / "case_snapshot.json"
         objective = json.loads(snapshot_path.read_text())["objective"] if snapshot_path.exists() else None
@@ -215,20 +219,47 @@ async def run_trials(group, manifest, settings, deadline=None):
         print(f"  {record['run_status']}; outcome={objective.get('first_choice', objective.get('next_step_route', objective.get('exchange_approved'))) if objective else 'unknown'}", flush=True)
         if record["run_status"] == "unknown":
             raise RuntimeError("ASP outcome is unknown; group judgment is blocked")
+        if record["run_status"] == "failed" and result_path.exists():
+            events_path = logs / "events.jsonl"
+            provider_block = find_provider_block(events_path.read_text() if events_path.exists() else "")
+            if provider_block:
+                write_json(group / "provider_block.json", provider_block)
+
+
+def find_provider_block(events):
+    """Stop only on explicit provider quota/auth/model errors, not response wording."""
+    codes = {"AccountQuotaExceeded": "account", "UnsupportedModel": "model",
+             "InvalidApiKey": "account", "AuthenticationError": "account"}
+    for line in events.splitlines():
+        try:
+            event = json.loads(line)
+        except json.JSONDecodeError:
+            continue
+        if event.get("type") not in {"error", "turn.failed"} and event.get("item", {}).get("type") != "error":
+            continue
+        for code, scope in codes.items():
+            if code in line:
+                return {"code": code, "scope": scope, "message": line,
+                        "policy": "Preserve failure; cancel unstarted runs; no retry or account substitution."}
+    return None
 
 
 def run(settings, repetitions=1, org_ids=None, seed=17, no_judge=False, task_version=None, deadline=None, task_id="001"):
+    judge_settings = Settings.load(role="judge")
     group, manifest = create_group(settings, repetitions, org_ids, seed, no_judge, task_version, task_id)
     manifest["deadline"] = deadline
+    manifest["judge_settings"] = judge_settings.public()
     write_json(group / "manifest.json", manifest)
     with local_asp(settings, group):
         asyncio.run(run_trials(group, manifest, settings, deadline))
-    if not no_judge:
-        if deadline and time.time() + 330 > deadline:
-            print("Judge not started: delivery deadline. Complete records are preserved.", flush=True)
-        else:
-            result = judge_group(group, settings)
-            print(f"Judge validated {len(result['results'])} response classifications", flush=True)
-    from .traces import render_traces
-    render_traces(group)
+    try:
+        if not no_judge:
+            if deadline and time.time() + 330 > deadline:
+                print("Judge not started: delivery deadline. Complete records are preserved.", flush=True)
+            else:
+                result = judge_group(group, judge_settings)
+                print(f"Judge validated {len(result['results'])} response classifications", flush=True)
+    finally:
+        from .traces import render_traces
+        render_traces(group)
     return group

@@ -29,8 +29,13 @@ There is no model-generated support simulator. Tool responses are deterministic 
 
 | `.env` name | Purpose |
 |---|---|
-| `ORIBIAS_LLM_BASE_URL`, `ORIBIAS_LLM_API_KEY` | Shared host-side model endpoint and credential |
-| `ORIBIAS_LLM_MODEL`, `ORIBIAS_LLM_EFFORT` | Exact shared model ID and effort |
+| `ORIBIAS_LLM_BASE_URL`, `ORIBIAS_LLM_API_KEY` | Default tested-agent endpoint/key; judge fallback when no explicit override exists |
+| `ORIBIAS_LLM_MODEL`, `ORIBIAS_LLM_EFFORT` | Default tested-agent model and effort |
+| `ORIBIAS_JUDGE_BASE_URL`, `ORIBIAS_JUDGE_API_KEY`, `ORIBIAS_JUDGE_MODEL`, `ORIBIAS_JUDGE_EFFORT` | Independent judge settings, unaffected by plan selection |
+| `ORIBIAS_JUDGE_CONTEXT_TOKENS`, `ORIBIAS_JUDGE_MAX_PROMPT_TOKENS` | Independent judge context budgets |
+| `ORIBIAS_ARK_CODING_*`, `ORIBIAS_ARK_PLAN_*` | Separate account base URLs and keys; select with `--plan coding` or `--plan plan` |
+| `ORIBIAS_ARK_DEFAULT_MODEL`, `ORIBIAS_ARK_MODELS`, `ORIBIAS_ARK_EFFORT` | Single-run default, optional sweep model list and requested effort |
+| `ORIBIAS_MATRIX_CONCURRENCY` | Concurrent complete groups, default 2, each with a separate ASP |
 | `ORIBIAS_ASP_URL`, `ORIBIAS_ASP_TOKEN` | Loopback host ASP address and authentication |
 | `ORIBIAS_CODEX_BIN` | Installed Codex executable, default `codex` |
 | `ORIBIAS_RUN_TIMEOUT` | Per-Codex-run wall-clock budget, default 300 seconds |
@@ -43,6 +48,10 @@ The 4141 model catalogue reports `gpt-6.1-sol`, medium reasoning support, the Re
 The local ASP also loads the explicit compatibility descriptor in `oribias/config/codex_models.json`. Its context and effort fields come from the provider catalogue; its instructions are the generic Codex 0.157.1 prompt. It is not an official product-default profile. The descriptor hash is included in the settings fingerprint and the full descriptor is saved per run. A different model needs a matching entry; unknown model IDs fail preparation instead of silently using fallback metadata. See [catalog provenance](../oribias/config/README.md).
 
 The actual `.env` is ignored and should never be committed. Model credentials are not placed in the task image, Harbor task configuration, judge request artifacts, or tool descriptions. The ASP rejects concurrent runs and only listens on loopback. `run` reuses a compatible already-running ASP or starts and stops its own.
+
+`uv run python -m oribias matrix` predeclares all configured named Ark text models over the three current tasks, then runs each group through the same entry point. The default profile is `coding`; `--plan plan` selects the independent Agent Plan account. Each group uses a fresh ASP/session and retains the configured 4141 judge. A matrix manifest links all group directories and logs. Explicit account-quota/authentication errors cancel unstarted runs and block queued groups for that account; unsupported models block their queued groups. No account is silently substituted, and no failed trial or judge call is retried. Cancelled and blocked conditions are missing evaluations, never negative bias findings.
+
+Ark descriptors use the same generic Codex prompt with provider-specific context limits from `oribias/config/ark_models.json`. Requested medium effort is recorded, but provider thinking implementations are not equivalent. Claude-specific `MAX_THINKING_TOKENS` and `API_TIMEOUT_MS` values are preserved as local preferences and do not control Codex; the actual run timeout is `ORIBIAS_RUN_TIMEOUT`. GLM-5.3 and Kimi-K3 cannot disable thinking according to the provider documentation.
 
 ## Outputs
 

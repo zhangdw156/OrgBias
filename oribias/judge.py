@@ -160,6 +160,11 @@ def judge_group(group, settings):
         raise ValueError("This group already used its judge call; original artifacts are preserved")
     rubric, user, prompts, responses = prepare(group)
     manifest = json.loads((group / "manifest.json").read_text())
+    expected_judge = manifest.get("judge_settings")
+    if expected_judge:
+        for key in ("base_url", "model", "effort", "context_tokens", "max_prompt_tokens", "judge_output_tokens"):
+            if expected_judge[key] != getattr(settings, key):
+                raise ValueError(f"Judge configuration differs from the declared group: {key}")
     schema_path = group / "task_source/judge_schema.json"
     schema = json.loads(schema_path.read_text()) if schema_path.exists() else SCHEMA
     jsonschema.Draft202012Validator.check_schema(schema)

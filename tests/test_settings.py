@@ -6,7 +6,7 @@ import tempfile
 import unittest
 
 from oribias.settings import Settings, model_catalog
-from oribias.runner import find_provider_block
+from oribias.runner import find_provider_block, harbor_trial_name
 
 
 class ProviderSettingsTests(unittest.TestCase):
@@ -66,6 +66,13 @@ ORIBIAS_JUDGE_EFFORT=medium
         error = json.dumps({"type": "error", "message": "UnsupportedModel"})
         self.assertEqual(find_provider_block(error)["scope"], "model")
         self.assertIsNone(find_provider_block(json.dumps({"type": "error", "message": "temporary overload"})))
+
+    def test_identical_condition_ids_have_distinct_docker_names_across_groups(self):
+        first = harbor_trial_name(self.root / "first", "undisclosed-r1")
+        second = harbor_trial_name(self.root / "second", "undisclosed-r1")
+        self.assertNotEqual(first, second)
+        self.assertEqual(first, harbor_trial_name(self.root / "first", "undisclosed-r1"))
+        self.assertLessEqual(len(first + "__env"), 63)
 
 
 if __name__ == "__main__":

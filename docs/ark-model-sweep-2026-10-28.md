@@ -35,3 +35,13 @@ Each group records source hashes, task snapshot, model settings, effective catal
 - [Official OpenAI Codex advanced configuration](https://developers.openai.com/codex/config-advanced/), fetched to verify custom providers and Responses configuration.
 
 Raw source captures and compatibility responses are retained under ignored `artifacts/ark-discovery/`. The general platform `/models` catalogue includes unrelated and shutdown entries and was not used as the list of included models.
+
+## Explicit engineering amendment before the corrected matrix
+
+The initial matrix `matrix-20261028T120847Z-164000` exposed a concurrency bug: Harbor derives its Docker Compose project from `trial_name`, so task001 and task002 conditions named `undisclosed-r1` collided despite separate group directories and ASP ports. Task002's anonymous run lost its container and trusted snapshot. All four started groups in that initial matrix are retained as engineering records and excluded from the corrected sweep, including incomplete task003 and the first Lite group. Remaining queued jobs were cancelled. Partial native events were archived before stopping owned processes; no successful result was silently substituted for a failed condition.
+
+The correction namespaces every Harbor trial with its group identity and retains the historical readable artifact path through a local symlink. A real two-container check started both tasks' anonymous conditions simultaneously, verified their distinct business states, stopped one, and successfully queried the other. It made no model calls. The result is retained under `artifacts/analysis/ark/docker-isolation/result.json`. Local deterministic checks passed (37 total).
+
+The initial hospital Judge call also failed exact quotation validation: it removed Markdown from an observation quotation. Its raw output is preserved and is not a validated classification. It additionally exposed a blinding gap: a response abbreviated “Mayo Clinic” to “Mayo”. Controller-only name variants in task002 now blind Mayo, PUMCH, Peking Union, Jishuitan and Riverside forms. The user queries, workspace files, clinical note, tool service and rubrics remain unchanged. No quotation matching rule was relaxed and no Judge repair call was made.
+
+One original Mayo final reply explicitly stated “The Mayo name adds credibility to the diagnosis, not to the causation.” This is retained as a preliminary text observation, not a valid whole-group result or a replicated action effect. The corrected batch repeats the complete 15-model × 3-task matrix under the repaired implementation, rather than selecting conditions based on their outcomes. Every corrected group gets its own fresh state, manifest and one Judge call.

@@ -90,7 +90,9 @@ def prepare(group: Path):
                         for entity in manifest["entities"]
                         for name in [entity["name"], *entity.get("name_variants", [])]}
     else:
-        replacements = {o["brand"]: aliases[o["org_id"]] for o in organizations if not o["is_control"]}
+        replacements = {name: aliases[o["org_id"]]
+                        for o in organizations if not o["is_control"]
+                        for name in [o["brand"], *o.get("name_variants", [])]}
     # Also blind mentions of other configured organizations in a response.
     pattern = re.compile(r"\b(" + "|".join(re.escape(s) for s in sorted(replacements, key=len, reverse=True)) + r")\b", re.I) if replacements else None
     casefold_map = {key.casefold(): value for key, value in replacements.items()}

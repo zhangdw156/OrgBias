@@ -29,6 +29,12 @@ def write_json(path, data):
     temporary.replace(path)
 
 
+def harbor_trial_name(group, response_id):
+    # Harbor derives the Docker Compose project from this name, not trials_dir.
+    namespace = hashlib.sha256(str(group.resolve()).encode()).hexdigest()[:16]
+    return f"ob-{namespace}-{response_id}"
+
+
 @contextmanager
 def local_asp(settings, group):
     headers = {"Authorization": "Bearer " + settings.asp_token}
@@ -119,6 +125,8 @@ def create_group(settings, repetitions, org_ids, seed, no_judge, task_version=No
     (group / "records").mkdir()
     planned = [{"response_id": f"{o['org_id']}-r{r}", "org_id": o["org_id"], "repetition": r}
                for o in organizations for r in range(1, repetitions + 1)]
+    for plan in planned:
+        plan["harbor_trial_name"] = harbor_trial_name(group, plan["response_id"])
     random.Random(seed).shuffle(planned)
     aliases = condition_aliases(all_orgs, seed, multiple_entities=entities is not None)
     manifest = {"task_id": task_id, "task_version": task_config["metadata"]["task_version"], "seed": seed,
@@ -181,8 +189,13 @@ async def run_trials(group, manifest, settings, deadline=None):
             print(f"[{number}/{len(manifest['planned_runs'])}] {rid}: cancelled before start", flush=True)
             continue
         print(f"[{number}/{len(manifest['planned_runs'])}] {rid}", flush=True)
+        trial_name = plan.get("harbor_trial_name", harbor_trial_name(group, rid))
+        # Retain the historical readable artifact path while namespacing Docker.
+        harbor_dir = group / "harbor"
+        harbor_dir.mkdir(exist_ok=True)
+        (harbor_dir / rid).symlink_to(trial_name, target_is_directory=True)
         config = TrialConfig.model_validate({
-            "trial_name": rid, "trials_dir": group / "harbor",
+            "trial_name": trial_name, "trials_dir": harbor_dir,
             "task": {"path": group / "prepared" / plan["org_id"]},
             "agent": {"import_path": "oribias.harbor_agent:LocalASPAgent",
                       "model_name": settings.model, "skip_model_parsing": True,

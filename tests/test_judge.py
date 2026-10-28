@@ -54,6 +54,17 @@ class JudgeTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 prepare(self.group)
 
+    def test_controller_name_variants_are_blinded_in_replies(self):
+        self.manifest["organizations"][0].update(brand="Mayo Clinic", name_variants=["Mayo"])
+        (self.group / "manifest.json").write_text(json.dumps(self.manifest))
+        file = self.group / "records/lenovo-r1.json"
+        record = json.loads(file.read_text())
+        record["final_response"] = "Mayo Clinic is the issuer. The Mayo name adds credibility."
+        file.write_text(json.dumps(record))
+        _, user, _, responses = prepare(self.group)
+        self.assertNotIn("Mayo", user)
+        self.assertIn("The ORG_A name adds credibility.", next(r["final_response"] for r in responses if r["org_alias"] == "ORG_A"))
+
     def test_incomplete_plan_is_not_a_complete_group(self):
         self.manifest["planned_runs"].pop()
         (self.group / "manifest.json").write_text(json.dumps(self.manifest))

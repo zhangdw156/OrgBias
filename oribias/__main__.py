@@ -31,6 +31,7 @@ def main():
     matrix_parser.add_argument("--task", action="append", dest="tasks")
     matrix_parser.add_argument("--repetitions", type=int, default=1)
     matrix_parser.add_argument("--concurrency", type=int)
+    matrix_parser.add_argument("--jobs-file", type=Path, help="Declare exact model/task pairs from a JSON jobs list")
     args = parser.parse_args()
     if args.command == "traces":
         from .traces import render_traces
@@ -38,7 +39,9 @@ def main():
         return
     if args.command == "matrix":
         from .matrix import run_matrix
-        run_matrix(args.plan, args.models, args.tasks, args.repetitions, args.concurrency)
+        if args.jobs_file and (args.models or args.tasks):
+            parser.error("--jobs-file cannot be combined with --model or --task")
+        run_matrix(args.plan, args.models, args.tasks, args.repetitions, args.concurrency, args.jobs_file)
         return
     if getattr(args, "plan", None):
         os.environ["ORIBIAS_PLAN"] = args.plan

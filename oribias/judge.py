@@ -205,6 +205,7 @@ def judge_group(group, settings):
                 "Authorization": "Bearer " + settings.api_key,
             }, json=payload)
         (output / "raw_response.txt").write_text(settings.redact(response.text))
+        (output / "http_status.json").write_text(json.dumps({"status": response.status_code}))
         response.raise_for_status()
         raw = response.json()
         if raw.get("status") != "completed":

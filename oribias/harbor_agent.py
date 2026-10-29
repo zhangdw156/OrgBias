@@ -85,6 +85,7 @@ class LocalASPAgent(BaseAgent):
                 raise RuntimeError("ASP settings changed during the group")
             (self.logs_dir / "events.jsonl").write_text(result.pop("events"))
             (self.logs_dir / "stderr.txt").write_text(result.pop("stderr"))
+            (self.logs_dir / "provider_requests.json").write_text(json.dumps(result.pop("provider_requests", []), indent=2))
             (self.logs_dir / "asp_result.json").write_text(json.dumps(result, indent=2))
             if result["final_response"] is not None:
                 (self.logs_dir / "final_response.txt").write_text(result["final_response"])

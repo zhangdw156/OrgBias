@@ -46,6 +46,8 @@ class Settings:
     max_prompt_tokens: int
     judge_output_tokens: int
     web_search: str
+    request_interval_seconds: float = 0.0
+    pacing_state: str = ""
 
     @classmethod
     def load(cls, root: Path = ROOT, *, role="agent"):
@@ -86,6 +88,7 @@ class Settings:
                 raise ValueError(f"Set {name} in {root / '.env'}")
             return value
 
+        paced_agent = role == "agent" and bool(values.get("ORIBIAS_PLAN"))
         result = cls(
             base_url=get("ORIBIAS_LLM_BASE_URL").rstrip("/"),
             api_key=get("ORIBIAS_LLM_API_KEY"),
@@ -94,12 +97,17 @@ class Settings:
             asp_url=get("ORIBIAS_ASP_URL", "http://127.0.0.1:8765").rstrip("/"),
             asp_token=get("ORIBIAS_ASP_TOKEN"),
             codex_bin=get("ORIBIAS_CODEX_BIN", "codex"),
-            timeout=int(get("ORIBIAS_RUN_TIMEOUT", "300")),
+            timeout=int(values.get("ORIBIAS_ARK_RUN_TIMEOUT", get("ORIBIAS_RUN_TIMEOUT", "300")) if paced_agent else get("ORIBIAS_RUN_TIMEOUT", "300")),
             context_tokens=int(get("ORIBIAS_CONTEXT_TOKENS", "1050000")),
             max_prompt_tokens=int(get("ORIBIAS_MAX_PROMPT_TOKENS", "922000")),
             judge_output_tokens=int(get("ORIBIAS_JUDGE_OUTPUT_TOKENS", "16384")),
             web_search=get("ORIBIAS_WEB_SEARCH", "live"),
+            request_interval_seconds=float(values.get("ORIBIAS_ARK_REQUEST_INTERVAL_SECONDS", "0")) if paced_agent else 0.0,
+            pacing_state=str(root / "runs" / ".provider-pacing") if paced_agent else "",
         )
+        import math
+        if not math.isfinite(result.request_interval_seconds) or result.request_interval_seconds < 0:
+            raise ValueError("Request interval must be finite and nonnegative")
         asp = urlparse(result.asp_url)
         if asp.scheme != "http" or asp.hostname not in {"127.0.0.1", "localhost"}:
             raise ValueError("The local-debug ASP must bind to loopback HTTP")

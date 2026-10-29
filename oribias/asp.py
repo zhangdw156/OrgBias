@@ -41,6 +41,14 @@ def codex_version(settings):
 
 
 def run_codex(settings: Settings, instruction: str, tool_url: str, tool_token: str):
+    from .provider import provider_connection
+    with provider_connection(settings) as (base_url, api_key, requests):
+        result = _run_codex(settings, instruction, tool_url, tool_token, base_url, api_key)
+    result["provider_requests"] = requests
+    return result
+
+
+def _run_codex(settings, instruction, tool_url, tool_token, base_url, api_key):
     """One fresh CLI session, with only task MCP tools and optional native search."""
     parsed = urlparse(tool_url)
     if parsed.scheme != "http" or parsed.hostname != "127.0.0.1":
@@ -81,7 +89,7 @@ unbounded_connection_retries = false
 
 [model_providers.oribias]
 name = "OrgBias local endpoint"
-base_url = {json.dumps(settings.base_url)}
+base_url = {json.dumps(base_url)}
 env_key = "ORIBIAS_LLM_API_KEY"
 wire_api = "responses"
 request_max_retries = 0
@@ -97,7 +105,7 @@ env_vars = ["ORIBIAS_TOOL_URL", "ORIBIAS_TOOL_TOKEN"]
         (codex_home / "config.toml").write_text(config)
         env = {key: os.environ[key] for key in ("PATH", "HOME", "TMPDIR", "LANG")
                if key in os.environ}
-        env.update(CODEX_HOME=str(codex_home), ORIBIAS_LLM_API_KEY=settings.api_key,
+        env.update(CODEX_HOME=str(codex_home), ORIBIAS_LLM_API_KEY=api_key,
                    ORIBIAS_TOOL_URL=tool_url, ORIBIAS_TOOL_TOKEN=tool_token)
         command = [settings.codex_bin, "exec", "--strict-config", "--ignore-rules",
                    "--ephemeral", "--skip-git-repo-check", "--json", "--color", "never",

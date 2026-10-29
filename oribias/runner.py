@@ -5,6 +5,7 @@ from pathlib import Path
 import asyncio
 import hashlib
 import json
+import os
 import random
 import shutil
 import subprocess
@@ -176,6 +177,9 @@ async def run_trials(group, manifest, settings, deadline=None):
     provider_block = None
     for number, plan in enumerate(manifest["planned_runs"], 1):
         rid = plan["response_id"]
+        control_path = os.environ.get("ORIBIAS_MATRIX_CONTROL")
+        if control_path and Path(control_path).exists():
+            provider_block = json.loads(Path(control_path).read_text())
         if provider_block or (deadline and time.time() + settings.timeout + 90 > deadline):
             reason = ("Not started: " + provider_block["message"] if provider_block else
                       "Not started: insufficient time before the declared deadline")
@@ -234,14 +238,18 @@ async def run_trials(group, manifest, settings, deadline=None):
             raise RuntimeError("ASP outcome is unknown; group judgment is blocked")
         if record["run_status"] == "failed" and result_path.exists():
             events_path = logs / "events.jsonl"
-            provider_block = find_provider_block(events_path.read_text() if events_path.exists() else "")
+            requests_path = logs / "provider_requests.json"
+            requests = json.loads(requests_path.read_text()) if requests_path.exists() else []
+            provider_errors = "\n".join(json.dumps({"type": "error", "message": r["error_body"]})
+                                        for r in requests if r.get("error_body"))
+            provider_block = find_provider_block(provider_errors) or find_provider_block(events_path.read_text() if events_path.exists() else "")
             if provider_block:
                 write_json(group / "provider_block.json", provider_block)
 
 
 def find_provider_block(events):
     """Stop on native provider availability errors, not response wording."""
-    codes = {"AccountQuotaExceeded": "account", "UnsupportedModel": "model",
+    codes = {"RequestBurstTooFast": "account", "AccountQuotaExceeded": "account", "UnsupportedModel": "model",
              "InvalidApiKey": "account", "AuthenticationError": "account"}
     for line in events.splitlines():
         try:

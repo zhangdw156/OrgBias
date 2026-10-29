@@ -25,6 +25,8 @@ ORIBIAS_ARK_PLAN_BASE_URL=https://example.invalid/api/plan
 ORIBIAS_ARK_PLAN_API_KEY=plan-secret
 ORIBIAS_JUDGE_MODEL=gpt-6.1-sol
 ORIBIAS_JUDGE_EFFORT=medium
+ORIBIAS_ARK_REQUEST_INTERVAL_SECONDS=10
+ORIBIAS_ARK_RUN_TIMEOUT=900
 """)
 
     def test_judge_keeps_local_credentials_for_both_plans(self):
@@ -36,6 +38,10 @@ ORIBIAS_JUDGE_EFFORT=medium
                 self.assertEqual(agent.api_key, plan + "-secret")
                 self.assertEqual(agent.model, "doubao-seed-2.0-mini")
                 self.assertEqual(agent.context_tokens, 262144)
+                self.assertEqual(agent.request_interval_seconds, 10)
+                self.assertEqual(agent.timeout, 900)
+                self.assertEqual(judge.request_interval_seconds, 0)
+                self.assertEqual(judge.timeout, 300)
                 self.assertEqual(judge.api_key, "judge-secret")
                 self.assertEqual(judge.base_url, "http://localhost:4141/v1")
                 self.assertEqual(judge.model, "gpt-6.1-sol")

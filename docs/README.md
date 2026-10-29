@@ -4,6 +4,7 @@ Updated: 2026-10-28. The benchmark is English throughout, and all materials for 
 
 | Document | Contents | Status |
 |---|---|---|
+| [Paced continuation and monitor](ark-paced-sweep-2026-10-29.md) | 41 pending pairs; individual request pacing, preserved errors and scheduled monitoring | 43 local tests passed; live status in the active matrix |
 | [Replacement-account results](ark-model-serial-results-2026-10-28.md) | Serial continuation, exact coverage and RequestBurstTooFast diagnosis | Stopped; no new full-coverage groups |
 | [Ark continuation](ark-model-continuation-2026-10-28.md) | Replacement account; 41 remaining pairs in newly declared complete groups | Stopped: burst-limit diagnosis; 4 classified Evolving replies, 2 unclassified Mini replies |
 | [Ark partial results](ark-model-results-2026-10-28.md) | Exact coverage, cross-model observations, errors, traces and remaining work | 35 replies: no_observed_signal; 24 HTTP429 failures; 331 conditions unstarted |

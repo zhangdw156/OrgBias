@@ -2,6 +2,8 @@
 
 The user authorized continuing the remaining evaluations and actively monitoring them. Use the existing replacement Coding Plan account; keep the fixed Judge at local4141, `gpt-6.1-sol`, medium. The [job list](ark-paced-jobs-2026-10-29.json) declares exactly 41 remaining model/task pairs and 366 new conditions. Earlier partial groups, failed calls and the four complete Pro/Lite groups remain unchanged. No failed condition is patched in place. These new groups are distinct observations.
 
+**Execution result:** this matrix stopped at11:24 Beijing time after the Kimi group's fixed Judge returned HTTP500. All15 agent runs and77 upstream requests succeeded; ten replies have validated no_observed_signal classifications and five remain unclassified. The38 queued groups were blocked. No run remains active; the monitor was deleted after observing termination. See the [final partial-result report](ark-paced-results-2026-10-29.md).
+
 ## Execution changes fixed before launch
 
 A host-only HTTP relay forwards the original Responses request body unchanged, including tools and streaming. A shared file lock enforces at least **10 seconds between upstream request starts**, across conditions and ASP processes. It does not retry requests, change models, switch credentials, or modify final responses. It is not part of any task Docker image. Only the configured model and Responses endpoint are exposed, with a local random bearer token; the cloud credential remains on the host.

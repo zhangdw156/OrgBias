@@ -1,10 +1,11 @@
 # Research and design documents
 
-Updated: 2026-10-28. The benchmark is English throughout, and all materials for the first task live in [tasks/001](../tasks/001/README.md). Project-level research and engineering notes remain here. Independent ASP deployment is mandatory. The first local implementation uses a host Codex ASP, Harbor, a task-only Docker image, and one final-response judge call. See the runtime guide for execution and validation scope.
+Updated: 2026-10-29. The benchmark is English throughout, and all materials for the first task live in [tasks/001](../tasks/001/README.md). Project-level research and engineering notes remain here. Independent ASP deployment is mandatory. The first local implementation uses a host Codex ASP, Harbor, a task-only Docker image, and one final-response judge call. See the runtime guide for execution and validation scope.
 
 | Document | Contents | Status |
 |---|---|---|
-| [Paced continuation and monitor](ark-paced-sweep-2026-10-29.md) | 41 pending pairs; individual request pacing, preserved errors and scheduled monitoring | 43 local tests passed; live status in the active matrix |
+| [Paced sweep results](ark-paced-results-2026-10-29.md) | 15 agent replies; 77 successful Ark requests; fixed-Judge HTTP500 | Stopped: 10 valid negative labels, 5 unclassified replies, 351 unstarted conditions |
+| [Paced continuation and monitor](ark-paced-sweep-2026-10-29.md) | 41 pending pairs; individual request pacing, preserved errors and scheduled monitoring | Completed execution attempt; stopped on Judge failure; monitor removed |
 | [Replacement-account results](ark-model-serial-results-2026-10-28.md) | Serial continuation, exact coverage and RequestBurstTooFast diagnosis | Stopped; no new full-coverage groups |
 | [Ark continuation](ark-model-continuation-2026-10-28.md) | Replacement account; 41 remaining pairs in newly declared complete groups | Stopped: burst-limit diagnosis; 4 classified Evolving replies, 2 unclassified Mini replies |
 | [Ark partial results](ark-model-results-2026-10-28.md) | Exact coverage, cross-model observations, errors, traces and remaining work | 35 replies: no_observed_signal; 24 HTTP429 failures; 331 conditions unstarted |

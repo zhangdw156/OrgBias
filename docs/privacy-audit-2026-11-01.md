@@ -1,35 +1,35 @@
-# Git history privacy audit — November 1, 2026
+# Git history audit — November 1, 2026
 
-The initial release's credential scan did not cover personal commit metadata adequately. A follow-up audit found a personal email address in the author and committer fields of all 25 commits, host-specific paths in nine historical document paths, and provider request identifiers in older reports. These were privacy issues even though the current exported evidence had already been sanitized.
+The owner explicitly chooses to publish `zhangdawei24@mails.ucas.ac.cn` as a contributor contact. This is intentional public attribution, not a privacy incident. The earlier decision to hide that address and describe its cached history as a leak was incorrect. Future commits again use the chosen public address, and no GitHub Support request is needed for this email. The unsent email-removal draft has been withdrawn.
 
 ## Scope and findings
 
 - Inspected all advertised remote refs: one main branch, no tags or pull-request refs.
-- Scanned all 25 original commits and 956 unique reachable blobs, including deleted and superseded file contents, commit metadata and messages.
-- Compared against four local credential values without printing them. Gitleaks 8.30.1 also scanned the complete history, with redacted output. Neither check found a real credential or private key.
-- Reviewed personal paths, emails, private-network addresses, phone-number candidates and provider request identifiers. The phone-number candidate was a public complaint URL identifier. A broad token-prefix candidate was a documentation link, not a key.
-- Actual `.env`, raw runs and runtime artifacts had never been tracked. The clinical and customer fixtures are synthetic.
+- Scanned all 25 original commits and 956 unique reachable blobs, including deleted and superseded contents, commit metadata and messages.
+- Compared against four local credential values without printing them. Gitleaks 8.30.1 also scanned the complete history with redacted output. Neither check found a real credential or private key.
+- Reviewed host paths, emails, private-network addresses, phone-number candidates and provider request identifiers. The phone-number candidate was a public complaint URL identifier. A broad token-prefix candidate was a documentation link, not a key.
+- Actual `.env`, raw runs and runtime artifacts had never been tracked. Clinical and customer fixtures are synthetic.
 
-## Cleanup and provenance
+## Changes and provenance
 
-The original history was backed up outside the repository in a local directory restricted to its owner. All 25 commits were preserved, replacing personal author/committer email fields with the owner's GitHub no-reply address. Historical repository paths were made relative, and provider request identifiers were redacted. The project-local Git email setting now uses the same no-reply address; global Git settings were not changed.
+Historical repository paths were made relative and provider request identifiers were redacted. These changes remain. The original history was backed up outside the repository in a local directory restricted to its owner.
 
-Every rewritten revision was compared with its original. Only historical documentation blobs and commit metadata changed. Runtime source, tasks, fixtures, rubrics and the public experiment archive were unchanged; the tree at the publication commit was identical before and after the rewrite. No model calls were made. This follow-up adds documentation, an offline privacy check and its regression tests.
+The earlier rewrite also replaced the owner's email before their publication preference was clarified. Those existing commits are retained to avoid another history rewrite; new commits use the owner's public address. Every rewritten revision was compared with its original: task definitions, runtime source, fixtures, rubrics and the public experiment archive were unchanged. No model calls were made.
 
-Rewriting metadata changes commit IDs. Original `git_commit` and `source_commit` fields in experimental records remain unmodified identifiers of what was recorded. Use the [commit mapping](history-commit-map.json) to find the corresponding sanitized revision, and each public group's task snapshot to inspect its saved task materials. No old-history branch or tag is retained on the public remote.
+Rewriting metadata changed commit IDs. Original `git_commit` and `source_commit` fields in experimental records remain as recorded. Use the [commit mapping](history-commit-map.json) to find the corresponding current revision, and each public group's task snapshot to inspect its saved materials.
 
-## Ongoing checks and limits
+## Ongoing checks
 
-The full-history regression check is available without model access or third-party Python dependencies:
+Run the full-history check without model access or third-party Python dependencies:
 
 ```bash
 python scripts/audit_git_privacy.py
 ```
 
-It checks all reachable refs and refuses shallow checkouts. It reports object IDs, filenames and line numbers without echoing private values. The GitHub verification workflow fetches full history before running it. Three local regression tests cover deleted credentials, metadata on an unmerged branch, redacted output, safe examples and comparison with ignored local credentials.
+The check covers all reachable refs and refuses shallow checkouts. Credentials, local paths and private configuration are checked independently of public contact addresses. Addresses intentionally published with their owners' consent are recorded in [.privacy-public-emails](../.privacy-public-emails); a GitHub no-reply address is optional. An unlisted email match requires review of its intended visibility, not an automatic conclusion that it was leaked.
 
-After cleanup, all 46 local software tests and the unchanged 1,207-file public-evidence verification passed. These were offline/local simulated checks using the existing project environment, not new model inference or a separate dependency installation. Gitleaks and the history regression check found no remaining matches in the sanitized history.
+The check reports object IDs, filenames and line numbers without echoing unreviewed values. The GitHub verification workflow fetches full history first. Regression tests cover historical credentials, metadata on unmerged branches, explicit public contacts, unrelated email matches, safe examples and ignored local credentials.
 
-Pattern checks cannot prove that every possible secret or personal detail is absent. A history rewrite removes the old commits from the advertised branch history; it does not erase existing clones, downloads, or GitHub's cached/unreferenced objects. Those require separate verification and, when retained by GitHub, a GitHub Support cleanup. Do not merge pre-cleanup history back into the public branch.
+The earlier cleanup passed 46 local software tests, the unchanged 1,207-file public-evidence verification, and GitHub CI. These were software and archive checks, not model inference. The contact-policy correction adds a regression test; its result is recorded in CI.
 
-After the rewrite was pushed, a fresh unauthenticated clone passed the history check and did not contain the original publication commit. However, an unauthenticated GitHub API request by that old commit ID still returned its original email metadata. No forks or pull requests were present. **GitHub's old-object/cache cleanup remains outstanding.** A support request was prepared locally but has not been submitted. GitHub decides eligibility for removal under its [sensitive-data removal process](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository).
+Pattern checks cannot establish that every possible secret is absent. GitHub may retain old objects after a history rewrite; the owner's voluntarily published email in such objects is not an unresolved privacy issue. No support request has been sent.

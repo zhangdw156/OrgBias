@@ -51,7 +51,18 @@ class GitPrivacyTests(unittest.TestCase):
         self.commit("test: add branch example")
         self.git("checkout", "-q", "main")
         report = audit(self.repo)
-        self.assertEqual(report["finding_counts"], {"personal_email": 2, "personal_path": 1})
+        self.assertEqual(report["finding_counts"], {"unreviewed_email": 2, "personal_path": 1})
+
+    def test_published_contact_is_allowed_without_exempting_other_emails(self):
+        email = "contributor" + "@" + "university.edu"
+        self.git("config", "user.email", email)
+        (self.repo / ".privacy-public-emails").write_text("# Public with consent\n" + email + "\n")
+        (self.repo / "README.md").write_text("Contact: " + email)
+        self.commit("test: publish contributor contact")
+        self.assertFalse(audit(self.repo)["findings"])
+        (self.repo / "unreviewed.txt").write_text("customer" + "@" + "university.edu")
+        self.commit("test: add unreviewed example")
+        self.assertEqual(audit(self.repo)["finding_counts"], {"unreviewed_email": 1})
 
     def test_examples_and_known_local_credential_comparison(self):
         path = self.repo / "README.md"

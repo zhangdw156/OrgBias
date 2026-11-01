@@ -27,7 +27,7 @@ These checks run locally without production model calls. Live experiments additi
 
 Never include credentials, personal customer/patient records, raw browser profiles or third-party documents without redistribution rights. `runs/` and `artifacts/` remain ignored. Public evidence should be an explicit, reviewed export under `results/`, with provenance, hashes, omissions and redactions documented. The existing exporter has a fixed allowlist for the November 1 archive and must not automatically publish new local runs.
 
-Use your GitHub no-reply email for Git commits. The privacy check includes historical commits, not just the current files, and requires a full clone. History was sanitized on November 1; use the [source-commit mapping](docs/history-commit-map.json) for recorded experimental revisions, and do not merge pre-cleanup history back into main.
+You may use a public contact email or a GitHub no-reply address for your commits. Contact addresses intentionally published by their owners are listed in [.privacy-public-emails](.privacy-public-emails); add an address only with its owner's consent. Unlisted email matches request review and are not proof of a leak. The privacy check includes historical commits and requires a full clone. Use the [source-commit mapping](docs/history-commit-map.json) for experimental revisions affected by the November 1 path cleanup.
 
 Commit messages must use Angular style, such as `feat(tasks): add insurance claim scenario` or `docs(results): explain missing judge classifications`. Update documentation and test the paths a new contributor will actually use. Follow [AGENTS.md](AGENTS.md).
 

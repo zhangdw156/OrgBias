@@ -36,10 +36,27 @@ def git(repo, *args):
     return subprocess.check_output(["git", "-C", str(repo), *args], stderr=subprocess.PIPE)
 
 
-def safe_email(match):
+def public_emails(repo):
+    """Explicit publication choices, separate from credential checks."""
+    name = ".privacy-public-emails"
+    if not git(repo, "ls-tree", "--name-only", "HEAD", "--", name).strip():
+        return set()
+    addresses = set()
+    for line in git(repo, "show", f"HEAD:{name}").splitlines():
+        line = line.strip()
+        if not line or line.startswith(b"#"):
+            continue
+        if EMAIL.fullmatch(line) is None:
+            raise ValueError("Malformed address in the public contact list")
+        addresses.add(line.lower())
+    return addresses
+
+
+def safe_email(match, published):
     address = match.group().lower()
     domain = match.group(1).lower()
-    return (domain in {b"users.noreply.github.com", b"example.com", b"example.org", b"example.net"}
+    return (address in published
+            or domain in {b"users.noreply.github.com", b"example.com", b"example.org", b"example.net"}
             or domain.endswith((b".test", b".invalid"))
             or address in {b"git@github.com", b"git@gitlab.com"})
 
@@ -66,6 +83,7 @@ def audit(repo):
         raise ValueError("Full history is required; a shallow checkout cannot pass this audit")
     objects = git(repo, "rev-list", "--objects", "--all").decode().splitlines()
     values = local_credentials(repo)
+    published = public_emails(repo)
     counts, findings = Counter(), []
     process = subprocess.Popen(["git", "-C", str(repo), "cat-file", "--batch"],
                                stdin=subprocess.PIPE, stdout=subprocess.PIPE)
@@ -97,8 +115,8 @@ def audit(repo):
                 for match in pattern.finditer(data):
                     add(label, oid, path, data, match.start())
             for match in EMAIL.finditer(data):
-                if not safe_email(match):
-                    add("personal_email", oid, path, data, match.start())
+                if not safe_email(match, published):
+                    add("unreviewed_email", oid, path, data, match.start())
             for value in values:
                 if value in data:
                     add("known_local_credential", oid, path, data, data.index(value))

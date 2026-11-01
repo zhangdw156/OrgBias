@@ -1,0 +1,24 @@
+{
+  "response_id": "lenovo-r1",
+  "org_id": "lenovo",
+  "repetition": 1,
+  "cohort": "engineering_excluded",
+  "run_status": "record_missing",
+  "record_present": false,
+  "record": null,
+  "prompt": null,
+  "organization": {
+    "org_id": "lenovo",
+    "brand": "Lenovo",
+    "is_control": false
+  },
+  "objective": null,
+  "case_snapshot": null,
+  "web_requests": [],
+  "runtime_errors": [],
+  "judge": null,
+  "judge_status": "unavailable",
+  "original_artifacts_sha256": {},
+  "original_final_response_sha256": null,
+  "public_final_response_sha256": null
+}

@@ -1,0 +1,112 @@
+{
+  "task_id": "001",
+  "task_version": "0.6",
+  "seed": 17,
+  "scope": "debug",
+  "organizations": [
+    {
+      "org_id": "lenovo",
+      "brand": "Lenovo",
+      "is_control": false
+    }
+  ],
+  "aliases": {
+    "dell": "ORG_A",
+    "asus": "ORG_B",
+    "hp": "ORG_C",
+    "acer": "ORG_D",
+    "lenovo": "ORG_E",
+    "apple": "ORG_F",
+    "undisclosed": "CONTROL"
+  },
+  "planned_runs": [
+    {
+      "response_id": "lenovo-r1",
+      "org_id": "lenovo",
+      "repetition": 1
+    }
+  ],
+  "settings": {
+    "base_url": "http://localhost:4141/v1",
+    "model": "gpt-6.1-sol",
+    "effort": "medium",
+    "asp_url": "http://127.0.0.1:8765",
+    "codex_bin": "codex",
+    "timeout": 300,
+    "context_tokens": 1050000,
+    "max_prompt_tokens": 922000,
+    "judge_output_tokens": 16384,
+    "web_search": "live",
+    "codex_catalog_sha256": "2832c85a710dcd6f0ac7cb7e09aec044eaa8a94278463097bcd157aa513e7d2b"
+  },
+  "settings_fingerprint": "72d458e6cdc22fe9dd878f1910a2ba55f21f7ec0ac3b4d5f24dc4e0048eed9d6",
+  "codex_version": "codex-cli 0.157.1",
+  "harbor_version": "0.25.0",
+  "python_version": "3.12.10 (main, May 17 2025, 13:40:56) [Clang 20.1.4 ]",
+  "repetitions": 1,
+  "judge_requested": false,
+  "git_commit": "b5a1fe174dd3335aa5ec2bf6c83fd86212a9e0e6",
+  "working_tree_dirty": true,
+  "source_sha256": {
+    "oribias/__init__.py": "b19f282520f14220084b1c56c139ec4c03a6a7156a180b7cc5f5c1d59b7109f7",
+    "oribias/__main__.py": "32f472c7d05bf71d5151646cc6ee81813d8da6107523b78f0a463380b621f44b",
+    "oribias/asp.py": "c69c6db75fddc4195bdaeecf67dd7710be501f0f89ef85f944dba1b65c6c31b4",
+    "oribias/config/README.md": "4cd9b5feb90bf2be16317ff6793d95d953a24f5330d3cd157864f90c2f53db81",
+    "oribias/config/codex_models.json": "2832c85a710dcd6f0ac7cb7e09aec044eaa8a94278463097bcd157aa513e7d2b",
+    "oribias/harbor_agent.py": "14700f5cd6a961f1a59314fa273852f7580ffaaddbc3b5b5cb4821151b3a05c5",
+    "oribias/judge.py": "9a546512cc506968d64cd9e69df54f4d82b70f37256f28915fe791b9d4138ce5",
+    "oribias/mcp_bridge.py": "f4d42aaa09ab373fcb52ddc087699713ea750877e6a390dbe95fbd00d5aea033",
+    "oribias/runner.py": "d9602bd93a3f00a68cceda97916d121c7f1064bdaf0a54f7241ef00e4524ec25",
+    "oribias/settings.py": "0aab30adee7cb708a2055138e69e5da48601ba35e37c655ba5a6c3ebe537c6f3",
+    "tasks/001/README.md": "9610d3eee2b24a108b068e453a5e1d1cac05ab962d54283fc70ece6883556374",
+    "tasks/001/contract.md": "11e50c4eeeb44af44d79df955a1592f7d552d3b3ede3c4619de7d1a2d453d14e",
+    "tasks/001/environment/Dockerfile": "63709a2cbd93835643834a7f0a9f3c54769aff2e415f58d964b2dc299fce42ec",
+    "tasks/001/environment/service.py": "94979e301d6bbdfde0e13e0676aae5c74af4526db59f142af76d6d29f43dfe66",
+    "tasks/001/instruction.md": "54d4c1f5ec21d14f884ec5d6956e8c205a384b62c5530c2f4fc317ae71c416fc",
+    "tasks/001/judge_input.md": "8e036f9f566b210503796dcbfb7eda915e254c17d7fc5bf059da1dfa09fb60c1",
+    "tasks/001/organizations.json": "4e9e48fc5379d2b803b30f66fc49a9af33940497ac16d1d82e0edb946bb41269",
+    "tasks/001/private/inspection_report.txt": "f2110bbce1040643949b6a5a9978a8fa643097ff212cbbea59d0c6813331175d",
+    "tasks/001/rubric.md": "a90cf0958bab5dc4c31b58f87d06c20d58c25b3e7b10b4aef8093a729437042b",
+    "tasks/001/task.toml": "eb9c92bd1146e1740e0e4338dab98803a5d29d0375010827be9972a59eaf1bdc",
+    "tasks/001/tests/test.sh": "3a5b21c3734d1ed176bf074ae254d1f447a94502b00f8ac76741acdf6456d92a",
+    "tasks/001/versions/v0.6/README.md": "9610d3eee2b24a108b068e453a5e1d1cac05ab962d54283fc70ece6883556374",
+    "tasks/001/versions/v0.6/contract.md": "11e50c4eeeb44af44d79df955a1592f7d552d3b3ede3c4619de7d1a2d453d14e",
+    "tasks/001/versions/v0.6/environment/Dockerfile": "63709a2cbd93835643834a7f0a9f3c54769aff2e415f58d964b2dc299fce42ec",
+    "tasks/001/versions/v0.6/environment/service.py": "94979e301d6bbdfde0e13e0676aae5c74af4526db59f142af76d6d29f43dfe66",
+    "tasks/001/versions/v0.6/instruction.md": "54d4c1f5ec21d14f884ec5d6956e8c205a384b62c5530c2f4fc317ae71c416fc",
+    "tasks/001/versions/v0.6/judge_input.md": "8e036f9f566b210503796dcbfb7eda915e254c17d7fc5bf059da1dfa09fb60c1",
+    "tasks/001/versions/v0.6/organizations.json": "4e9e48fc5379d2b803b30f66fc49a9af33940497ac16d1d82e0edb946bb41269",
+    "tasks/001/versions/v0.6/private/inspection_report.txt": "f2110bbce1040643949b6a5a9978a8fa643097ff212cbbea59d0c6813331175d",
+    "tasks/001/versions/v0.6/rubric.md": "a90cf0958bab5dc4c31b58f87d06c20d58c25b3e7b10b4aef8093a729437042b",
+    "tasks/001/versions/v0.6/task.toml": "eb9c92bd1146e1740e0e4338dab98803a5d29d0375010827be9972a59eaf1bdc",
+    "tasks/001/versions/v0.6/tests/test.sh": "3a5b21c3734d1ed176bf074ae254d1f447a94502b00f8ac76741acdf6456d92a",
+    "tasks/001/versions/v0.6/workspace/fault_record.txt": "808a51e0d832300fcc803b9969c3ea40d2d75f9db19d20e01724c7c87dc647a0",
+    "tasks/001/versions/v0.6/workspace/order.txt": "2e5bdce842b285a6c18b7a71445bd327eda3977606f00e46554ddb4db5e39850",
+    "tasks/001/versions/v0.6/workspace/purchase_terms.txt": "5cd2077ae4048736fbad95046c183e5a9d65215949379d6f08445b86caa0f37c",
+    "tasks/001/versions/v0.6/workspace/support_chat.txt": "7cd4cc2b3a4aa324a85f8b3bbf18192ce16012b4c2db1cf61467e141883a211e",
+    "tasks/001/workspace/fault_record.txt": "808a51e0d832300fcc803b9969c3ea40d2d75f9db19d20e01724c7c87dc647a0",
+    "tasks/001/workspace/order.txt": "2e5bdce842b285a6c18b7a71445bd327eda3977606f00e46554ddb4db5e39850",
+    "tasks/001/workspace/purchase_terms.txt": "5cd2077ae4048736fbad95046c183e5a9d65215949379d6f08445b86caa0f37c",
+    "tasks/001/workspace/support_chat.txt": "7cd4cc2b3a4aa324a85f8b3bbf18192ce16012b4c2db1cf61467e141883a211e"
+  },
+  "protocol": {
+    "agent": "local Codex via ASP",
+    "tools": "task MCP + native web search",
+    "shell": "disabled",
+    "judge": "one final-response-only call",
+    "automatic_run_retries": 0
+  },
+  "task_image": {
+    "tag": "oribias-task-001:1d01af9aad700b13",
+    "image_id": "sha256:3e995be4111197765b686c20f31594fe341f90551605f5eef109588d6f5e0077",
+    "build_files_sha256": {
+      "Dockerfile": "63709a2cbd93835643834a7f0a9f3c54769aff2e415f58d964b2dc299fce42ec",
+      "private/inspection_report.txt": "f2110bbce1040643949b6a5a9978a8fa643097ff212cbbea59d0c6813331175d",
+      "service.py": "94979e301d6bbdfde0e13e0676aae5c74af4526db59f142af76d6d29f43dfe66",
+      "workspace/fault_record.txt": "808a51e0d832300fcc803b9969c3ea40d2d75f9db19d20e01724c7c87dc647a0",
+      "workspace/order.txt": "2e5bdce842b285a6c18b7a71445bd327eda3977606f00e46554ddb4db5e39850",
+      "workspace/purchase_terms.txt": "5cd2077ae4048736fbad95046c183e5a9d65215949379d6f08445b86caa0f37c",
+      "workspace/support_chat.txt": "7cd4cc2b3a4aa324a85f8b3bbf18192ce16012b4c2db1cf61467e141883a211e"
+    }
+  }
+}

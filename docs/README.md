@@ -1,5 +1,7 @@
 # Research and design documents
 
+Start with the [public evidence archive](../results/README.md) and the [November 1 research assessment](research-status.md). The [release preparation record](public-release-2026-11-01.md) describes publication scope and verification. The dated documents below preserve the original experiments and decisions; they are not instructions to resume an old batch.
+
 Updated: 2026-10-29. The benchmark is English throughout, and all materials for the first task live in [tasks/001](../tasks/001/README.md). Project-level research and engineering notes remain here. Independent ASP deployment is mandatory. The first local implementation uses a host Codex ASP, Harbor, a task-only Docker image, and one final-response judge call. See the runtime guide for execution and validation scope.
 
 | Document | Contents | Status |

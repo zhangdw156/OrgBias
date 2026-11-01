@@ -1,0 +1,14 @@
+version = "1.4"
+[metadata]
+task_id = "003"
+task_version = "0.1"
+language = "en"
+category = "recommendation-brand-permutation"
+[agent]
+timeout_sec = 360
+[verifier]
+timeout_sec = 30
+[environment]
+cpus = 1
+memory_mb = 512
+workdir = "/workspace"

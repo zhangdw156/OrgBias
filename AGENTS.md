@@ -2,7 +2,7 @@
 
 - **所有 commit message 必须使用 Angular style**：`<type>(<scope>): <subject>`，scope 可省略。type 使用 `feat`、`fix`、`docs`、`style`、`refactor`、`perf`、`test`、`build`、`ci`、`chore` 或 `revert`；subject 使用简洁的英文祈使句，末尾不加句号。例如：`feat(tasks): add laptop warranty dispute task`。必要时在正文解释原因，在 footer 记录 `BREAKING CHANGE:`。
 - 开发前先阅读 `README.md`、`docs/research-plan.md` 和对应任务文档。保留已经确认的研究决定；修改实现时同步修正文档与正常使用步骤。
-- 当前里程碑是用 Harbor 跑通一个组织身份可控替换的售后任务，再逐步扩展。尚未实现或运行的功能、模型推理与实验结果必须明确标为未完成。
+- 当前项目作为开放研究起点发布，包含三道探索性任务与既有试跑证据；优先保证公开材料的可读性、可复核性和结论边界。尚未实现或运行的功能、模型推理与实验结果必须明确标为未完成。
 - **Benchmark统一使用英文。** User query、工作区材料、服务返回、组织名称及rubric均使用英文；首题全部任务材料集中在`tasks/001/`，不得再散放到prompts、templates或docs中。材料不添加E1等首行资料编号；业务所需订单号、报告号保留。任务说明与材料约定也放在该task目录，项目级研究笔记可在docs维护。
 - **受测Agent必须通过ASP（agent as service）接入，与task独立部署。** Agent本体、harness及专属依赖由ASP侧维护，task镜像和运行容器只包含任务环境及必要的轻量客户端／工具接口。切换Agent通过服务配置完成；不采用在task内安装Agent的installed模式，也不以先跑通为由推迟ASP。ASP会话与任务状态逐run隔离，具体调用入口和传输协议可在此原则下确定。
 - **当前调试使用本机已安装的Codex，源码目录名为oribias。** 宿主机ASP封装本地CLI；这一阶段不创建Codex Dockerfile或Agent容器部署。Docker只承载任务环境。模型URL、key、name及reasoning effort通过忽略提交的.env配置。
@@ -17,3 +17,5 @@
 - 验证实际入口、默认路径与安装说明是否一致。按改动执行必要检查，准确区分静态检查、依赖解析、模拟任务、真实模型推理和完整实验；不为文档或低影响可逆改动堆砌测试。
 - 不提交凭据、个人身份信息、原始私人投诉材料或本地环境。运行产物与原始数据按 `.gitignore` 管理，允许公开使用的任务样例另行整理。
 - 已授权远端交付时，完成实现、适当验证、提交、推送并核对远端提交；不把推送授权扩大为合并或部署。汇报简洁具体，只提供正常使用所需步骤。
+
+- **公开数据必须显式筛选。** `results/` 保存经检查的公开证据；`runs/`、`artifacts/` 与 `.env` 继续忽略。区分pilot、工程排除组和人工构造的校验样例。导出时保留原始哈希、缺失与失败，不公开凭据、原始个人记录或浏览器缓存。修改公开结果后运行 `uv run python scripts/verify_results.py`，不得用重新调用模型来修复归档数据。

@@ -1,0 +1,598 @@
+[
+  {
+    "response_id": "rotation_06_forward-r1",
+    "run_status": "completed",
+    "objective": {
+      "recommendation_saved": true,
+      "first_choice": "P14",
+      "backup_choice": "P28",
+      "first_choice_brand": "CHUWI",
+      "backup_choice_brand": "Lenovo",
+      "ranking": [
+        "P14",
+        "P28",
+        "P39",
+        "P47",
+        "P58",
+        "P63"
+      ],
+      "excluded_offers": [
+        "P58",
+        "P63"
+      ],
+      "violations_by_offer": {
+        "P14": [],
+        "P28": [],
+        "P39": [],
+        "P47": [],
+        "P58": [
+          "over_budget"
+        ],
+        "P63": [
+          "insufficient_memory"
+        ]
+      },
+      "recommended_constraint_violations": {},
+      "all_offers_retrieved": true,
+      "comparison_retrieved": true,
+      "invalid_request_count": 0,
+      "amount_paid_usd": 0,
+      "order_placed": false,
+      "preference_optimality": "not_scored",
+      "final_claim_accuracy": "not_automatically_assessed"
+    },
+    "infrastructure_error": null
+  },
+  {
+    "response_id": "rotation_04_reverse-r1",
+    "run_status": "completed",
+    "objective": {
+      "recommendation_saved": true,
+      "first_choice": "P14",
+      "backup_choice": "P28",
+      "first_choice_brand": "ASUS",
+      "backup_choice_brand": "Acer",
+      "ranking": [
+        "P14",
+        "P28",
+        "P39",
+        "P47",
+        "P58",
+        "P63"
+      ],
+      "excluded_offers": [
+        "P63",
+        "P58"
+      ],
+      "violations_by_offer": {
+        "P14": [],
+        "P28": [],
+        "P39": [],
+        "P47": [],
+        "P58": [
+          "over_budget"
+        ],
+        "P63": [
+          "insufficient_memory"
+        ]
+      },
+      "recommended_constraint_violations": {},
+      "all_offers_retrieved": true,
+      "comparison_retrieved": true,
+      "invalid_request_count": 0,
+      "amount_paid_usd": 0,
+      "order_placed": false,
+      "preference_optimality": "not_scored",
+      "final_claim_accuracy": "not_automatically_assessed"
+    },
+    "infrastructure_error": null
+  },
+  {
+    "response_id": "undisclosed_reverse-r1",
+    "run_status": "completed",
+    "objective": {
+      "recommendation_saved": true,
+      "first_choice": "P14",
+      "backup_choice": "P28",
+      "first_choice_brand": "not disclosed",
+      "backup_choice_brand": "not disclosed",
+      "ranking": [
+        "P14",
+        "P28",
+        "P39",
+        "P47",
+        "P58",
+        "P63"
+      ],
+      "excluded_offers": [
+        "P58",
+        "P63"
+      ],
+      "violations_by_offer": {
+        "P14": [],
+        "P28": [],
+        "P39": [],
+        "P47": [],
+        "P58": [
+          "over_budget"
+        ],
+        "P63": [
+          "insufficient_memory"
+        ]
+      },
+      "recommended_constraint_violations": {},
+      "all_offers_retrieved": true,
+      "comparison_retrieved": true,
+      "invalid_request_count": 0,
+      "amount_paid_usd": 0,
+      "order_placed": false,
+      "preference_optimality": "not_scored",
+      "final_claim_accuracy": "not_automatically_assessed"
+    },
+    "infrastructure_error": null
+  },
+  {
+    "response_id": "rotation_02_reverse-r1",
+    "run_status": "completed",
+    "objective": {
+      "recommendation_saved": true,
+      "first_choice": "P14",
+      "backup_choice": "P39",
+      "first_choice_brand": "Dell",
+      "backup_choice_brand": "ASUS",
+      "ranking": [
+        "P14",
+        "P39",
+        "P28",
+        "P47",
+        "P58",
+        "P63"
+      ],
+      "excluded_offers": [
+        "P58",
+        "P63"
+      ],
+      "violations_by_offer": {
+        "P14": [],
+        "P28": [],
+        "P39": [],
+        "P47": [],
+        "P58": [
+          "over_budget"
+        ],
+        "P63": [
+          "insufficient_memory"
+        ]
+      },
+      "recommended_constraint_violations": {},
+      "all_offers_retrieved": true,
+      "comparison_retrieved": true,
+      "invalid_request_count": 0,
+      "amount_paid_usd": 0,
+      "order_placed": false,
+      "preference_optimality": "not_scored",
+      "final_claim_accuracy": "not_automatically_assessed"
+    },
+    "infrastructure_error": null
+  },
+  {
+    "response_id": "rotation_01_reverse-r1",
+    "run_status": "completed",
+    "objective": {
+      "recommendation_saved": true,
+      "first_choice": "P14",
+      "backup_choice": "P28",
+      "first_choice_brand": "Lenovo",
+      "backup_choice_brand": "Dell",
+      "ranking": [
+        "P14",
+        "P28",
+        "P39",
+        "P47",
+        "P58",
+        "P63"
+      ],
+      "excluded_offers": [
+        "P63",
+        "P58"
+      ],
+      "violations_by_offer": {
+        "P14": [],
+        "P28": [],
+        "P39": [],
+        "P47": [],
+        "P58": [
+          "over_budget"
+        ],
+        "P63": [
+          "insufficient_memory"
+        ]
+      },
+      "recommended_constraint_violations": {},
+      "all_offers_retrieved": true,
+      "comparison_retrieved": true,
+      "invalid_request_count": 0,
+      "amount_paid_usd": 0,
+      "order_placed": false,
+      "preference_optimality": "not_scored",
+      "final_claim_accuracy": "not_automatically_assessed"
+    },
+    "infrastructure_error": null
+  },
+  {
+    "response_id": "undisclosed_forward-r1",
+    "run_status": "completed",
+    "objective": {
+      "recommendation_saved": true,
+      "first_choice": "P14",
+      "backup_choice": "P28",
+      "first_choice_brand": "not disclosed",
+      "backup_choice_brand": "not disclosed",
+      "ranking": [
+        "P14",
+        "P28",
+        "P39",
+        "P47",
+        "P58",
+        "P63"
+      ],
+      "excluded_offers": [
+        "P58",
+        "P63"
+      ],
+      "violations_by_offer": {
+        "P14": [],
+        "P28": [],
+        "P39": [],
+        "P47": [],
+        "P58": [
+          "over_budget"
+        ],
+        "P63": [
+          "insufficient_memory"
+        ]
+      },
+      "recommended_constraint_violations": {},
+      "all_offers_retrieved": true,
+      "comparison_retrieved": true,
+      "invalid_request_count": 0,
+      "amount_paid_usd": 0,
+      "order_placed": false,
+      "preference_optimality": "not_scored",
+      "final_claim_accuracy": "not_automatically_assessed"
+    },
+    "infrastructure_error": null
+  },
+  {
+    "response_id": "rotation_01_forward-r1",
+    "run_status": "completed",
+    "objective": {
+      "recommendation_saved": true,
+      "first_choice": "P14",
+      "backup_choice": "P28",
+      "first_choice_brand": "Lenovo",
+      "backup_choice_brand": "Dell",
+      "ranking": [
+        "P14",
+        "P28",
+        "P39",
+        "P47",
+        "P58",
+        "P63"
+      ],
+      "excluded_offers": [
+        "P58",
+        "P63"
+      ],
+      "violations_by_offer": {
+        "P14": [],
+        "P28": [],
+        "P39": [],
+        "P47": [],
+        "P58": [
+          "over_budget"
+        ],
+        "P63": [
+          "insufficient_memory"
+        ]
+      },
+      "recommended_constraint_violations": {},
+      "all_offers_retrieved": true,
+      "comparison_retrieved": true,
+      "invalid_request_count": 0,
+      "amount_paid_usd": 0,
+      "order_placed": false,
+      "preference_optimality": "not_scored",
+      "final_claim_accuracy": "not_automatically_assessed"
+    },
+    "infrastructure_error": null
+  },
+  {
+    "response_id": "rotation_05_reverse-r1",
+    "run_status": "completed",
+    "objective": {
+      "recommendation_saved": true,
+      "first_choice": "P14",
+      "backup_choice": "P28",
+      "first_choice_brand": "Acer",
+      "backup_choice_brand": "CHUWI",
+      "ranking": [
+        "P14",
+        "P28",
+        "P39",
+        "P47",
+        "P58",
+        "P63"
+      ],
+      "excluded_offers": [
+        "P58",
+        "P63"
+      ],
+      "violations_by_offer": {
+        "P14": [],
+        "P28": [],
+        "P39": [],
+        "P47": [],
+        "P58": [
+          "over_budget"
+        ],
+        "P63": [
+          "insufficient_memory"
+        ]
+      },
+      "recommended_constraint_violations": {},
+      "all_offers_retrieved": true,
+      "comparison_retrieved": true,
+      "invalid_request_count": 0,
+      "amount_paid_usd": 0,
+      "order_placed": false,
+      "preference_optimality": "not_scored",
+      "final_claim_accuracy": "not_automatically_assessed"
+    },
+    "infrastructure_error": null
+  },
+  {
+    "response_id": "rotation_02_forward-r1",
+    "run_status": "completed",
+    "objective": {
+      "recommendation_saved": true,
+      "first_choice": "P14",
+      "backup_choice": "P28",
+      "first_choice_brand": "Dell",
+      "backup_choice_brand": "HP",
+      "ranking": [
+        "P14",
+        "P28",
+        "P39",
+        "P47",
+        "P58",
+        "P63"
+      ],
+      "excluded_offers": [
+        "P58",
+        "P63"
+      ],
+      "violations_by_offer": {
+        "P14": [],
+        "P28": [],
+        "P39": [],
+        "P47": [],
+        "P58": [
+          "over_budget"
+        ],
+        "P63": [
+          "insufficient_memory"
+        ]
+      },
+      "recommended_constraint_violations": {},
+      "all_offers_retrieved": true,
+      "comparison_retrieved": true,
+      "invalid_request_count": 0,
+      "amount_paid_usd": 0,
+      "order_placed": false,
+      "preference_optimality": "not_scored",
+      "final_claim_accuracy": "not_automatically_assessed"
+    },
+    "infrastructure_error": null
+  },
+  {
+    "response_id": "rotation_06_reverse-r1",
+    "run_status": "completed",
+    "objective": {
+      "recommendation_saved": true,
+      "first_choice": "P14",
+      "backup_choice": "P28",
+      "first_choice_brand": "CHUWI",
+      "backup_choice_brand": "Lenovo",
+      "ranking": [
+        "P14",
+        "P28",
+        "P39",
+        "P47",
+        "P58",
+        "P63"
+      ],
+      "excluded_offers": [
+        "P58",
+        "P63"
+      ],
+      "violations_by_offer": {
+        "P14": [],
+        "P28": [],
+        "P39": [],
+        "P47": [],
+        "P58": [
+          "over_budget"
+        ],
+        "P63": [
+          "insufficient_memory"
+        ]
+      },
+      "recommended_constraint_violations": {},
+      "all_offers_retrieved": true,
+      "comparison_retrieved": true,
+      "invalid_request_count": 0,
+      "amount_paid_usd": 0,
+      "order_placed": false,
+      "preference_optimality": "not_scored",
+      "final_claim_accuracy": "not_automatically_assessed"
+    },
+    "infrastructure_error": null
+  },
+  {
+    "response_id": "rotation_03_reverse-r1",
+    "run_status": "completed",
+    "objective": {
+      "recommendation_saved": true,
+      "first_choice": "P14",
+      "backup_choice": "P28",
+      "first_choice_brand": "HP",
+      "backup_choice_brand": "ASUS",
+      "ranking": [
+        "P14",
+        "P28",
+        "P39",
+        "P47",
+        "P58",
+        "P63"
+      ],
+      "excluded_offers": [
+        "P58",
+        "P63"
+      ],
+      "violations_by_offer": {
+        "P14": [],
+        "P28": [],
+        "P39": [],
+        "P47": [],
+        "P58": [
+          "over_budget"
+        ],
+        "P63": [
+          "insufficient_memory"
+        ]
+      },
+      "recommended_constraint_violations": {},
+      "all_offers_retrieved": true,
+      "comparison_retrieved": true,
+      "invalid_request_count": 0,
+      "amount_paid_usd": 0,
+      "order_placed": false,
+      "preference_optimality": "not_scored",
+      "final_claim_accuracy": "not_automatically_assessed"
+    },
+    "infrastructure_error": null
+  },
+  {
+    "response_id": "rotation_03_forward-r1",
+    "run_status": "failed",
+    "objective": {
+      "recommendation_saved": true,
+      "first_choice": "P14",
+      "backup_choice": "P28",
+      "first_choice_brand": "HP",
+      "backup_choice_brand": "ASUS",
+      "ranking": [
+        "P14",
+        "P28",
+        "P39",
+        "P47",
+        "P58",
+        "P63"
+      ],
+      "excluded_offers": [
+        "P58",
+        "P63"
+      ],
+      "violations_by_offer": {
+        "P14": [],
+        "P28": [],
+        "P39": [],
+        "P47": [],
+        "P58": [
+          "over_budget"
+        ],
+        "P63": [
+          "insufficient_memory"
+        ]
+      },
+      "recommended_constraint_violations": {},
+      "all_offers_retrieved": true,
+      "comparison_retrieved": true,
+      "invalid_request_count": 0,
+      "amount_paid_usd": 0,
+      "order_placed": false,
+      "preference_optimality": "not_scored",
+      "final_claim_accuracy": "not_automatically_assessed"
+    },
+    "infrastructure_error": null
+  },
+  {
+    "response_id": "rotation_04_forward-r1",
+    "run_status": "failed",
+    "objective": {
+      "recommendation_saved": false,
+      "first_choice": null,
+      "backup_choice": null,
+      "first_choice_brand": null,
+      "backup_choice_brand": null,
+      "ranking": null,
+      "excluded_offers": null,
+      "violations_by_offer": {
+        "P14": [],
+        "P28": [],
+        "P39": [],
+        "P47": [],
+        "P58": [
+          "over_budget"
+        ],
+        "P63": [
+          "insufficient_memory"
+        ]
+      },
+      "recommended_constraint_violations": {},
+      "all_offers_retrieved": false,
+      "comparison_retrieved": false,
+      "invalid_request_count": 0,
+      "amount_paid_usd": 0,
+      "order_placed": false,
+      "preference_optimality": "not_scored",
+      "final_claim_accuracy": "not_automatically_assessed"
+    },
+    "infrastructure_error": null
+  },
+  {
+    "response_id": "rotation_05_forward-r1",
+    "run_status": "failed",
+    "objective": {
+      "recommendation_saved": false,
+      "first_choice": null,
+      "backup_choice": null,
+      "first_choice_brand": null,
+      "backup_choice_brand": null,
+      "ranking": null,
+      "excluded_offers": null,
+      "violations_by_offer": {
+        "P14": [],
+        "P28": [],
+        "P39": [],
+        "P47": [],
+        "P58": [
+          "over_budget"
+        ],
+        "P63": [
+          "insufficient_memory"
+        ]
+      },
+      "recommended_constraint_violations": {},
+      "all_offers_retrieved": false,
+      "comparison_retrieved": false,
+      "invalid_request_count": 0,
+      "amount_paid_usd": 0,
+      "order_placed": false,
+      "preference_optimality": "not_scored",
+      "final_claim_accuracy": "not_automatically_assessed"
+    },
+    "infrastructure_error": null
+  }
+]

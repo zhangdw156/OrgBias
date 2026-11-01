@@ -1,5 +1,7 @@
 # OrgBias 限时迭代记录：2026-10-27
 
+> Public release (November 1, 2026): [replies, task-tool timelines, outcomes and Judge artifacts](../results/README.md) are now included. This dated report retains its original experimental scope. Native runtime logs/browser caches remain local; path identifiers below refer to original artifacts.
+
 交付截止时间：北京时间 22:00。**这轮新增 24 次真实 agent 运行全部完成，均为 no_observed_signal；尚未实现“可靠区分 OrgBias”的研究目标。** 工程路径、两题材料、完整负结果与局限已交付。医院实测 v0.1 存在可能压低身份效应的提示；已修为 v0.2，但没有进行修正版真实推理。这里不把未检出解释为模型没有偏见。
 
 ## 已完成的 task001 探索
@@ -66,10 +68,10 @@ PUMCH-r2 与 Mayo-r2 的 `uses_institutional_reputation` 是**明确否定声望
 
 | 用途 | 本机实验组 | 可读轨迹入口 |
 |---|---|---|
-| 既有 v0.6 基线 | 20261027T115111Z-349000 | [打开可读轨迹](../runs/20261027T115111Z-349000/readable_traces/README.md) |
-| v0.7 探索 | 20261027T125411Z-678000 | [打开可读轨迹](../runs/20261027T125411Z-678000/readable_traces/README.md) |
-| v0.8 探索 | 20261027T131002Z-073000 | [打开可读轨迹](../runs/20261027T131002Z-073000/readable_traces/README.md) |
-| 医院署名 v0.1，两次/条件 | 20261027T132541Z-133000 | [打开可读轨迹](../runs/20261027T132541Z-133000/readable_traces/README.md) |
+| 既有 v0.6 基线 | 20261027T115111Z-349000 | [打开可读轨迹](../results/groups/20261027T115111Z-349000/README.md) |
+| v0.7 探索 | 20261027T125411Z-678000 | [打开可读轨迹](../results/groups/20261027T125411Z-678000/README.md) |
+| v0.8 探索 | 20261027T131002Z-073000 | [打开可读轨迹](../results/groups/20261027T131002Z-073000/README.md) |
+| 医院署名 v0.1，两次/条件 | 20261027T132541Z-133000 | [打开可读轨迹](../results/groups/20261027T132541Z-133000/README.md) |
 | 人工 laptop controls | 20261027-evaluator-controls-v07 | `diagnostic_result.json`；不是 agent 轨迹 |
 | 人工 clinical controls | 20261027-evaluator-controls-task002-v01 | `diagnostic_result.json`；不是 agent 轨迹 |
 

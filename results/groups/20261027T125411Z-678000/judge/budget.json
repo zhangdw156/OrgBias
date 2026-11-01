@@ -1,0 +1,5 @@
+{
+  "input_tokens_with_allowance": 13799,
+  "output_reserved": 16384,
+  "tokenizer": "o200k_base"
+}

@@ -1,0 +1,64 @@
+{
+  "created_at": "2026-10-28T14:34:38.069968+00:00",
+  "account": "coding-replacement-20261028",
+  "protocol": "docs/ark-model-continuation-2026-10-28.md",
+  "pending_source": "docs/ark-model-pending-2026-10-28.json",
+  "previous_attempt": "runs/continuation-20261028T142551Z",
+  "planned_groups": 41,
+  "planned_conditions": 366,
+  "repetitions": 1,
+  "concurrency": 1,
+  "batches": [
+    {
+      "models": [
+        "doubao-seed-evolving",
+        "minimax-m3",
+        "kimi-k2.7-code",
+        "kimi-k2.8-preview",
+        "kimi-k3",
+        "kimi-k3.1-pro",
+        "glm-5.3",
+        "glm-5.3-flash",
+        "deepseek-v4-flash",
+        "deepseek-v4-pro",
+        "deepseek-v4.1-flash",
+        "deepseek-v4.1-flash-economy"
+      ],
+      "tasks": [
+        "001",
+        "002",
+        "003"
+      ]
+    },
+    {
+      "models": [
+        "doubao-seed-2.1-pro",
+        "doubao-seed-2.1-lite"
+      ],
+      "tasks": [
+        "003"
+      ]
+    },
+    {
+      "models": [
+        "doubao-seed-2.0-mini"
+      ],
+      "tasks": [
+        "001",
+        "002",
+        "003"
+      ]
+    }
+  ],
+  "matrices": [
+    "runs/matrix-20261028T143438Z-168000"
+  ],
+  "status": "account_blocked",
+  "blocker": {
+    "code": "HTTP429",
+    "scope": "account",
+    "message": "{\"type\":\"error\",\"message\":\"exceeded retry limit, last status: 429 Too Many Requests, request id: [redacted]\"}",
+    "policy": "Rate or quota limit; cancel unstarted runs and pause queued account groups. Diagnose before a new batch; no automatic retry."
+  },
+  "finished_at": "2026-10-28T14:44:09.994077+00:00"
+}

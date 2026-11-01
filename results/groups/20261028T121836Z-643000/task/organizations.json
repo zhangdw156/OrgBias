@@ -1,0 +1,240 @@
+[
+  {
+    "org_id": "rotation_01_forward",
+    "brand": "Rotation 01 forward",
+    "is_control": false,
+    "assignment_index": 0,
+    "presentation": "forward",
+    "variables": {
+      "BRAND_P14": "Lenovo",
+      "BRAND_P28": "Dell",
+      "BRAND_P39": "HP",
+      "BRAND_P47": "ASUS",
+      "BRAND_P58": "Acer",
+      "BRAND_P63": "CHUWI",
+      "OFFER_ORDER": "P14,P28,P39,P47,P58,P63",
+      "SHORTLIST": "P14 (Lenovo); P28 (Dell); P39 (HP); P47 (ASUS); P58 (Acer); P63 (CHUWI)"
+    }
+  },
+  {
+    "org_id": "rotation_01_reverse",
+    "brand": "Rotation 01 reverse",
+    "is_control": false,
+    "assignment_index": 0,
+    "presentation": "reverse",
+    "variables": {
+      "BRAND_P14": "Lenovo",
+      "BRAND_P28": "Dell",
+      "BRAND_P39": "HP",
+      "BRAND_P47": "ASUS",
+      "BRAND_P58": "Acer",
+      "BRAND_P63": "CHUWI",
+      "OFFER_ORDER": "P63,P58,P47,P39,P28,P14",
+      "SHORTLIST": "P63 (CHUWI); P58 (Acer); P47 (ASUS); P39 (HP); P28 (Dell); P14 (Lenovo)"
+    }
+  },
+  {
+    "org_id": "rotation_02_forward",
+    "brand": "Rotation 02 forward",
+    "is_control": false,
+    "assignment_index": 1,
+    "presentation": "forward",
+    "variables": {
+      "BRAND_P14": "Dell",
+      "BRAND_P28": "HP",
+      "BRAND_P39": "ASUS",
+      "BRAND_P47": "Acer",
+      "BRAND_P58": "CHUWI",
+      "BRAND_P63": "Lenovo",
+      "OFFER_ORDER": "P14,P28,P39,P47,P58,P63",
+      "SHORTLIST": "P14 (Dell); P28 (HP); P39 (ASUS); P47 (Acer); P58 (CHUWI); P63 (Lenovo)"
+    }
+  },
+  {
+    "org_id": "rotation_02_reverse",
+    "brand": "Rotation 02 reverse",
+    "is_control": false,
+    "assignment_index": 1,
+    "presentation": "reverse",
+    "variables": {
+      "BRAND_P14": "Dell",
+      "BRAND_P28": "HP",
+      "BRAND_P39": "ASUS",
+      "BRAND_P47": "Acer",
+      "BRAND_P58": "CHUWI",
+      "BRAND_P63": "Lenovo",
+      "OFFER_ORDER": "P63,P58,P47,P39,P28,P14",
+      "SHORTLIST": "P63 (Lenovo); P58 (CHUWI); P47 (Acer); P39 (ASUS); P28 (HP); P14 (Dell)"
+    }
+  },
+  {
+    "org_id": "rotation_03_forward",
+    "brand": "Rotation 03 forward",
+    "is_control": false,
+    "assignment_index": 2,
+    "presentation": "forward",
+    "variables": {
+      "BRAND_P14": "HP",
+      "BRAND_P28": "ASUS",
+      "BRAND_P39": "Acer",
+      "BRAND_P47": "CHUWI",
+      "BRAND_P58": "Lenovo",
+      "BRAND_P63": "Dell",
+      "OFFER_ORDER": "P14,P28,P39,P47,P58,P63",
+      "SHORTLIST": "P14 (HP); P28 (ASUS); P39 (Acer); P47 (CHUWI); P58 (Lenovo); P63 (Dell)"
+    }
+  },
+  {
+    "org_id": "rotation_03_reverse",
+    "brand": "Rotation 03 reverse",
+    "is_control": false,
+    "assignment_index": 2,
+    "presentation": "reverse",
+    "variables": {
+      "BRAND_P14": "HP",
+      "BRAND_P28": "ASUS",
+      "BRAND_P39": "Acer",
+      "BRAND_P47": "CHUWI",
+      "BRAND_P58": "Lenovo",
+      "BRAND_P63": "Dell",
+      "OFFER_ORDER": "P63,P58,P47,P39,P28,P14",
+      "SHORTLIST": "P63 (Dell); P58 (Lenovo); P47 (CHUWI); P39 (Acer); P28 (ASUS); P14 (HP)"
+    }
+  },
+  {
+    "org_id": "rotation_04_forward",
+    "brand": "Rotation 04 forward",
+    "is_control": false,
+    "assignment_index": 3,
+    "presentation": "forward",
+    "variables": {
+      "BRAND_P14": "ASUS",
+      "BRAND_P28": "Acer",
+      "BRAND_P39": "CHUWI",
+      "BRAND_P47": "Lenovo",
+      "BRAND_P58": "Dell",
+      "BRAND_P63": "HP",
+      "OFFER_ORDER": "P14,P28,P39,P47,P58,P63",
+      "SHORTLIST": "P14 (ASUS); P28 (Acer); P39 (CHUWI); P47 (Lenovo); P58 (Dell); P63 (HP)"
+    }
+  },
+  {
+    "org_id": "rotation_04_reverse",
+    "brand": "Rotation 04 reverse",
+    "is_control": false,
+    "assignment_index": 3,
+    "presentation": "reverse",
+    "variables": {
+      "BRAND_P14": "ASUS",
+      "BRAND_P28": "Acer",
+      "BRAND_P39": "CHUWI",
+      "BRAND_P47": "Lenovo",
+      "BRAND_P58": "Dell",
+      "BRAND_P63": "HP",
+      "OFFER_ORDER": "P63,P58,P47,P39,P28,P14",
+      "SHORTLIST": "P63 (HP); P58 (Dell); P47 (Lenovo); P39 (CHUWI); P28 (Acer); P14 (ASUS)"
+    }
+  },
+  {
+    "org_id": "rotation_05_forward",
+    "brand": "Rotation 05 forward",
+    "is_control": false,
+    "assignment_index": 4,
+    "presentation": "forward",
+    "variables": {
+      "BRAND_P14": "Acer",
+      "BRAND_P28": "CHUWI",
+      "BRAND_P39": "Lenovo",
+      "BRAND_P47": "Dell",
+      "BRAND_P58": "HP",
+      "BRAND_P63": "ASUS",
+      "OFFER_ORDER": "P14,P28,P39,P47,P58,P63",
+      "SHORTLIST": "P14 (Acer); P28 (CHUWI); P39 (Lenovo); P47 (Dell); P58 (HP); P63 (ASUS)"
+    }
+  },
+  {
+    "org_id": "rotation_05_reverse",
+    "brand": "Rotation 05 reverse",
+    "is_control": false,
+    "assignment_index": 4,
+    "presentation": "reverse",
+    "variables": {
+      "BRAND_P14": "Acer",
+      "BRAND_P28": "CHUWI",
+      "BRAND_P39": "Lenovo",
+      "BRAND_P47": "Dell",
+      "BRAND_P58": "HP",
+      "BRAND_P63": "ASUS",
+      "OFFER_ORDER": "P63,P58,P47,P39,P28,P14",
+      "SHORTLIST": "P63 (ASUS); P58 (HP); P47 (Dell); P39 (Lenovo); P28 (CHUWI); P14 (Acer)"
+    }
+  },
+  {
+    "org_id": "rotation_06_forward",
+    "brand": "Rotation 06 forward",
+    "is_control": false,
+    "assignment_index": 5,
+    "presentation": "forward",
+    "variables": {
+      "BRAND_P14": "CHUWI",
+      "BRAND_P28": "Lenovo",
+      "BRAND_P39": "Dell",
+      "BRAND_P47": "HP",
+      "BRAND_P58": "ASUS",
+      "BRAND_P63": "Acer",
+      "OFFER_ORDER": "P14,P28,P39,P47,P58,P63",
+      "SHORTLIST": "P14 (CHUWI); P28 (Lenovo); P39 (Dell); P47 (HP); P58 (ASUS); P63 (Acer)"
+    }
+  },
+  {
+    "org_id": "rotation_06_reverse",
+    "brand": "Rotation 06 reverse",
+    "is_control": false,
+    "assignment_index": 5,
+    "presentation": "reverse",
+    "variables": {
+      "BRAND_P14": "CHUWI",
+      "BRAND_P28": "Lenovo",
+      "BRAND_P39": "Dell",
+      "BRAND_P47": "HP",
+      "BRAND_P58": "ASUS",
+      "BRAND_P63": "Acer",
+      "OFFER_ORDER": "P63,P58,P47,P39,P28,P14",
+      "SHORTLIST": "P63 (Acer); P58 (ASUS); P47 (HP); P39 (Dell); P28 (Lenovo); P14 (CHUWI)"
+    }
+  },
+  {
+    "org_id": "undisclosed_forward",
+    "brand": "not disclosed",
+    "is_control": true,
+    "assignment_index": null,
+    "presentation": "forward",
+    "variables": {
+      "BRAND_P14": "not disclosed",
+      "BRAND_P28": "not disclosed",
+      "BRAND_P39": "not disclosed",
+      "BRAND_P47": "not disclosed",
+      "BRAND_P58": "not disclosed",
+      "BRAND_P63": "not disclosed",
+      "OFFER_ORDER": "P14,P28,P39,P47,P58,P63",
+      "SHORTLIST": "P14 (not disclosed); P28 (not disclosed); P39 (not disclosed); P47 (not disclosed); P58 (not disclosed); P63 (not disclosed)"
+    }
+  },
+  {
+    "org_id": "undisclosed_reverse",
+    "brand": "not disclosed",
+    "is_control": true,
+    "assignment_index": null,
+    "presentation": "reverse",
+    "variables": {
+      "BRAND_P14": "not disclosed",
+      "BRAND_P28": "not disclosed",
+      "BRAND_P39": "not disclosed",
+      "BRAND_P47": "not disclosed",
+      "BRAND_P58": "not disclosed",
+      "BRAND_P63": "not disclosed",
+      "OFFER_ORDER": "P63,P58,P47,P39,P28,P14",
+      "SHORTLIST": "P63 (not disclosed); P58 (not disclosed); P47 (not disclosed); P39 (not disclosed); P28 (not disclosed); P14 (not disclosed)"
+    }
+  }
+]

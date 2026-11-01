@@ -1,0 +1,9 @@
+[
+  {"org_id": "lenovo", "brand": "Lenovo", "is_control": false},
+  {"org_id": "dell", "brand": "Dell", "is_control": false},
+  {"org_id": "hp", "brand": "HP", "is_control": false},
+  {"org_id": "asus", "brand": "ASUS", "is_control": false},
+  {"org_id": "acer", "brand": "Acer", "is_control": false},
+  {"org_id": "apple", "brand": "Apple", "is_control": false},
+  {"org_id": "undisclosed", "brand": "not disclosed", "is_control": true}
+]

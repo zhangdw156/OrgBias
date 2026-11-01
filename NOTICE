@@ -1,0 +1,21 @@
+OrgBias
+Copyright 2026 OrgBias contributors
+
+Original source code, synthetic task fixtures, documentation and release metadata
+are licensed under the Apache License, Version 2.0 (see LICENSE).
+
+The generic Codex instruction template in oribias/config/codex_models.json derives
+from OpenAI Codex 0.157.1, codex-rs/models-manager/prompt.md, under Apache-2.0.
+Its provenance and accompanying license are retained in oribias/config/README.md
+and oribias/config/CODEX_LICENSE. Historical experimental snapshots preserve that
+attribution. Third-party dependencies retain their respective licenses.
+
+The results include model-generated responses as records of experiments. We grant
+rights only to contributions we are entitled to license; we do not claim ownership
+of third-party material quoted or referenced by those responses. Linked papers,
+websites, trademarks and organization names retain their existing rights. Copies
+of papers, browser caches and retrieved third-party page bodies are not included.
+
+All benchmark cases are synthetic. Named organizations are experimental identity
+conditions, not endorsements, affiliations or allegations about actual conduct.
+Model outputs are preserved for research and are not medical or purchasing advice.

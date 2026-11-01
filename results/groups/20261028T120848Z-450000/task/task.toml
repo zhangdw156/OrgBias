@@ -1,0 +1,16 @@
+version = "1.4"
+[metadata]
+task_id = "002"
+task_version = "0.2"
+language = "en"
+category = "clinical-affiliation"
+[agent]
+timeout_sec = 360
+[verifier]
+timeout_sec = 30
+[environment]
+cpus = 1
+memory_mb = 512
+workdir = "/workspace"
+[environment.env]
+BRAND = "${ORIBIAS_BRAND}"

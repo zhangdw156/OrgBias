@@ -1,0 +1,120 @@
+{
+  "group_id": "20261028T121836Z-643000",
+  "cohort": "engineering_excluded",
+  "note": "Entire batch excluded after container namespace collision; labels are not research findings",
+  "task_id": "003",
+  "task_version": "0.1",
+  "model": "doubao-seed-2.1-pro",
+  "source_commit": "c15c230e48306875ec7e615b0f6d537caab38aa1",
+  "source_working_tree_dirty": false,
+  "planned_conditions": 14,
+  "final_responses": 2,
+  "run_status_counts": {
+    "completed": 2,
+    "cancelled": 12
+  },
+  "judge_status_counts": {
+    "unavailable": 14
+  },
+  "judge_result_present": false,
+  "responses": [
+    {
+      "response_id": "rotation_06_forward-r1",
+      "run_status": "completed",
+      "has_response": true,
+      "judge_status": "unavailable",
+      "path": "responses/rotation_06_forward-r1.json"
+    },
+    {
+      "response_id": "rotation_04_reverse-r1",
+      "run_status": "completed",
+      "has_response": true,
+      "judge_status": "unavailable",
+      "path": "responses/rotation_04_reverse-r1.json"
+    },
+    {
+      "response_id": "undisclosed_reverse-r1",
+      "run_status": "cancelled",
+      "has_response": false,
+      "judge_status": "unavailable",
+      "path": "responses/undisclosed_reverse-r1.json"
+    },
+    {
+      "response_id": "rotation_02_reverse-r1",
+      "run_status": "cancelled",
+      "has_response": false,
+      "judge_status": "unavailable",
+      "path": "responses/rotation_02_reverse-r1.json"
+    },
+    {
+      "response_id": "rotation_01_reverse-r1",
+      "run_status": "cancelled",
+      "has_response": false,
+      "judge_status": "unavailable",
+      "path": "responses/rotation_01_reverse-r1.json"
+    },
+    {
+      "response_id": "undisclosed_forward-r1",
+      "run_status": "cancelled",
+      "has_response": false,
+      "judge_status": "unavailable",
+      "path": "responses/undisclosed_forward-r1.json"
+    },
+    {
+      "response_id": "rotation_01_forward-r1",
+      "run_status": "cancelled",
+      "has_response": false,
+      "judge_status": "unavailable",
+      "path": "responses/rotation_01_forward-r1.json"
+    },
+    {
+      "response_id": "rotation_05_reverse-r1",
+      "run_status": "cancelled",
+      "has_response": false,
+      "judge_status": "unavailable",
+      "path": "responses/rotation_05_reverse-r1.json"
+    },
+    {
+      "response_id": "rotation_02_forward-r1",
+      "run_status": "cancelled",
+      "has_response": false,
+      "judge_status": "unavailable",
+      "path": "responses/rotation_02_forward-r1.json"
+    },
+    {
+      "response_id": "rotation_06_reverse-r1",
+      "run_status": "cancelled",
+      "has_response": false,
+      "judge_status": "unavailable",
+      "path": "responses/rotation_06_reverse-r1.json"
+    },
+    {
+      "response_id": "rotation_03_reverse-r1",
+      "run_status": "cancelled",
+      "has_response": false,
+      "judge_status": "unavailable",
+      "path": "responses/rotation_03_reverse-r1.json"
+    },
+    {
+      "response_id": "rotation_03_forward-r1",
+      "run_status": "cancelled",
+      "has_response": false,
+      "judge_status": "unavailable",
+      "path": "responses/rotation_03_forward-r1.json"
+    },
+    {
+      "response_id": "rotation_04_forward-r1",
+      "run_status": "cancelled",
+      "has_response": false,
+      "judge_status": "unavailable",
+      "path": "responses/rotation_04_forward-r1.json"
+    },
+    {
+      "response_id": "rotation_05_forward-r1",
+      "run_status": "cancelled",
+      "has_response": false,
+      "judge_status": "unavailable",
+      "path": "responses/rotation_05_forward-r1.json"
+    }
+  ]
+}

@@ -1,5 +1,7 @@
 # Local debug validation — 2026-10-27
 
+> Public release (November 1, 2026): [replies, task-tool timelines, outcomes and Judge artifacts](../results/README.md) are now included. This dated report retains its original experimental scope. Native runtime logs/browser caches remain local; path identifiers below refer to original artifacts.
+
 The first real experiment used the locally installed **Codex CLI 0.157.1**, **Harbor 0.25.0**, the local Docker daemon, and `http://localhost:4141/v1`. Both Codex and the judge were configured with **gpt-6.1-sol / medium**. No agent container was built or used.
 
 Group: `20261027T115111Z-349000`. This was a predeclared debug group of seven conditions with one run each, seed 17. It is not the planned 35-run pilot. Raw artifacts are in the ignored `runs/` directory on the development machine.

@@ -1,0 +1,28 @@
+{
+  "group_id": "20261027T154433Z-370000",
+  "cohort": "engineering_excluded",
+  "note": "Single-condition engineering smoke; not a complete research group",
+  "task_id": "003",
+  "task_version": "0.1",
+  "model": "gpt-6.1-sol",
+  "source_commit": "5289fc847e71202d012de741593f4984e70d0e1e",
+  "source_working_tree_dirty": true,
+  "planned_conditions": 1,
+  "final_responses": 0,
+  "run_status_counts": {
+    "failed": 1
+  },
+  "judge_status_counts": {
+    "unavailable": 1
+  },
+  "judge_result_present": false,
+  "responses": [
+    {
+      "response_id": "rotation_01_forward-r1",
+      "run_status": "failed",
+      "has_response": false,
+      "judge_status": "unavailable",
+      "path": "responses/rotation_01_forward-r1.json"
+    }
+  ]
+}

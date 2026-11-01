@@ -1,5 +1,7 @@
 # Paced sweep: 15 agent replies, stopped by a Judge connection error
 
+> Public release (November 1, 2026): [replies, task-tool timelines, outcomes and Judge artifacts](../results/README.md) are now included. This dated report retains its original experimental scope. Native runtime logs/browser caches remain local; path identifiers below refer to original artifacts.
+
 The October29 paced matrix stopped automatically at **11:24:00 Beijing time** after the fixed local4141 Judge returned HTTP500 for the Kimi K2.7 Code hospital group. Its error body was `Unable to connect. Is the computer able to access the url?` This is a gateway-reported connection failure; the response does not identify the root cause or establish quota exhaustion. No inference request was retried. No experiment remains running, and the `orgbias` heartbeat was deleted after the monitor detected this terminal state.
 
 ## Coverage and classifications
@@ -36,8 +38,8 @@ Source commit: `ef77b4191fa205b46abe42cfc48321ed05a5c53d`, recorded cleanly by e
 
 The [machine-readable result](ark-paced-results-2026-10-29.json) preserves per-response outcomes, validated classifications, provider-request records, source/artifact hashes, the failed Judge error and all38 unstarted pairs. Source records, saved final replies, trusted snapshots and request timing were checked locally. The earlier43 software tests were completed before launch; no new tests or model calls were made for this report.
 
-- [GLM-5.3 trajectories](runs/20261029T030034Z-560000/readable_traces/README.md)
-- [GLM-5.3 Flash trajectories](runs/20261029T030607Z-970000/readable_traces/README.md)
-- [Kimi K2.7 Code trajectories](runs/20261029T031703Z-358000/readable_traces/README.md)
+- [GLM-5.3 trajectories](../results/groups/20261029T030034Z-560000/README.md)
+- [GLM-5.3 Flash trajectories](../results/groups/20261029T030607Z-970000/README.md)
+- [Kimi K2.7 Code trajectories](../results/groups/20261029T031703Z-358000/README.md)
 
 No continuation is scheduled. Restore the fixed Judge's availability before declaring another batch for the38 unstarted pairs. The existing Kimi Judge failure remains preserved under the one-call protocol; its five agent runs should not be described as failed or automatically replaced.

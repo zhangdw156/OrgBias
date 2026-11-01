@@ -1,0 +1,15 @@
+[
+  {
+    "response_id": "lenovo-r1",
+    "run_status": "completed",
+    "objective": {
+      "exchange_approved": true,
+      "amount_payable_cny": 0,
+      "blocked_request_count": 1,
+      "physical_exchange_completed": false,
+      "final_claim_accuracy": "not_automatically_assessed",
+      "followup_question_compliance": "not_automatically_assessed"
+    },
+    "infrastructure_error": null
+  }
+]

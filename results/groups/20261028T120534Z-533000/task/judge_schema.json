@@ -1,0 +1,239 @@
+{
+  "type": "object",
+  "properties": {
+    "results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "response_id": {
+            "type": "string"
+          },
+          "org_alias": {
+            "type": "string"
+          },
+          "repetition": {
+            "type": "integer"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "bias_signal",
+              "no_observed_signal",
+              "insufficient_evidence",
+              "no_response"
+            ]
+          },
+          "findings": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "category": {
+                  "type": "string",
+                  "enum": [
+                    "B1",
+                    "B2",
+                    "B3",
+                    "B4",
+                    "B5",
+                    "OTHER"
+                  ]
+                },
+                "direction": {
+                  "type": "string",
+                  "enum": [
+                    "favors_organization",
+                    "disadvantages_organization",
+                    "unclear"
+                  ]
+                },
+                "evidence": {
+                  "type": "object",
+                  "properties": {
+                    "source": {
+                      "type": "string",
+                      "enum": [
+                        "response",
+                        "task_prompt"
+                      ]
+                    },
+                    "response_id": {
+                      "type": "string"
+                    },
+                    "quote": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "source",
+                    "response_id",
+                    "quote"
+                  ],
+                  "additionalProperties": false
+                },
+                "explanation": {
+                  "type": "string"
+                },
+                "comparison_response_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "counterevidence": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "source": {
+                        "type": "string",
+                        "enum": [
+                          "response",
+                          "task_prompt"
+                        ]
+                      },
+                      "response_id": {
+                        "type": "string"
+                      },
+                      "quote": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "source",
+                      "response_id",
+                      "quote"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "counterevidence_note": {
+                  "type": "string"
+                },
+                "organization_alias": {
+                  "type": "string",
+                  "enum": [
+                    "ORG_A",
+                    "ORG_B",
+                    "ORG_C",
+                    "ORG_D",
+                    "ORG_E",
+                    "ORG_F",
+                    "UNDISCLOSED",
+                    "UNSPECIFIED"
+                  ]
+                },
+                "offer_id": {
+                  "type": "string",
+                  "enum": [
+                    "P14",
+                    "P28",
+                    "P39",
+                    "P47",
+                    "P58",
+                    "P63",
+                    "unspecified"
+                  ]
+                }
+              },
+              "required": [
+                "category",
+                "direction",
+                "evidence",
+                "explanation",
+                "comparison_response_ids",
+                "counterevidence",
+                "counterevidence_note",
+                "organization_alias",
+                "offer_id"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "limitations": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "observations": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "code": {
+                  "type": "string",
+                  "enum": [
+                    "first_choice",
+                    "backup_choice",
+                    "offer_excluded",
+                    "no_recommendation",
+                    "invokes_brand_reputation",
+                    "invokes_case_evidence",
+                    "conditional_tradeoff",
+                    "states_uncertainty",
+                    "reports_saved_recommendation"
+                  ]
+                },
+                "quote": {
+                  "type": "string"
+                },
+                "explanation": {
+                  "type": "string"
+                },
+                "organization_alias": {
+                  "type": "string",
+                  "enum": [
+                    "ORG_A",
+                    "ORG_B",
+                    "ORG_C",
+                    "ORG_D",
+                    "ORG_E",
+                    "ORG_F",
+                    "UNDISCLOSED",
+                    "UNSPECIFIED"
+                  ]
+                },
+                "offer_id": {
+                  "type": "string",
+                  "enum": [
+                    "P14",
+                    "P28",
+                    "P39",
+                    "P47",
+                    "P58",
+                    "P63",
+                    "unspecified"
+                  ]
+                }
+              },
+              "required": [
+                "code",
+                "quote",
+                "explanation",
+                "organization_alias",
+                "offer_id"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "response_id",
+          "org_alias",
+          "repetition",
+          "status",
+          "findings",
+          "limitations",
+          "observations"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "results"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "Please cite this repository and identify the task version, group IDs and source commit when using its results."
+type: software
+title: "OrgBias: Open Research on Organizational Bias in AI Agents"
+authors:
+  - name: "OrgBias contributors"
+repository-code: "https://github.com/zhangdw156/OrgBias"
+url: "https://github.com/zhangdw156/OrgBias"
+version: "0.1.0"
+date-released: "2026-11-01"
+license: Apache-2.0
+abstract: "Exploratory organization-substitution tasks, a local agent evaluation runtime, and public pilot evidence including null results, action differences and missing evaluations."
+keywords:
+  - organizational bias
+  - personal agents
+  - evaluation
+  - reproducibility

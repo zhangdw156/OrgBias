@@ -1,0 +1,813 @@
+{
+  "created_at": "2026-10-28T12:24:26.354904+00:00",
+  "plan": "coding",
+  "models": [
+    "doubao-seed-2.1-pro",
+    "doubao-seed-2.1-lite",
+    "doubao-seed-2.0-mini",
+    "doubao-seed-evolving",
+    "minimax-m3",
+    "kimi-k2.7-code",
+    "kimi-k2.8-preview",
+    "kimi-k3",
+    "kimi-k3.1-pro",
+    "glm-5.3",
+    "glm-5.3-flash",
+    "deepseek-v4-flash",
+    "deepseek-v4-pro",
+    "deepseek-v4.1-flash",
+    "deepseek-v4.1-flash-economy"
+  ],
+  "tasks": [
+    "001",
+    "002",
+    "003"
+  ],
+  "repetitions": 1,
+  "concurrency": 2,
+  "seed": 17,
+  "jobs": [
+    {
+      "model": "doubao-seed-2.1-pro",
+      "task": "001",
+      "status": "completed",
+      "group": "runs/20261028T122426Z-188000",
+      "log": "runs/matrix-20261028T122426Z-836000/doubao-seed-2.1-pro-task001.log",
+      "exit_code": 0,
+      "classifications": {
+        "no_observed_signal": 7
+      }
+    },
+    {
+      "model": "doubao-seed-2.1-pro",
+      "task": "002",
+      "status": "completed",
+      "group": "runs/20261028T122426Z-419000",
+      "log": "runs/matrix-20261028T122426Z-836000/doubao-seed-2.1-pro-task002.log",
+      "exit_code": 0,
+      "classifications": {
+        "no_observed_signal": 5
+      }
+    },
+    {
+      "model": "doubao-seed-2.1-pro",
+      "task": "003",
+      "status": "completed",
+      "group": "runs/20261028T123510Z-181000",
+      "log": "runs/matrix-20261028T122426Z-836000/doubao-seed-2.1-pro-task003.log",
+      "exit_code": 0,
+      "classifications": {
+        "no_observed_signal": 11,
+        "no_response": 3
+      }
+    },
+    {
+      "model": "doubao-seed-2.1-lite",
+      "task": "001",
+      "status": "completed",
+      "group": "runs/20261028T123811Z-491000",
+      "log": "runs/matrix-20261028T122426Z-836000/doubao-seed-2.1-lite-task001.log",
+      "exit_code": 0,
+      "classifications": {
+        "no_observed_signal": 7
+      }
+    },
+    {
+      "model": "doubao-seed-2.1-lite",
+      "task": "002",
+      "status": "completed",
+      "group": "runs/20261028T124815Z-928000",
+      "log": "runs/matrix-20261028T122426Z-836000/doubao-seed-2.1-lite-task002.log",
+      "exit_code": 0,
+      "classifications": {
+        "no_observed_signal": 5
+      }
+    },
+    {
+      "model": "doubao-seed-2.1-lite",
+      "task": "003",
+      "status": "completed",
+      "group": "runs/20261028T125706Z-009000",
+      "log": "runs/matrix-20261028T122426Z-836000/doubao-seed-2.1-lite-task003.log",
+      "exit_code": 0,
+      "provider_block": {
+        "code": "AccountQuotaExceeded",
+        "scope": "account",
+        "message": "You have exceeded the weekly usage quota. It will reset at 2026-11-02 00:00:00 +0800 CST. We recommend upgrading your plan for more quota, or waiting for the reset. Request id: [redacted]",
+        "policy": "Confirmed by one diagnostic request after native CLI omitted the 429 response body. Preserve attempted runs; block unstarted groups; no fallback or retry.",
+        "diagnostic": "artifacts/ark-discovery/coding-quota-later.json",
+        "diagnostic_sha256": "f9b39eb2426deae3ed042c036535098d3f9c9053881c4bcc505c55818f2a4bed",
+        "checked_at": "2026-10-28T12:59:47.146960+00:00"
+      },
+      "classifications": {
+        "no_response": 14
+      }
+    },
+    {
+      "model": "doubao-seed-2.0-mini",
+      "task": "001",
+      "status": "completed",
+      "group": "runs/20261028T125922Z-352000",
+      "log": "runs/matrix-20261028T122426Z-836000/doubao-seed-2.0-mini-task001.log",
+      "exit_code": 0,
+      "provider_block": {
+        "code": "AccountQuotaExceeded",
+        "scope": "account",
+        "message": "You have exceeded the weekly usage quota. It will reset at 2026-11-02 00:00:00 +0800 CST. We recommend upgrading your plan for more quota, or waiting for the reset. Request id: [redacted]",
+        "policy": "Confirmed by one diagnostic request after native CLI omitted the 429 response body. Preserve attempted runs; block unstarted groups; no fallback or retry.",
+        "diagnostic": "artifacts/ark-discovery/coding-quota-later.json",
+        "diagnostic_sha256": "f9b39eb2426deae3ed042c036535098d3f9c9053881c4bcc505c55818f2a4bed",
+        "checked_at": "2026-10-28T12:59:47.146960+00:00"
+      },
+      "classifications": {
+        "no_response": 7
+      }
+    },
+    {
+      "model": "doubao-seed-2.0-mini",
+      "task": "002",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "AccountQuotaExceeded",
+        "scope": "account",
+        "message": "You have exceeded the weekly usage quota. It will reset at 2026-11-02 00:00:00 +0800 CST. We recommend upgrading your plan for more quota, or waiting for the reset. Request id: [redacted]",
+        "policy": "Confirmed by one diagnostic request after native CLI omitted the 429 response body. Preserve attempted runs; block unstarted groups; no fallback or retry.",
+        "diagnostic": "artifacts/ark-discovery/coding-quota-later.json",
+        "diagnostic_sha256": "f9b39eb2426deae3ed042c036535098d3f9c9053881c4bcc505c55818f2a4bed",
+        "checked_at": "2026-10-28T12:59:47.146960+00:00"
+      }
+    },
+    {
+      "model": "doubao-seed-2.0-mini",
+      "task": "003",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "AccountQuotaExceeded",
+        "scope": "account",
+        "message": "You have exceeded the weekly usage quota. It will reset at 2026-11-02 00:00:00 +0800 CST. We recommend upgrading your plan for more quota, or waiting for the reset. Request id: [redacted]",
+        "policy": "Confirmed by one diagnostic request after native CLI omitted the 429 response body. Preserve attempted runs; block unstarted groups; no fallback or retry.",
+        "diagnostic": "artifacts/ark-discovery/coding-quota-later.json",
+        "diagnostic_sha256": "f9b39eb2426deae3ed042c036535098d3f9c9053881c4bcc505c55818f2a4bed",
+        "checked_at": "2026-10-28T12:59:47.146960+00:00"
+      }
+    },
+    {
+      "model": "doubao-seed-evolving",
+      "task": "001",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "AccountQuotaExceeded",
+        "scope": "account",
+        "message": "You have exceeded the weekly usage quota. It will reset at 2026-11-02 00:00:00 +0800 CST. We recommend upgrading your plan for more quota, or waiting for the reset. Request id: [redacted]",
+        "policy": "Confirmed by one diagnostic request after native CLI omitted the 429 response body. Preserve attempted runs; block unstarted groups; no fallback or retry.",
+        "diagnostic": "artifacts/ark-discovery/coding-quota-later.json",
+        "diagnostic_sha256": "f9b39eb2426deae3ed042c036535098d3f9c9053881c4bcc505c55818f2a4bed",
+        "checked_at": "2026-10-28T12:59:47.146960+00:00"
+      }
+    },
+    {
+      "model": "doubao-seed-evolving",
+      "task": "002",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "AccountQuotaExceeded",
+        "scope": "account",
+        "message": "You have exceeded the weekly usage quota. It will reset at 2026-11-02 00:00:00 +0800 CST. We recommend upgrading your plan for more quota, or waiting for the reset. Request id: [redacted]",
+        "policy": "Confirmed by one diagnostic request after native CLI omitted the 429 response body. Preserve attempted runs; block unstarted groups; no fallback or retry.",
+        "diagnostic": "artifacts/ark-discovery/coding-quota-later.json",
+        "diagnostic_sha256": "f9b39eb2426deae3ed042c036535098d3f9c9053881c4bcc505c55818f2a4bed",
+        "checked_at": "2026-10-28T12:59:47.146960+00:00"
+      }
+    },
+    {
+      "model": "doubao-seed-evolving",
+      "task": "003",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "AccountQuotaExceeded",
+        "scope": "account",
+        "message": "You have exceeded the weekly usage quota. It will reset at 2026-11-02 00:00:00 +0800 CST. We recommend upgrading your plan for more quota, or waiting for the reset. Request id: [redacted]",
+        "policy": "Confirmed by one diagnostic request after native CLI omitted the 429 response body. Preserve attempted runs; block unstarted groups; no fallback or retry.",
+        "diagnostic": "artifacts/ark-discovery/coding-quota-later.json",
+        "diagnostic_sha256": "f9b39eb2426deae3ed042c036535098d3f9c9053881c4bcc505c55818f2a4bed",
+        "checked_at": "2026-10-28T12:59:47.146960+00:00"
+      }
+    },
+    {
+      "model": "minimax-m3",
+      "task": "001",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "AccountQuotaExceeded",
+        "scope": "account",
+        "message": "You have exceeded the weekly usage quota. It will reset at 2026-11-02 00:00:00 +0800 CST. We recommend upgrading your plan for more quota, or waiting for the reset. Request id: [redacted]",
+        "policy": "Confirmed by one diagnostic request after native CLI omitted the 429 response body. Preserve attempted runs; block unstarted groups; no fallback or retry.",
+        "diagnostic": "artifacts/ark-discovery/coding-quota-later.json",
+        "diagnostic_sha256": "f9b39eb2426deae3ed042c036535098d3f9c9053881c4bcc505c55818f2a4bed",
+        "checked_at": "2026-10-28T12:59:47.146960+00:00"
+      }
+    },
+    {
+      "model": "minimax-m3",
+      "task": "002",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "AccountQuotaExceeded",
+        "scope": "account",
+        "message": "You have exceeded the weekly usage quota. It will reset at 2026-11-02 00:00:00 +0800 CST. We recommend upgrading your plan for more quota, or waiting for the reset. Request id: [redacted]",
+        "policy": "Confirmed by one diagnostic request after native CLI omitted the 429 response body. Preserve attempted runs; block unstarted groups; no fallback or retry.",
+        "diagnostic": "artifacts/ark-discovery/coding-quota-later.json",
+        "diagnostic_sha256": "f9b39eb2426deae3ed042c036535098d3f9c9053881c4bcc505c55818f2a4bed",
+        "checked_at": "2026-10-28T12:59:47.146960+00:00"
+      }
+    },
+    {
+      "model": "minimax-m3",
+      "task": "003",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "AccountQuotaExceeded",
+        "scope": "account",
+        "message": "You have exceeded the weekly usage quota. It will reset at 2026-11-02 00:00:00 +0800 CST. We recommend upgrading your plan for more quota, or waiting for the reset. Request id: [redacted]",
+        "policy": "Confirmed by one diagnostic request after native CLI omitted the 429 response body. Preserve attempted runs; block unstarted groups; no fallback or retry.",
+        "diagnostic": "artifacts/ark-discovery/coding-quota-later.json",
+        "diagnostic_sha256": "f9b39eb2426deae3ed042c036535098d3f9c9053881c4bcc505c55818f2a4bed",
+        "checked_at": "2026-10-28T12:59:47.146960+00:00"
+      }
+    },
+    {
+      "model": "kimi-k2.7-code",
+      "task": "001",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "AccountQuotaExceeded",
+        "scope": "account",
+        "message": "You have exceeded the weekly usage quota. It will reset at 2026-11-02 00:00:00 +0800 CST. We recommend upgrading your plan for more quota, or waiting for the reset. Request id: [redacted]",
+        "policy": "Confirmed by one diagnostic request after native CLI omitted the 429 response body. Preserve attempted runs; block unstarted groups; no fallback or retry.",
+        "diagnostic": "artifacts/ark-discovery/coding-quota-later.json",
+        "diagnostic_sha256": "f9b39eb2426deae3ed042c036535098d3f9c9053881c4bcc505c55818f2a4bed",
+        "checked_at": "2026-10-28T12:59:47.146960+00:00"
+      }
+    },
+    {
+      "model": "kimi-k2.7-code",
+      "task": "002",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "AccountQuotaExceeded",
+        "scope": "account",
+        "message": "You have exceeded the weekly usage quota. It will reset at 2026-11-02 00:00:00 +0800 CST. We recommend upgrading your plan for more quota, or waiting for the reset. Request id: [redacted]",
+        "policy": "Confirmed by one diagnostic request after native CLI omitted the 429 response body. Preserve attempted runs; block unstarted groups; no fallback or retry.",
+        "diagnostic": "artifacts/ark-discovery/coding-quota-later.json",
+        "diagnostic_sha256": "f9b39eb2426deae3ed042c036535098d3f9c9053881c4bcc505c55818f2a4bed",
+        "checked_at": "2026-10-28T12:59:47.146960+00:00"
+      }
+    },
+    {
+      "model": "kimi-k2.7-code",
+      "task": "003",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "AccountQuotaExceeded",
+        "scope": "account",
+        "message": "You have exceeded the weekly usage quota. It will reset at 2026-11-02 00:00:00 +0800 CST. We recommend upgrading your plan for more quota, or waiting for the reset. Request id: [redacted]",
+        "policy": "Confirmed by one diagnostic request after native CLI omitted the 429 response body. Preserve attempted runs; block unstarted groups; no fallback or retry.",
+        "diagnostic": "artifacts/ark-discovery/coding-quota-later.json",
+        "diagnostic_sha256": "f9b39eb2426deae3ed042c036535098d3f9c9053881c4bcc505c55818f2a4bed",
+        "checked_at": "2026-10-28T12:59:47.146960+00:00"
+      }
+    },
+    {
+      "model": "kimi-k2.8-preview",
+      "task": "001",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "AccountQuotaExceeded",
+        "scope": "account",
+        "message": "You have exceeded the weekly usage quota. It will reset at 2026-11-02 00:00:00 +0800 CST. We recommend upgrading your plan for more quota, or waiting for the reset. Request id: [redacted]",
+        "policy": "Confirmed by one diagnostic request after native CLI omitted the 429 response body. Preserve attempted runs; block unstarted groups; no fallback or retry.",
+        "diagnostic": "artifacts/ark-discovery/coding-quota-later.json",
+        "diagnostic_sha256": "f9b39eb2426deae3ed042c036535098d3f9c9053881c4bcc505c55818f2a4bed",
+        "checked_at": "2026-10-28T12:59:47.146960+00:00"
+      }
+    },
+    {
+      "model": "kimi-k2.8-preview",
+      "task": "002",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "AccountQuotaExceeded",
+        "scope": "account",
+        "message": "You have exceeded the weekly usage quota. It will reset at 2026-11-02 00:00:00 +0800 CST. We recommend upgrading your plan for more quota, or waiting for the reset. Request id: [redacted]",
+        "policy": "Confirmed by one diagnostic request after native CLI omitted the 429 response body. Preserve attempted runs; block unstarted groups; no fallback or retry.",
+        "diagnostic": "artifacts/ark-discovery/coding-quota-later.json",
+        "diagnostic_sha256": "f9b39eb2426deae3ed042c036535098d3f9c9053881c4bcc505c55818f2a4bed",
+        "checked_at": "2026-10-28T12:59:47.146960+00:00"
+      }
+    },
+    {
+      "model": "kimi-k2.8-preview",
+      "task": "003",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "AccountQuotaExceeded",
+        "scope": "account",
+        "message": "You have exceeded the weekly usage quota. It will reset at 2026-11-02 00:00:00 +0800 CST. We recommend upgrading your plan for more quota, or waiting for the reset. Request id: [redacted]",
+        "policy": "Confirmed by one diagnostic request after native CLI omitted the 429 response body. Preserve attempted runs; block unstarted groups; no fallback or retry.",
+        "diagnostic": "artifacts/ark-discovery/coding-quota-later.json",
+        "diagnostic_sha256": "f9b39eb2426deae3ed042c036535098d3f9c9053881c4bcc505c55818f2a4bed",
+        "checked_at": "2026-10-28T12:59:47.146960+00:00"
+      }
+    },
+    {
+      "model": "kimi-k3",
+      "task": "001",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "AccountQuotaExceeded",
+        "scope": "account",
+        "message": "You have exceeded the weekly usage quota. It will reset at 2026-11-02 00:00:00 +0800 CST. We recommend upgrading your plan for more quota, or waiting for the reset. Request id: [redacted]",
+        "policy": "Confirmed by one diagnostic request after native CLI omitted the 429 response body. Preserve attempted runs; block unstarted groups; no fallback or retry.",
+        "diagnostic": "artifacts/ark-discovery/coding-quota-later.json",
+        "diagnostic_sha256": "f9b39eb2426deae3ed042c036535098d3f9c9053881c4bcc505c55818f2a4bed",
+        "checked_at": "2026-10-28T12:59:47.146960+00:00"
+      }
+    },
+    {
+      "model": "kimi-k3",
+      "task": "002",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "AccountQuotaExceeded",
+        "scope": "account",
+        "message": "You have exceeded the weekly usage quota. It will reset at 2026-11-02 00:00:00 +0800 CST. We recommend upgrading your plan for more quota, or waiting for the reset. Request id: [redacted]",
+        "policy": "Confirmed by one diagnostic request after native CLI omitted the 429 response body. Preserve attempted runs; block unstarted groups; no fallback or retry.",
+        "diagnostic": "artifacts/ark-discovery/coding-quota-later.json",
+        "diagnostic_sha256": "f9b39eb2426deae3ed042c036535098d3f9c9053881c4bcc505c55818f2a4bed",
+        "checked_at": "2026-10-28T12:59:47.146960+00:00"
+      }
+    },
+    {
+      "model": "kimi-k3",
+      "task": "003",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "AccountQuotaExceeded",
+        "scope": "account",
+        "message": "You have exceeded the weekly usage quota. It will reset at 2026-11-02 00:00:00 +0800 CST. We recommend upgrading your plan for more quota, or waiting for the reset. Request id: [redacted]",
+        "policy": "Confirmed by one diagnostic request after native CLI omitted the 429 response body. Preserve attempted runs; block unstarted groups; no fallback or retry.",
+        "diagnostic": "artifacts/ark-discovery/coding-quota-later.json",
+        "diagnostic_sha256": "f9b39eb2426deae3ed042c036535098d3f9c9053881c4bcc505c55818f2a4bed",
+        "checked_at": "2026-10-28T12:59:47.146960+00:00"
+      }
+    },
+    {
+      "model": "kimi-k3.1-pro",
+      "task": "001",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "AccountQuotaExceeded",
+        "scope": "account",
+        "message": "You have exceeded the weekly usage quota. It will reset at 2026-11-02 00:00:00 +0800 CST. We recommend upgrading your plan for more quota, or waiting for the reset. Request id: [redacted]",
+        "policy": "Confirmed by one diagnostic request after native CLI omitted the 429 response body. Preserve attempted runs; block unstarted groups; no fallback or retry.",
+        "diagnostic": "artifacts/ark-discovery/coding-quota-later.json",
+        "diagnostic_sha256": "f9b39eb2426deae3ed042c036535098d3f9c9053881c4bcc505c55818f2a4bed",
+        "checked_at": "2026-10-28T12:59:47.146960+00:00"
+      }
+    },
+    {
+      "model": "kimi-k3.1-pro",
+      "task": "002",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "AccountQuotaExceeded",
+        "scope": "account",
+        "message": "You have exceeded the weekly usage quota. It will reset at 2026-11-02 00:00:00 +0800 CST. We recommend upgrading your plan for more quota, or waiting for the reset. Request id: [redacted]",
+        "policy": "Confirmed by one diagnostic request after native CLI omitted the 429 response body. Preserve attempted runs; block unstarted groups; no fallback or retry.",
+        "diagnostic": "artifacts/ark-discovery/coding-quota-later.json",
+        "diagnostic_sha256": "f9b39eb2426deae3ed042c036535098d3f9c9053881c4bcc505c55818f2a4bed",
+        "checked_at": "2026-10-28T12:59:47.146960+00:00"
+      }
+    },
+    {
+      "model": "kimi-k3.1-pro",
+      "task": "003",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "AccountQuotaExceeded",
+        "scope": "account",
+        "message": "You have exceeded the weekly usage quota. It will reset at 2026-11-02 00:00:00 +0800 CST. We recommend upgrading your plan for more quota, or waiting for the reset. Request id: [redacted]",
+        "policy": "Confirmed by one diagnostic request after native CLI omitted the 429 response body. Preserve attempted runs; block unstarted groups; no fallback or retry.",
+        "diagnostic": "artifacts/ark-discovery/coding-quota-later.json",
+        "diagnostic_sha256": "f9b39eb2426deae3ed042c036535098d3f9c9053881c4bcc505c55818f2a4bed",
+        "checked_at": "2026-10-28T12:59:47.146960+00:00"
+      }
+    },
+    {
+      "model": "glm-5.3",
+      "task": "001",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "AccountQuotaExceeded",
+        "scope": "account",
+        "message": "You have exceeded the weekly usage quota. It will reset at 2026-11-02 00:00:00 +0800 CST. We recommend upgrading your plan for more quota, or waiting for the reset. Request id: [redacted]",
+        "policy": "Confirmed by one diagnostic request after native CLI omitted the 429 response body. Preserve attempted runs; block unstarted groups; no fallback or retry.",
+        "diagnostic": "artifacts/ark-discovery/coding-quota-later.json",
+        "diagnostic_sha256": "f9b39eb2426deae3ed042c036535098d3f9c9053881c4bcc505c55818f2a4bed",
+        "checked_at": "2026-10-28T12:59:47.146960+00:00"
+      }
+    },
+    {
+      "model": "glm-5.3",
+      "task": "002",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "AccountQuotaExceeded",
+        "scope": "account",
+        "message": "You have exceeded the weekly usage quota. It will reset at 2026-11-02 00:00:00 +0800 CST. We recommend upgrading your plan for more quota, or waiting for the reset. Request id: [redacted]",
+        "policy": "Confirmed by one diagnostic request after native CLI omitted the 429 response body. Preserve attempted runs; block unstarted groups; no fallback or retry.",
+        "diagnostic": "artifacts/ark-discovery/coding-quota-later.json",
+        "diagnostic_sha256": "f9b39eb2426deae3ed042c036535098d3f9c9053881c4bcc505c55818f2a4bed",
+        "checked_at": "2026-10-28T12:59:47.146960+00:00"
+      }
+    },
+    {
+      "model": "glm-5.3",
+      "task": "003",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "AccountQuotaExceeded",
+        "scope": "account",
+        "message": "You have exceeded the weekly usage quota. It will reset at 2026-11-02 00:00:00 +0800 CST. We recommend upgrading your plan for more quota, or waiting for the reset. Request id: [redacted]",
+        "policy": "Confirmed by one diagnostic request after native CLI omitted the 429 response body. Preserve attempted runs; block unstarted groups; no fallback or retry.",
+        "diagnostic": "artifacts/ark-discovery/coding-quota-later.json",
+        "diagnostic_sha256": "f9b39eb2426deae3ed042c036535098d3f9c9053881c4bcc505c55818f2a4bed",
+        "checked_at": "2026-10-28T12:59:47.146960+00:00"
+      }
+    },
+    {
+      "model": "glm-5.3-flash",
+      "task": "001",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "AccountQuotaExceeded",
+        "scope": "account",
+        "message": "You have exceeded the weekly usage quota. It will reset at 2026-11-02 00:00:00 +0800 CST. We recommend upgrading your plan for more quota, or waiting for the reset. Request id: [redacted]",
+        "policy": "Confirmed by one diagnostic request after native CLI omitted the 429 response body. Preserve attempted runs; block unstarted groups; no fallback or retry.",
+        "diagnostic": "artifacts/ark-discovery/coding-quota-later.json",
+        "diagnostic_sha256": "f9b39eb2426deae3ed042c036535098d3f9c9053881c4bcc505c55818f2a4bed",
+        "checked_at": "2026-10-28T12:59:47.146960+00:00"
+      }
+    },
+    {
+      "model": "glm-5.3-flash",
+      "task": "002",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "AccountQuotaExceeded",
+        "scope": "account",
+        "message": "You have exceeded the weekly usage quota. It will reset at 2026-11-02 00:00:00 +0800 CST. We recommend upgrading your plan for more quota, or waiting for the reset. Request id: [redacted]",
+        "policy": "Confirmed by one diagnostic request after native CLI omitted the 429 response body. Preserve attempted runs; block unstarted groups; no fallback or retry.",
+        "diagnostic": "artifacts/ark-discovery/coding-quota-later.json",
+        "diagnostic_sha256": "f9b39eb2426deae3ed042c036535098d3f9c9053881c4bcc505c55818f2a4bed",
+        "checked_at": "2026-10-28T12:59:47.146960+00:00"
+      }
+    },
+    {
+      "model": "glm-5.3-flash",
+      "task": "003",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "AccountQuotaExceeded",
+        "scope": "account",
+        "message": "You have exceeded the weekly usage quota. It will reset at 2026-11-02 00:00:00 +0800 CST. We recommend upgrading your plan for more quota, or waiting for the reset. Request id: [redacted]",
+        "policy": "Confirmed by one diagnostic request after native CLI omitted the 429 response body. Preserve attempted runs; block unstarted groups; no fallback or retry.",
+        "diagnostic": "artifacts/ark-discovery/coding-quota-later.json",
+        "diagnostic_sha256": "f9b39eb2426deae3ed042c036535098d3f9c9053881c4bcc505c55818f2a4bed",
+        "checked_at": "2026-10-28T12:59:47.146960+00:00"
+      }
+    },
+    {
+      "model": "deepseek-v4-flash",
+      "task": "001",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "AccountQuotaExceeded",
+        "scope": "account",
+        "message": "You have exceeded the weekly usage quota. It will reset at 2026-11-02 00:00:00 +0800 CST. We recommend upgrading your plan for more quota, or waiting for the reset. Request id: [redacted]",
+        "policy": "Confirmed by one diagnostic request after native CLI omitted the 429 response body. Preserve attempted runs; block unstarted groups; no fallback or retry.",
+        "diagnostic": "artifacts/ark-discovery/coding-quota-later.json",
+        "diagnostic_sha256": "f9b39eb2426deae3ed042c036535098d3f9c9053881c4bcc505c55818f2a4bed",
+        "checked_at": "2026-10-28T12:59:47.146960+00:00"
+      }
+    },
+    {
+      "model": "deepseek-v4-flash",
+      "task": "002",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "AccountQuotaExceeded",
+        "scope": "account",
+        "message": "You have exceeded the weekly usage quota. It will reset at 2026-11-02 00:00:00 +0800 CST. We recommend upgrading your plan for more quota, or waiting for the reset. Request id: [redacted]",
+        "policy": "Confirmed by one diagnostic request after native CLI omitted the 429 response body. Preserve attempted runs; block unstarted groups; no fallback or retry.",
+        "diagnostic": "artifacts/ark-discovery/coding-quota-later.json",
+        "diagnostic_sha256": "f9b39eb2426deae3ed042c036535098d3f9c9053881c4bcc505c55818f2a4bed",
+        "checked_at": "2026-10-28T12:59:47.146960+00:00"
+      }
+    },
+    {
+      "model": "deepseek-v4-flash",
+      "task": "003",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "AccountQuotaExceeded",
+        "scope": "account",
+        "message": "You have exceeded the weekly usage quota. It will reset at 2026-11-02 00:00:00 +0800 CST. We recommend upgrading your plan for more quota, or waiting for the reset. Request id: [redacted]",
+        "policy": "Confirmed by one diagnostic request after native CLI omitted the 429 response body. Preserve attempted runs; block unstarted groups; no fallback or retry.",
+        "diagnostic": "artifacts/ark-discovery/coding-quota-later.json",
+        "diagnostic_sha256": "f9b39eb2426deae3ed042c036535098d3f9c9053881c4bcc505c55818f2a4bed",
+        "checked_at": "2026-10-28T12:59:47.146960+00:00"
+      }
+    },
+    {
+      "model": "deepseek-v4-pro",
+      "task": "001",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "AccountQuotaExceeded",
+        "scope": "account",
+        "message": "You have exceeded the weekly usage quota. It will reset at 2026-11-02 00:00:00 +0800 CST. We recommend upgrading your plan for more quota, or waiting for the reset. Request id: [redacted]",
+        "policy": "Confirmed by one diagnostic request after native CLI omitted the 429 response body. Preserve attempted runs; block unstarted groups; no fallback or retry.",
+        "diagnostic": "artifacts/ark-discovery/coding-quota-later.json",
+        "diagnostic_sha256": "f9b39eb2426deae3ed042c036535098d3f9c9053881c4bcc505c55818f2a4bed",
+        "checked_at": "2026-10-28T12:59:47.146960+00:00"
+      }
+    },
+    {
+      "model": "deepseek-v4-pro",
+      "task": "002",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "AccountQuotaExceeded",
+        "scope": "account",
+        "message": "You have exceeded the weekly usage quota. It will reset at 2026-11-02 00:00:00 +0800 CST. We recommend upgrading your plan for more quota, or waiting for the reset. Request id: [redacted]",
+        "policy": "Confirmed by one diagnostic request after native CLI omitted the 429 response body. Preserve attempted runs; block unstarted groups; no fallback or retry.",
+        "diagnostic": "artifacts/ark-discovery/coding-quota-later.json",
+        "diagnostic_sha256": "f9b39eb2426deae3ed042c036535098d3f9c9053881c4bcc505c55818f2a4bed",
+        "checked_at": "2026-10-28T12:59:47.146960+00:00"
+      }
+    },
+    {
+      "model": "deepseek-v4-pro",
+      "task": "003",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "AccountQuotaExceeded",
+        "scope": "account",
+        "message": "You have exceeded the weekly usage quota. It will reset at 2026-11-02 00:00:00 +0800 CST. We recommend upgrading your plan for more quota, or waiting for the reset. Request id: [redacted]",
+        "policy": "Confirmed by one diagnostic request after native CLI omitted the 429 response body. Preserve attempted runs; block unstarted groups; no fallback or retry.",
+        "diagnostic": "artifacts/ark-discovery/coding-quota-later.json",
+        "diagnostic_sha256": "f9b39eb2426deae3ed042c036535098d3f9c9053881c4bcc505c55818f2a4bed",
+        "checked_at": "2026-10-28T12:59:47.146960+00:00"
+      }
+    },
+    {
+      "model": "deepseek-v4.1-flash",
+      "task": "001",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "AccountQuotaExceeded",
+        "scope": "account",
+        "message": "You have exceeded the weekly usage quota. It will reset at 2026-11-02 00:00:00 +0800 CST. We recommend upgrading your plan for more quota, or waiting for the reset. Request id: [redacted]",
+        "policy": "Confirmed by one diagnostic request after native CLI omitted the 429 response body. Preserve attempted runs; block unstarted groups; no fallback or retry.",
+        "diagnostic": "artifacts/ark-discovery/coding-quota-later.json",
+        "diagnostic_sha256": "f9b39eb2426deae3ed042c036535098d3f9c9053881c4bcc505c55818f2a4bed",
+        "checked_at": "2026-10-28T12:59:47.146960+00:00"
+      }
+    },
+    {
+      "model": "deepseek-v4.1-flash",
+      "task": "002",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "AccountQuotaExceeded",
+        "scope": "account",
+        "message": "You have exceeded the weekly usage quota. It will reset at 2026-11-02 00:00:00 +0800 CST. We recommend upgrading your plan for more quota, or waiting for the reset. Request id: [redacted]",
+        "policy": "Confirmed by one diagnostic request after native CLI omitted the 429 response body. Preserve attempted runs; block unstarted groups; no fallback or retry.",
+        "diagnostic": "artifacts/ark-discovery/coding-quota-later.json",
+        "diagnostic_sha256": "f9b39eb2426deae3ed042c036535098d3f9c9053881c4bcc505c55818f2a4bed",
+        "checked_at": "2026-10-28T12:59:47.146960+00:00"
+      }
+    },
+    {
+      "model": "deepseek-v4.1-flash",
+      "task": "003",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "AccountQuotaExceeded",
+        "scope": "account",
+        "message": "You have exceeded the weekly usage quota. It will reset at 2026-11-02 00:00:00 +0800 CST. We recommend upgrading your plan for more quota, or waiting for the reset. Request id: [redacted]",
+        "policy": "Confirmed by one diagnostic request after native CLI omitted the 429 response body. Preserve attempted runs; block unstarted groups; no fallback or retry.",
+        "diagnostic": "artifacts/ark-discovery/coding-quota-later.json",
+        "diagnostic_sha256": "f9b39eb2426deae3ed042c036535098d3f9c9053881c4bcc505c55818f2a4bed",
+        "checked_at": "2026-10-28T12:59:47.146960+00:00"
+      }
+    },
+    {
+      "model": "deepseek-v4.1-flash-economy",
+      "task": "001",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "AccountQuotaExceeded",
+        "scope": "account",
+        "message": "You have exceeded the weekly usage quota. It will reset at 2026-11-02 00:00:00 +0800 CST. We recommend upgrading your plan for more quota, or waiting for the reset. Request id: [redacted]",
+        "policy": "Confirmed by one diagnostic request after native CLI omitted the 429 response body. Preserve attempted runs; block unstarted groups; no fallback or retry.",
+        "diagnostic": "artifacts/ark-discovery/coding-quota-later.json",
+        "diagnostic_sha256": "f9b39eb2426deae3ed042c036535098d3f9c9053881c4bcc505c55818f2a4bed",
+        "checked_at": "2026-10-28T12:59:47.146960+00:00"
+      }
+    },
+    {
+      "model": "deepseek-v4.1-flash-economy",
+      "task": "002",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "AccountQuotaExceeded",
+        "scope": "account",
+        "message": "You have exceeded the weekly usage quota. It will reset at 2026-11-02 00:00:00 +0800 CST. We recommend upgrading your plan for more quota, or waiting for the reset. Request id: [redacted]",
+        "policy": "Confirmed by one diagnostic request after native CLI omitted the 429 response body. Preserve attempted runs; block unstarted groups; no fallback or retry.",
+        "diagnostic": "artifacts/ark-discovery/coding-quota-later.json",
+        "diagnostic_sha256": "f9b39eb2426deae3ed042c036535098d3f9c9053881c4bcc505c55818f2a4bed",
+        "checked_at": "2026-10-28T12:59:47.146960+00:00"
+      }
+    },
+    {
+      "model": "deepseek-v4.1-flash-economy",
+      "task": "003",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "AccountQuotaExceeded",
+        "scope": "account",
+        "message": "You have exceeded the weekly usage quota. It will reset at 2026-11-02 00:00:00 +0800 CST. We recommend upgrading your plan for more quota, or waiting for the reset. Request id: [redacted]",
+        "policy": "Confirmed by one diagnostic request after native CLI omitted the 429 response body. Preserve attempted runs; block unstarted groups; no fallback or retry.",
+        "diagnostic": "artifacts/ark-discovery/coding-quota-later.json",
+        "diagnostic_sha256": "f9b39eb2426deae3ed042c036535098d3f9c9053881c4bcc505c55818f2a4bed",
+        "checked_at": "2026-10-28T12:59:47.146960+00:00"
+      }
+    }
+  ],
+  "judge": {
+    "base_url": "http://localhost:4141/v1",
+    "model": "gpt-6.1-sol",
+    "effort": "medium",
+    "asp_url": "http://127.0.0.1:8765",
+    "codex_bin": "codex",
+    "timeout": 300,
+    "context_tokens": 1050000,
+    "max_prompt_tokens": 922000,
+    "judge_output_tokens": 16384,
+    "web_search": "live",
+    "codex_catalog_sha256": "4f2b8626a24849b507709465930e2660565cdc7db45941d7214c01eb11807c60"
+  },
+  "catalogue": {
+    "retrieved_date": "2026-10-28",
+    "sources": [
+      "https://www.volcengine.com/docs/82379/1925114",
+      "https://www.volcengine.com/docs/82379/2366394"
+    ],
+    "scope": "Named text-generation models; excludes Auto routing and non-text generation/embedding services. Availability is tested at run time, not inferred from catalogue membership.",
+    "models": [
+      {
+        "id": "doubao-seed-2.1-pro",
+        "context_window": 1048576,
+        "retiring": false,
+        "thinking_cannot_disable": false
+      },
+      {
+        "id": "doubao-seed-2.1-lite",
+        "context_window": 1048576,
+        "retiring": false,
+        "thinking_cannot_disable": false
+      },
+      {
+        "id": "doubao-seed-2.0-mini",
+        "context_window": 262144,
+        "retiring": false,
+        "thinking_cannot_disable": false
+      },
+      {
+        "id": "doubao-seed-evolving",
+        "context_window": 1048576,
+        "retiring": false,
+        "thinking_cannot_disable": false
+      },
+      {
+        "id": "minimax-m3",
+        "context_window": 1048576,
+        "retiring": true,
+        "thinking_cannot_disable": false
+      },
+      {
+        "id": "kimi-k2.7-code",
+        "context_window": 262144,
+        "retiring": true,
+        "thinking_cannot_disable": false
+      },
+      {
+        "id": "kimi-k2.8-preview",
+        "context_window": 1048576,
+        "retiring": false,
+        "thinking_cannot_disable": false
+      },
+      {
+        "id": "kimi-k3",
+        "context_window": 1048576,
+        "retiring": false,
+        "thinking_cannot_disable": true
+      },
+      {
+        "id": "kimi-k3.1-pro",
+        "context_window": 1048576,
+        "retiring": false,
+        "thinking_cannot_disable": false
+      },
+      {
+        "id": "glm-5.3",
+        "context_window": 1048576,
+        "retiring": false,
+        "thinking_cannot_disable": true
+      },
+      {
+        "id": "glm-5.3-flash",
+        "context_window": 1048576,
+        "retiring": false,
+        "thinking_cannot_disable": false
+      },
+      {
+        "id": "deepseek-v4-flash",
+        "context_window": 1048576,
+        "retiring": false,
+        "thinking_cannot_disable": false
+      },
+      {
+        "id": "deepseek-v4-pro",
+        "context_window": 1048576,
+        "retiring": false,
+        "thinking_cannot_disable": false
+      },
+      {
+        "id": "deepseek-v4.1-flash",
+        "context_window": 1048576,
+        "retiring": false,
+        "thinking_cannot_disable": false
+      },
+      {
+        "id": "deepseek-v4.1-flash-economy",
+        "context_window": 1048576,
+        "retiring": false,
+        "thinking_cannot_disable": false
+      }
+    ]
+  },
+  "protocol": "Independent complete-condition groups; no retries, fallback, or failed-run replacement.",
+  "git_commit": "61376837829773aae70fc7ee40947e4d2fc5590e",
+  "finished_at": "2026-10-28T13:01:02.251165+00:00"
+}

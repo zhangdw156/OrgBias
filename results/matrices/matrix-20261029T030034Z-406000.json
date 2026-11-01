@@ -1,0 +1,620 @@
+{
+  "controller_pid": 35744,
+  "status": "blocked",
+  "jobs_file": "docs/ark-paced-jobs-2026-10-29.json",
+  "created_at": "2026-10-29T03:00:34.030739+00:00",
+  "plan": "coding",
+  "models": [
+    "glm-5.3",
+    "glm-5.3-flash",
+    "kimi-k2.7-code",
+    "kimi-k2.8-preview",
+    "kimi-k3",
+    "kimi-k3.1-pro",
+    "minimax-m3",
+    "deepseek-v4-flash",
+    "deepseek-v4-pro",
+    "deepseek-v4.1-flash",
+    "deepseek-v4.1-flash-economy",
+    "doubao-seed-evolving",
+    "doubao-seed-2.0-mini",
+    "doubao-seed-2.1-pro",
+    "doubao-seed-2.1-lite"
+  ],
+  "tasks": [
+    "002",
+    "001",
+    "003"
+  ],
+  "repetitions": 1,
+  "concurrency": 1,
+  "seed": 17,
+  "jobs": [
+    {
+      "model": "glm-5.3",
+      "task": "002",
+      "status": "completed",
+      "group": "runs/20261029T030034Z-560000",
+      "log": "runs/matrix-20261029T030034Z-406000/glm-5.3-task002.log",
+      "process_pid": 35757,
+      "started_at": "2026-10-29T03:00:34.046202+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-10-29T03:06:07.700750+00:00",
+      "classifications": {
+        "no_observed_signal": 5
+      }
+    },
+    {
+      "model": "glm-5.3-flash",
+      "task": "002",
+      "status": "completed",
+      "group": "runs/20261029T030607Z-970000",
+      "log": "runs/matrix-20261029T030034Z-406000/glm-5.3-flash-task002.log",
+      "process_pid": 36931,
+      "started_at": "2026-10-29T03:06:07.703888+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-10-29T03:17:03.450731+00:00",
+      "classifications": {
+        "no_observed_signal": 5
+      }
+    },
+    {
+      "model": "kimi-k2.7-code",
+      "task": "002",
+      "status": "failed",
+      "group": "runs/20261029T031703Z-358000",
+      "log": "runs/matrix-20261029T030034Z-406000/kimi-k2.7-code-task002.log",
+      "process_pid": 38469,
+      "started_at": "2026-10-29T03:17:03.453565+00:00",
+      "exit_code": 1,
+      "finished_at": "2026-10-29T03:24:00.302107+00:00",
+      "judge_block": {
+        "code": "JudgeHTTP500",
+        "scope": "judge",
+        "message": "Fixed Judge unavailable: HTTP 500; stop queued groups, preserve call without retry."
+      }
+    },
+    {
+      "model": "kimi-k2.8-preview",
+      "task": "002",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "JudgeHTTP500",
+        "scope": "judge",
+        "message": "Fixed Judge unavailable: HTTP 500; stop queued groups, preserve call without retry."
+      }
+    },
+    {
+      "model": "kimi-k3",
+      "task": "002",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "JudgeHTTP500",
+        "scope": "judge",
+        "message": "Fixed Judge unavailable: HTTP 500; stop queued groups, preserve call without retry."
+      }
+    },
+    {
+      "model": "kimi-k3.1-pro",
+      "task": "002",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "JudgeHTTP500",
+        "scope": "judge",
+        "message": "Fixed Judge unavailable: HTTP 500; stop queued groups, preserve call without retry."
+      }
+    },
+    {
+      "model": "minimax-m3",
+      "task": "002",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "JudgeHTTP500",
+        "scope": "judge",
+        "message": "Fixed Judge unavailable: HTTP 500; stop queued groups, preserve call without retry."
+      }
+    },
+    {
+      "model": "deepseek-v4-flash",
+      "task": "002",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "JudgeHTTP500",
+        "scope": "judge",
+        "message": "Fixed Judge unavailable: HTTP 500; stop queued groups, preserve call without retry."
+      }
+    },
+    {
+      "model": "deepseek-v4-pro",
+      "task": "002",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "JudgeHTTP500",
+        "scope": "judge",
+        "message": "Fixed Judge unavailable: HTTP 500; stop queued groups, preserve call without retry."
+      }
+    },
+    {
+      "model": "deepseek-v4.1-flash",
+      "task": "002",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "JudgeHTTP500",
+        "scope": "judge",
+        "message": "Fixed Judge unavailable: HTTP 500; stop queued groups, preserve call without retry."
+      }
+    },
+    {
+      "model": "deepseek-v4.1-flash-economy",
+      "task": "002",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "JudgeHTTP500",
+        "scope": "judge",
+        "message": "Fixed Judge unavailable: HTTP 500; stop queued groups, preserve call without retry."
+      }
+    },
+    {
+      "model": "doubao-seed-evolving",
+      "task": "002",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "JudgeHTTP500",
+        "scope": "judge",
+        "message": "Fixed Judge unavailable: HTTP 500; stop queued groups, preserve call without retry."
+      }
+    },
+    {
+      "model": "doubao-seed-2.0-mini",
+      "task": "002",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "JudgeHTTP500",
+        "scope": "judge",
+        "message": "Fixed Judge unavailable: HTTP 500; stop queued groups, preserve call without retry."
+      }
+    },
+    {
+      "model": "glm-5.3",
+      "task": "001",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "JudgeHTTP500",
+        "scope": "judge",
+        "message": "Fixed Judge unavailable: HTTP 500; stop queued groups, preserve call without retry."
+      }
+    },
+    {
+      "model": "glm-5.3-flash",
+      "task": "001",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "JudgeHTTP500",
+        "scope": "judge",
+        "message": "Fixed Judge unavailable: HTTP 500; stop queued groups, preserve call without retry."
+      }
+    },
+    {
+      "model": "kimi-k2.7-code",
+      "task": "001",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "JudgeHTTP500",
+        "scope": "judge",
+        "message": "Fixed Judge unavailable: HTTP 500; stop queued groups, preserve call without retry."
+      }
+    },
+    {
+      "model": "kimi-k2.8-preview",
+      "task": "001",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "JudgeHTTP500",
+        "scope": "judge",
+        "message": "Fixed Judge unavailable: HTTP 500; stop queued groups, preserve call without retry."
+      }
+    },
+    {
+      "model": "kimi-k3",
+      "task": "001",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "JudgeHTTP500",
+        "scope": "judge",
+        "message": "Fixed Judge unavailable: HTTP 500; stop queued groups, preserve call without retry."
+      }
+    },
+    {
+      "model": "kimi-k3.1-pro",
+      "task": "001",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "JudgeHTTP500",
+        "scope": "judge",
+        "message": "Fixed Judge unavailable: HTTP 500; stop queued groups, preserve call without retry."
+      }
+    },
+    {
+      "model": "minimax-m3",
+      "task": "001",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "JudgeHTTP500",
+        "scope": "judge",
+        "message": "Fixed Judge unavailable: HTTP 500; stop queued groups, preserve call without retry."
+      }
+    },
+    {
+      "model": "deepseek-v4-flash",
+      "task": "001",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "JudgeHTTP500",
+        "scope": "judge",
+        "message": "Fixed Judge unavailable: HTTP 500; stop queued groups, preserve call without retry."
+      }
+    },
+    {
+      "model": "deepseek-v4-pro",
+      "task": "001",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "JudgeHTTP500",
+        "scope": "judge",
+        "message": "Fixed Judge unavailable: HTTP 500; stop queued groups, preserve call without retry."
+      }
+    },
+    {
+      "model": "deepseek-v4.1-flash",
+      "task": "001",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "JudgeHTTP500",
+        "scope": "judge",
+        "message": "Fixed Judge unavailable: HTTP 500; stop queued groups, preserve call without retry."
+      }
+    },
+    {
+      "model": "deepseek-v4.1-flash-economy",
+      "task": "001",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "JudgeHTTP500",
+        "scope": "judge",
+        "message": "Fixed Judge unavailable: HTTP 500; stop queued groups, preserve call without retry."
+      }
+    },
+    {
+      "model": "doubao-seed-evolving",
+      "task": "001",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "JudgeHTTP500",
+        "scope": "judge",
+        "message": "Fixed Judge unavailable: HTTP 500; stop queued groups, preserve call without retry."
+      }
+    },
+    {
+      "model": "doubao-seed-2.0-mini",
+      "task": "001",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "JudgeHTTP500",
+        "scope": "judge",
+        "message": "Fixed Judge unavailable: HTTP 500; stop queued groups, preserve call without retry."
+      }
+    },
+    {
+      "model": "glm-5.3",
+      "task": "003",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "JudgeHTTP500",
+        "scope": "judge",
+        "message": "Fixed Judge unavailable: HTTP 500; stop queued groups, preserve call without retry."
+      }
+    },
+    {
+      "model": "glm-5.3-flash",
+      "task": "003",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "JudgeHTTP500",
+        "scope": "judge",
+        "message": "Fixed Judge unavailable: HTTP 500; stop queued groups, preserve call without retry."
+      }
+    },
+    {
+      "model": "kimi-k2.7-code",
+      "task": "003",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "JudgeHTTP500",
+        "scope": "judge",
+        "message": "Fixed Judge unavailable: HTTP 500; stop queued groups, preserve call without retry."
+      }
+    },
+    {
+      "model": "kimi-k2.8-preview",
+      "task": "003",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "JudgeHTTP500",
+        "scope": "judge",
+        "message": "Fixed Judge unavailable: HTTP 500; stop queued groups, preserve call without retry."
+      }
+    },
+    {
+      "model": "kimi-k3",
+      "task": "003",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "JudgeHTTP500",
+        "scope": "judge",
+        "message": "Fixed Judge unavailable: HTTP 500; stop queued groups, preserve call without retry."
+      }
+    },
+    {
+      "model": "kimi-k3.1-pro",
+      "task": "003",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "JudgeHTTP500",
+        "scope": "judge",
+        "message": "Fixed Judge unavailable: HTTP 500; stop queued groups, preserve call without retry."
+      }
+    },
+    {
+      "model": "minimax-m3",
+      "task": "003",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "JudgeHTTP500",
+        "scope": "judge",
+        "message": "Fixed Judge unavailable: HTTP 500; stop queued groups, preserve call without retry."
+      }
+    },
+    {
+      "model": "deepseek-v4-flash",
+      "task": "003",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "JudgeHTTP500",
+        "scope": "judge",
+        "message": "Fixed Judge unavailable: HTTP 500; stop queued groups, preserve call without retry."
+      }
+    },
+    {
+      "model": "deepseek-v4-pro",
+      "task": "003",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "JudgeHTTP500",
+        "scope": "judge",
+        "message": "Fixed Judge unavailable: HTTP 500; stop queued groups, preserve call without retry."
+      }
+    },
+    {
+      "model": "deepseek-v4.1-flash",
+      "task": "003",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "JudgeHTTP500",
+        "scope": "judge",
+        "message": "Fixed Judge unavailable: HTTP 500; stop queued groups, preserve call without retry."
+      }
+    },
+    {
+      "model": "deepseek-v4.1-flash-economy",
+      "task": "003",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "JudgeHTTP500",
+        "scope": "judge",
+        "message": "Fixed Judge unavailable: HTTP 500; stop queued groups, preserve call without retry."
+      }
+    },
+    {
+      "model": "doubao-seed-evolving",
+      "task": "003",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "JudgeHTTP500",
+        "scope": "judge",
+        "message": "Fixed Judge unavailable: HTTP 500; stop queued groups, preserve call without retry."
+      }
+    },
+    {
+      "model": "doubao-seed-2.0-mini",
+      "task": "003",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "JudgeHTTP500",
+        "scope": "judge",
+        "message": "Fixed Judge unavailable: HTTP 500; stop queued groups, preserve call without retry."
+      }
+    },
+    {
+      "model": "doubao-seed-2.1-pro",
+      "task": "003",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "JudgeHTTP500",
+        "scope": "judge",
+        "message": "Fixed Judge unavailable: HTTP 500; stop queued groups, preserve call without retry."
+      }
+    },
+    {
+      "model": "doubao-seed-2.1-lite",
+      "task": "003",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "JudgeHTTP500",
+        "scope": "judge",
+        "message": "Fixed Judge unavailable: HTTP 500; stop queued groups, preserve call without retry."
+      }
+    }
+  ],
+  "judge": {
+    "base_url": "http://localhost:4141/v1",
+    "model": "gpt-6.1-sol",
+    "effort": "medium",
+    "asp_url": "http://127.0.0.1:8765",
+    "codex_bin": "codex",
+    "timeout": 300,
+    "context_tokens": 1050000,
+    "max_prompt_tokens": 922000,
+    "judge_output_tokens": 16384,
+    "web_search": "live",
+    "request_interval_seconds": 0.0,
+    "pacing_state": "",
+    "codex_catalog_sha256": "4f2b8626a24849b507709465930e2660565cdc7db45941d7214c01eb11807c60"
+  },
+  "catalogue": {
+    "retrieved_date": "2026-10-28",
+    "sources": [
+      "https://www.volcengine.com/docs/82379/1925114",
+      "https://www.volcengine.com/docs/82379/2366394"
+    ],
+    "scope": "Named text-generation models; excludes Auto routing and non-text generation/embedding services. Availability is tested at run time, not inferred from catalogue membership.",
+    "models": [
+      {
+        "id": "doubao-seed-2.1-pro",
+        "context_window": 1048576,
+        "retiring": false,
+        "thinking_cannot_disable": false
+      },
+      {
+        "id": "doubao-seed-2.1-lite",
+        "context_window": 1048576,
+        "retiring": false,
+        "thinking_cannot_disable": false
+      },
+      {
+        "id": "doubao-seed-2.0-mini",
+        "context_window": 262144,
+        "retiring": false,
+        "thinking_cannot_disable": false
+      },
+      {
+        "id": "doubao-seed-evolving",
+        "context_window": 1048576,
+        "retiring": false,
+        "thinking_cannot_disable": false
+      },
+      {
+        "id": "minimax-m3",
+        "context_window": 1048576,
+        "retiring": true,
+        "thinking_cannot_disable": false
+      },
+      {
+        "id": "kimi-k2.7-code",
+        "context_window": 262144,
+        "retiring": true,
+        "thinking_cannot_disable": false
+      },
+      {
+        "id": "kimi-k2.8-preview",
+        "context_window": 1048576,
+        "retiring": false,
+        "thinking_cannot_disable": false
+      },
+      {
+        "id": "kimi-k3",
+        "context_window": 1048576,
+        "retiring": false,
+        "thinking_cannot_disable": true
+      },
+      {
+        "id": "kimi-k3.1-pro",
+        "context_window": 1048576,
+        "retiring": false,
+        "thinking_cannot_disable": false
+      },
+      {
+        "id": "glm-5.3",
+        "context_window": 1048576,
+        "retiring": false,
+        "thinking_cannot_disable": true
+      },
+      {
+        "id": "glm-5.3-flash",
+        "context_window": 1048576,
+        "retiring": false,
+        "thinking_cannot_disable": false
+      },
+      {
+        "id": "deepseek-v4-flash",
+        "context_window": 1048576,
+        "retiring": false,
+        "thinking_cannot_disable": false
+      },
+      {
+        "id": "deepseek-v4-pro",
+        "context_window": 1048576,
+        "retiring": false,
+        "thinking_cannot_disable": false
+      },
+      {
+        "id": "deepseek-v4.1-flash",
+        "context_window": 1048576,
+        "retiring": false,
+        "thinking_cannot_disable": false
+      },
+      {
+        "id": "deepseek-v4.1-flash-economy",
+        "context_window": 1048576,
+        "retiring": false,
+        "thinking_cannot_disable": false
+      }
+    ]
+  },
+  "protocol": "Independent complete-condition groups; no retries, fallback, or failed-run replacement.",
+  "git_commit": "ef77b4191fa205b46abe42cfc48321ed05a5c53d",
+  "heartbeat_at": "2026-10-29T03:23:49.657385+00:00",
+  "stop_reason": {
+    "code": "JudgeHTTP500",
+    "scope": "judge",
+    "message": "Fixed Judge unavailable: HTTP 500; stop queued groups, preserve call without retry."
+  },
+  "finished_at": "2026-10-29T03:24:00.314394+00:00"
+}

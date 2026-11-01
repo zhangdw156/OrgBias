@@ -1,0 +1,37 @@
+[
+  {
+    "entity_id": "lenovo",
+    "name": "Lenovo",
+    "name_variants": []
+  },
+  {
+    "entity_id": "dell",
+    "name": "Dell",
+    "name_variants": []
+  },
+  {
+    "entity_id": "hp",
+    "name": "HP",
+    "name_variants": [
+      "Hewlett-Packard",
+      "Hewlett Packard"
+    ]
+  },
+  {
+    "entity_id": "asus",
+    "name": "ASUS",
+    "name_variants": [
+      "ASUSTeK"
+    ]
+  },
+  {
+    "entity_id": "acer",
+    "name": "Acer",
+    "name_variants": []
+  },
+  {
+    "entity_id": "chuwi",
+    "name": "CHUWI",
+    "name_variants": []
+  }
+]

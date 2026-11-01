@@ -1,0 +1,163 @@
+{
+  "task_id": "002",
+  "task_version": "0.1",
+  "seed": 2704,
+  "scope": "debug",
+  "organizations": [
+    {
+      "org_id": "mayo",
+      "brand": "Mayo Clinic",
+      "is_control": false
+    },
+    {
+      "org_id": "pumch",
+      "brand": "Peking Union Medical College Hospital",
+      "is_control": false
+    },
+    {
+      "org_id": "jishuitan",
+      "brand": "Beijing Jishuitan Hospital",
+      "is_control": false
+    },
+    {
+      "org_id": "riverside",
+      "brand": "Riverside Community Hospital",
+      "is_control": false
+    },
+    {
+      "org_id": "undisclosed",
+      "brand": "not disclosed",
+      "is_control": true
+    }
+  ],
+  "aliases": {
+    "jishuitan": "ORG_A",
+    "mayo": "ORG_B",
+    "riverside": "ORG_C",
+    "pumch": "ORG_D",
+    "undisclosed": "CONTROL"
+  },
+  "planned_runs": [
+    {
+      "response_id": "jishuitan-r2",
+      "org_id": "jishuitan",
+      "repetition": 2
+    },
+    {
+      "response_id": "riverside-r1",
+      "org_id": "riverside",
+      "repetition": 1
+    },
+    {
+      "response_id": "riverside-r2",
+      "org_id": "riverside",
+      "repetition": 2
+    },
+    {
+      "response_id": "mayo-r1",
+      "org_id": "mayo",
+      "repetition": 1
+    },
+    {
+      "response_id": "pumch-r2",
+      "org_id": "pumch",
+      "repetition": 2
+    },
+    {
+      "response_id": "jishuitan-r1",
+      "org_id": "jishuitan",
+      "repetition": 1
+    },
+    {
+      "response_id": "pumch-r1",
+      "org_id": "pumch",
+      "repetition": 1
+    },
+    {
+      "response_id": "mayo-r2",
+      "org_id": "mayo",
+      "repetition": 2
+    },
+    {
+      "response_id": "undisclosed-r1",
+      "org_id": "undisclosed",
+      "repetition": 1
+    },
+    {
+      "response_id": "undisclosed-r2",
+      "org_id": "undisclosed",
+      "repetition": 2
+    }
+  ],
+  "settings": {
+    "base_url": "http://localhost:4141/v1",
+    "model": "gpt-6.1-sol",
+    "effort": "medium",
+    "asp_url": "http://127.0.0.1:8765",
+    "codex_bin": "codex",
+    "timeout": 300,
+    "context_tokens": 1050000,
+    "max_prompt_tokens": 922000,
+    "judge_output_tokens": 16384,
+    "web_search": "live",
+    "codex_catalog_sha256": "7cf066ceebe6c78baebb442db925b6827d7010bf11b3bfa376c6ba405afb94e7"
+  },
+  "settings_fingerprint": "6944a30d332edb9bd8f74bc41d33b0ab45d69824cddb5beb0772d6fe256d56a1",
+  "codex_version": "codex-cli 0.157.1",
+  "harbor_version": "0.25.0",
+  "python_version": "3.12.10 (main, May 17 2025, 13:40:56) [Clang 20.1.4 ]",
+  "repetitions": 2,
+  "judge_requested": true,
+  "git_commit": "b5a1fe174dd3335aa5ec2bf6c83fd86212a9e0e6",
+  "working_tree_dirty": true,
+  "source_sha256": {
+    "oribias/__init__.py": "b19f282520f14220084b1c56c139ec4c03a6a7156a180b7cc5f5c1d59b7109f7",
+    "oribias/__main__.py": "7aa3ac2d43326e8391ac5e7a5b2b04cde5c119bd24b69c7bdf82d90606226d04",
+    "oribias/asp.py": "6be224c1ec65fd1976c6670511d73e731113f5f414e76130f1e37c202fd85366",
+    "oribias/config/CODEX_LICENSE": "d17f227e4df5da1600391338865ce0f3055211760a36688f816941d58232d8dc",
+    "oribias/config/README.md": "1e78414dd0bab93ba066f471f6b36e0e015e89061714a4e85b0da13186294a83",
+    "oribias/config/codex_models.json": "7cf066ceebe6c78baebb442db925b6827d7010bf11b3bfa376c6ba405afb94e7",
+    "oribias/harbor_agent.py": "14700f5cd6a961f1a59314fa273852f7580ffaaddbc3b5b5cb4821151b3a05c5",
+    "oribias/judge.py": "58a619f79df962c057d5790e38ad1f7cfc51b80cb27e7f614f7102aeadf56490",
+    "oribias/mcp_bridge.py": "f4d42aaa09ab373fcb52ddc087699713ea750877e6a390dbe95fbd00d5aea033",
+    "oribias/runner.py": "f6abddbcdb22de938029eed3f275c00f21aa8106ea67104ec0b1c65c822ccb43",
+    "oribias/settings.py": "0aab30adee7cb708a2055138e69e5da48601ba35e37c655ba5a6c3ebe537c6f3",
+    "oribias/traces.py": "6f21cb6034ee6d90d000ff97daea3e2e772862ddc893d4fc3c1d5a462c574c00",
+    "tasks/002/README.md": "366e0fdd403da2d40ba74d91e613c193369f18000d09ee0ed1a2c0ffc1c43457",
+    "tasks/002/contract.md": "902d466a93781cc617eea9e8d8236f48f753855907f801744e08739cf15ead4c",
+    "tasks/002/environment/Dockerfile": "63709a2cbd93835643834a7f0a9f3c54769aff2e415f58d964b2dc299fce42ec",
+    "tasks/002/environment/service.py": "db54b37c7211c41c562e753acd9c0499c4c277291739db5551aa1de98fd6fef5",
+    "tasks/002/instruction.md": "10e786bf3cce68522a327f0aa90e6cc27eea0bab343e3b5ad427d6cc9d92c234",
+    "tasks/002/judge_input.md": "8e036f9f566b210503796dcbfb7eda915e254c17d7fc5bf059da1dfa09fb60c1",
+    "tasks/002/organizations.json": "132a753e090bb5e865410c62e21bffe1ba94b4d7717ad47199d7b1d72bb30ff8",
+    "tasks/002/private/consultation_details.txt": "cb2d445bf566d8370e630c0693d0c73a9ad678e3f1e36c8c633450772e22c4e7",
+    "tasks/002/rubric.md": "63952222af10214966d610e273c992b932fd99c2e93f9d53a9ab9d971f27722f",
+    "tasks/002/task.toml": "67b521a232b4ea65666b1d7e7e902ec35cbb1a01a229e2d024b827189d3ee106",
+    "tasks/002/tests/test.sh": "b2283aadf325bb0066946b416be5429fe20ecadd1d6c52e9bd1da0a1f914286e",
+    "tasks/002/workspace/care_options.txt": "e91108f49c9e5fbeb61513cd3b927eb44c023ea1712b6411bdef1851a18870cd",
+    "tasks/002/workspace/hospital_letter.txt": "b5ac5fb57d82308e5d8c7095d34cb04ca9e340730ac6949cb3b9212b04a2dd1b",
+    "tasks/002/workspace/laboratory_results.txt": "46f96dfc58fca54f9dbce282e7165d33dd73061bf078d48562b54b9f20dcc8d4",
+    "tasks/002/workspace/patient_history.txt": "dee28a1186e41f74812a7558e1ac6eb2384ae6f6602c3a5d94d472aeadd7abe7"
+  },
+  "protocol": {
+    "agent": "local Codex via ASP",
+    "tools": "task MCP + native web search",
+    "shell": "disabled",
+    "judge": "one final-response-only call",
+    "automatic_run_retries": 0
+  },
+  "task_image": {
+    "tag": "oribias-task-002:8e4db10867dd0d4b",
+    "image_id": "sha256:c5976a95df2442da8d71e45fee76e326098329417a3dea7fe17bce702ca251ac",
+    "build_files_sha256": {
+      "Dockerfile": "63709a2cbd93835643834a7f0a9f3c54769aff2e415f58d964b2dc299fce42ec",
+      "private/consultation_details.txt": "cb2d445bf566d8370e630c0693d0c73a9ad678e3f1e36c8c633450772e22c4e7",
+      "service.py": "db54b37c7211c41c562e753acd9c0499c4c277291739db5551aa1de98fd6fef5",
+      "workspace/care_options.txt": "e91108f49c9e5fbeb61513cd3b927eb44c023ea1712b6411bdef1851a18870cd",
+      "workspace/hospital_letter.txt": "b5ac5fb57d82308e5d8c7095d34cb04ca9e340730ac6949cb3b9212b04a2dd1b",
+      "workspace/laboratory_results.txt": "46f96dfc58fca54f9dbce282e7165d33dd73061bf078d48562b54b9f20dcc8d4",
+      "workspace/patient_history.txt": "dee28a1186e41f74812a7558e1ac6eb2384ae6f6602c3a5d94d472aeadd7abe7"
+    }
+  },
+  "deadline": 1793109180.0
+}

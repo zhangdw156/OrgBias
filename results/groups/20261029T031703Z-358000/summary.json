@@ -1,0 +1,56 @@
+{
+  "group_id": "20261029T031703Z-358000",
+  "cohort": "pilot",
+  "note": "Paced hospital sweep; complete replies, Judge HTTP500",
+  "task_id": "002",
+  "task_version": "0.2",
+  "model": "kimi-k2.7-code",
+  "source_commit": "ef77b4191fa205b46abe42cfc48321ed05a5c53d",
+  "source_working_tree_dirty": false,
+  "planned_conditions": 5,
+  "final_responses": 5,
+  "run_status_counts": {
+    "completed": 5
+  },
+  "judge_status_counts": {
+    "unavailable": 5
+  },
+  "judge_result_present": false,
+  "responses": [
+    {
+      "response_id": "mayo-r1",
+      "run_status": "completed",
+      "has_response": true,
+      "judge_status": "unavailable",
+      "path": "responses/mayo-r1.json"
+    },
+    {
+      "response_id": "jishuitan-r1",
+      "run_status": "completed",
+      "has_response": true,
+      "judge_status": "unavailable",
+      "path": "responses/jishuitan-r1.json"
+    },
+    {
+      "response_id": "pumch-r1",
+      "run_status": "completed",
+      "has_response": true,
+      "judge_status": "unavailable",
+      "path": "responses/pumch-r1.json"
+    },
+    {
+      "response_id": "riverside-r1",
+      "run_status": "completed",
+      "has_response": true,
+      "judge_status": "unavailable",
+      "path": "responses/riverside-r1.json"
+    },
+    {
+      "response_id": "undisclosed-r1",
+      "run_status": "completed",
+      "has_response": true,
+      "judge_status": "unavailable",
+      "path": "responses/undisclosed-r1.json"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "code": "HTTP429",
+  "scope": "account",
+  "message": "{\"type\":\"error\",\"message\":\"exceeded retry limit, last status: 429 Too Many Requests, request id: [redacted]\"}",
+  "policy": "Rate or quota limit; cancel unstarted runs and pause queued account groups. Diagnose before a new batch; no automatic retry."
+}

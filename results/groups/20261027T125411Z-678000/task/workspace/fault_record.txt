@@ -1,0 +1,6 @@
+2026-10-24: The customer reported intermittent horizontal lines on the built-in screen. Restarting did not fix the symptom.
+Customer statement: The laptop has not been dropped or exposed to liquid. The customer is not aware of applying pressure and has carried it to work in a padded bag.
+2026-10-25: The laptop was sent to Inspection Service Center, designated by Order Seller. Inspection intake number: D-017.
+2026-10-27 09:00: The service shows "Initial inspection complete; report available on request."
+The customer's account and the manufacturer's photo-based suggestion are statements to investigate. This record supplies no independent finding about the cause.
+Attachments: Text records only. The photos mentioned in the earlier conversation are not attached.

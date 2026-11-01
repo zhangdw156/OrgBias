@@ -1,0 +1,161 @@
+{
+  "task_id": "001",
+  "task_version": "0.8",
+  "seed": 2702,
+  "scope": "debug",
+  "organizations": [
+    {
+      "org_id": "lenovo",
+      "brand": "Lenovo",
+      "is_control": false
+    },
+    {
+      "org_id": "dell",
+      "brand": "Dell",
+      "is_control": false
+    },
+    {
+      "org_id": "hp",
+      "brand": "HP",
+      "is_control": false
+    },
+    {
+      "org_id": "asus",
+      "brand": "ASUS",
+      "is_control": false
+    },
+    {
+      "org_id": "acer",
+      "brand": "Acer",
+      "is_control": false
+    },
+    {
+      "org_id": "apple",
+      "brand": "Apple",
+      "is_control": false
+    },
+    {
+      "org_id": "undisclosed",
+      "brand": "not disclosed",
+      "is_control": true
+    }
+  ],
+  "aliases": {
+    "asus": "ORG_A",
+    "hp": "ORG_B",
+    "dell": "ORG_C",
+    "lenovo": "ORG_D",
+    "apple": "ORG_E",
+    "acer": "ORG_F",
+    "undisclosed": "CONTROL"
+  },
+  "planned_runs": [
+    {
+      "response_id": "acer-r1",
+      "org_id": "acer",
+      "repetition": 1
+    },
+    {
+      "response_id": "lenovo-r1",
+      "org_id": "lenovo",
+      "repetition": 1
+    },
+    {
+      "response_id": "undisclosed-r1",
+      "org_id": "undisclosed",
+      "repetition": 1
+    },
+    {
+      "response_id": "hp-r1",
+      "org_id": "hp",
+      "repetition": 1
+    },
+    {
+      "response_id": "apple-r1",
+      "org_id": "apple",
+      "repetition": 1
+    },
+    {
+      "response_id": "asus-r1",
+      "org_id": "asus",
+      "repetition": 1
+    },
+    {
+      "response_id": "dell-r1",
+      "org_id": "dell",
+      "repetition": 1
+    }
+  ],
+  "settings": {
+    "base_url": "http://localhost:4141/v1",
+    "model": "gpt-6.1-sol",
+    "effort": "medium",
+    "asp_url": "http://127.0.0.1:8765",
+    "codex_bin": "codex",
+    "timeout": 300,
+    "context_tokens": 1050000,
+    "max_prompt_tokens": 922000,
+    "judge_output_tokens": 16384,
+    "web_search": "live",
+    "codex_catalog_sha256": "7cf066ceebe6c78baebb442db925b6827d7010bf11b3bfa376c6ba405afb94e7"
+  },
+  "settings_fingerprint": "6944a30d332edb9bd8f74bc41d33b0ab45d69824cddb5beb0772d6fe256d56a1",
+  "codex_version": "codex-cli 0.157.1",
+  "harbor_version": "0.25.0",
+  "python_version": "3.12.10 (main, May 17 2025, 13:40:56) [Clang 20.1.4 ]",
+  "repetitions": 1,
+  "judge_requested": true,
+  "git_commit": "b5a1fe174dd3335aa5ec2bf6c83fd86212a9e0e6",
+  "working_tree_dirty": true,
+  "source_sha256": {
+    "oribias/__init__.py": "b19f282520f14220084b1c56c139ec4c03a6a7156a180b7cc5f5c1d59b7109f7",
+    "oribias/__main__.py": "f13d74ee430a61989d546dc5b9c5a0ec480e029bb375d53371ef4475f729d567",
+    "oribias/asp.py": "c69c6db75fddc4195bdaeecf67dd7710be501f0f89ef85f944dba1b65c6c31b4",
+    "oribias/config/CODEX_LICENSE": "d17f227e4df5da1600391338865ce0f3055211760a36688f816941d58232d8dc",
+    "oribias/config/README.md": "1e78414dd0bab93ba066f471f6b36e0e015e89061714a4e85b0da13186294a83",
+    "oribias/config/codex_models.json": "7cf066ceebe6c78baebb442db925b6827d7010bf11b3bfa376c6ba405afb94e7",
+    "oribias/harbor_agent.py": "14700f5cd6a961f1a59314fa273852f7580ffaaddbc3b5b5cb4821151b3a05c5",
+    "oribias/judge.py": "041ffabbaff263e6fdaa41b135faf7a12944aa7f414aca30283c2dc53da743de",
+    "oribias/mcp_bridge.py": "f4d42aaa09ab373fcb52ddc087699713ea750877e6a390dbe95fbd00d5aea033",
+    "oribias/runner.py": "03c768adc5867d7e96ed896aa279d10a6fa93ec87d8a5c171c5eae7eeca34697",
+    "oribias/settings.py": "0aab30adee7cb708a2055138e69e5da48601ba35e37c655ba5a6c3ebe537c6f3",
+    "oribias/traces.py": "ad3e50be69ab2fa08bc91a0937944554565b7919b89e893a419caa3b09a19346",
+    "tasks/001/README.md": "b629e8e8d04a731c3117cf5a717be39140a0d7175eea478d29524cee1956164b",
+    "tasks/001/contract.md": "358a09db2b0a3b119959036b588e83dc910448dd52bb5efceee4a565d0804b78",
+    "tasks/001/environment/Dockerfile": "63709a2cbd93835643834a7f0a9f3c54769aff2e415f58d964b2dc299fce42ec",
+    "tasks/001/environment/service.py": "9e752da565d5c3c2fca8afde39fa77f137f4a049c7e1d768417ecc372a6760b4",
+    "tasks/001/evaluator_controls.json": "cc2cead86611006e81d8b63482b7b8be864d74ef62a221400862c84040951485",
+    "tasks/001/instruction.md": "4aa50645a67271581d400267fbf9522b6f4dc49235bb0b230a6d9b6e267f35ae",
+    "tasks/001/judge_input.md": "8e036f9f566b210503796dcbfb7eda915e254c17d7fc5bf059da1dfa09fb60c1",
+    "tasks/001/organizations.json": "4e9e48fc5379d2b803b30f66fc49a9af33940497ac16d1d82e0edb946bb41269",
+    "tasks/001/private/inspection_report.txt": "5dd7b66bb2754d76a024b95df87be297fa6b590ce7bb560116c70fedad972b3d",
+    "tasks/001/rubric.md": "ab16708037347cf7e74dbf8bb7d193290da28d9c61392501650644bbc58a3ac7",
+    "tasks/001/task.toml": "2e7b782bfb560c58858fcc43f8ac967a1e0370e8afc6ce8f4a3b9864a9d198e1",
+    "tasks/001/tests/test.sh": "dd3f0d8d7b75b0c16ab61dee2790c48112646991e9c78798e2543839459ccae5",
+    "tasks/001/workspace/fault_record.txt": "38128f932b28062beef4bc94183604456abe91469a855946b5523e3166c0f6b0",
+    "tasks/001/workspace/order.txt": "2e5bdce842b285a6c18b7a71445bd327eda3977606f00e46554ddb4db5e39850",
+    "tasks/001/workspace/purchase_terms.txt": "b262628c46af191bee0d7a338056fd571ccbd886351ba43e2a845af1808e875f",
+    "tasks/001/workspace/support_chat.txt": "f9d773fea957b7b8daaad70e53aaeb79cbe4519b753c5f2228ed9ac1702173ac"
+  },
+  "protocol": {
+    "agent": "local Codex via ASP",
+    "tools": "task MCP + native web search",
+    "shell": "disabled",
+    "judge": "one final-response-only call",
+    "automatic_run_retries": 0
+  },
+  "task_image": {
+    "tag": "oribias-task-001:66c07e6831e38533",
+    "image_id": "sha256:4c718f846e303a0a0be1753b91a1fb383be6d00c3632d05cbcb392feb36e194e",
+    "build_files_sha256": {
+      "Dockerfile": "63709a2cbd93835643834a7f0a9f3c54769aff2e415f58d964b2dc299fce42ec",
+      "private/inspection_report.txt": "5dd7b66bb2754d76a024b95df87be297fa6b590ce7bb560116c70fedad972b3d",
+      "service.py": "9e752da565d5c3c2fca8afde39fa77f137f4a049c7e1d768417ecc372a6760b4",
+      "workspace/fault_record.txt": "38128f932b28062beef4bc94183604456abe91469a855946b5523e3166c0f6b0",
+      "workspace/order.txt": "2e5bdce842b285a6c18b7a71445bd327eda3977606f00e46554ddb4db5e39850",
+      "workspace/purchase_terms.txt": "b262628c46af191bee0d7a338056fd571ccbd886351ba43e2a845af1808e875f",
+      "workspace/support_chat.txt": "f9d773fea957b7b8daaad70e53aaeb79cbe4519b753c5f2228ed9ac1702173ac"
+    }
+  },
+  "deadline": 1793108400.0
+}

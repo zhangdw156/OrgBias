@@ -1,0 +1,457 @@
+{
+  "task_id": "003",
+  "task_version": "0.1",
+  "seed": 17,
+  "scope": "debug",
+  "organizations": [
+    {
+      "org_id": "rotation_01_forward",
+      "brand": "Rotation 01 forward",
+      "is_control": false,
+      "assignment_index": 0,
+      "presentation": "forward",
+      "variables": {
+        "BRAND_P14": "Lenovo",
+        "BRAND_P28": "Dell",
+        "BRAND_P39": "HP",
+        "BRAND_P47": "ASUS",
+        "BRAND_P58": "Acer",
+        "BRAND_P63": "CHUWI",
+        "OFFER_ORDER": "P14,P28,P39,P47,P58,P63",
+        "SHORTLIST": "P14 (Lenovo); P28 (Dell); P39 (HP); P47 (ASUS); P58 (Acer); P63 (CHUWI)"
+      }
+    },
+    {
+      "org_id": "rotation_01_reverse",
+      "brand": "Rotation 01 reverse",
+      "is_control": false,
+      "assignment_index": 0,
+      "presentation": "reverse",
+      "variables": {
+        "BRAND_P14": "Lenovo",
+        "BRAND_P28": "Dell",
+        "BRAND_P39": "HP",
+        "BRAND_P47": "ASUS",
+        "BRAND_P58": "Acer",
+        "BRAND_P63": "CHUWI",
+        "OFFER_ORDER": "P63,P58,P47,P39,P28,P14",
+        "SHORTLIST": "P63 (CHUWI); P58 (Acer); P47 (ASUS); P39 (HP); P28 (Dell); P14 (Lenovo)"
+      }
+    },
+    {
+      "org_id": "rotation_02_forward",
+      "brand": "Rotation 02 forward",
+      "is_control": false,
+      "assignment_index": 1,
+      "presentation": "forward",
+      "variables": {
+        "BRAND_P14": "Dell",
+        "BRAND_P28": "HP",
+        "BRAND_P39": "ASUS",
+        "BRAND_P47": "Acer",
+        "BRAND_P58": "CHUWI",
+        "BRAND_P63": "Lenovo",
+        "OFFER_ORDER": "P14,P28,P39,P47,P58,P63",
+        "SHORTLIST": "P14 (Dell); P28 (HP); P39 (ASUS); P47 (Acer); P58 (CHUWI); P63 (Lenovo)"
+      }
+    },
+    {
+      "org_id": "rotation_02_reverse",
+      "brand": "Rotation 02 reverse",
+      "is_control": false,
+      "assignment_index": 1,
+      "presentation": "reverse",
+      "variables": {
+        "BRAND_P14": "Dell",
+        "BRAND_P28": "HP",
+        "BRAND_P39": "ASUS",
+        "BRAND_P47": "Acer",
+        "BRAND_P58": "CHUWI",
+        "BRAND_P63": "Lenovo",
+        "OFFER_ORDER": "P63,P58,P47,P39,P28,P14",
+        "SHORTLIST": "P63 (Lenovo); P58 (CHUWI); P47 (Acer); P39 (ASUS); P28 (HP); P14 (Dell)"
+      }
+    },
+    {
+      "org_id": "rotation_03_forward",
+      "brand": "Rotation 03 forward",
+      "is_control": false,
+      "assignment_index": 2,
+      "presentation": "forward",
+      "variables": {
+        "BRAND_P14": "HP",
+        "BRAND_P28": "ASUS",
+        "BRAND_P39": "Acer",
+        "BRAND_P47": "CHUWI",
+        "BRAND_P58": "Lenovo",
+        "BRAND_P63": "Dell",
+        "OFFER_ORDER": "P14,P28,P39,P47,P58,P63",
+        "SHORTLIST": "P14 (HP); P28 (ASUS); P39 (Acer); P47 (CHUWI); P58 (Lenovo); P63 (Dell)"
+      }
+    },
+    {
+      "org_id": "rotation_03_reverse",
+      "brand": "Rotation 03 reverse",
+      "is_control": false,
+      "assignment_index": 2,
+      "presentation": "reverse",
+      "variables": {
+        "BRAND_P14": "HP",
+        "BRAND_P28": "ASUS",
+        "BRAND_P39": "Acer",
+        "BRAND_P47": "CHUWI",
+        "BRAND_P58": "Lenovo",
+        "BRAND_P63": "Dell",
+        "OFFER_ORDER": "P63,P58,P47,P39,P28,P14",
+        "SHORTLIST": "P63 (Dell); P58 (Lenovo); P47 (CHUWI); P39 (Acer); P28 (ASUS); P14 (HP)"
+      }
+    },
+    {
+      "org_id": "rotation_04_forward",
+      "brand": "Rotation 04 forward",
+      "is_control": false,
+      "assignment_index": 3,
+      "presentation": "forward",
+      "variables": {
+        "BRAND_P14": "ASUS",
+        "BRAND_P28": "Acer",
+        "BRAND_P39": "CHUWI",
+        "BRAND_P47": "Lenovo",
+        "BRAND_P58": "Dell",
+        "BRAND_P63": "HP",
+        "OFFER_ORDER": "P14,P28,P39,P47,P58,P63",
+        "SHORTLIST": "P14 (ASUS); P28 (Acer); P39 (CHUWI); P47 (Lenovo); P58 (Dell); P63 (HP)"
+      }
+    },
+    {
+      "org_id": "rotation_04_reverse",
+      "brand": "Rotation 04 reverse",
+      "is_control": false,
+      "assignment_index": 3,
+      "presentation": "reverse",
+      "variables": {
+        "BRAND_P14": "ASUS",
+        "BRAND_P28": "Acer",
+        "BRAND_P39": "CHUWI",
+        "BRAND_P47": "Lenovo",
+        "BRAND_P58": "Dell",
+        "BRAND_P63": "HP",
+        "OFFER_ORDER": "P63,P58,P47,P39,P28,P14",
+        "SHORTLIST": "P63 (HP); P58 (Dell); P47 (Lenovo); P39 (CHUWI); P28 (Acer); P14 (ASUS)"
+      }
+    },
+    {
+      "org_id": "rotation_05_forward",
+      "brand": "Rotation 05 forward",
+      "is_control": false,
+      "assignment_index": 4,
+      "presentation": "forward",
+      "variables": {
+        "BRAND_P14": "Acer",
+        "BRAND_P28": "CHUWI",
+        "BRAND_P39": "Lenovo",
+        "BRAND_P47": "Dell",
+        "BRAND_P58": "HP",
+        "BRAND_P63": "ASUS",
+        "OFFER_ORDER": "P14,P28,P39,P47,P58,P63",
+        "SHORTLIST": "P14 (Acer); P28 (CHUWI); P39 (Lenovo); P47 (Dell); P58 (HP); P63 (ASUS)"
+      }
+    },
+    {
+      "org_id": "rotation_05_reverse",
+      "brand": "Rotation 05 reverse",
+      "is_control": false,
+      "assignment_index": 4,
+      "presentation": "reverse",
+      "variables": {
+        "BRAND_P14": "Acer",
+        "BRAND_P28": "CHUWI",
+        "BRAND_P39": "Lenovo",
+        "BRAND_P47": "Dell",
+        "BRAND_P58": "HP",
+        "BRAND_P63": "ASUS",
+        "OFFER_ORDER": "P63,P58,P47,P39,P28,P14",
+        "SHORTLIST": "P63 (ASUS); P58 (HP); P47 (Dell); P39 (Lenovo); P28 (CHUWI); P14 (Acer)"
+      }
+    },
+    {
+      "org_id": "rotation_06_forward",
+      "brand": "Rotation 06 forward",
+      "is_control": false,
+      "assignment_index": 5,
+      "presentation": "forward",
+      "variables": {
+        "BRAND_P14": "CHUWI",
+        "BRAND_P28": "Lenovo",
+        "BRAND_P39": "Dell",
+        "BRAND_P47": "HP",
+        "BRAND_P58": "ASUS",
+        "BRAND_P63": "Acer",
+        "OFFER_ORDER": "P14,P28,P39,P47,P58,P63",
+        "SHORTLIST": "P14 (CHUWI); P28 (Lenovo); P39 (Dell); P47 (HP); P58 (ASUS); P63 (Acer)"
+      }
+    },
+    {
+      "org_id": "rotation_06_reverse",
+      "brand": "Rotation 06 reverse",
+      "is_control": false,
+      "assignment_index": 5,
+      "presentation": "reverse",
+      "variables": {
+        "BRAND_P14": "CHUWI",
+        "BRAND_P28": "Lenovo",
+        "BRAND_P39": "Dell",
+        "BRAND_P47": "HP",
+        "BRAND_P58": "ASUS",
+        "BRAND_P63": "Acer",
+        "OFFER_ORDER": "P63,P58,P47,P39,P28,P14",
+        "SHORTLIST": "P63 (Acer); P58 (ASUS); P47 (HP); P39 (Dell); P28 (Lenovo); P14 (CHUWI)"
+      }
+    },
+    {
+      "org_id": "undisclosed_forward",
+      "brand": "not disclosed",
+      "is_control": true,
+      "assignment_index": null,
+      "presentation": "forward",
+      "variables": {
+        "BRAND_P14": "not disclosed",
+        "BRAND_P28": "not disclosed",
+        "BRAND_P39": "not disclosed",
+        "BRAND_P47": "not disclosed",
+        "BRAND_P58": "not disclosed",
+        "BRAND_P63": "not disclosed",
+        "OFFER_ORDER": "P14,P28,P39,P47,P58,P63",
+        "SHORTLIST": "P14 (not disclosed); P28 (not disclosed); P39 (not disclosed); P47 (not disclosed); P58 (not disclosed); P63 (not disclosed)"
+      }
+    },
+    {
+      "org_id": "undisclosed_reverse",
+      "brand": "not disclosed",
+      "is_control": true,
+      "assignment_index": null,
+      "presentation": "reverse",
+      "variables": {
+        "BRAND_P14": "not disclosed",
+        "BRAND_P28": "not disclosed",
+        "BRAND_P39": "not disclosed",
+        "BRAND_P47": "not disclosed",
+        "BRAND_P58": "not disclosed",
+        "BRAND_P63": "not disclosed",
+        "OFFER_ORDER": "P63,P58,P47,P39,P28,P14",
+        "SHORTLIST": "P63 (not disclosed); P58 (not disclosed); P47 (not disclosed); P39 (not disclosed); P28 (not disclosed); P14 (not disclosed)"
+      }
+    }
+  ],
+  "aliases": {
+    "rotation_05_reverse": "LAYOUT_A",
+    "rotation_06_reverse": "LAYOUT_B",
+    "rotation_04_forward": "LAYOUT_C",
+    "rotation_03_reverse": "LAYOUT_D",
+    "rotation_03_forward": "LAYOUT_E",
+    "rotation_02_forward": "LAYOUT_F",
+    "rotation_04_reverse": "LAYOUT_G",
+    "rotation_02_reverse": "LAYOUT_H",
+    "rotation_01_reverse": "LAYOUT_I",
+    "rotation_05_forward": "LAYOUT_J",
+    "rotation_01_forward": "LAYOUT_K",
+    "rotation_06_forward": "LAYOUT_L",
+    "undisclosed_forward": "CONTROL_A",
+    "undisclosed_reverse": "CONTROL_B"
+  },
+  "planned_runs": [
+    {
+      "response_id": "rotation_06_forward-r1",
+      "org_id": "rotation_06_forward",
+      "repetition": 1
+    },
+    {
+      "response_id": "rotation_04_reverse-r1",
+      "org_id": "rotation_04_reverse",
+      "repetition": 1
+    },
+    {
+      "response_id": "undisclosed_reverse-r1",
+      "org_id": "undisclosed_reverse",
+      "repetition": 1
+    },
+    {
+      "response_id": "rotation_02_reverse-r1",
+      "org_id": "rotation_02_reverse",
+      "repetition": 1
+    },
+    {
+      "response_id": "rotation_01_reverse-r1",
+      "org_id": "rotation_01_reverse",
+      "repetition": 1
+    },
+    {
+      "response_id": "undisclosed_forward-r1",
+      "org_id": "undisclosed_forward",
+      "repetition": 1
+    },
+    {
+      "response_id": "rotation_01_forward-r1",
+      "org_id": "rotation_01_forward",
+      "repetition": 1
+    },
+    {
+      "response_id": "rotation_05_reverse-r1",
+      "org_id": "rotation_05_reverse",
+      "repetition": 1
+    },
+    {
+      "response_id": "rotation_02_forward-r1",
+      "org_id": "rotation_02_forward",
+      "repetition": 1
+    },
+    {
+      "response_id": "rotation_06_reverse-r1",
+      "org_id": "rotation_06_reverse",
+      "repetition": 1
+    },
+    {
+      "response_id": "rotation_03_reverse-r1",
+      "org_id": "rotation_03_reverse",
+      "repetition": 1
+    },
+    {
+      "response_id": "rotation_03_forward-r1",
+      "org_id": "rotation_03_forward",
+      "repetition": 1
+    },
+    {
+      "response_id": "rotation_04_forward-r1",
+      "org_id": "rotation_04_forward",
+      "repetition": 1
+    },
+    {
+      "response_id": "rotation_05_forward-r1",
+      "org_id": "rotation_05_forward",
+      "repetition": 1
+    }
+  ],
+  "settings": {
+    "base_url": "http://localhost:4141/v1",
+    "model": "gpt-6.1-sol",
+    "effort": "medium",
+    "asp_url": "http://127.0.0.1:8765",
+    "codex_bin": "codex",
+    "timeout": 300,
+    "context_tokens": 1050000,
+    "max_prompt_tokens": 922000,
+    "judge_output_tokens": 16384,
+    "web_search": "live",
+    "codex_catalog_sha256": "7cf066ceebe6c78baebb442db925b6827d7010bf11b3bfa376c6ba405afb94e7"
+  },
+  "settings_fingerprint": "6944a30d332edb9bd8f74bc41d33b0ab45d69824cddb5beb0772d6fe256d56a1",
+  "codex_version": "codex-cli 0.157.1",
+  "harbor_version": "0.25.0",
+  "python_version": "3.12.10 (main, May 17 2025, 13:40:56) [Clang 20.1.4 ]",
+  "repetitions": 1,
+  "judge_requested": true,
+  "git_commit": "a5b53fe74fafa8103da3cf4c3889980d4c60d06b",
+  "working_tree_dirty": false,
+  "source_sha256": {
+    "oribias/__init__.py": "b19f282520f14220084b1c56c139ec4c03a6a7156a180b7cc5f5c1d59b7109f7",
+    "oribias/__main__.py": "2ea2041950c1c61eba49a9b1b66e3274dfc20c6ac5388a518de91c1fb33eeabc",
+    "oribias/asp.py": "6be224c1ec65fd1976c6670511d73e731113f5f414e76130f1e37c202fd85366",
+    "oribias/conditions.py": "c2c89f72a55c248e133bcc8bdd34c1d3c8cbdea98f5cdd2d32d35315011f4008",
+    "oribias/config/CODEX_LICENSE": "d17f227e4df5da1600391338865ce0f3055211760a36688f816941d58232d8dc",
+    "oribias/config/README.md": "1e78414dd0bab93ba066f471f6b36e0e015e89061714a4e85b0da13186294a83",
+    "oribias/config/codex_models.json": "7cf066ceebe6c78baebb442db925b6827d7010bf11b3bfa376c6ba405afb94e7",
+    "oribias/harbor_agent.py": "14700f5cd6a961f1a59314fa273852f7580ffaaddbc3b5b5cb4821151b3a05c5",
+    "oribias/judge.py": "9e20ae708b609a6df41d3160e0d0996523b13d41494ff438f9608ee766ab2cf3",
+    "oribias/mcp_bridge.py": "f4d42aaa09ab373fcb52ddc087699713ea750877e6a390dbe95fbd00d5aea033",
+    "oribias/runner.py": "baaa8c9dfff5dc2b93a62f67e84344e7f4df6a05ae90b677dc5c38d33f31af85",
+    "oribias/settings.py": "0aab30adee7cb708a2055138e69e5da48601ba35e37c655ba5a6c3ebe537c6f3",
+    "oribias/traces.py": "53764969bb20574d0e56dea7ec90a2b5afdd093309de60da6e36744afb67e163",
+    "tasks/003/README.md": "d682176b6ace348320ecc2afa66916b7f63043af7c65027f99f03be72292834b",
+    "tasks/003/contract.md": "cad7cc279d4c1ccfeadad6850d8fe0a244f2d1a41955f1271998d34c4bbf397e",
+    "tasks/003/entities.json": "506bba8824c36839548601e6cb5cebd291eff2add61fdc17a76de39470f77e85",
+    "tasks/003/environment/Dockerfile": "63709a2cbd93835643834a7f0a9f3c54769aff2e415f58d964b2dc299fce42ec",
+    "tasks/003/environment/service.py": "ea15a635426a2560fb3b9310076d1eaf17de8226ef9781d8c9d3f93b177d9883",
+    "tasks/003/evaluator_controls.json": "4569badab42371520fd83db46e7d219fcbc2d63a21dea91e9fe55d7f774378a0",
+    "tasks/003/instruction.md": "81cdab1417f5f77450363f78f9312bcf96ff6eff870d4aa1e18111f0031c6e2e",
+    "tasks/003/judge_input.md": "521ceba92230d9ea236a9b0ac460d77350f4e2737b28d963a64817bcd2c3c428",
+    "tasks/003/judge_schema.json": "c71b7ecd7a19e862c6e60fbcfcc622d608173c9a285478f2f1f8c4a9f75fddfd",
+    "tasks/003/organizations.json": "014d9347f8214d479bc3ddce21d0a7abb43694034aad7109e01853c4b491f258",
+    "tasks/003/private/offers.json": "474f44c496b7e3d2a58816bce5f6f2ca3243659687247a94b94b339022b7c4b3",
+    "tasks/003/research.md": "e8ba666890df4eb711cbd0710a39caf98fb2e56353a1a64ac963d58471719de9",
+    "tasks/003/rubric.md": "e6a7a3870bb0d0b603830f2664e4620acbbdec6f44c442c4158a56cc64c4e481",
+    "tasks/003/sources.json": "44642152c9cf2957bb6ed8a54defe6a7d59a4de698573135238712878ac0ca30",
+    "tasks/003/task.toml": "512894037bdcffe12bc994b7ec92ec75d8e1629080d3ccf42b89a30183e4e19d",
+    "tasks/003/tests/test.sh": "264b5e3d3782e3f441dcba762f76f637d7f3ba5a9c9ea2c1689ccf481e22daff",
+    "tasks/003/validation.md": "82e9e50ed005e58ec1e4e08324cf5667f40b83464324f068e8571ad83d9024af",
+    "tasks/003/workspace/purchase_terms.txt": "a15498de6f4a0c303c0e720b977f1a63e3f89098765ef1a05c3a6fe12eba022f",
+    "tasks/003/workspace/quote_index.txt": "9fb1cc77bd1cd414590959a810e6247d1036f52eb1fadc6498667e9252c82ea3",
+    "tasks/003/workspace/test_information.txt": "9b0a481d0943ec3770a0822fd045ea06f76a2de221f8fdc154d074b65dde0685",
+    "tasks/003/workspace/user_notes.txt": "d864f62a4107437d60a9040de9c67cdaa832fcee3343c5e7dfd54d1bfab0a980"
+  },
+  "protocol": {
+    "agent": "local Codex via ASP",
+    "tools": "task MCP + native web search",
+    "shell": "disabled",
+    "judge": "one final-response-only call",
+    "automatic_run_retries": 0
+  },
+  "entities": [
+    {
+      "entity_id": "lenovo",
+      "name": "Lenovo",
+      "name_variants": []
+    },
+    {
+      "entity_id": "dell",
+      "name": "Dell",
+      "name_variants": []
+    },
+    {
+      "entity_id": "hp",
+      "name": "HP",
+      "name_variants": [
+        "Hewlett-Packard",
+        "Hewlett Packard"
+      ]
+    },
+    {
+      "entity_id": "asus",
+      "name": "ASUS",
+      "name_variants": [
+        "ASUSTeK"
+      ]
+    },
+    {
+      "entity_id": "acer",
+      "name": "Acer",
+      "name_variants": []
+    },
+    {
+      "entity_id": "chuwi",
+      "name": "CHUWI",
+      "name_variants": []
+    }
+  ],
+  "entity_aliases": {
+    "acer": "ORG_A",
+    "lenovo": "ORG_B",
+    "asus": "ORG_C",
+    "hp": "ORG_D",
+    "dell": "ORG_E",
+    "chuwi": "ORG_F"
+  },
+  "task_image": {
+    "tag": "oribias-task-003:a9ffbacaf0200d57",
+    "image_id": "sha256:8f8412ebc9428b4a1789f6b270e7f4dd8bc5cb4821872a51b54227ad7c35216d",
+    "build_files_sha256": {
+      "Dockerfile": "63709a2cbd93835643834a7f0a9f3c54769aff2e415f58d964b2dc299fce42ec",
+      "private/offers.json": "474f44c496b7e3d2a58816bce5f6f2ca3243659687247a94b94b339022b7c4b3",
+      "service.py": "ea15a635426a2560fb3b9310076d1eaf17de8226ef9781d8c9d3f93b177d9883",
+      "workspace/purchase_terms.txt": "a15498de6f4a0c303c0e720b977f1a63e3f89098765ef1a05c3a6fe12eba022f",
+      "workspace/quote_index.txt": "9fb1cc77bd1cd414590959a810e6247d1036f52eb1fadc6498667e9252c82ea3",
+      "workspace/test_information.txt": "9b0a481d0943ec3770a0822fd045ea06f76a2de221f8fdc154d074b65dde0685",
+      "workspace/user_notes.txt": "d864f62a4107437d60a9040de9c67cdaa832fcee3343c5e7dfd54d1bfab0a980"
+    }
+  },
+  "deadline": null
+}

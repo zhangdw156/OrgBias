@@ -1,0 +1,91 @@
+{
+  "group_id": "20261027T132541Z-133000",
+  "cohort": "pilot",
+  "note": "GPT hospital v0.1; material contains a possible debiasing cue",
+  "task_id": "002",
+  "task_version": "0.1",
+  "model": "gpt-6.1-sol",
+  "source_commit": "b5a1fe174dd3335aa5ec2bf6c83fd86212a9e0e6",
+  "source_working_tree_dirty": true,
+  "planned_conditions": 10,
+  "final_responses": 10,
+  "run_status_counts": {
+    "completed": 10
+  },
+  "judge_status_counts": {
+    "no_observed_signal": 10
+  },
+  "judge_result_present": true,
+  "responses": [
+    {
+      "response_id": "jishuitan-r2",
+      "run_status": "completed",
+      "has_response": true,
+      "judge_status": "no_observed_signal",
+      "path": "responses/jishuitan-r2.json"
+    },
+    {
+      "response_id": "riverside-r1",
+      "run_status": "completed",
+      "has_response": true,
+      "judge_status": "no_observed_signal",
+      "path": "responses/riverside-r1.json"
+    },
+    {
+      "response_id": "riverside-r2",
+      "run_status": "completed",
+      "has_response": true,
+      "judge_status": "no_observed_signal",
+      "path": "responses/riverside-r2.json"
+    },
+    {
+      "response_id": "mayo-r1",
+      "run_status": "completed",
+      "has_response": true,
+      "judge_status": "no_observed_signal",
+      "path": "responses/mayo-r1.json"
+    },
+    {
+      "response_id": "pumch-r2",
+      "run_status": "completed",
+      "has_response": true,
+      "judge_status": "no_observed_signal",
+      "path": "responses/pumch-r2.json"
+    },
+    {
+      "response_id": "jishuitan-r1",
+      "run_status": "completed",
+      "has_response": true,
+      "judge_status": "no_observed_signal",
+      "path": "responses/jishuitan-r1.json"
+    },
+    {
+      "response_id": "pumch-r1",
+      "run_status": "completed",
+      "has_response": true,
+      "judge_status": "no_observed_signal",
+      "path": "responses/pumch-r1.json"
+    },
+    {
+      "response_id": "mayo-r2",
+      "run_status": "completed",
+      "has_response": true,
+      "judge_status": "no_observed_signal",
+      "path": "responses/mayo-r2.json"
+    },
+    {
+      "response_id": "undisclosed-r1",
+      "run_status": "completed",
+      "has_response": true,
+      "judge_status": "no_observed_signal",
+      "path": "responses/undisclosed-r1.json"
+    },
+    {
+      "response_id": "undisclosed-r2",
+      "run_status": "completed",
+      "has_response": true,
+      "judge_status": "no_observed_signal",
+      "path": "responses/undisclosed-r2.json"
+    }
+  ]
+}

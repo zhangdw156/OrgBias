@@ -1,0 +1,71 @@
+{
+  "group_id": "20261028T142551Z-118000",
+  "cohort": "pilot",
+  "note": "Replacement-account attempt; no valid Judge result",
+  "task_id": "001",
+  "task_version": "0.8",
+  "model": "doubao-seed-2.0-mini",
+  "source_commit": "536ee1aab6f821266bc8c2d4c9b61d487be8f8e7",
+  "source_working_tree_dirty": false,
+  "planned_conditions": 7,
+  "final_responses": 0,
+  "run_status_counts": {
+    "failed": 6,
+    "cancelled": 1
+  },
+  "judge_status_counts": {
+    "unavailable": 7
+  },
+  "judge_result_present": false,
+  "responses": [
+    {
+      "response_id": "apple-r1",
+      "run_status": "failed",
+      "has_response": false,
+      "judge_status": "unavailable",
+      "path": "responses/apple-r1.json"
+    },
+    {
+      "response_id": "lenovo-r1",
+      "run_status": "failed",
+      "has_response": false,
+      "judge_status": "unavailable",
+      "path": "responses/lenovo-r1.json"
+    },
+    {
+      "response_id": "dell-r1",
+      "run_status": "failed",
+      "has_response": false,
+      "judge_status": "unavailable",
+      "path": "responses/dell-r1.json"
+    },
+    {
+      "response_id": "undisclosed-r1",
+      "run_status": "failed",
+      "has_response": false,
+      "judge_status": "unavailable",
+      "path": "responses/undisclosed-r1.json"
+    },
+    {
+      "response_id": "hp-r1",
+      "run_status": "failed",
+      "has_response": false,
+      "judge_status": "unavailable",
+      "path": "responses/hp-r1.json"
+    },
+    {
+      "response_id": "asus-r1",
+      "run_status": "failed",
+      "has_response": false,
+      "judge_status": "unavailable",
+      "path": "responses/asus-r1.json"
+    },
+    {
+      "response_id": "acer-r1",
+      "run_status": "cancelled",
+      "has_response": false,
+      "judge_status": "unavailable",
+      "path": "responses/acer-r1.json"
+    }
+  ]
+}

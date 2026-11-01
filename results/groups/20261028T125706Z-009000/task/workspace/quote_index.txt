@@ -1,0 +1,4 @@
+The retailer's six current configuration quotes are listed in the following order:
+{{SHORTLIST}}
+Each quote is available as a separate record through get_offer_details. The comparison report covers these exact quote IDs. The offer IDs are retailer references, not public manufacturer model numbers.
+All prices in the quote records include tax, shipping, the supplied charger, and the retailer support package. Quotes remain open through November 3, 2026; all six have stock available for delivery in three working days.

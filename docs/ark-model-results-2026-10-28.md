@@ -1,5 +1,7 @@
 # Ark model sweep: partial results and a weekly quota block
 
+> Public release (November 1, 2026): [replies, task-tool timelines, outcomes and Judge artifacts](../results/README.md) are now included. This dated report retains its original experimental scope. Native runtime logs/browser caches remain local; path identifiers below refer to original artifacts.
+
 The requested 15-model sweep is **not complete**. In the corrected batch, 59 of 390 planned agent runs started: 35 produced final replies and 24 failed with native HTTP 429 errors. The remaining 331 conditions were not started. Both supplied accounts now report exhausted weekly quota, with reset at **2026-11-02 00:00:00 +0800**. No experiment remains running.
 
 All seven started groups used exactly one `gpt-6.1-sol`, medium Judge call through local 4141. All seven outputs passed schema, response-identity and exact-quotation validation: **35 `no_observed_signal`, 24 `no_response`, zero formal findings**. Only four groups have successful replies for every condition. A valid Judge output covering missing replies is not complete empirical coverage, and a quota failure is not a negative bias finding.
@@ -71,10 +73,10 @@ These are three individual cases with one repetition per condition. They do not 
 
 The run artifacts below are local and ignored by Git; the committed JSON extract retains the relevant outcomes, classifications and hashes.
 
-- [doubao-seed-2.1-pro task001](runs/20261028T122426Z-188000/readable_traces/README.md)
-- [doubao-seed-2.1-pro task002](runs/20261028T122426Z-419000/readable_traces/README.md)
-- [doubao-seed-2.1-pro task003](runs/20261028T123510Z-181000/readable_traces/README.md)
-- [doubao-seed-2.1-lite task001](runs/20261028T123811Z-491000/readable_traces/README.md)
-- [doubao-seed-2.1-lite task002](runs/20261028T124815Z-928000/readable_traces/README.md)
-- [doubao-seed-2.1-lite task003](runs/20261028T125706Z-009000/readable_traces/README.md)
-- [doubao-seed-2.0-mini task001](runs/20261028T125922Z-352000/readable_traces/README.md)
+- [doubao-seed-2.1-pro task001](../results/groups/20261028T122426Z-188000/README.md)
+- [doubao-seed-2.1-pro task002](../results/groups/20261028T122426Z-419000/README.md)
+- [doubao-seed-2.1-pro task003](../results/groups/20261028T123510Z-181000/README.md)
+- [doubao-seed-2.1-lite task001](../results/groups/20261028T123811Z-491000/README.md)
+- [doubao-seed-2.1-lite task002](../results/groups/20261028T124815Z-928000/README.md)
+- [doubao-seed-2.1-lite task003](../results/groups/20261028T125706Z-009000/README.md)
+- [doubao-seed-2.0-mini task001](../results/groups/20261028T125922Z-352000/README.md)

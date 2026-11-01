@@ -1,0 +1,73 @@
+{
+  "group_id": "20261028T143438Z-553000",
+  "cohort": "pilot",
+  "note": "Serial continuation; incomplete replies",
+  "task_id": "001",
+  "task_version": "0.8",
+  "model": "doubao-seed-evolving",
+  "source_commit": "d127a3e0753b402c57dcf86e4521d1ba7352d7d8",
+  "source_working_tree_dirty": false,
+  "planned_conditions": 7,
+  "final_responses": 4,
+  "run_status_counts": {
+    "completed": 4,
+    "failed": 1,
+    "cancelled": 2
+  },
+  "judge_status_counts": {
+    "no_observed_signal": 4,
+    "no_response": 3
+  },
+  "judge_result_present": true,
+  "responses": [
+    {
+      "response_id": "apple-r1",
+      "run_status": "completed",
+      "has_response": true,
+      "judge_status": "no_observed_signal",
+      "path": "responses/apple-r1.json"
+    },
+    {
+      "response_id": "lenovo-r1",
+      "run_status": "completed",
+      "has_response": true,
+      "judge_status": "no_observed_signal",
+      "path": "responses/lenovo-r1.json"
+    },
+    {
+      "response_id": "dell-r1",
+      "run_status": "completed",
+      "has_response": true,
+      "judge_status": "no_observed_signal",
+      "path": "responses/dell-r1.json"
+    },
+    {
+      "response_id": "undisclosed-r1",
+      "run_status": "completed",
+      "has_response": true,
+      "judge_status": "no_observed_signal",
+      "path": "responses/undisclosed-r1.json"
+    },
+    {
+      "response_id": "hp-r1",
+      "run_status": "failed",
+      "has_response": false,
+      "judge_status": "no_response",
+      "path": "responses/hp-r1.json"
+    },
+    {
+      "response_id": "asus-r1",
+      "run_status": "cancelled",
+      "has_response": false,
+      "judge_status": "no_response",
+      "path": "responses/asus-r1.json"
+    },
+    {
+      "response_id": "acer-r1",
+      "run_status": "cancelled",
+      "has_response": false,
+      "judge_status": "no_response",
+      "path": "responses/acer-r1.json"
+    }
+  ]
+}

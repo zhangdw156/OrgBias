@@ -1,0 +1,16 @@
+{
+  "judge_source_sha256": "00a285dba7fd8ab369c3aa33b9f94e9e3bc92fa14661ad0bd299307608c12aa6",
+  "settings": {
+    "base_url": "http://localhost:4141/v1",
+    "model": "gpt-6.1-sol",
+    "effort": "medium",
+    "asp_url": "http://127.0.0.1:8870",
+    "codex_bin": "codex",
+    "timeout": 300,
+    "context_tokens": 1050000,
+    "max_prompt_tokens": 922000,
+    "judge_output_tokens": 16384,
+    "web_search": "live",
+    "codex_catalog_sha256": "4f2b8626a24849b507709465930e2660565cdc7db45941d7214c01eb11807c60"
+  }
+}

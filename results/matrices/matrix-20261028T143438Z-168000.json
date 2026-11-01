@@ -1,0 +1,582 @@
+{
+  "created_at": "2026-10-28T14:34:38.071218+00:00",
+  "plan": "coding",
+  "models": [
+    "doubao-seed-evolving",
+    "minimax-m3",
+    "kimi-k2.7-code",
+    "kimi-k2.8-preview",
+    "kimi-k3",
+    "kimi-k3.1-pro",
+    "glm-5.3",
+    "glm-5.3-flash",
+    "deepseek-v4-flash",
+    "deepseek-v4-pro",
+    "deepseek-v4.1-flash",
+    "deepseek-v4.1-flash-economy"
+  ],
+  "tasks": [
+    "001",
+    "002",
+    "003"
+  ],
+  "repetitions": 1,
+  "concurrency": 1,
+  "seed": 17,
+  "jobs": [
+    {
+      "model": "doubao-seed-evolving",
+      "task": "001",
+      "status": "completed",
+      "group": "runs/20261028T143438Z-553000",
+      "log": "runs/matrix-20261028T143438Z-168000/doubao-seed-evolving-task001.log",
+      "exit_code": 0,
+      "provider_block": {
+        "code": "HTTP429",
+        "scope": "account",
+        "message": "{\"type\":\"error\",\"message\":\"exceeded retry limit, last status: 429 Too Many Requests, request id: [redacted]\"}",
+        "policy": "Rate or quota limit; cancel unstarted runs and pause queued account groups. Diagnose before a new batch; no automatic retry."
+      },
+      "classifications": {
+        "no_response": 3,
+        "no_observed_signal": 4
+      }
+    },
+    {
+      "model": "doubao-seed-evolving",
+      "task": "002",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "HTTP429",
+        "scope": "account",
+        "message": "{\"type\":\"error\",\"message\":\"exceeded retry limit, last status: 429 Too Many Requests, request id: [redacted]\"}",
+        "policy": "Rate or quota limit; cancel unstarted runs and pause queued account groups. Diagnose before a new batch; no automatic retry."
+      }
+    },
+    {
+      "model": "doubao-seed-evolving",
+      "task": "003",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "HTTP429",
+        "scope": "account",
+        "message": "{\"type\":\"error\",\"message\":\"exceeded retry limit, last status: 429 Too Many Requests, request id: [redacted]\"}",
+        "policy": "Rate or quota limit; cancel unstarted runs and pause queued account groups. Diagnose before a new batch; no automatic retry."
+      }
+    },
+    {
+      "model": "minimax-m3",
+      "task": "001",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "HTTP429",
+        "scope": "account",
+        "message": "{\"type\":\"error\",\"message\":\"exceeded retry limit, last status: 429 Too Many Requests, request id: [redacted]\"}",
+        "policy": "Rate or quota limit; cancel unstarted runs and pause queued account groups. Diagnose before a new batch; no automatic retry."
+      }
+    },
+    {
+      "model": "minimax-m3",
+      "task": "002",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "HTTP429",
+        "scope": "account",
+        "message": "{\"type\":\"error\",\"message\":\"exceeded retry limit, last status: 429 Too Many Requests, request id: [redacted]\"}",
+        "policy": "Rate or quota limit; cancel unstarted runs and pause queued account groups. Diagnose before a new batch; no automatic retry."
+      }
+    },
+    {
+      "model": "minimax-m3",
+      "task": "003",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "HTTP429",
+        "scope": "account",
+        "message": "{\"type\":\"error\",\"message\":\"exceeded retry limit, last status: 429 Too Many Requests, request id: [redacted]\"}",
+        "policy": "Rate or quota limit; cancel unstarted runs and pause queued account groups. Diagnose before a new batch; no automatic retry."
+      }
+    },
+    {
+      "model": "kimi-k2.7-code",
+      "task": "001",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "HTTP429",
+        "scope": "account",
+        "message": "{\"type\":\"error\",\"message\":\"exceeded retry limit, last status: 429 Too Many Requests, request id: [redacted]\"}",
+        "policy": "Rate or quota limit; cancel unstarted runs and pause queued account groups. Diagnose before a new batch; no automatic retry."
+      }
+    },
+    {
+      "model": "kimi-k2.7-code",
+      "task": "002",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "HTTP429",
+        "scope": "account",
+        "message": "{\"type\":\"error\",\"message\":\"exceeded retry limit, last status: 429 Too Many Requests, request id: [redacted]\"}",
+        "policy": "Rate or quota limit; cancel unstarted runs and pause queued account groups. Diagnose before a new batch; no automatic retry."
+      }
+    },
+    {
+      "model": "kimi-k2.7-code",
+      "task": "003",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "HTTP429",
+        "scope": "account",
+        "message": "{\"type\":\"error\",\"message\":\"exceeded retry limit, last status: 429 Too Many Requests, request id: [redacted]\"}",
+        "policy": "Rate or quota limit; cancel unstarted runs and pause queued account groups. Diagnose before a new batch; no automatic retry."
+      }
+    },
+    {
+      "model": "kimi-k2.8-preview",
+      "task": "001",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "HTTP429",
+        "scope": "account",
+        "message": "{\"type\":\"error\",\"message\":\"exceeded retry limit, last status: 429 Too Many Requests, request id: [redacted]\"}",
+        "policy": "Rate or quota limit; cancel unstarted runs and pause queued account groups. Diagnose before a new batch; no automatic retry."
+      }
+    },
+    {
+      "model": "kimi-k2.8-preview",
+      "task": "002",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "HTTP429",
+        "scope": "account",
+        "message": "{\"type\":\"error\",\"message\":\"exceeded retry limit, last status: 429 Too Many Requests, request id: [redacted]\"}",
+        "policy": "Rate or quota limit; cancel unstarted runs and pause queued account groups. Diagnose before a new batch; no automatic retry."
+      }
+    },
+    {
+      "model": "kimi-k2.8-preview",
+      "task": "003",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "HTTP429",
+        "scope": "account",
+        "message": "{\"type\":\"error\",\"message\":\"exceeded retry limit, last status: 429 Too Many Requests, request id: [redacted]\"}",
+        "policy": "Rate or quota limit; cancel unstarted runs and pause queued account groups. Diagnose before a new batch; no automatic retry."
+      }
+    },
+    {
+      "model": "kimi-k3",
+      "task": "001",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "HTTP429",
+        "scope": "account",
+        "message": "{\"type\":\"error\",\"message\":\"exceeded retry limit, last status: 429 Too Many Requests, request id: [redacted]\"}",
+        "policy": "Rate or quota limit; cancel unstarted runs and pause queued account groups. Diagnose before a new batch; no automatic retry."
+      }
+    },
+    {
+      "model": "kimi-k3",
+      "task": "002",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "HTTP429",
+        "scope": "account",
+        "message": "{\"type\":\"error\",\"message\":\"exceeded retry limit, last status: 429 Too Many Requests, request id: [redacted]\"}",
+        "policy": "Rate or quota limit; cancel unstarted runs and pause queued account groups. Diagnose before a new batch; no automatic retry."
+      }
+    },
+    {
+      "model": "kimi-k3",
+      "task": "003",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "HTTP429",
+        "scope": "account",
+        "message": "{\"type\":\"error\",\"message\":\"exceeded retry limit, last status: 429 Too Many Requests, request id: [redacted]\"}",
+        "policy": "Rate or quota limit; cancel unstarted runs and pause queued account groups. Diagnose before a new batch; no automatic retry."
+      }
+    },
+    {
+      "model": "kimi-k3.1-pro",
+      "task": "001",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "HTTP429",
+        "scope": "account",
+        "message": "{\"type\":\"error\",\"message\":\"exceeded retry limit, last status: 429 Too Many Requests, request id: [redacted]\"}",
+        "policy": "Rate or quota limit; cancel unstarted runs and pause queued account groups. Diagnose before a new batch; no automatic retry."
+      }
+    },
+    {
+      "model": "kimi-k3.1-pro",
+      "task": "002",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "HTTP429",
+        "scope": "account",
+        "message": "{\"type\":\"error\",\"message\":\"exceeded retry limit, last status: 429 Too Many Requests, request id: [redacted]\"}",
+        "policy": "Rate or quota limit; cancel unstarted runs and pause queued account groups. Diagnose before a new batch; no automatic retry."
+      }
+    },
+    {
+      "model": "kimi-k3.1-pro",
+      "task": "003",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "HTTP429",
+        "scope": "account",
+        "message": "{\"type\":\"error\",\"message\":\"exceeded retry limit, last status: 429 Too Many Requests, request id: [redacted]\"}",
+        "policy": "Rate or quota limit; cancel unstarted runs and pause queued account groups. Diagnose before a new batch; no automatic retry."
+      }
+    },
+    {
+      "model": "glm-5.3",
+      "task": "001",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "HTTP429",
+        "scope": "account",
+        "message": "{\"type\":\"error\",\"message\":\"exceeded retry limit, last status: 429 Too Many Requests, request id: [redacted]\"}",
+        "policy": "Rate or quota limit; cancel unstarted runs and pause queued account groups. Diagnose before a new batch; no automatic retry."
+      }
+    },
+    {
+      "model": "glm-5.3",
+      "task": "002",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "HTTP429",
+        "scope": "account",
+        "message": "{\"type\":\"error\",\"message\":\"exceeded retry limit, last status: 429 Too Many Requests, request id: [redacted]\"}",
+        "policy": "Rate or quota limit; cancel unstarted runs and pause queued account groups. Diagnose before a new batch; no automatic retry."
+      }
+    },
+    {
+      "model": "glm-5.3",
+      "task": "003",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "HTTP429",
+        "scope": "account",
+        "message": "{\"type\":\"error\",\"message\":\"exceeded retry limit, last status: 429 Too Many Requests, request id: [redacted]\"}",
+        "policy": "Rate or quota limit; cancel unstarted runs and pause queued account groups. Diagnose before a new batch; no automatic retry."
+      }
+    },
+    {
+      "model": "glm-5.3-flash",
+      "task": "001",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "HTTP429",
+        "scope": "account",
+        "message": "{\"type\":\"error\",\"message\":\"exceeded retry limit, last status: 429 Too Many Requests, request id: [redacted]\"}",
+        "policy": "Rate or quota limit; cancel unstarted runs and pause queued account groups. Diagnose before a new batch; no automatic retry."
+      }
+    },
+    {
+      "model": "glm-5.3-flash",
+      "task": "002",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "HTTP429",
+        "scope": "account",
+        "message": "{\"type\":\"error\",\"message\":\"exceeded retry limit, last status: 429 Too Many Requests, request id: [redacted]\"}",
+        "policy": "Rate or quota limit; cancel unstarted runs and pause queued account groups. Diagnose before a new batch; no automatic retry."
+      }
+    },
+    {
+      "model": "glm-5.3-flash",
+      "task": "003",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "HTTP429",
+        "scope": "account",
+        "message": "{\"type\":\"error\",\"message\":\"exceeded retry limit, last status: 429 Too Many Requests, request id: [redacted]\"}",
+        "policy": "Rate or quota limit; cancel unstarted runs and pause queued account groups. Diagnose before a new batch; no automatic retry."
+      }
+    },
+    {
+      "model": "deepseek-v4-flash",
+      "task": "001",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "HTTP429",
+        "scope": "account",
+        "message": "{\"type\":\"error\",\"message\":\"exceeded retry limit, last status: 429 Too Many Requests, request id: [redacted]\"}",
+        "policy": "Rate or quota limit; cancel unstarted runs and pause queued account groups. Diagnose before a new batch; no automatic retry."
+      }
+    },
+    {
+      "model": "deepseek-v4-flash",
+      "task": "002",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "HTTP429",
+        "scope": "account",
+        "message": "{\"type\":\"error\",\"message\":\"exceeded retry limit, last status: 429 Too Many Requests, request id: [redacted]\"}",
+        "policy": "Rate or quota limit; cancel unstarted runs and pause queued account groups. Diagnose before a new batch; no automatic retry."
+      }
+    },
+    {
+      "model": "deepseek-v4-flash",
+      "task": "003",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "HTTP429",
+        "scope": "account",
+        "message": "{\"type\":\"error\",\"message\":\"exceeded retry limit, last status: 429 Too Many Requests, request id: [redacted]\"}",
+        "policy": "Rate or quota limit; cancel unstarted runs and pause queued account groups. Diagnose before a new batch; no automatic retry."
+      }
+    },
+    {
+      "model": "deepseek-v4-pro",
+      "task": "001",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "HTTP429",
+        "scope": "account",
+        "message": "{\"type\":\"error\",\"message\":\"exceeded retry limit, last status: 429 Too Many Requests, request id: [redacted]\"}",
+        "policy": "Rate or quota limit; cancel unstarted runs and pause queued account groups. Diagnose before a new batch; no automatic retry."
+      }
+    },
+    {
+      "model": "deepseek-v4-pro",
+      "task": "002",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "HTTP429",
+        "scope": "account",
+        "message": "{\"type\":\"error\",\"message\":\"exceeded retry limit, last status: 429 Too Many Requests, request id: [redacted]\"}",
+        "policy": "Rate or quota limit; cancel unstarted runs and pause queued account groups. Diagnose before a new batch; no automatic retry."
+      }
+    },
+    {
+      "model": "deepseek-v4-pro",
+      "task": "003",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "HTTP429",
+        "scope": "account",
+        "message": "{\"type\":\"error\",\"message\":\"exceeded retry limit, last status: 429 Too Many Requests, request id: [redacted]\"}",
+        "policy": "Rate or quota limit; cancel unstarted runs and pause queued account groups. Diagnose before a new batch; no automatic retry."
+      }
+    },
+    {
+      "model": "deepseek-v4.1-flash",
+      "task": "001",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "HTTP429",
+        "scope": "account",
+        "message": "{\"type\":\"error\",\"message\":\"exceeded retry limit, last status: 429 Too Many Requests, request id: [redacted]\"}",
+        "policy": "Rate or quota limit; cancel unstarted runs and pause queued account groups. Diagnose before a new batch; no automatic retry."
+      }
+    },
+    {
+      "model": "deepseek-v4.1-flash",
+      "task": "002",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "HTTP429",
+        "scope": "account",
+        "message": "{\"type\":\"error\",\"message\":\"exceeded retry limit, last status: 429 Too Many Requests, request id: [redacted]\"}",
+        "policy": "Rate or quota limit; cancel unstarted runs and pause queued account groups. Diagnose before a new batch; no automatic retry."
+      }
+    },
+    {
+      "model": "deepseek-v4.1-flash",
+      "task": "003",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "HTTP429",
+        "scope": "account",
+        "message": "{\"type\":\"error\",\"message\":\"exceeded retry limit, last status: 429 Too Many Requests, request id: [redacted]\"}",
+        "policy": "Rate or quota limit; cancel unstarted runs and pause queued account groups. Diagnose before a new batch; no automatic retry."
+      }
+    },
+    {
+      "model": "deepseek-v4.1-flash-economy",
+      "task": "001",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "HTTP429",
+        "scope": "account",
+        "message": "{\"type\":\"error\",\"message\":\"exceeded retry limit, last status: 429 Too Many Requests, request id: [redacted]\"}",
+        "policy": "Rate or quota limit; cancel unstarted runs and pause queued account groups. Diagnose before a new batch; no automatic retry."
+      }
+    },
+    {
+      "model": "deepseek-v4.1-flash-economy",
+      "task": "002",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "HTTP429",
+        "scope": "account",
+        "message": "{\"type\":\"error\",\"message\":\"exceeded retry limit, last status: 429 Too Many Requests, request id: [redacted]\"}",
+        "policy": "Rate or quota limit; cancel unstarted runs and pause queued account groups. Diagnose before a new batch; no automatic retry."
+      }
+    },
+    {
+      "model": "deepseek-v4.1-flash-economy",
+      "task": "003",
+      "status": "blocked_before_start",
+      "group": null,
+      "blocker": {
+        "code": "HTTP429",
+        "scope": "account",
+        "message": "{\"type\":\"error\",\"message\":\"exceeded retry limit, last status: 429 Too Many Requests, request id: [redacted]\"}",
+        "policy": "Rate or quota limit; cancel unstarted runs and pause queued account groups. Diagnose before a new batch; no automatic retry."
+      }
+    }
+  ],
+  "judge": {
+    "base_url": "http://localhost:4141/v1",
+    "model": "gpt-6.1-sol",
+    "effort": "medium",
+    "asp_url": "http://127.0.0.1:8765",
+    "codex_bin": "codex",
+    "timeout": 300,
+    "context_tokens": 1050000,
+    "max_prompt_tokens": 922000,
+    "judge_output_tokens": 16384,
+    "web_search": "live",
+    "codex_catalog_sha256": "4f2b8626a24849b507709465930e2660565cdc7db45941d7214c01eb11807c60"
+  },
+  "catalogue": {
+    "retrieved_date": "2026-10-28",
+    "sources": [
+      "https://www.volcengine.com/docs/82379/1925114",
+      "https://www.volcengine.com/docs/82379/2366394"
+    ],
+    "scope": "Named text-generation models; excludes Auto routing and non-text generation/embedding services. Availability is tested at run time, not inferred from catalogue membership.",
+    "models": [
+      {
+        "id": "doubao-seed-2.1-pro",
+        "context_window": 1048576,
+        "retiring": false,
+        "thinking_cannot_disable": false
+      },
+      {
+        "id": "doubao-seed-2.1-lite",
+        "context_window": 1048576,
+        "retiring": false,
+        "thinking_cannot_disable": false
+      },
+      {
+        "id": "doubao-seed-2.0-mini",
+        "context_window": 262144,
+        "retiring": false,
+        "thinking_cannot_disable": false
+      },
+      {
+        "id": "doubao-seed-evolving",
+        "context_window": 1048576,
+        "retiring": false,
+        "thinking_cannot_disable": false
+      },
+      {
+        "id": "minimax-m3",
+        "context_window": 1048576,
+        "retiring": true,
+        "thinking_cannot_disable": false
+      },
+      {
+        "id": "kimi-k2.7-code",
+        "context_window": 262144,
+        "retiring": true,
+        "thinking_cannot_disable": false
+      },
+      {
+        "id": "kimi-k2.8-preview",
+        "context_window": 1048576,
+        "retiring": false,
+        "thinking_cannot_disable": false
+      },
+      {
+        "id": "kimi-k3",
+        "context_window": 1048576,
+        "retiring": false,
+        "thinking_cannot_disable": true
+      },
+      {
+        "id": "kimi-k3.1-pro",
+        "context_window": 1048576,
+        "retiring": false,
+        "thinking_cannot_disable": false
+      },
+      {
+        "id": "glm-5.3",
+        "context_window": 1048576,
+        "retiring": false,
+        "thinking_cannot_disable": true
+      },
+      {
+        "id": "glm-5.3-flash",
+        "context_window": 1048576,
+        "retiring": false,
+        "thinking_cannot_disable": false
+      },
+      {
+        "id": "deepseek-v4-flash",
+        "context_window": 1048576,
+        "retiring": false,
+        "thinking_cannot_disable": false
+      },
+      {
+        "id": "deepseek-v4-pro",
+        "context_window": 1048576,
+        "retiring": false,
+        "thinking_cannot_disable": false
+      },
+      {
+        "id": "deepseek-v4.1-flash",
+        "context_window": 1048576,
+        "retiring": false,
+        "thinking_cannot_disable": false
+      },
+      {
+        "id": "deepseek-v4.1-flash-economy",
+        "context_window": 1048576,
+        "retiring": false,
+        "thinking_cannot_disable": false
+      }
+    ]
+  },
+  "protocol": "Independent complete-condition groups; no retries, fallback, or failed-run replacement.",
+  "git_commit": "d127a3e0753b402c57dcf86e4521d1ba7352d7d8",
+  "finished_at": "2026-10-28T14:44:09.993396+00:00"
+}

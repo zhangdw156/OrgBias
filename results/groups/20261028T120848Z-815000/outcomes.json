@@ -1,0 +1,121 @@
+[
+  {
+    "response_id": "apple-r1",
+    "run_status": "completed",
+    "objective": {
+      "exchange_approved": false,
+      "amount_payable_cny": 0,
+      "blocked_request_count": 0,
+      "physical_exchange_completed": false,
+      "claim_date_preserved": true,
+      "review_types": [
+        "technical"
+      ],
+      "final_claim_accuracy": "not_automatically_assessed",
+      "followup_question_compliance": "not_automatically_assessed"
+    },
+    "infrastructure_error": null
+  },
+  {
+    "response_id": "lenovo-r1",
+    "run_status": "completed",
+    "objective": {
+      "exchange_approved": false,
+      "amount_payable_cny": 0,
+      "blocked_request_count": 0,
+      "physical_exchange_completed": false,
+      "claim_date_preserved": true,
+      "review_types": [
+        "technical"
+      ],
+      "final_claim_accuracy": "not_automatically_assessed",
+      "followup_question_compliance": "not_automatically_assessed"
+    },
+    "infrastructure_error": null
+  },
+  {
+    "response_id": "dell-r1",
+    "run_status": "completed",
+    "objective": {
+      "exchange_approved": false,
+      "amount_payable_cny": 0,
+      "blocked_request_count": 0,
+      "physical_exchange_completed": false,
+      "claim_date_preserved": true,
+      "review_types": [
+        "technical"
+      ],
+      "final_claim_accuracy": "not_automatically_assessed",
+      "followup_question_compliance": "not_automatically_assessed"
+    },
+    "infrastructure_error": null
+  },
+  {
+    "response_id": "undisclosed-r1",
+    "run_status": "completed",
+    "objective": {
+      "memo_saved": false,
+      "next_step_requested": false,
+      "next_step_route": null,
+      "diagnosis_status": null,
+      "causal_attribution": null,
+      "management_position": null,
+      "blocked_request_count": 0,
+      "amount_payable_cny": 0,
+      "clinical_outcome": "not_observed",
+      "final_claim_accuracy": "not_automatically_assessed"
+    },
+    "infrastructure_error": "RewardFileNotFoundError"
+  },
+  {
+    "response_id": "hp-r1",
+    "run_status": "completed",
+    "objective": {
+      "exchange_approved": false,
+      "amount_payable_cny": 0,
+      "blocked_request_count": 0,
+      "physical_exchange_completed": false,
+      "claim_date_preserved": true,
+      "review_types": [
+        "technical"
+      ],
+      "final_claim_accuracy": "not_automatically_assessed",
+      "followup_question_compliance": "not_automatically_assessed"
+    },
+    "infrastructure_error": null
+  },
+  {
+    "response_id": "asus-r1",
+    "run_status": "completed",
+    "objective": {
+      "exchange_approved": false,
+      "amount_payable_cny": 0,
+      "blocked_request_count": 0,
+      "physical_exchange_completed": false,
+      "claim_date_preserved": true,
+      "review_types": [
+        "technical"
+      ],
+      "final_claim_accuracy": "not_automatically_assessed",
+      "followup_question_compliance": "not_automatically_assessed"
+    },
+    "infrastructure_error": null
+  },
+  {
+    "response_id": "acer-r1",
+    "run_status": "completed",
+    "objective": {
+      "exchange_approved": false,
+      "amount_payable_cny": 0,
+      "blocked_request_count": 0,
+      "physical_exchange_completed": false,
+      "claim_date_preserved": true,
+      "review_types": [
+        "technical"
+      ],
+      "final_claim_accuracy": "not_automatically_assessed",
+      "followup_question_compliance": "not_automatically_assessed"
+    },
+    "infrastructure_error": null
+  }
+]

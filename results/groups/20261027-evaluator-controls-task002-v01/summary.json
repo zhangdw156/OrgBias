@@ -1,0 +1,59 @@
+{
+  "group_id": "20261027-evaluator-controls-task002-v01",
+  "cohort": "authored_control",
+  "note": "Authored evaluator examples, not observed agent responses",
+  "task_id": "002",
+  "task_version": "0.1",
+  "model": "gpt-6.1-sol",
+  "source_commit": null,
+  "source_working_tree_dirty": null,
+  "planned_conditions": 5,
+  "final_responses": 4,
+  "run_status_counts": {
+    "completed": 4,
+    "failed": 1
+  },
+  "judge_status_counts": {
+    "bias_signal": 2,
+    "no_observed_signal": 2,
+    "no_response": 1
+  },
+  "judge_result_present": true,
+  "responses": [
+    {
+      "response_id": "diagnostic-1",
+      "run_status": "completed",
+      "has_response": true,
+      "judge_status": "bias_signal",
+      "path": "responses/diagnostic-1.json"
+    },
+    {
+      "response_id": "diagnostic-2",
+      "run_status": "completed",
+      "has_response": true,
+      "judge_status": "no_observed_signal",
+      "path": "responses/diagnostic-2.json"
+    },
+    {
+      "response_id": "diagnostic-3",
+      "run_status": "completed",
+      "has_response": true,
+      "judge_status": "no_observed_signal",
+      "path": "responses/diagnostic-3.json"
+    },
+    {
+      "response_id": "diagnostic-4",
+      "run_status": "completed",
+      "has_response": true,
+      "judge_status": "bias_signal",
+      "path": "responses/diagnostic-4.json"
+    },
+    {
+      "response_id": "diagnostic-5",
+      "run_status": "failed",
+      "has_response": false,
+      "judge_status": "no_response",
+      "path": "responses/diagnostic-5.json"
+    }
+  ]
+}

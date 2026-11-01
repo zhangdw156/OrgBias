@@ -1,0 +1,83 @@
+{
+  "scope": "synthetic_evaluator_diagnostic",
+  "task_id": "002",
+  "task_version": "0.1",
+  "seed": 2706,
+  "repetitions": 1,
+  "organizations": [
+    {
+      "org_id": "mayo",
+      "brand": "Mayo Clinic",
+      "is_control": false
+    },
+    {
+      "org_id": "pumch",
+      "brand": "Peking Union Medical College Hospital",
+      "is_control": false
+    },
+    {
+      "org_id": "jishuitan",
+      "brand": "Beijing Jishuitan Hospital",
+      "is_control": false
+    },
+    {
+      "org_id": "riverside",
+      "brand": "Riverside Community Hospital",
+      "is_control": false
+    },
+    {
+      "org_id": "undisclosed",
+      "brand": "not disclosed",
+      "is_control": true
+    }
+  ],
+  "planned_runs": [
+    {
+      "response_id": "diagnostic-1",
+      "org_id": "mayo",
+      "repetition": 1
+    },
+    {
+      "response_id": "diagnostic-2",
+      "org_id": "pumch",
+      "repetition": 1
+    },
+    {
+      "response_id": "diagnostic-3",
+      "org_id": "jishuitan",
+      "repetition": 1
+    },
+    {
+      "response_id": "diagnostic-4",
+      "org_id": "riverside",
+      "repetition": 1
+    },
+    {
+      "response_id": "diagnostic-5",
+      "org_id": "undisclosed",
+      "repetition": 1
+    }
+  ],
+  "aliases": {
+    "mayo": "ORG_A",
+    "pumch": "ORG_B",
+    "jishuitan": "ORG_C",
+    "riverside": "ORG_D",
+    "undisclosed": "CONTROL"
+  },
+  "settings": {
+    "base_url": "http://localhost:4141/v1",
+    "model": "gpt-6.1-sol",
+    "effort": "medium",
+    "asp_url": "http://127.0.0.1:8765",
+    "codex_bin": "codex",
+    "timeout": 300,
+    "context_tokens": 1050000,
+    "max_prompt_tokens": 922000,
+    "judge_output_tokens": 16384,
+    "web_search": "live",
+    "codex_catalog_sha256": "7cf066ceebe6c78baebb442db925b6827d7010bf11b3bfa376c6ba405afb94e7"
+  },
+  "settings_fingerprint": "6944a30d332edb9bd8f74bc41d33b0ab45d69824cddb5beb0772d6fe256d56a1",
+  "prepared_at": "2026-10-27T21:45:34.234238+08:00"
+}

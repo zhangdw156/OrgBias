@@ -1,0 +1,155 @@
+{
+  "task_id": "002",
+  "task_version": "0.2",
+  "seed": 17,
+  "scope": "debug",
+  "organizations": [
+    {
+      "org_id": "mayo",
+      "brand": "Mayo Clinic",
+      "is_control": false
+    },
+    {
+      "org_id": "pumch",
+      "brand": "Peking Union Medical College Hospital",
+      "is_control": false
+    },
+    {
+      "org_id": "jishuitan",
+      "brand": "Beijing Jishuitan Hospital",
+      "is_control": false
+    },
+    {
+      "org_id": "riverside",
+      "brand": "Riverside Community Hospital",
+      "is_control": false
+    },
+    {
+      "org_id": "undisclosed",
+      "brand": "not disclosed",
+      "is_control": true
+    }
+  ],
+  "aliases": {
+    "pumch": "ORG_A",
+    "riverside": "ORG_B",
+    "jishuitan": "ORG_C",
+    "mayo": "ORG_D",
+    "undisclosed": "CONTROL"
+  },
+  "planned_runs": [
+    {
+      "response_id": "mayo-r1",
+      "org_id": "mayo",
+      "repetition": 1
+    },
+    {
+      "response_id": "jishuitan-r1",
+      "org_id": "jishuitan",
+      "repetition": 1
+    },
+    {
+      "response_id": "pumch-r1",
+      "org_id": "pumch",
+      "repetition": 1
+    },
+    {
+      "response_id": "riverside-r1",
+      "org_id": "riverside",
+      "repetition": 1
+    },
+    {
+      "response_id": "undisclosed-r1",
+      "org_id": "undisclosed",
+      "repetition": 1
+    }
+  ],
+  "settings": {
+    "base_url": "https://ark.cn-beijing.volces.com/api/coding/v3",
+    "model": "doubao-seed-2.1-pro",
+    "effort": "medium",
+    "asp_url": "http://127.0.0.1:8871",
+    "codex_bin": "codex",
+    "timeout": 300,
+    "context_tokens": 1048576,
+    "max_prompt_tokens": 1015808,
+    "judge_output_tokens": 16384,
+    "web_search": "live",
+    "codex_catalog_sha256": "1ff149163fe09b6f1270673d7bc194e59b513cfd019d1e802431cc9c9b52f7de"
+  },
+  "settings_fingerprint": "0c68f28a627cdc83573c60178bf540ccbe11379bda419a4d59dc841bc97b3260",
+  "codex_version": "codex-cli 0.157.1",
+  "harbor_version": "0.25.0",
+  "python_version": "3.12.10 (main, May 17 2025, 13:40:56) [Clang 20.1.4 ]",
+  "repetitions": 1,
+  "judge_requested": true,
+  "git_commit": "c15c230e48306875ec7e615b0f6d537caab38aa1",
+  "working_tree_dirty": false,
+  "source_sha256": {
+    "oribias/__init__.py": "b19f282520f14220084b1c56c139ec4c03a6a7156a180b7cc5f5c1d59b7109f7",
+    "oribias/__main__.py": "0f3b06ee213b21b304b4f46794ceb870baf3694b66572f249cfa392f505286b5",
+    "oribias/asp.py": "762dae4545b03969b226c505ab8e4c6af9488118102477d84680670e74f5f29f",
+    "oribias/conditions.py": "c2c89f72a55c248e133bcc8bdd34c1d3c8cbdea98f5cdd2d32d35315011f4008",
+    "oribias/config/CODEX_LICENSE": "d17f227e4df5da1600391338865ce0f3055211760a36688f816941d58232d8dc",
+    "oribias/config/README.md": "7f23c853802346688e50fb602a72134f747ebe76296ea0405f4fb92b764c98a2",
+    "oribias/config/ark_models.json": "9acb310f411f6238e7b834e9f0d2667336c695856afba3b6b49de8d718af6080",
+    "oribias/config/codex_models.json": "7cf066ceebe6c78baebb442db925b6827d7010bf11b3bfa376c6ba405afb94e7",
+    "oribias/harbor_agent.py": "14700f5cd6a961f1a59314fa273852f7580ffaaddbc3b5b5cb4821151b3a05c5",
+    "oribias/judge.py": "00a285dba7fd8ab369c3aa33b9f94e9e3bc92fa14661ad0bd299307608c12aa6",
+    "oribias/matrix.py": "8d368c1ca1283a970e380a591f441f20bd61a9e2efe59c7bb3ecf8a15576f9c6",
+    "oribias/mcp_bridge.py": "f4d42aaa09ab373fcb52ddc087699713ea750877e6a390dbe95fbd00d5aea033",
+    "oribias/runner.py": "ebf9384b27f898b272f90764708056fddce704f6320ae1c8ef0c240ca76f68bd",
+    "oribias/settings.py": "351aa3020123f262fb1135d4228867962e597aa104b3cc71222f0a934d60daab",
+    "oribias/traces.py": "53764969bb20574d0e56dea7ec90a2b5afdd093309de60da6e36744afb67e163",
+    "tasks/002/README.md": "083010085fd88ecbe334a61eea04df444ddfbb65fbd8c75ee5e04684d2334286",
+    "tasks/002/contract.md": "1fea2ea216da1506102535c2868ea083007b1664bc76ba37a4009f1ea46ba3d7",
+    "tasks/002/environment/Dockerfile": "63709a2cbd93835643834a7f0a9f3c54769aff2e415f58d964b2dc299fce42ec",
+    "tasks/002/environment/service.py": "db54b37c7211c41c562e753acd9c0499c4c277291739db5551aa1de98fd6fef5",
+    "tasks/002/evaluator_controls.json": "a8c639438100d969973e9a87d2c51a6a5206f66c2febe529f5de569542e7ec12",
+    "tasks/002/instruction.md": "10e786bf3cce68522a327f0aa90e6cc27eea0bab343e3b5ad427d6cc9d92c234",
+    "tasks/002/judge_input.md": "8e036f9f566b210503796dcbfb7eda915e254c17d7fc5bf059da1dfa09fb60c1",
+    "tasks/002/organizations.json": "132a753e090bb5e865410c62e21bffe1ba94b4d7717ad47199d7b1d72bb30ff8",
+    "tasks/002/private/consultation_details.txt": "cb2d445bf566d8370e630c0693d0c73a9ad678e3f1e36c8c633450772e22c4e7",
+    "tasks/002/rubric.md": "63952222af10214966d610e273c992b932fd99c2e93f9d53a9ab9d971f27722f",
+    "tasks/002/task.toml": "016b886851a4c1339d9c82d4937063f900970dbff8db156396a0076bcc69574e",
+    "tasks/002/tests/test.sh": "b2283aadf325bb0066946b416be5429fe20ecadd1d6c52e9bd1da0a1f914286e",
+    "tasks/002/workspace/care_options.txt": "9c856a0f1c1772686f35e472f3d79080eab5c77ec48c5e6896b200e112f7f4e1",
+    "tasks/002/workspace/hospital_letter.txt": "b5ac5fb57d82308e5d8c7095d34cb04ca9e340730ac6949cb3b9212b04a2dd1b",
+    "tasks/002/workspace/laboratory_results.txt": "46f96dfc58fca54f9dbce282e7165d33dd73061bf078d48562b54b9f20dcc8d4",
+    "tasks/002/workspace/patient_history.txt": "dee28a1186e41f74812a7558e1ac6eb2384ae6f6602c3a5d94d472aeadd7abe7"
+  },
+  "protocol": {
+    "agent": "local Codex via ASP",
+    "tools": "task MCP + native web search",
+    "shell": "disabled",
+    "judge": "one final-response-only call",
+    "automatic_run_retries": 0
+  },
+  "task_image": {
+    "tag": "oribias-task-002:a0901fc0b6754be4",
+    "image_id": "sha256:b349b8a773ebdcc378ca7b2566197ee76a52657ca71c5d10a1d48bc67dfb36b4",
+    "build_files_sha256": {
+      "Dockerfile": "63709a2cbd93835643834a7f0a9f3c54769aff2e415f58d964b2dc299fce42ec",
+      "private/consultation_details.txt": "cb2d445bf566d8370e630c0693d0c73a9ad678e3f1e36c8c633450772e22c4e7",
+      "service.py": "db54b37c7211c41c562e753acd9c0499c4c277291739db5551aa1de98fd6fef5",
+      "workspace/care_options.txt": "9c856a0f1c1772686f35e472f3d79080eab5c77ec48c5e6896b200e112f7f4e1",
+      "workspace/hospital_letter.txt": "b5ac5fb57d82308e5d8c7095d34cb04ca9e340730ac6949cb3b9212b04a2dd1b",
+      "workspace/laboratory_results.txt": "46f96dfc58fca54f9dbce282e7165d33dd73061bf078d48562b54b9f20dcc8d4",
+      "workspace/patient_history.txt": "dee28a1186e41f74812a7558e1ac6eb2384ae6f6602c3a5d94d472aeadd7abe7"
+    }
+  },
+  "deadline": null,
+  "judge_settings": {
+    "base_url": "http://localhost:4141/v1",
+    "model": "gpt-6.1-sol",
+    "effort": "medium",
+    "asp_url": "http://127.0.0.1:8871",
+    "codex_bin": "codex",
+    "timeout": 300,
+    "context_tokens": 1050000,
+    "max_prompt_tokens": 922000,
+    "judge_output_tokens": 16384,
+    "web_search": "live",
+    "codex_catalog_sha256": "4f2b8626a24849b507709465930e2660565cdc7db45941d7214c01eb11807c60"
+  }
+}

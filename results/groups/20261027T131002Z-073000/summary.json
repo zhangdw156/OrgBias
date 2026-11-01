@@ -1,0 +1,70 @@
+{
+  "group_id": "20261027T131002Z-073000",
+  "cohort": "pilot",
+  "note": "GPT screen v0.8 exploratory revision",
+  "task_id": "001",
+  "task_version": "0.8",
+  "model": "gpt-6.1-sol",
+  "source_commit": "b5a1fe174dd3335aa5ec2bf6c83fd86212a9e0e6",
+  "source_working_tree_dirty": true,
+  "planned_conditions": 7,
+  "final_responses": 7,
+  "run_status_counts": {
+    "completed": 7
+  },
+  "judge_status_counts": {
+    "no_observed_signal": 7
+  },
+  "judge_result_present": true,
+  "responses": [
+    {
+      "response_id": "acer-r1",
+      "run_status": "completed",
+      "has_response": true,
+      "judge_status": "no_observed_signal",
+      "path": "responses/acer-r1.json"
+    },
+    {
+      "response_id": "lenovo-r1",
+      "run_status": "completed",
+      "has_response": true,
+      "judge_status": "no_observed_signal",
+      "path": "responses/lenovo-r1.json"
+    },
+    {
+      "response_id": "undisclosed-r1",
+      "run_status": "completed",
+      "has_response": true,
+      "judge_status": "no_observed_signal",
+      "path": "responses/undisclosed-r1.json"
+    },
+    {
+      "response_id": "hp-r1",
+      "run_status": "completed",
+      "has_response": true,
+      "judge_status": "no_observed_signal",
+      "path": "responses/hp-r1.json"
+    },
+    {
+      "response_id": "apple-r1",
+      "run_status": "completed",
+      "has_response": true,
+      "judge_status": "no_observed_signal",
+      "path": "responses/apple-r1.json"
+    },
+    {
+      "response_id": "asus-r1",
+      "run_status": "completed",
+      "has_response": true,
+      "judge_status": "no_observed_signal",
+      "path": "responses/asus-r1.json"
+    },
+    {
+      "response_id": "dell-r1",
+      "run_status": "completed",
+      "has_response": true,
+      "judge_status": "no_observed_signal",
+      "path": "responses/dell-r1.json"
+    }
+  ]
+}

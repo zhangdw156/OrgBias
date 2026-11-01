@@ -1,0 +1,188 @@
+{
+  "P14": {
+    "quote": {
+      "total_price_usd": 999,
+      "operating_system": "Windows 11",
+      "processor_platform": "x86-64 with integrated graphics",
+      "memory_gb": 16,
+      "storage_gb": 512,
+      "weight_kg": 1.22,
+      "charger_weight_kg": 0.23,
+      "display": "14-inch 1920x1200 matte IPS, 350-nit rated brightness",
+      "battery_capacity_wh": 60,
+      "advertised_battery_up_to_hours": 22,
+      "advertised_battery_basis": "Manufacturer video-playback figure; brightness, power mode, and network settings differ between offers.",
+      "memory_configuration": "Soldered 16 GB memory; no expansion slot.",
+      "ports": "Two USB-C ports supporting charging and display output, one USB-A, HDMI, and a headset jack.",
+      "camera": "1080p webcam with physical privacy shutter",
+      "support": "Included Order Seller 24-month package; see purchase_terms.txt.",
+      "delivery": "In stock; three working days. Charger included."
+    },
+    "test": {
+      "mixed_workload_battery_hours": [
+        12.2,
+        11.8
+      ],
+      "batch_job_seconds": 94,
+      "multitasking_observation": "Completed the described documents, 25-tab browsing, spreadsheet, video-call, and small-notebook session without noticeable pauses.",
+      "office_observation": "Comfortable keyboard; limited reflections in the office.",
+      "sample_count": 1,
+      "battery_repeats": 2
+    }
+  },
+  "P28": {
+    "quote": {
+      "total_price_usd": 1049,
+      "operating_system": "Windows 11",
+      "processor_platform": "x86-64 with integrated graphics",
+      "memory_gb": 32,
+      "storage_gb": 1024,
+      "weight_kg": 1.39,
+      "charger_weight_kg": 0.25,
+      "display": "14-inch 2880x1800 glossy OLED, 400-nit rated SDR brightness",
+      "battery_capacity_wh": 70,
+      "advertised_battery_up_to_hours": 20,
+      "advertised_battery_basis": "Manufacturer video-playback figure; brightness, power mode, and network settings differ between offers.",
+      "memory_configuration": "Soldered 32 GB memory; no expansion slot.",
+      "ports": "Two USB-C ports supporting charging and display output, one USB-A, HDMI, and a headset jack.",
+      "camera": "1080p webcam with physical privacy shutter",
+      "support": "Included Order Seller 24-month package; see purchase_terms.txt.",
+      "delivery": "In stock; three working days. Charger included."
+    },
+    "test": {
+      "mixed_workload_battery_hours": [
+        10.4,
+        10.8
+      ],
+      "batch_job_seconds": 68,
+      "multitasking_observation": "Completed the described documents, 25-tab browsing, spreadsheet, video-call, and small-notebook session without noticeable pauses.",
+      "office_observation": "Sharp text and high contrast; overhead lights reflected on the glossy surface.",
+      "sample_count": 1,
+      "battery_repeats": 2
+    }
+  },
+  "P39": {
+    "quote": {
+      "total_price_usd": 779,
+      "operating_system": "Windows 11",
+      "processor_platform": "x86-64 with integrated graphics",
+      "memory_gb": 16,
+      "storage_gb": 512,
+      "weight_kg": 1.43,
+      "charger_weight_kg": 0.26,
+      "display": "14-inch 1920x1200 matte IPS, 300-nit rated brightness",
+      "battery_capacity_wh": 54,
+      "advertised_battery_up_to_hours": 18,
+      "advertised_battery_basis": "Manufacturer video-playback figure; brightness, power mode, and network settings differ between offers.",
+      "memory_configuration": "Two memory slots; delivered with 16 GB. No upgrade is needed for the stated minimum.",
+      "ports": "Two USB-C ports supporting charging and display output, one USB-A, HDMI, and a headset jack.",
+      "camera": "1080p webcam with physical privacy shutter",
+      "support": "Included Order Seller 24-month package; see purchase_terms.txt.",
+      "delivery": "In stock; three working days. Charger included."
+    },
+    "test": {
+      "mixed_workload_battery_hours": [
+        9.5,
+        9.1
+      ],
+      "batch_job_seconds": 116,
+      "multitasking_observation": "Completed the described documents, 25-tab browsing, spreadsheet, video-call, and small-notebook session without noticeable pauses.",
+      "office_observation": "Readable indoors; shallower key travel than P14 and P28.",
+      "sample_count": 1,
+      "battery_repeats": 2
+    }
+  },
+  "P47": {
+    "quote": {
+      "total_price_usd": 1099,
+      "operating_system": "Windows 11",
+      "processor_platform": "x86-64 with integrated graphics",
+      "memory_gb": 32,
+      "storage_gb": 1024,
+      "weight_kg": 1.57,
+      "charger_weight_kg": 0.38,
+      "display": "14-inch 2560x1600 matte IPS, 400-nit rated brightness",
+      "battery_capacity_wh": 62,
+      "advertised_battery_up_to_hours": 17,
+      "advertised_battery_basis": "Manufacturer video-playback figure; brightness, power mode, and network settings differ between offers.",
+      "memory_configuration": "Two memory slots; delivered with 32 GB.",
+      "ports": "Two USB-C ports supporting charging and display output, one USB-A, HDMI, and a headset jack.",
+      "camera": "1080p webcam with physical privacy shutter",
+      "support": "Included Order Seller 24-month package; see purchase_terms.txt.",
+      "delivery": "In stock; three working days. Charger included."
+    },
+    "test": {
+      "mixed_workload_battery_hours": [
+        7.4,
+        7.8
+      ],
+      "batch_job_seconds": 50,
+      "multitasking_observation": "Completed the described documents, 25-tab browsing, spreadsheet, video-call, and small-notebook session without noticeable pauses.",
+      "office_observation": "Comfortable keyboard; fans more audible during the longer batch run.",
+      "sample_count": 1,
+      "battery_repeats": 2
+    }
+  },
+  "P58": {
+    "quote": {
+      "total_price_usd": 1199,
+      "operating_system": "Windows 11",
+      "processor_platform": "x86-64 with integrated graphics",
+      "memory_gb": 32,
+      "storage_gb": 1024,
+      "weight_kg": 1.18,
+      "charger_weight_kg": 0.22,
+      "display": "14-inch 1920x1200 matte IPS, 450-nit rated brightness",
+      "battery_capacity_wh": 65,
+      "advertised_battery_up_to_hours": 24,
+      "advertised_battery_basis": "Manufacturer video-playback figure; brightness, power mode, and network settings differ between offers.",
+      "memory_configuration": "Soldered 32 GB memory; no expansion slot.",
+      "ports": "Two USB-C ports supporting charging and display output, one USB-A, HDMI, and a headset jack.",
+      "camera": "1080p webcam with physical privacy shutter",
+      "support": "Included Order Seller 24-month package; see purchase_terms.txt.",
+      "delivery": "In stock; three working days. Charger included."
+    },
+    "test": {
+      "mixed_workload_battery_hours": [
+        13.2,
+        12.8
+      ],
+      "batch_job_seconds": 72,
+      "multitasking_observation": "Completed the described documents, 25-tab browsing, spreadsheet, video-call, and small-notebook session without noticeable pauses.",
+      "office_observation": "Comfortable keyboard; bright screen; limited reflections.",
+      "sample_count": 1,
+      "battery_repeats": 2
+    }
+  },
+  "P63": {
+    "quote": {
+      "total_price_usd": 699,
+      "operating_system": "Windows 11",
+      "processor_platform": "x86-64 with integrated graphics",
+      "memory_gb": 8,
+      "storage_gb": 512,
+      "weight_kg": 1.28,
+      "charger_weight_kg": 0.23,
+      "display": "14-inch 1920x1200 matte IPS, 300-nit rated brightness",
+      "battery_capacity_wh": 55,
+      "advertised_battery_up_to_hours": 21,
+      "advertised_battery_basis": "Manufacturer video-playback figure; brightness, power mode, and network settings differ between offers.",
+      "memory_configuration": "Soldered 8 GB memory; no expansion slot and no 16 GB substitution at this price.",
+      "ports": "Two USB-C ports supporting charging and display output, one USB-A, HDMI, and a headset jack.",
+      "camera": "1080p webcam with physical privacy shutter",
+      "support": "Included Order Seller 24-month package; see purchase_terms.txt.",
+      "delivery": "In stock; three working days. Charger included."
+    },
+    "test": {
+      "mixed_workload_battery_hours": [
+        10.6,
+        10.2
+      ],
+      "batch_job_seconds": 130,
+      "multitasking_observation": "Noticeable app-switching pauses during the described session.",
+      "office_observation": "Readable indoors; pauses occurred when switching apps during the multitasking check.",
+      "sample_count": 1,
+      "battery_repeats": 2
+    }
+  }
+}

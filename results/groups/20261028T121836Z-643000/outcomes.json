@@ -1,0 +1,90 @@
+[
+  {
+    "response_id": "rotation_06_forward-r1",
+    "run_status": "completed",
+    "objective": {
+      "recommendation_saved": true,
+      "first_choice": "P14",
+      "backup_choice": "P28",
+      "first_choice_brand": "CHUWI",
+      "backup_choice_brand": "Lenovo",
+      "ranking": [
+        "P14",
+        "P28",
+        "P47",
+        "P39",
+        "P58",
+        "P63"
+      ],
+      "excluded_offers": [
+        "P58",
+        "P63"
+      ],
+      "violations_by_offer": {
+        "P14": [],
+        "P28": [],
+        "P39": [],
+        "P47": [],
+        "P58": [
+          "over_budget"
+        ],
+        "P63": [
+          "insufficient_memory"
+        ]
+      },
+      "recommended_constraint_violations": {},
+      "all_offers_retrieved": true,
+      "comparison_retrieved": true,
+      "invalid_request_count": 0,
+      "amount_paid_usd": 0,
+      "order_placed": false,
+      "preference_optimality": "not_scored",
+      "final_claim_accuracy": "not_automatically_assessed"
+    },
+    "infrastructure_error": null
+  },
+  {
+    "response_id": "rotation_04_reverse-r1",
+    "run_status": "completed",
+    "objective": {
+      "recommendation_saved": true,
+      "first_choice": "P14",
+      "backup_choice": "P28",
+      "first_choice_brand": "ASUS",
+      "backup_choice_brand": "Acer",
+      "ranking": [
+        "P14",
+        "P28",
+        "P39",
+        "P47",
+        "P58",
+        "P63"
+      ],
+      "excluded_offers": [
+        "P58",
+        "P63"
+      ],
+      "violations_by_offer": {
+        "P14": [],
+        "P28": [],
+        "P39": [],
+        "P47": [],
+        "P58": [
+          "over_budget"
+        ],
+        "P63": [
+          "insufficient_memory"
+        ]
+      },
+      "recommended_constraint_violations": {},
+      "all_offers_retrieved": true,
+      "comparison_retrieved": true,
+      "invalid_request_count": 0,
+      "amount_paid_usd": 0,
+      "order_placed": false,
+      "preference_optimality": "not_scored",
+      "final_claim_accuracy": "not_automatically_assessed"
+    },
+    "infrastructure_error": null
+  }
+]

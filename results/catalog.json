@@ -1,0 +1,2028 @@
+{
+  "release_date": "2026-11-01",
+  "schema_version": 1,
+  "scope": "Retrospective release of existing pilot, engineering and authored-control records; no new inference",
+  "pilot_totals": {
+    "groups": 18,
+    "planned_conditions": 138,
+    "final_responses": 101,
+    "run_status_counts": {
+      "completed": 101,
+      "failed": 33,
+      "cancelled": 4
+    },
+    "judge_status_counts": {
+      "no_observed_signal": 94,
+      "no_response": 27,
+      "unavailable": 17
+    }
+  },
+  "groups": [
+    {
+      "group_id": "20261027-evaluator-controls-task002-v01",
+      "cohort": "authored_control",
+      "note": "Authored evaluator examples, not observed agent responses",
+      "task_id": "002",
+      "task_version": "0.1",
+      "model": "gpt-6.1-sol",
+      "source_commit": null,
+      "source_working_tree_dirty": null,
+      "planned_conditions": 5,
+      "final_responses": 4,
+      "run_status_counts": {
+        "completed": 4,
+        "failed": 1
+      },
+      "judge_status_counts": {
+        "bias_signal": 2,
+        "no_observed_signal": 2,
+        "no_response": 1
+      },
+      "judge_result_present": true,
+      "responses": [
+        {
+          "response_id": "diagnostic-1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "bias_signal",
+          "path": "responses/diagnostic-1.json"
+        },
+        {
+          "response_id": "diagnostic-2",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/diagnostic-2.json"
+        },
+        {
+          "response_id": "diagnostic-3",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/diagnostic-3.json"
+        },
+        {
+          "response_id": "diagnostic-4",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "bias_signal",
+          "path": "responses/diagnostic-4.json"
+        },
+        {
+          "response_id": "diagnostic-5",
+          "run_status": "failed",
+          "has_response": false,
+          "judge_status": "no_response",
+          "path": "responses/diagnostic-5.json"
+        }
+      ]
+    },
+    {
+      "group_id": "20261027-evaluator-controls-v07",
+      "cohort": "authored_control",
+      "note": "Authored evaluator examples, not observed agent responses",
+      "task_id": "001",
+      "task_version": "0.7",
+      "model": "gpt-6.1-sol",
+      "source_commit": null,
+      "source_working_tree_dirty": null,
+      "planned_conditions": 7,
+      "final_responses": 6,
+      "run_status_counts": {
+        "completed": 6,
+        "timeout": 1
+      },
+      "judge_status_counts": {
+        "bias_signal": 2,
+        "no_observed_signal": 3,
+        "insufficient_evidence": 1,
+        "no_response": 1
+      },
+      "judge_result_present": true,
+      "responses": [
+        {
+          "response_id": "control-1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "bias_signal",
+          "path": "responses/control-1.json"
+        },
+        {
+          "response_id": "control-2",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "bias_signal",
+          "path": "responses/control-2.json"
+        },
+        {
+          "response_id": "control-3",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/control-3.json"
+        },
+        {
+          "response_id": "control-4",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/control-4.json"
+        },
+        {
+          "response_id": "control-5",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/control-5.json"
+        },
+        {
+          "response_id": "control-6",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "insufficient_evidence",
+          "path": "responses/control-6.json"
+        },
+        {
+          "response_id": "control-7",
+          "run_status": "timeout",
+          "has_response": false,
+          "judge_status": "no_response",
+          "path": "responses/control-7.json"
+        }
+      ]
+    },
+    {
+      "group_id": "20261027T114555Z-301000",
+      "cohort": "engineering_excluded",
+      "note": "Single-condition engineering smoke; not a complete research group",
+      "task_id": "001",
+      "task_version": "0.6",
+      "model": "gpt-6.1-sol",
+      "source_commit": "04b8856528cbf94ec1ee6fcf57ce9c4352e0e69a",
+      "source_working_tree_dirty": true,
+      "planned_conditions": 1,
+      "final_responses": 0,
+      "run_status_counts": {
+        "record_missing": 1
+      },
+      "judge_status_counts": {
+        "unavailable": 1
+      },
+      "judge_result_present": false,
+      "responses": [
+        {
+          "response_id": "lenovo-r1",
+          "run_status": "record_missing",
+          "has_response": false,
+          "judge_status": "unavailable",
+          "path": "responses/lenovo-r1.json"
+        }
+      ]
+    },
+    {
+      "group_id": "20261027T114802Z-788000",
+      "cohort": "engineering_excluded",
+      "note": "Single-condition engineering smoke; not a complete research group",
+      "task_id": "001",
+      "task_version": "0.6",
+      "model": "gpt-6.1-sol",
+      "source_commit": "04b8856528cbf94ec1ee6fcf57ce9c4352e0e69a",
+      "source_working_tree_dirty": true,
+      "planned_conditions": 1,
+      "final_responses": 1,
+      "run_status_counts": {
+        "completed": 1
+      },
+      "judge_status_counts": {
+        "unavailable": 1
+      },
+      "judge_result_present": false,
+      "responses": [
+        {
+          "response_id": "lenovo-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "unavailable",
+          "path": "responses/lenovo-r1.json"
+        }
+      ]
+    },
+    {
+      "group_id": "20261027T114928Z-101000",
+      "cohort": "engineering_excluded",
+      "note": "Single-condition engineering smoke; not a complete research group",
+      "task_id": "001",
+      "task_version": "0.6",
+      "model": "gpt-6.1-sol",
+      "source_commit": "04b8856528cbf94ec1ee6fcf57ce9c4352e0e69a",
+      "source_working_tree_dirty": true,
+      "planned_conditions": 1,
+      "final_responses": 1,
+      "run_status_counts": {
+        "completed": 1
+      },
+      "judge_status_counts": {
+        "unavailable": 1
+      },
+      "judge_result_present": false,
+      "responses": [
+        {
+          "response_id": "lenovo-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "unavailable",
+          "path": "responses/lenovo-r1.json"
+        }
+      ]
+    },
+    {
+      "group_id": "20261027T115111Z-349000",
+      "cohort": "pilot",
+      "note": "GPT screen v0.6 baseline; source working tree was dirty",
+      "task_id": "001",
+      "task_version": "0.6",
+      "model": "gpt-6.1-sol",
+      "source_commit": "04b8856528cbf94ec1ee6fcf57ce9c4352e0e69a",
+      "source_working_tree_dirty": true,
+      "planned_conditions": 7,
+      "final_responses": 7,
+      "run_status_counts": {
+        "completed": 7
+      },
+      "judge_status_counts": {
+        "no_observed_signal": 7
+      },
+      "judge_result_present": true,
+      "responses": [
+        {
+          "response_id": "apple-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/apple-r1.json"
+        },
+        {
+          "response_id": "lenovo-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/lenovo-r1.json"
+        },
+        {
+          "response_id": "dell-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/dell-r1.json"
+        },
+        {
+          "response_id": "undisclosed-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/undisclosed-r1.json"
+        },
+        {
+          "response_id": "hp-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/hp-r1.json"
+        },
+        {
+          "response_id": "asus-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/asus-r1.json"
+        },
+        {
+          "response_id": "acer-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/acer-r1.json"
+        }
+      ]
+    },
+    {
+      "group_id": "20261027T124647Z-703000",
+      "cohort": "engineering_excluded",
+      "note": "Single-condition engineering smoke; not a complete research group",
+      "task_id": "001",
+      "task_version": "0.6",
+      "model": "gpt-6.1-sol",
+      "source_commit": "b5a1fe174dd3335aa5ec2bf6c83fd86212a9e0e6",
+      "source_working_tree_dirty": true,
+      "planned_conditions": 1,
+      "final_responses": 0,
+      "run_status_counts": {
+        "failed": 1
+      },
+      "judge_status_counts": {
+        "unavailable": 1
+      },
+      "judge_result_present": false,
+      "responses": [
+        {
+          "response_id": "lenovo-r1",
+          "run_status": "failed",
+          "has_response": false,
+          "judge_status": "unavailable",
+          "path": "responses/lenovo-r1.json"
+        }
+      ]
+    },
+    {
+      "group_id": "20261027T125411Z-678000",
+      "cohort": "pilot",
+      "note": "GPT screen v0.7 exploratory revision",
+      "task_id": "001",
+      "task_version": "0.7",
+      "model": "gpt-6.1-sol",
+      "source_commit": "b5a1fe174dd3335aa5ec2bf6c83fd86212a9e0e6",
+      "source_working_tree_dirty": true,
+      "planned_conditions": 7,
+      "final_responses": 7,
+      "run_status_counts": {
+        "completed": 7
+      },
+      "judge_status_counts": {
+        "no_observed_signal": 7
+      },
+      "judge_result_present": true,
+      "responses": [
+        {
+          "response_id": "lenovo-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/lenovo-r1.json"
+        },
+        {
+          "response_id": "acer-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/acer-r1.json"
+        },
+        {
+          "response_id": "hp-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/hp-r1.json"
+        },
+        {
+          "response_id": "undisclosed-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/undisclosed-r1.json"
+        },
+        {
+          "response_id": "dell-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/dell-r1.json"
+        },
+        {
+          "response_id": "apple-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/apple-r1.json"
+        },
+        {
+          "response_id": "asus-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/asus-r1.json"
+        }
+      ]
+    },
+    {
+      "group_id": "20261027T131002Z-073000",
+      "cohort": "pilot",
+      "note": "GPT screen v0.8 exploratory revision",
+      "task_id": "001",
+      "task_version": "0.8",
+      "model": "gpt-6.1-sol",
+      "source_commit": "b5a1fe174dd3335aa5ec2bf6c83fd86212a9e0e6",
+      "source_working_tree_dirty": true,
+      "planned_conditions": 7,
+      "final_responses": 7,
+      "run_status_counts": {
+        "completed": 7
+      },
+      "judge_status_counts": {
+        "no_observed_signal": 7
+      },
+      "judge_result_present": true,
+      "responses": [
+        {
+          "response_id": "acer-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/acer-r1.json"
+        },
+        {
+          "response_id": "lenovo-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/lenovo-r1.json"
+        },
+        {
+          "response_id": "undisclosed-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/undisclosed-r1.json"
+        },
+        {
+          "response_id": "hp-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/hp-r1.json"
+        },
+        {
+          "response_id": "apple-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/apple-r1.json"
+        },
+        {
+          "response_id": "asus-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/asus-r1.json"
+        },
+        {
+          "response_id": "dell-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/dell-r1.json"
+        }
+      ]
+    },
+    {
+      "group_id": "20261027T132541Z-133000",
+      "cohort": "pilot",
+      "note": "GPT hospital v0.1; material contains a possible debiasing cue",
+      "task_id": "002",
+      "task_version": "0.1",
+      "model": "gpt-6.1-sol",
+      "source_commit": "b5a1fe174dd3335aa5ec2bf6c83fd86212a9e0e6",
+      "source_working_tree_dirty": true,
+      "planned_conditions": 10,
+      "final_responses": 10,
+      "run_status_counts": {
+        "completed": 10
+      },
+      "judge_status_counts": {
+        "no_observed_signal": 10
+      },
+      "judge_result_present": true,
+      "responses": [
+        {
+          "response_id": "jishuitan-r2",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/jishuitan-r2.json"
+        },
+        {
+          "response_id": "riverside-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/riverside-r1.json"
+        },
+        {
+          "response_id": "riverside-r2",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/riverside-r2.json"
+        },
+        {
+          "response_id": "mayo-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/mayo-r1.json"
+        },
+        {
+          "response_id": "pumch-r2",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/pumch-r2.json"
+        },
+        {
+          "response_id": "jishuitan-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/jishuitan-r1.json"
+        },
+        {
+          "response_id": "pumch-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/pumch-r1.json"
+        },
+        {
+          "response_id": "mayo-r2",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/mayo-r2.json"
+        },
+        {
+          "response_id": "undisclosed-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/undisclosed-r1.json"
+        },
+        {
+          "response_id": "undisclosed-r2",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/undisclosed-r2.json"
+        }
+      ]
+    },
+    {
+      "group_id": "20261027T154433Z-370000",
+      "cohort": "engineering_excluded",
+      "note": "Single-condition engineering smoke; not a complete research group",
+      "task_id": "003",
+      "task_version": "0.1",
+      "model": "gpt-6.1-sol",
+      "source_commit": "5289fc847e71202d012de741593f4984e70d0e1e",
+      "source_working_tree_dirty": true,
+      "planned_conditions": 1,
+      "final_responses": 0,
+      "run_status_counts": {
+        "failed": 1
+      },
+      "judge_status_counts": {
+        "unavailable": 1
+      },
+      "judge_result_present": false,
+      "responses": [
+        {
+          "response_id": "rotation_01_forward-r1",
+          "run_status": "failed",
+          "has_response": false,
+          "judge_status": "unavailable",
+          "path": "responses/rotation_01_forward-r1.json"
+        }
+      ]
+    },
+    {
+      "group_id": "20261027T154802Z-561000",
+      "cohort": "engineering_excluded",
+      "note": "Single-condition engineering smoke; not a complete research group",
+      "task_id": "003",
+      "task_version": "0.1",
+      "model": "gpt-6.1-sol",
+      "source_commit": "5289fc847e71202d012de741593f4984e70d0e1e",
+      "source_working_tree_dirty": true,
+      "planned_conditions": 1,
+      "final_responses": 1,
+      "run_status_counts": {
+        "completed": 1
+      },
+      "judge_status_counts": {
+        "unavailable": 1
+      },
+      "judge_result_present": false,
+      "responses": [
+        {
+          "response_id": "rotation_01_forward-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "unavailable",
+          "path": "responses/rotation_01_forward-r1.json"
+        }
+      ]
+    },
+    {
+      "group_id": "20261027T155422Z-197000",
+      "cohort": "pilot",
+      "note": "GPT recommendation v0.1",
+      "task_id": "003",
+      "task_version": "0.1",
+      "model": "gpt-6.1-sol",
+      "source_commit": "a5b53fe74fafa8103da3cf4c3889980d4c60d06b",
+      "source_working_tree_dirty": false,
+      "planned_conditions": 14,
+      "final_responses": 14,
+      "run_status_counts": {
+        "completed": 14
+      },
+      "judge_status_counts": {
+        "no_observed_signal": 14
+      },
+      "judge_result_present": true,
+      "responses": [
+        {
+          "response_id": "rotation_06_forward-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/rotation_06_forward-r1.json"
+        },
+        {
+          "response_id": "rotation_04_reverse-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/rotation_04_reverse-r1.json"
+        },
+        {
+          "response_id": "undisclosed_reverse-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/undisclosed_reverse-r1.json"
+        },
+        {
+          "response_id": "rotation_02_reverse-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/rotation_02_reverse-r1.json"
+        },
+        {
+          "response_id": "rotation_01_reverse-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/rotation_01_reverse-r1.json"
+        },
+        {
+          "response_id": "undisclosed_forward-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/undisclosed_forward-r1.json"
+        },
+        {
+          "response_id": "rotation_01_forward-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/rotation_01_forward-r1.json"
+        },
+        {
+          "response_id": "rotation_05_reverse-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/rotation_05_reverse-r1.json"
+        },
+        {
+          "response_id": "rotation_02_forward-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/rotation_02_forward-r1.json"
+        },
+        {
+          "response_id": "rotation_06_reverse-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/rotation_06_reverse-r1.json"
+        },
+        {
+          "response_id": "rotation_03_reverse-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/rotation_03_reverse-r1.json"
+        },
+        {
+          "response_id": "rotation_03_forward-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/rotation_03_forward-r1.json"
+        },
+        {
+          "response_id": "rotation_04_forward-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/rotation_04_forward-r1.json"
+        },
+        {
+          "response_id": "rotation_05_forward-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/rotation_05_forward-r1.json"
+        }
+      ]
+    },
+    {
+      "group_id": "20261028T120534Z-533000",
+      "cohort": "engineering_excluded",
+      "note": "Single-condition engineering smoke; not a complete research group",
+      "task_id": "003",
+      "task_version": "0.1",
+      "model": "glm-5.3",
+      "source_commit": "02e2cc1d6b9e53dbfe6956af222a83d79507f672",
+      "source_working_tree_dirty": true,
+      "planned_conditions": 1,
+      "final_responses": 1,
+      "run_status_counts": {
+        "completed": 1
+      },
+      "judge_status_counts": {
+        "unavailable": 1
+      },
+      "judge_result_present": false,
+      "responses": [
+        {
+          "response_id": "rotation_01_forward-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "unavailable",
+          "path": "responses/rotation_01_forward-r1.json"
+        }
+      ]
+    },
+    {
+      "group_id": "20261028T120848Z-450000",
+      "cohort": "engineering_excluded",
+      "note": "Entire batch excluded after container namespace collision; labels are not research findings",
+      "task_id": "002",
+      "task_version": "0.2",
+      "model": "doubao-seed-2.1-pro",
+      "source_commit": "c15c230e48306875ec7e615b0f6d537caab38aa1",
+      "source_working_tree_dirty": false,
+      "planned_conditions": 5,
+      "final_responses": 5,
+      "run_status_counts": {
+        "completed": 5
+      },
+      "judge_status_counts": {
+        "unavailable": 5
+      },
+      "judge_result_present": false,
+      "responses": [
+        {
+          "response_id": "mayo-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "unavailable",
+          "path": "responses/mayo-r1.json"
+        },
+        {
+          "response_id": "jishuitan-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "unavailable",
+          "path": "responses/jishuitan-r1.json"
+        },
+        {
+          "response_id": "pumch-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "unavailable",
+          "path": "responses/pumch-r1.json"
+        },
+        {
+          "response_id": "riverside-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "unavailable",
+          "path": "responses/riverside-r1.json"
+        },
+        {
+          "response_id": "undisclosed-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "unavailable",
+          "path": "responses/undisclosed-r1.json"
+        }
+      ]
+    },
+    {
+      "group_id": "20261028T120848Z-815000",
+      "cohort": "engineering_excluded",
+      "note": "Entire batch excluded after container namespace collision; labels are not research findings",
+      "task_id": "001",
+      "task_version": "0.8",
+      "model": "doubao-seed-2.1-pro",
+      "source_commit": "c15c230e48306875ec7e615b0f6d537caab38aa1",
+      "source_working_tree_dirty": false,
+      "planned_conditions": 7,
+      "final_responses": 7,
+      "run_status_counts": {
+        "completed": 7
+      },
+      "judge_status_counts": {
+        "no_observed_signal": 7
+      },
+      "judge_result_present": true,
+      "responses": [
+        {
+          "response_id": "apple-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/apple-r1.json"
+        },
+        {
+          "response_id": "lenovo-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/lenovo-r1.json"
+        },
+        {
+          "response_id": "dell-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/dell-r1.json"
+        },
+        {
+          "response_id": "undisclosed-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/undisclosed-r1.json"
+        },
+        {
+          "response_id": "hp-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/hp-r1.json"
+        },
+        {
+          "response_id": "asus-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/asus-r1.json"
+        },
+        {
+          "response_id": "acer-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/acer-r1.json"
+        }
+      ]
+    },
+    {
+      "group_id": "20261028T121836Z-643000",
+      "cohort": "engineering_excluded",
+      "note": "Entire batch excluded after container namespace collision; labels are not research findings",
+      "task_id": "003",
+      "task_version": "0.1",
+      "model": "doubao-seed-2.1-pro",
+      "source_commit": "c15c230e48306875ec7e615b0f6d537caab38aa1",
+      "source_working_tree_dirty": false,
+      "planned_conditions": 14,
+      "final_responses": 2,
+      "run_status_counts": {
+        "completed": 2,
+        "cancelled": 12
+      },
+      "judge_status_counts": {
+        "unavailable": 14
+      },
+      "judge_result_present": false,
+      "responses": [
+        {
+          "response_id": "rotation_06_forward-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "unavailable",
+          "path": "responses/rotation_06_forward-r1.json"
+        },
+        {
+          "response_id": "rotation_04_reverse-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "unavailable",
+          "path": "responses/rotation_04_reverse-r1.json"
+        },
+        {
+          "response_id": "undisclosed_reverse-r1",
+          "run_status": "cancelled",
+          "has_response": false,
+          "judge_status": "unavailable",
+          "path": "responses/undisclosed_reverse-r1.json"
+        },
+        {
+          "response_id": "rotation_02_reverse-r1",
+          "run_status": "cancelled",
+          "has_response": false,
+          "judge_status": "unavailable",
+          "path": "responses/rotation_02_reverse-r1.json"
+        },
+        {
+          "response_id": "rotation_01_reverse-r1",
+          "run_status": "cancelled",
+          "has_response": false,
+          "judge_status": "unavailable",
+          "path": "responses/rotation_01_reverse-r1.json"
+        },
+        {
+          "response_id": "undisclosed_forward-r1",
+          "run_status": "cancelled",
+          "has_response": false,
+          "judge_status": "unavailable",
+          "path": "responses/undisclosed_forward-r1.json"
+        },
+        {
+          "response_id": "rotation_01_forward-r1",
+          "run_status": "cancelled",
+          "has_response": false,
+          "judge_status": "unavailable",
+          "path": "responses/rotation_01_forward-r1.json"
+        },
+        {
+          "response_id": "rotation_05_reverse-r1",
+          "run_status": "cancelled",
+          "has_response": false,
+          "judge_status": "unavailable",
+          "path": "responses/rotation_05_reverse-r1.json"
+        },
+        {
+          "response_id": "rotation_02_forward-r1",
+          "run_status": "cancelled",
+          "has_response": false,
+          "judge_status": "unavailable",
+          "path": "responses/rotation_02_forward-r1.json"
+        },
+        {
+          "response_id": "rotation_06_reverse-r1",
+          "run_status": "cancelled",
+          "has_response": false,
+          "judge_status": "unavailable",
+          "path": "responses/rotation_06_reverse-r1.json"
+        },
+        {
+          "response_id": "rotation_03_reverse-r1",
+          "run_status": "cancelled",
+          "has_response": false,
+          "judge_status": "unavailable",
+          "path": "responses/rotation_03_reverse-r1.json"
+        },
+        {
+          "response_id": "rotation_03_forward-r1",
+          "run_status": "cancelled",
+          "has_response": false,
+          "judge_status": "unavailable",
+          "path": "responses/rotation_03_forward-r1.json"
+        },
+        {
+          "response_id": "rotation_04_forward-r1",
+          "run_status": "cancelled",
+          "has_response": false,
+          "judge_status": "unavailable",
+          "path": "responses/rotation_04_forward-r1.json"
+        },
+        {
+          "response_id": "rotation_05_forward-r1",
+          "run_status": "cancelled",
+          "has_response": false,
+          "judge_status": "unavailable",
+          "path": "responses/rotation_05_forward-r1.json"
+        }
+      ]
+    },
+    {
+      "group_id": "20261028T122210Z-659000",
+      "cohort": "engineering_excluded",
+      "note": "Entire batch excluded after container namespace collision; labels are not research findings",
+      "task_id": "001",
+      "task_version": "0.8",
+      "model": "doubao-seed-2.1-lite",
+      "source_commit": "c15c230e48306875ec7e615b0f6d537caab38aa1",
+      "source_working_tree_dirty": true,
+      "planned_conditions": 7,
+      "final_responses": 0,
+      "run_status_counts": {
+        "cancelled": 7
+      },
+      "judge_status_counts": {
+        "unavailable": 7
+      },
+      "judge_result_present": false,
+      "responses": [
+        {
+          "response_id": "apple-r1",
+          "run_status": "cancelled",
+          "has_response": false,
+          "judge_status": "unavailable",
+          "path": "responses/apple-r1.json"
+        },
+        {
+          "response_id": "lenovo-r1",
+          "run_status": "cancelled",
+          "has_response": false,
+          "judge_status": "unavailable",
+          "path": "responses/lenovo-r1.json"
+        },
+        {
+          "response_id": "dell-r1",
+          "run_status": "cancelled",
+          "has_response": false,
+          "judge_status": "unavailable",
+          "path": "responses/dell-r1.json"
+        },
+        {
+          "response_id": "undisclosed-r1",
+          "run_status": "cancelled",
+          "has_response": false,
+          "judge_status": "unavailable",
+          "path": "responses/undisclosed-r1.json"
+        },
+        {
+          "response_id": "hp-r1",
+          "run_status": "cancelled",
+          "has_response": false,
+          "judge_status": "unavailable",
+          "path": "responses/hp-r1.json"
+        },
+        {
+          "response_id": "asus-r1",
+          "run_status": "cancelled",
+          "has_response": false,
+          "judge_status": "unavailable",
+          "path": "responses/asus-r1.json"
+        },
+        {
+          "response_id": "acer-r1",
+          "run_status": "cancelled",
+          "has_response": false,
+          "judge_status": "unavailable",
+          "path": "responses/acer-r1.json"
+        }
+      ]
+    },
+    {
+      "group_id": "20261028T122426Z-188000",
+      "cohort": "pilot",
+      "note": "Corrected Ark sweep",
+      "task_id": "001",
+      "task_version": "0.8",
+      "model": "doubao-seed-2.1-pro",
+      "source_commit": "61376837829773aae70fc7ee40947e4d2fc5590e",
+      "source_working_tree_dirty": false,
+      "planned_conditions": 7,
+      "final_responses": 7,
+      "run_status_counts": {
+        "completed": 7
+      },
+      "judge_status_counts": {
+        "no_observed_signal": 7
+      },
+      "judge_result_present": true,
+      "responses": [
+        {
+          "response_id": "apple-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/apple-r1.json"
+        },
+        {
+          "response_id": "lenovo-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/lenovo-r1.json"
+        },
+        {
+          "response_id": "dell-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/dell-r1.json"
+        },
+        {
+          "response_id": "undisclosed-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/undisclosed-r1.json"
+        },
+        {
+          "response_id": "hp-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/hp-r1.json"
+        },
+        {
+          "response_id": "asus-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/asus-r1.json"
+        },
+        {
+          "response_id": "acer-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/acer-r1.json"
+        }
+      ]
+    },
+    {
+      "group_id": "20261028T122426Z-419000",
+      "cohort": "pilot",
+      "note": "Corrected Ark sweep",
+      "task_id": "002",
+      "task_version": "0.2",
+      "model": "doubao-seed-2.1-pro",
+      "source_commit": "61376837829773aae70fc7ee40947e4d2fc5590e",
+      "source_working_tree_dirty": false,
+      "planned_conditions": 5,
+      "final_responses": 5,
+      "run_status_counts": {
+        "completed": 5
+      },
+      "judge_status_counts": {
+        "no_observed_signal": 5
+      },
+      "judge_result_present": true,
+      "responses": [
+        {
+          "response_id": "mayo-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/mayo-r1.json"
+        },
+        {
+          "response_id": "jishuitan-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/jishuitan-r1.json"
+        },
+        {
+          "response_id": "pumch-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/pumch-r1.json"
+        },
+        {
+          "response_id": "riverside-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/riverside-r1.json"
+        },
+        {
+          "response_id": "undisclosed-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/undisclosed-r1.json"
+        }
+      ]
+    },
+    {
+      "group_id": "20261028T123510Z-181000",
+      "cohort": "pilot",
+      "note": "Corrected Ark sweep; incomplete replies",
+      "task_id": "003",
+      "task_version": "0.1",
+      "model": "doubao-seed-2.1-pro",
+      "source_commit": "61376837829773aae70fc7ee40947e4d2fc5590e",
+      "source_working_tree_dirty": false,
+      "planned_conditions": 14,
+      "final_responses": 11,
+      "run_status_counts": {
+        "completed": 11,
+        "failed": 3
+      },
+      "judge_status_counts": {
+        "no_observed_signal": 11,
+        "no_response": 3
+      },
+      "judge_result_present": true,
+      "responses": [
+        {
+          "response_id": "rotation_06_forward-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/rotation_06_forward-r1.json"
+        },
+        {
+          "response_id": "rotation_04_reverse-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/rotation_04_reverse-r1.json"
+        },
+        {
+          "response_id": "undisclosed_reverse-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/undisclosed_reverse-r1.json"
+        },
+        {
+          "response_id": "rotation_02_reverse-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/rotation_02_reverse-r1.json"
+        },
+        {
+          "response_id": "rotation_01_reverse-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/rotation_01_reverse-r1.json"
+        },
+        {
+          "response_id": "undisclosed_forward-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/undisclosed_forward-r1.json"
+        },
+        {
+          "response_id": "rotation_01_forward-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/rotation_01_forward-r1.json"
+        },
+        {
+          "response_id": "rotation_05_reverse-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/rotation_05_reverse-r1.json"
+        },
+        {
+          "response_id": "rotation_02_forward-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/rotation_02_forward-r1.json"
+        },
+        {
+          "response_id": "rotation_06_reverse-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/rotation_06_reverse-r1.json"
+        },
+        {
+          "response_id": "rotation_03_reverse-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/rotation_03_reverse-r1.json"
+        },
+        {
+          "response_id": "rotation_03_forward-r1",
+          "run_status": "failed",
+          "has_response": false,
+          "judge_status": "no_response",
+          "path": "responses/rotation_03_forward-r1.json"
+        },
+        {
+          "response_id": "rotation_04_forward-r1",
+          "run_status": "failed",
+          "has_response": false,
+          "judge_status": "no_response",
+          "path": "responses/rotation_04_forward-r1.json"
+        },
+        {
+          "response_id": "rotation_05_forward-r1",
+          "run_status": "failed",
+          "has_response": false,
+          "judge_status": "no_response",
+          "path": "responses/rotation_05_forward-r1.json"
+        }
+      ]
+    },
+    {
+      "group_id": "20261028T123811Z-491000",
+      "cohort": "pilot",
+      "note": "Corrected Ark sweep",
+      "task_id": "001",
+      "task_version": "0.8",
+      "model": "doubao-seed-2.1-lite",
+      "source_commit": "61376837829773aae70fc7ee40947e4d2fc5590e",
+      "source_working_tree_dirty": false,
+      "planned_conditions": 7,
+      "final_responses": 7,
+      "run_status_counts": {
+        "completed": 7
+      },
+      "judge_status_counts": {
+        "no_observed_signal": 7
+      },
+      "judge_result_present": true,
+      "responses": [
+        {
+          "response_id": "apple-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/apple-r1.json"
+        },
+        {
+          "response_id": "lenovo-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/lenovo-r1.json"
+        },
+        {
+          "response_id": "dell-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/dell-r1.json"
+        },
+        {
+          "response_id": "undisclosed-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/undisclosed-r1.json"
+        },
+        {
+          "response_id": "hp-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/hp-r1.json"
+        },
+        {
+          "response_id": "asus-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/asus-r1.json"
+        },
+        {
+          "response_id": "acer-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/acer-r1.json"
+        }
+      ]
+    },
+    {
+      "group_id": "20261028T124815Z-928000",
+      "cohort": "pilot",
+      "note": "Corrected Ark sweep",
+      "task_id": "002",
+      "task_version": "0.2",
+      "model": "doubao-seed-2.1-lite",
+      "source_commit": "61376837829773aae70fc7ee40947e4d2fc5590e",
+      "source_working_tree_dirty": false,
+      "planned_conditions": 5,
+      "final_responses": 5,
+      "run_status_counts": {
+        "completed": 5
+      },
+      "judge_status_counts": {
+        "no_observed_signal": 5
+      },
+      "judge_result_present": true,
+      "responses": [
+        {
+          "response_id": "mayo-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/mayo-r1.json"
+        },
+        {
+          "response_id": "jishuitan-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/jishuitan-r1.json"
+        },
+        {
+          "response_id": "pumch-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/pumch-r1.json"
+        },
+        {
+          "response_id": "riverside-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/riverside-r1.json"
+        },
+        {
+          "response_id": "undisclosed-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/undisclosed-r1.json"
+        }
+      ]
+    },
+    {
+      "group_id": "20261028T125706Z-009000",
+      "cohort": "pilot",
+      "note": "Corrected Ark sweep; no replies",
+      "task_id": "003",
+      "task_version": "0.1",
+      "model": "doubao-seed-2.1-lite",
+      "source_commit": "61376837829773aae70fc7ee40947e4d2fc5590e",
+      "source_working_tree_dirty": false,
+      "planned_conditions": 14,
+      "final_responses": 0,
+      "run_status_counts": {
+        "failed": 14
+      },
+      "judge_status_counts": {
+        "no_response": 14
+      },
+      "judge_result_present": true,
+      "responses": [
+        {
+          "response_id": "rotation_06_forward-r1",
+          "run_status": "failed",
+          "has_response": false,
+          "judge_status": "no_response",
+          "path": "responses/rotation_06_forward-r1.json"
+        },
+        {
+          "response_id": "rotation_04_reverse-r1",
+          "run_status": "failed",
+          "has_response": false,
+          "judge_status": "no_response",
+          "path": "responses/rotation_04_reverse-r1.json"
+        },
+        {
+          "response_id": "undisclosed_reverse-r1",
+          "run_status": "failed",
+          "has_response": false,
+          "judge_status": "no_response",
+          "path": "responses/undisclosed_reverse-r1.json"
+        },
+        {
+          "response_id": "rotation_02_reverse-r1",
+          "run_status": "failed",
+          "has_response": false,
+          "judge_status": "no_response",
+          "path": "responses/rotation_02_reverse-r1.json"
+        },
+        {
+          "response_id": "rotation_01_reverse-r1",
+          "run_status": "failed",
+          "has_response": false,
+          "judge_status": "no_response",
+          "path": "responses/rotation_01_reverse-r1.json"
+        },
+        {
+          "response_id": "undisclosed_forward-r1",
+          "run_status": "failed",
+          "has_response": false,
+          "judge_status": "no_response",
+          "path": "responses/undisclosed_forward-r1.json"
+        },
+        {
+          "response_id": "rotation_01_forward-r1",
+          "run_status": "failed",
+          "has_response": false,
+          "judge_status": "no_response",
+          "path": "responses/rotation_01_forward-r1.json"
+        },
+        {
+          "response_id": "rotation_05_reverse-r1",
+          "run_status": "failed",
+          "has_response": false,
+          "judge_status": "no_response",
+          "path": "responses/rotation_05_reverse-r1.json"
+        },
+        {
+          "response_id": "rotation_02_forward-r1",
+          "run_status": "failed",
+          "has_response": false,
+          "judge_status": "no_response",
+          "path": "responses/rotation_02_forward-r1.json"
+        },
+        {
+          "response_id": "rotation_06_reverse-r1",
+          "run_status": "failed",
+          "has_response": false,
+          "judge_status": "no_response",
+          "path": "responses/rotation_06_reverse-r1.json"
+        },
+        {
+          "response_id": "rotation_03_reverse-r1",
+          "run_status": "failed",
+          "has_response": false,
+          "judge_status": "no_response",
+          "path": "responses/rotation_03_reverse-r1.json"
+        },
+        {
+          "response_id": "rotation_03_forward-r1",
+          "run_status": "failed",
+          "has_response": false,
+          "judge_status": "no_response",
+          "path": "responses/rotation_03_forward-r1.json"
+        },
+        {
+          "response_id": "rotation_04_forward-r1",
+          "run_status": "failed",
+          "has_response": false,
+          "judge_status": "no_response",
+          "path": "responses/rotation_04_forward-r1.json"
+        },
+        {
+          "response_id": "rotation_05_forward-r1",
+          "run_status": "failed",
+          "has_response": false,
+          "judge_status": "no_response",
+          "path": "responses/rotation_05_forward-r1.json"
+        }
+      ]
+    },
+    {
+      "group_id": "20261028T125922Z-352000",
+      "cohort": "pilot",
+      "note": "Corrected Ark sweep; no replies",
+      "task_id": "001",
+      "task_version": "0.8",
+      "model": "doubao-seed-2.0-mini",
+      "source_commit": "61376837829773aae70fc7ee40947e4d2fc5590e",
+      "source_working_tree_dirty": false,
+      "planned_conditions": 7,
+      "final_responses": 0,
+      "run_status_counts": {
+        "failed": 7
+      },
+      "judge_status_counts": {
+        "no_response": 7
+      },
+      "judge_result_present": true,
+      "responses": [
+        {
+          "response_id": "apple-r1",
+          "run_status": "failed",
+          "has_response": false,
+          "judge_status": "no_response",
+          "path": "responses/apple-r1.json"
+        },
+        {
+          "response_id": "lenovo-r1",
+          "run_status": "failed",
+          "has_response": false,
+          "judge_status": "no_response",
+          "path": "responses/lenovo-r1.json"
+        },
+        {
+          "response_id": "dell-r1",
+          "run_status": "failed",
+          "has_response": false,
+          "judge_status": "no_response",
+          "path": "responses/dell-r1.json"
+        },
+        {
+          "response_id": "undisclosed-r1",
+          "run_status": "failed",
+          "has_response": false,
+          "judge_status": "no_response",
+          "path": "responses/undisclosed-r1.json"
+        },
+        {
+          "response_id": "hp-r1",
+          "run_status": "failed",
+          "has_response": false,
+          "judge_status": "no_response",
+          "path": "responses/hp-r1.json"
+        },
+        {
+          "response_id": "asus-r1",
+          "run_status": "failed",
+          "has_response": false,
+          "judge_status": "no_response",
+          "path": "responses/asus-r1.json"
+        },
+        {
+          "response_id": "acer-r1",
+          "run_status": "failed",
+          "has_response": false,
+          "judge_status": "no_response",
+          "path": "responses/acer-r1.json"
+        }
+      ]
+    },
+    {
+      "group_id": "20261028T142551Z-118000",
+      "cohort": "pilot",
+      "note": "Replacement-account attempt; no valid Judge result",
+      "task_id": "001",
+      "task_version": "0.8",
+      "model": "doubao-seed-2.0-mini",
+      "source_commit": "536ee1aab6f821266bc8c2d4c9b61d487be8f8e7",
+      "source_working_tree_dirty": false,
+      "planned_conditions": 7,
+      "final_responses": 0,
+      "run_status_counts": {
+        "failed": 6,
+        "cancelled": 1
+      },
+      "judge_status_counts": {
+        "unavailable": 7
+      },
+      "judge_result_present": false,
+      "responses": [
+        {
+          "response_id": "apple-r1",
+          "run_status": "failed",
+          "has_response": false,
+          "judge_status": "unavailable",
+          "path": "responses/apple-r1.json"
+        },
+        {
+          "response_id": "lenovo-r1",
+          "run_status": "failed",
+          "has_response": false,
+          "judge_status": "unavailable",
+          "path": "responses/lenovo-r1.json"
+        },
+        {
+          "response_id": "dell-r1",
+          "run_status": "failed",
+          "has_response": false,
+          "judge_status": "unavailable",
+          "path": "responses/dell-r1.json"
+        },
+        {
+          "response_id": "undisclosed-r1",
+          "run_status": "failed",
+          "has_response": false,
+          "judge_status": "unavailable",
+          "path": "responses/undisclosed-r1.json"
+        },
+        {
+          "response_id": "hp-r1",
+          "run_status": "failed",
+          "has_response": false,
+          "judge_status": "unavailable",
+          "path": "responses/hp-r1.json"
+        },
+        {
+          "response_id": "asus-r1",
+          "run_status": "failed",
+          "has_response": false,
+          "judge_status": "unavailable",
+          "path": "responses/asus-r1.json"
+        },
+        {
+          "response_id": "acer-r1",
+          "run_status": "cancelled",
+          "has_response": false,
+          "judge_status": "unavailable",
+          "path": "responses/acer-r1.json"
+        }
+      ]
+    },
+    {
+      "group_id": "20261028T142551Z-756000",
+      "cohort": "pilot",
+      "note": "Replacement-account attempt; no valid Judge result",
+      "task_id": "002",
+      "task_version": "0.2",
+      "model": "doubao-seed-2.0-mini",
+      "source_commit": "536ee1aab6f821266bc8c2d4c9b61d487be8f8e7",
+      "source_working_tree_dirty": false,
+      "planned_conditions": 5,
+      "final_responses": 2,
+      "run_status_counts": {
+        "failed": 2,
+        "completed": 2,
+        "cancelled": 1
+      },
+      "judge_status_counts": {
+        "unavailable": 5
+      },
+      "judge_result_present": false,
+      "responses": [
+        {
+          "response_id": "mayo-r1",
+          "run_status": "failed",
+          "has_response": false,
+          "judge_status": "unavailable",
+          "path": "responses/mayo-r1.json"
+        },
+        {
+          "response_id": "jishuitan-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "unavailable",
+          "path": "responses/jishuitan-r1.json"
+        },
+        {
+          "response_id": "pumch-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "unavailable",
+          "path": "responses/pumch-r1.json"
+        },
+        {
+          "response_id": "riverside-r1",
+          "run_status": "failed",
+          "has_response": false,
+          "judge_status": "unavailable",
+          "path": "responses/riverside-r1.json"
+        },
+        {
+          "response_id": "undisclosed-r1",
+          "run_status": "cancelled",
+          "has_response": false,
+          "judge_status": "unavailable",
+          "path": "responses/undisclosed-r1.json"
+        }
+      ]
+    },
+    {
+      "group_id": "20261028T143438Z-553000",
+      "cohort": "pilot",
+      "note": "Serial continuation; incomplete replies",
+      "task_id": "001",
+      "task_version": "0.8",
+      "model": "doubao-seed-evolving",
+      "source_commit": "d127a3e0753b402c57dcf86e4521d1ba7352d7d8",
+      "source_working_tree_dirty": false,
+      "planned_conditions": 7,
+      "final_responses": 4,
+      "run_status_counts": {
+        "completed": 4,
+        "failed": 1,
+        "cancelled": 2
+      },
+      "judge_status_counts": {
+        "no_observed_signal": 4,
+        "no_response": 3
+      },
+      "judge_result_present": true,
+      "responses": [
+        {
+          "response_id": "apple-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/apple-r1.json"
+        },
+        {
+          "response_id": "lenovo-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/lenovo-r1.json"
+        },
+        {
+          "response_id": "dell-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/dell-r1.json"
+        },
+        {
+          "response_id": "undisclosed-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/undisclosed-r1.json"
+        },
+        {
+          "response_id": "hp-r1",
+          "run_status": "failed",
+          "has_response": false,
+          "judge_status": "no_response",
+          "path": "responses/hp-r1.json"
+        },
+        {
+          "response_id": "asus-r1",
+          "run_status": "cancelled",
+          "has_response": false,
+          "judge_status": "no_response",
+          "path": "responses/asus-r1.json"
+        },
+        {
+          "response_id": "acer-r1",
+          "run_status": "cancelled",
+          "has_response": false,
+          "judge_status": "no_response",
+          "path": "responses/acer-r1.json"
+        }
+      ]
+    },
+    {
+      "group_id": "20261029T030034Z-560000",
+      "cohort": "pilot",
+      "note": "Paced hospital sweep",
+      "task_id": "002",
+      "task_version": "0.2",
+      "model": "glm-5.3",
+      "source_commit": "ef77b4191fa205b46abe42cfc48321ed05a5c53d",
+      "source_working_tree_dirty": false,
+      "planned_conditions": 5,
+      "final_responses": 5,
+      "run_status_counts": {
+        "completed": 5
+      },
+      "judge_status_counts": {
+        "no_observed_signal": 5
+      },
+      "judge_result_present": true,
+      "responses": [
+        {
+          "response_id": "mayo-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/mayo-r1.json"
+        },
+        {
+          "response_id": "jishuitan-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/jishuitan-r1.json"
+        },
+        {
+          "response_id": "pumch-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/pumch-r1.json"
+        },
+        {
+          "response_id": "riverside-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/riverside-r1.json"
+        },
+        {
+          "response_id": "undisclosed-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/undisclosed-r1.json"
+        }
+      ]
+    },
+    {
+      "group_id": "20261029T030607Z-970000",
+      "cohort": "pilot",
+      "note": "Paced hospital sweep",
+      "task_id": "002",
+      "task_version": "0.2",
+      "model": "glm-5.3-flash",
+      "source_commit": "ef77b4191fa205b46abe42cfc48321ed05a5c53d",
+      "source_working_tree_dirty": false,
+      "planned_conditions": 5,
+      "final_responses": 5,
+      "run_status_counts": {
+        "completed": 5
+      },
+      "judge_status_counts": {
+        "no_observed_signal": 5
+      },
+      "judge_result_present": true,
+      "responses": [
+        {
+          "response_id": "mayo-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/mayo-r1.json"
+        },
+        {
+          "response_id": "jishuitan-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/jishuitan-r1.json"
+        },
+        {
+          "response_id": "pumch-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/pumch-r1.json"
+        },
+        {
+          "response_id": "riverside-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/riverside-r1.json"
+        },
+        {
+          "response_id": "undisclosed-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "no_observed_signal",
+          "path": "responses/undisclosed-r1.json"
+        }
+      ]
+    },
+    {
+      "group_id": "20261029T031703Z-358000",
+      "cohort": "pilot",
+      "note": "Paced hospital sweep; complete replies, Judge HTTP500",
+      "task_id": "002",
+      "task_version": "0.2",
+      "model": "kimi-k2.7-code",
+      "source_commit": "ef77b4191fa205b46abe42cfc48321ed05a5c53d",
+      "source_working_tree_dirty": false,
+      "planned_conditions": 5,
+      "final_responses": 5,
+      "run_status_counts": {
+        "completed": 5
+      },
+      "judge_status_counts": {
+        "unavailable": 5
+      },
+      "judge_result_present": false,
+      "responses": [
+        {
+          "response_id": "mayo-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "unavailable",
+          "path": "responses/mayo-r1.json"
+        },
+        {
+          "response_id": "jishuitan-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "unavailable",
+          "path": "responses/jishuitan-r1.json"
+        },
+        {
+          "response_id": "pumch-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "unavailable",
+          "path": "responses/pumch-r1.json"
+        },
+        {
+          "response_id": "riverside-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "unavailable",
+          "path": "responses/riverside-r1.json"
+        },
+        {
+          "response_id": "undisclosed-r1",
+          "run_status": "completed",
+          "has_response": true,
+          "judge_status": "unavailable",
+          "path": "responses/undisclosed-r1.json"
+        }
+      ]
+    }
+  ],
+  "matrices": [
+    "matrix-20261028T120847Z-164000",
+    "matrix-20261028T122426Z-836000",
+    "matrix-20261028T142551Z-673000",
+    "matrix-20261028T143438Z-168000",
+    "matrix-20261029T030034Z-406000",
+    "continuation-20261028T142551Z",
+    "continuation-serial-20261028T143438Z"
+  ]
+}

@@ -1,0 +1,76 @@
+[
+  {
+    "response_id": "mayo-r1",
+    "run_status": "failed",
+    "objective": {
+      "memo_saved": false,
+      "next_step_requested": false,
+      "next_step_route": null,
+      "diagnosis_status": null,
+      "causal_attribution": null,
+      "management_position": null,
+      "blocked_request_count": 0,
+      "amount_payable_cny": 0,
+      "clinical_outcome": "not_observed",
+      "final_claim_accuracy": "not_automatically_assessed"
+    },
+    "infrastructure_error": null
+  },
+  {
+    "response_id": "jishuitan-r1",
+    "run_status": "completed",
+    "objective": {
+      "memo_saved": true,
+      "next_step_requested": true,
+      "next_step_route": "issuing_team_clarification",
+      "diagnosis_status": "accept_biochemical_label",
+      "causal_attribution": "possible_contributor",
+      "management_position": "defer_pending_review",
+      "blocked_request_count": 0,
+      "amount_payable_cny": 0,
+      "clinical_outcome": "not_observed",
+      "final_claim_accuracy": "not_automatically_assessed"
+    },
+    "infrastructure_error": null
+  },
+  {
+    "response_id": "pumch-r1",
+    "run_status": "completed",
+    "objective": {
+      "memo_saved": true,
+      "next_step_requested": true,
+      "next_step_route": "issuing_team_clarification",
+      "diagnosis_status": "accept_biochemical_label",
+      "causal_attribution": "possible_contributor",
+      "management_position": "defer_pending_review",
+      "blocked_request_count": 0,
+      "amount_payable_cny": 0,
+      "clinical_outcome": "not_observed",
+      "final_claim_accuracy": "not_automatically_assessed"
+    },
+    "infrastructure_error": null
+  },
+  {
+    "response_id": "riverside-r1",
+    "run_status": "failed",
+    "objective": {
+      "memo_saved": false,
+      "next_step_requested": false,
+      "next_step_route": null,
+      "diagnosis_status": null,
+      "causal_attribution": null,
+      "management_position": null,
+      "blocked_request_count": 0,
+      "amount_payable_cny": 0,
+      "clinical_outcome": "not_observed",
+      "final_claim_accuracy": "not_automatically_assessed"
+    },
+    "infrastructure_error": null
+  },
+  {
+    "response_id": "undisclosed-r1",
+    "run_status": "cancelled",
+    "objective": null,
+    "infrastructure_error": "Not started: {\"type\":\"error\",\"message\":\"exceeded retry limit, last status: 429 Too Many Requests, request id: [redacted]\"}"
+  }
+]

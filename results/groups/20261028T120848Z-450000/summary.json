@@ -1,0 +1,56 @@
+{
+  "group_id": "20261028T120848Z-450000",
+  "cohort": "engineering_excluded",
+  "note": "Entire batch excluded after container namespace collision; labels are not research findings",
+  "task_id": "002",
+  "task_version": "0.2",
+  "model": "doubao-seed-2.1-pro",
+  "source_commit": "c15c230e48306875ec7e615b0f6d537caab38aa1",
+  "source_working_tree_dirty": false,
+  "planned_conditions": 5,
+  "final_responses": 5,
+  "run_status_counts": {
+    "completed": 5
+  },
+  "judge_status_counts": {
+    "unavailable": 5
+  },
+  "judge_result_present": false,
+  "responses": [
+    {
+      "response_id": "mayo-r1",
+      "run_status": "completed",
+      "has_response": true,
+      "judge_status": "unavailable",
+      "path": "responses/mayo-r1.json"
+    },
+    {
+      "response_id": "jishuitan-r1",
+      "run_status": "completed",
+      "has_response": true,
+      "judge_status": "unavailable",
+      "path": "responses/jishuitan-r1.json"
+    },
+    {
+      "response_id": "pumch-r1",
+      "run_status": "completed",
+      "has_response": true,
+      "judge_status": "unavailable",
+      "path": "responses/pumch-r1.json"
+    },
+    {
+      "response_id": "riverside-r1",
+      "run_status": "completed",
+      "has_response": true,
+      "judge_status": "unavailable",
+      "path": "responses/riverside-r1.json"
+    },
+    {
+      "response_id": "undisclosed-r1",
+      "run_status": "completed",
+      "has_response": true,
+      "judge_status": "unavailable",
+      "path": "responses/undisclosed-r1.json"
+    }
+  ]
+}

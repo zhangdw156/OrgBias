@@ -1,0 +1,28 @@
+{
+  "group_id": "20261027T114802Z-788000",
+  "cohort": "engineering_excluded",
+  "note": "Single-condition engineering smoke; not a complete research group",
+  "task_id": "001",
+  "task_version": "0.6",
+  "model": "gpt-6.1-sol",
+  "source_commit": "04b8856528cbf94ec1ee6fcf57ce9c4352e0e69a",
+  "source_working_tree_dirty": true,
+  "planned_conditions": 1,
+  "final_responses": 1,
+  "run_status_counts": {
+    "completed": 1
+  },
+  "judge_status_counts": {
+    "unavailable": 1
+  },
+  "judge_result_present": false,
+  "responses": [
+    {
+      "response_id": "lenovo-r1",
+      "run_status": "completed",
+      "has_response": true,
+      "judge_status": "unavailable",
+      "path": "responses/lenovo-r1.json"
+    }
+  ]
+}

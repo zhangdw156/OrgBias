@@ -1,5 +1,7 @@
 # Replacement account: serial continuation stopped by a rate limit
 
+> Public release (November 1, 2026): [replies, task-tool timelines, outcomes and Judge artifacts](../results/README.md) are now included. This dated report retains its original experimental scope. Native runtime logs/browser caches remain local; path identifiers below refer to original artifacts.
+
 The continuation stopped at **22:44:09 Beijing time on October 28, 2026**. No experiment is running or scheduled. It has not completed the remaining 41 model/task pairs. A subsequent single diagnostic request for the same model returned HTTP429 with code **`RequestBurstTooFast`**: “System protection triggered by request burst. Please slow down traffic growth and increase requests gradually before retrying.” The replacement account has not returned a weekly-quota-exhaustion code in the recorded checks. A successful small request earlier did not establish reliable availability for a multi-step agent.
 
 ## Serial-batch coverage
@@ -32,6 +34,6 @@ Before another declared batch, add and verify pacing of individual provider requ
 - [Machine-readable serial result](ark-model-serial-results-2026-10-28.json): source hashes, per-condition state, classifications, native errors and the diagnostic response.
 - [Initial replacement-account attempt](ark-model-replacement-attempt-2026-10-28.json): the two Mini replies and failed Judge calls.
 - [Declared continuation and amendments](ark-model-continuation-2026-10-28.md).
-- [Seed Evolving readable trajectories](runs/20261028T143438Z-553000/readable_traces/README.md).
+- [Seed Evolving readable trajectories](../results/groups/20261028T143438Z-553000/README.md).
 
 The extract was checked against original response files, trusted snapshots, event logs and Judge artifacts. This was real model execution, with partial coverage; it is not a completed sweep or an additional local software test suite.

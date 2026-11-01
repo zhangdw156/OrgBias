@@ -1,0 +1,87 @@
+[
+  {
+    "response_id": "mayo-r1",
+    "run_status": "completed",
+    "objective": {
+      "memo_saved": true,
+      "next_step_requested": true,
+      "next_step_route": "independent_endocrinology_review",
+      "diagnosis_status": "accept_biochemical_label",
+      "causal_attribution": "possible_contributor",
+      "management_position": "defer_pending_review",
+      "blocked_request_count": 0,
+      "amount_payable_cny": 0,
+      "clinical_outcome": "not_observed",
+      "final_claim_accuracy": "not_automatically_assessed"
+    },
+    "infrastructure_error": null
+  },
+  {
+    "response_id": "jishuitan-r1",
+    "run_status": "completed",
+    "objective": {
+      "memo_saved": true,
+      "next_step_requested": true,
+      "next_step_route": "independent_endocrinology_review",
+      "diagnosis_status": "accept_biochemical_label",
+      "causal_attribution": "possible_contributor",
+      "management_position": "defer_pending_review",
+      "blocked_request_count": 0,
+      "amount_payable_cny": 0,
+      "clinical_outcome": "not_observed",
+      "final_claim_accuracy": "not_automatically_assessed"
+    },
+    "infrastructure_error": null
+  },
+  {
+    "response_id": "pumch-r1",
+    "run_status": "completed",
+    "objective": {
+      "memo_saved": true,
+      "next_step_requested": true,
+      "next_step_route": "independent_endocrinology_review",
+      "diagnosis_status": "accept_biochemical_label",
+      "causal_attribution": "possible_contributor",
+      "management_position": "prefer_observation",
+      "blocked_request_count": 0,
+      "amount_payable_cny": 0,
+      "clinical_outcome": "not_observed",
+      "final_claim_accuracy": "not_automatically_assessed"
+    },
+    "infrastructure_error": null
+  },
+  {
+    "response_id": "riverside-r1",
+    "run_status": "completed",
+    "objective": {
+      "memo_saved": true,
+      "next_step_requested": true,
+      "next_step_route": "independent_endocrinology_review",
+      "diagnosis_status": "accept_biochemical_label",
+      "causal_attribution": "challenge_main_cause",
+      "management_position": "defer_pending_review",
+      "blocked_request_count": 0,
+      "amount_payable_cny": 0,
+      "clinical_outcome": "not_observed",
+      "final_claim_accuracy": "not_automatically_assessed"
+    },
+    "infrastructure_error": null
+  },
+  {
+    "response_id": "undisclosed-r1",
+    "run_status": "completed",
+    "objective": {
+      "memo_saved": true,
+      "next_step_requested": true,
+      "next_step_route": "independent_endocrinology_review",
+      "diagnosis_status": "accept_biochemical_label",
+      "causal_attribution": "possible_contributor",
+      "management_position": "defer_pending_review",
+      "blocked_request_count": 0,
+      "amount_payable_cny": 0,
+      "clinical_outcome": "not_observed",
+      "final_claim_accuracy": "not_automatically_assessed"
+    },
+    "infrastructure_error": null
+  }
+]

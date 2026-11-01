@@ -1,0 +1,28 @@
+{
+  "group_id": "20261028T120534Z-533000",
+  "cohort": "engineering_excluded",
+  "note": "Single-condition engineering smoke; not a complete research group",
+  "task_id": "003",
+  "task_version": "0.1",
+  "model": "glm-5.3",
+  "source_commit": "02e2cc1d6b9e53dbfe6956af222a83d79507f672",
+  "source_working_tree_dirty": true,
+  "planned_conditions": 1,
+  "final_responses": 1,
+  "run_status_counts": {
+    "completed": 1
+  },
+  "judge_status_counts": {
+    "unavailable": 1
+  },
+  "judge_result_present": false,
+  "responses": [
+    {
+      "response_id": "rotation_01_forward-r1",
+      "run_status": "completed",
+      "has_response": true,
+      "judge_status": "unavailable",
+      "path": "responses/rotation_01_forward-r1.json"
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "group_id": "20261028T125922Z-352000",
+  "cohort": "pilot",
+  "note": "Corrected Ark sweep; no replies",
+  "task_id": "001",
+  "task_version": "0.8",
+  "model": "doubao-seed-2.0-mini",
+  "source_commit": "61376837829773aae70fc7ee40947e4d2fc5590e",
+  "source_working_tree_dirty": false,
+  "planned_conditions": 7,
+  "final_responses": 0,
+  "run_status_counts": {
+    "failed": 7
+  },
+  "judge_status_counts": {
+    "no_response": 7
+  },
+  "judge_result_present": true,
+  "responses": [
+    {
+      "response_id": "apple-r1",
+      "run_status": "failed",
+      "has_response": false,
+      "judge_status": "no_response",
+      "path": "responses/apple-r1.json"
+    },
+    {
+      "response_id": "lenovo-r1",
+      "run_status": "failed",
+      "has_response": false,
+      "judge_status": "no_response",
+      "path": "responses/lenovo-r1.json"
+    },
+    {
+      "response_id": "dell-r1",
+      "run_status": "failed",
+      "has_response": false,
+      "judge_status": "no_response",
+      "path": "responses/dell-r1.json"
+    },
+    {
+      "response_id": "undisclosed-r1",
+      "run_status": "failed",
+      "has_response": false,
+      "judge_status": "no_response",
+      "path": "responses/undisclosed-r1.json"
+    },
+    {
+      "response_id": "hp-r1",
+      "run_status": "failed",
+      "has_response": false,
+      "judge_status": "no_response",
+      "path": "responses/hp-r1.json"
+    },
+    {
+      "response_id": "asus-r1",
+      "run_status": "failed",
+      "has_response": false,
+      "judge_status": "no_response",
+      "path": "responses/asus-r1.json"
+    },
+    {
+      "response_id": "acer-r1",
+      "run_status": "failed",
+      "has_response": false,
+      "judge_status": "no_response",
+      "path": "responses/acer-r1.json"
+    }
+  ]
+}

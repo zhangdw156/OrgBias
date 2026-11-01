@@ -1,0 +1,56 @@
+{
+  "group_id": "20261028T124815Z-928000",
+  "cohort": "pilot",
+  "note": "Corrected Ark sweep",
+  "task_id": "002",
+  "task_version": "0.2",
+  "model": "doubao-seed-2.1-lite",
+  "source_commit": "61376837829773aae70fc7ee40947e4d2fc5590e",
+  "source_working_tree_dirty": false,
+  "planned_conditions": 5,
+  "final_responses": 5,
+  "run_status_counts": {
+    "completed": 5
+  },
+  "judge_status_counts": {
+    "no_observed_signal": 5
+  },
+  "judge_result_present": true,
+  "responses": [
+    {
+      "response_id": "mayo-r1",
+      "run_status": "completed",
+      "has_response": true,
+      "judge_status": "no_observed_signal",
+      "path": "responses/mayo-r1.json"
+    },
+    {
+      "response_id": "jishuitan-r1",
+      "run_status": "completed",
+      "has_response": true,
+      "judge_status": "no_observed_signal",
+      "path": "responses/jishuitan-r1.json"
+    },
+    {
+      "response_id": "pumch-r1",
+      "run_status": "completed",
+      "has_response": true,
+      "judge_status": "no_observed_signal",
+      "path": "responses/pumch-r1.json"
+    },
+    {
+      "response_id": "riverside-r1",
+      "run_status": "completed",
+      "has_response": true,
+      "judge_status": "no_observed_signal",
+      "path": "responses/riverside-r1.json"
+    },
+    {
+      "response_id": "undisclosed-r1",
+      "run_status": "completed",
+      "has_response": true,
+      "judge_status": "no_observed_signal",
+      "path": "responses/undisclosed-r1.json"
+    }
+  ]
+}

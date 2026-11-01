@@ -1,82 +1,82 @@
 # OrgBias
 
-OrgBias studies how organizational identity changes personal agents' evidence assessment, decisions, actions, and user outcomes. Organizations may include manufacturers, platforms, hospitals, and financial institutions. The first task concerns a laptop after-sales dispute.
+**Open research on how organizational identity affects AI agents acting for users.**
 
-All benchmark tasks are authored in English. Each task keeps its instruction, materials, organization conditions, private fixtures, rubric, and task documentation under one directory in `tasks/`.
+We invite researchers to reproduce these experiments, challenge their assumptions, contribute better tasks, and build stronger evidence about organizational bias in personal agents. Positive findings, small effects, and well-supported null results are all valuable. The aim is to understand when organization names change an agent's judgments and actions, whether those changes are justified, and what they mean for the user.
+
+This repository shares **three exploratory tasks, an agent evaluation runtime, and a public record of our pilot experiments**. It is a research starting point, not a validated leaderboard or a claim that any named organization or model is systematically biased.
+
+[Read the results](results/README.md) · [Browse the tasks](#tasks) · [Research questions and related work](docs/research-status.md) · [Contribute](CONTRIBUTING.md)
+
+## What we observed
+
+The public pilot archive contains **18 groups, 138 declared conditions and 101 final replies** from October 27–29, 2026. Of those replies, **94 have a validated `no_observed_signal` classification and 7 have no valid Judge result**. There are also 33 failed and 4 cancelled conditions. These are archive counts across different versions and configurations, not independent cases or an estimate of bias prevalence.
+
+- **Laptop disputes:** GPT, Doubao Pro and Doubao Lite each requested technical review in all seven conditions of task001 v0.8. Wording varied; the principal action did not.
+- **Hospital affiliation:** replacing the signature was accompanied by different follow-up routes and management positions in GLM and Kimi runs. Each condition was sampled once per model. These differences are candidates for replication, not established bias or clinical harm. Kimi's five replies have no valid Judge result.
+- **Laptop recommendations:** GPT selected the same first choice and backup in all 14 brand/order conditions. Doubao Pro selected the same first choice in its 11 available replies, with one backup change. Three Pro replies are missing.
+
+`no_observed_signal` means that the fixed Judge found no sufficient bias evidence **in the supplied final text**. It does not establish neutrality, validate the agent's medical advice, or rule out effects on information gathering and actions. Our current data do not demonstrate a stable organizational-bias effect.
+
+See the [evidence and limitations](docs/research-status.md), [group-by-group archive](results/README.md), and [machine-readable catalog](results/catalog.json). The archive includes replies, rendered prompts, observed task-tool calls and returns, saved outcomes, original Judge inputs/results, and task snapshots. Engineering runs and authored evaluator controls are explicitly separated from pilot observations. Missing and failed results remain visible.
 
 ## Tasks
 
-[Task 001](tasks/001/README.md) is an English v0.8 task package. It includes a [user instruction](tasks/001/instruction.md), [four workspace text files](tasks/001/workspace/), [organization conditions](tasks/001/organizations.json), a [private inspection report](tasks/001/private/inspection_report.txt), a [response-classification rubric](tasks/001/rubric.md), and a [judge input template](tasks/001/judge_input.md). The [material contract](tasks/001/contract.md) defines visibility, case rules, and recording requirements.
+| Task | Controlled identity | What the agent does | Current version |
+|---|---|---|---|
+| [001: Laptop-screen dispute](tasks/001/README.md) | Six manufacturers plus an undisclosed control | Read case records, obtain an inspection report, assess the dispute, request a review | v0.8; earlier versions preserved |
+| [002: Hospital affiliation](tasks/002/README.md) | Four hospitals plus an undisclosed control | Review clinical records, save a care memo, request one next step | v0.2; earlier GPT data used v0.1 |
+| [003: Laptop recommendation](tasks/003/README.md) | Six brands rotated over fixed offers, with order and anonymous controls | Retrieve offers and measurements, rank options, save a recommendation | v0.1; 14 conditions |
 
-[Task 002](tasks/002/README.md) is a hospital-affiliation extension: identical endocrine records and a disputed fatigue interpretation are signed by four hospitals or an undisclosed source. Current v0.2 has now been run in complete groups with Doubao Pro and Lite; the earlier ten GPT runs used frozen v0.1. The agent records a care memo and chooses one simulated next-step request. The task fixes clinician credentials, access and fees. No real medication or appointments are involved.
+All task inputs are English and text-only. Cases, clinical records, offers, measurements and service outcomes are **synthetic research fixtures**. Named organizations are identity treatments, not subjects of real complaints or measurements. The `private/` directories contain simulator-held fixtures exposed through tools; they do not contain private patient or customer data. Tasks perform no real purchases, payments, appointments or clinical treatment.
 
-[Task 003](tasks/003/README.md) compares recommendations over six fixed synthetic laptop offers with Lenovo, Dell, HP, ASUS, Acer and CHUWI identities. Six assignments in two presentation orders plus two undisclosed controls make 14 conditions. The agent retrieves records, ranks offers and saves a recommendation. Run it with `uv run python -m oribias run --task 003`. Browser sources and validation limits are kept in the task directory.
+## Evaluation design
 
-Its [first complete group](tasks/003/results/2026-10-28-first-group.md) finished all 14 runs and one Judge call: every run selected P14 first, P28 as backup, and the same full ranking and exclusions. All 14 final replies were classified as `no_observed_signal`. This is a negative result for one fixed case and agent configuration, not proof of general neutrality.
+Agents run through an independent **ASP (agent as service)**. The current adapter wraps the locally installed Codex CLI on the host; Harbor runs isolated task containers. The task image does not install the agent. Each run receives fresh state and may voluntarily read files, use task tools and, when configured, search the web. Agents are instructed to finish without follow-up questions.
 
-The agent chooses which workspace files to read; the adapter does not automatically insert their contents into the query. In task 001, the inspection report is only returned through a case-service query; task 002 similarly exposes its detailed consultation note through a tool. No screenshots or other visual inputs are supplied. Do not mount the entire task directory into a tested agent's environment.
+After all planned conditions in a group are terminal, a **single Judge call** compares the task prompts and all final replies, returning categorical labels with quotations. Trajectories and trusted state are audited separately. There are no automatic experiment retries, account fallbacks or failed-Judge repair calls.
 
-All tested agents must run through independently deployed ASPs (agent as service). Task environments do not install the agent, harness, or agent-specific dependencies. Each trial has isolated agent and case state.
+The released experiments use one configured Codex harness with different provider-reported model identifiers. They are **not** a comparison of untouched commercial personal-agent products. `gpt-6.1-sol` / medium is the identifier recorded by the local provider for the reference agent and fixed Judge; it is not a public API availability guarantee. Requested reasoning effort, provider budgets and live retrieval are not necessarily equivalent across models. [Runtime and provenance](docs/local-runtime.md).
 
-Formal bias classification happens only after every planned organization condition and repetition for the same task and agent configuration is terminal and its final reply or confirmed absence of one is recorded. Make one LLM call with the rubric, task prompts, and all final responses, producing one classification per response. No trajectories, task documents, inspection report, summaries, or outcome records enter this call. The judge assesses observable response-level signals; task success and protocol compliance are verified separately.
+## Explore without model access
 
-The first local implementation is in [oribias/](oribias/): organization scheduling, rendering, an ASP wrapping the **locally installed Codex CLI**, a Harbor external-agent adapter, and a single-call judge. Docker runs only the task environment and deterministic case service. There is no Codex Dockerfile or agent-container deployment in this version. A specialized trained evaluator remains future work.
-
-## Development environment
-
-Use Python 3.12 and uv. From the repository root:
+All released evidence can be read directly on GitHub. To check its integrity locally, with Python 3.12 and [uv](https://docs.astral.sh/uv/):
 
 ```bash
+git clone https://github.com/zhangdw156/OrgBias.git
+cd OrgBias
 uv sync --locked
+uv run python scripts/verify_results.py
 ```
 
-This prepares the project's own `.venv` from `uv.lock`; no manual activation is needed. Local Codex and a working Docker daemon must already be installed.
+This checks the file inventory, hashes, group coverage, saved outcomes, and Judge schemas/identities/quotations. It makes **no model calls** and requires neither Docker nor credentials. Passing these checks does not establish the substantive correctness of Judge labels.
 
-The current version leaves fault causation unresolved, asks whether the user's suspicion of blame shifting is justified, requests service-trust advice, and asks the agent to choose one free review route first. Earlier task versions remain under `tasks/001/versions/`. See the [bounded iteration plan](docs/task001-iteration-plan-2026-10-27.md).
+## Run a new experiment
 
-## Local debug experiment
-
-Configure the provider URL, key, model, and ASP token in `.env`, using [.env.example](.env.example) for a new checkout. The development machine's ignored `.env` retains `http://localhost:4141/v1`, `gpt-6.1-sol`, and `medium` as the default agent. Separate `ORIBIAS_JUDGE_*` settings pin the rubric judge to that GPT configuration when an Ark plan changes the tested model. Credentials stay on the host.
-
-For all 15 named text models in the pinned Ark catalogue across tasks 001/002/003, use `uv run python -m oribias matrix`. This schedules 45 complete groups (390 conditions once), with independent ASP ports and configured group concurrency (one in the current paced setup). A single-model group can be run with `uv run python -m oribias run --task 003 --plan coding --model glm-5.3`. Both commands retain the local Codex harness. See the [Ark sweep protocol](docs/ark-model-sweep-2026-10-28.md) for availability, thinking-mode and comparability limits.
-
-The [October 29 paced continuation](docs/ark-paced-sweep-2026-10-29.md) adds a shared 10-second interval between Ark requests, a recorded 900-second agent wall-clock limit and scheduled monitoring. Its exact 41-pair job list excludes the four previously complete pairs. The [paced result](docs/ark-paced-results-2026-10-29.md) records15 successful agent runs, ten validated no_observed_signal replies and five Kimi replies with a failed Judge call. The fixed Judge returned HTTP500, so38 groups/351 conditions were blocked. No experiment remains running and the monitor was deleted.
-
-The [October 28 Ark result](docs/ark-model-results-2026-10-28.md) is **partial**: 59 conditions started, 35 final replies, 24 HTTP 429 failures, and 331 unstarted conditions after both accounts exhausted weekly quota. All 35 replies were classified as `no_observed_signal`; missing replies were classified as `no_response`. Only Pro/Lite tasks001/002 have full response coverage. The [pending list](docs/ark-model-pending-2026-10-28.json) records 41 model/task pairs still needing complete coverage. The replacement-account continuation also stopped after HTTP429; a later check identified `RequestBurstTooFast`. It added four classified Seed Evolving replies and two Mini replies whose Judge calls failed, with no new full-coverage groups. See the [current result and rate-limit diagnosis](docs/ark-model-serial-results-2026-10-28.md). That October 28 attempt is terminal; the October 29 continuation is recorded separately.
-
-From the repository root:
+Install the local Codex CLI and start Docker. Copy `.env.example` to `.env` and configure your own compatible model endpoints, credentials and local ASP token. The example preserves the original local setup; it does not provision the service on port 4141. Models need an explicit matching [compatibility descriptor](oribias/config/README.md).
 
 ```bash
-uv run python -m oribias run
+cp .env.example .env
+# Edit .env with your own endpoint settings before running.
+uv run python -m oribias run --task 001
 ```
 
-The default task 001 command builds/reuses one task image, automatically starts a local ASP when needed, and runs all seven conditions once in randomized order through Harbor. For task 002, use `uv run python -m oribias run --task 002`; its declared group has five conditions. Each run has a new task container, case state, Codex configuration directory, and session. After the whole group terminates, the judge receives all final replies in one call. This is a **seven-run debug group**, not the planned 35-run pilot. Use `--repetitions 5` for that pilot.
+This starts the host ASP when needed, runs all seven task001 conditions once and invokes the configured Judge once. New outputs go to ignored `runs/`; existing public results are not overwritten. Use `--task 002` or `--task 003` for the other tasks. See [configuration and experimental limits](docs/local-runtime.md) before a larger study. The earlier 15-model sweep was interrupted; its old job declarations are historical records, not a ready-made continuation plan.
 
-The four case files live in the task's `/workspace` and are accessed through MCP file tools. They are never automatically inserted into the user prompt. The native Codex shell, host skills, plugins, and memory are disabled for this controlled task; native web search is enabled by default. This is a documented local Codex configuration, not an untouched product-default comparison. The protocol prevents interactive approval waits and instructs the agent not to ask questions; a question written in its final reply remains a possible violation, not something the runner rewrites.
+## Help move this research forward
 
-Each group is saved under `runs/<group>/`. See [the local runtime guide](docs/local-runtime.md) for artifacts, subset debugging, and validation limits. The program does not retry failed agent runs or judge outputs automatically.
+We especially welcome:
 
-The [first real debug group](docs/local-debug-2026-10-27.md) completed seven Codex runs and one judge call: all seven exchange applications were approved, and all seven final replies were classified as `no_observed_signal`. This small engineering check is not evidence that the agent is free of organizational bias.
+- Independent cases and repeated, controlled organization substitutions, including credible null results.
+- Human calibration of categorical judgments and objective checks of consequential actions.
+- Experiments separating identity effects from evidence, presentation order, sampling variation, search results and harness behavior.
+- Studies of how identity changes verification, correction, user costs or memory, with clear comparisons to prior work.
+- Interventions that reduce unjustified differences while preserving task quality and useful personalization.
 
-The October 27 laptop groups (14 runs) and clinical v0.1 group (10 runs) all returned `no_observed_signal`. The clinical v0.1 material included a potential debiasing cue; v0.2 removes it and was subsequently evaluated with the two Doubao models in the October 28 sweep. These are limited negative findings, not proof of unbiased agents.
+Use [Issues](https://github.com/zhangdw156/OrgBias/issues) for research questions, replications and corrections, or submit a pull request following [CONTRIBUTING.md](CONTRIBUTING.md). Existing work already studies affiliation, source and commercial preferences; we make no claim to be the first. [Related work and research boundaries](docs/research-status.md).
 
-The bounded exploration and hospital extension are documented in the [iteration report](docs/bounded-iteration-report-2026-10-27.md), with a [machine-readable result extract](docs/iteration-results-2026-10-27.json).
+## License and citation
 
-## Research and design
+Original project contributions are available under [Apache-2.0](LICENSE). Third-party attribution and the scope of the released model-output records are described in [NOTICE](NOTICE). Use [CITATION.cff](CITATION.cff) to cite the repository, and identify the task version, group IDs and source commit when using experimental results. This repository is not a peer-reviewed publication.
 
-- [Four-paper task-design review](docs/four-paper-task-design-review-2026-10-27.md): original methods, author-code checks, current design limits, and how to test for small or absent organizational effects.
-- [Document index](docs/README.md): project research and engineering notes.
-- [Research plan](docs/research-plan.md): objectives, accepted decisions, and experiment sequence.
-- [Engineering design](docs/engineering-design.md): ASP integration, Harbor interfaces, unattended execution, and group aggregation.
-- [Agent/task deployment review](docs/agent-task-deployment-review.md): independent services, task environments, and official framework implementations.
-- [Laptop scenario research](docs/laptop-orgbias-pilot-research.md): source cases, candidate disputes, and evidence limits.
-- [Personal-agent literature review](docs/personal-agent-orgbias-review.md): directly related and adjacent research.
-
-## Contributions
-
-Follow [AGENTS.md](AGENTS.md). Commit messages must use Angular style, for example:
-
-```text
-feat(tasks): add laptop warranty dispute task
-docs(rubric): clarify evidence classification rules
-```
+For dated protocols, earlier design decisions and engineering reports, see the [document index](docs/README.md). The public release was prepared on November 1, 2026; no new model inference was performed for publication.

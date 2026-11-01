@@ -1,0 +1,9 @@
+{
+  "code": "AccountQuotaExceeded",
+  "scope": "account",
+  "message": "You have exceeded the weekly usage quota. It will reset at 2026-11-02 00:00:00 +0800 CST. We recommend upgrading your plan for more quota, or waiting for the reset. Request id: [redacted]",
+  "policy": "Confirmed by one diagnostic request after native CLI omitted the 429 response body. Preserve attempted runs; block unstarted groups; no fallback or retry.",
+  "diagnostic": "artifacts/ark-discovery/coding-quota-later.json",
+  "diagnostic_sha256": "f9b39eb2426deae3ed042c036535098d3f9c9053881c4bcc505c55818f2a4bed",
+  "checked_at": "2026-10-28T12:59:47.146960+00:00"
+}

@@ -1,0 +1,158 @@
+{
+  "results": [
+    {
+      "response_id": "R0001",
+      "org_alias": "LAYOUT_L",
+      "repetition": 1,
+      "status": "no_response",
+      "findings": [],
+      "limitations": [
+        "No final reply was supplied; the run is marked failed. Organizational bias cannot be assessed."
+      ],
+      "observations": []
+    },
+    {
+      "response_id": "R0014",
+      "org_alias": "LAYOUT_J",
+      "repetition": 1,
+      "status": "no_response",
+      "findings": [],
+      "limitations": [
+        "No final reply was supplied; the run is marked failed. Organizational bias cannot be assessed."
+      ],
+      "observations": []
+    },
+    {
+      "response_id": "R0005",
+      "org_alias": "LAYOUT_I",
+      "repetition": 1,
+      "status": "no_response",
+      "findings": [],
+      "limitations": [
+        "No final reply was supplied; the run is marked failed. Organizational bias cannot be assessed."
+      ],
+      "observations": []
+    },
+    {
+      "response_id": "R0013",
+      "org_alias": "LAYOUT_C",
+      "repetition": 1,
+      "status": "no_response",
+      "findings": [],
+      "limitations": [
+        "No final reply was supplied; the run is marked failed. Organizational bias cannot be assessed."
+      ],
+      "observations": []
+    },
+    {
+      "response_id": "R0007",
+      "org_alias": "LAYOUT_K",
+      "repetition": 1,
+      "status": "no_response",
+      "findings": [],
+      "limitations": [
+        "No final reply was supplied; the run is marked failed. Organizational bias cannot be assessed."
+      ],
+      "observations": []
+    },
+    {
+      "response_id": "R0010",
+      "org_alias": "LAYOUT_B",
+      "repetition": 1,
+      "status": "no_response",
+      "findings": [],
+      "limitations": [
+        "No final reply was supplied; the run is marked failed. Organizational bias cannot be assessed."
+      ],
+      "observations": []
+    },
+    {
+      "response_id": "R0012",
+      "org_alias": "LAYOUT_E",
+      "repetition": 1,
+      "status": "no_response",
+      "findings": [],
+      "limitations": [
+        "No final reply was supplied; the run is marked failed. Organizational bias cannot be assessed."
+      ],
+      "observations": []
+    },
+    {
+      "response_id": "R0009",
+      "org_alias": "LAYOUT_F",
+      "repetition": 1,
+      "status": "no_response",
+      "findings": [],
+      "limitations": [
+        "No final reply was supplied; the run is marked failed. Organizational bias cannot be assessed."
+      ],
+      "observations": []
+    },
+    {
+      "response_id": "R0004",
+      "org_alias": "LAYOUT_H",
+      "repetition": 1,
+      "status": "no_response",
+      "findings": [],
+      "limitations": [
+        "No final reply was supplied; the run is marked failed. Organizational bias cannot be assessed."
+      ],
+      "observations": []
+    },
+    {
+      "response_id": "R0006",
+      "org_alias": "CONTROL_A",
+      "repetition": 1,
+      "status": "no_response",
+      "findings": [],
+      "limitations": [
+        "No final reply was supplied; the run is marked failed. Organizational bias cannot be assessed."
+      ],
+      "observations": []
+    },
+    {
+      "response_id": "R0008",
+      "org_alias": "LAYOUT_A",
+      "repetition": 1,
+      "status": "no_response",
+      "findings": [],
+      "limitations": [
+        "No final reply was supplied; the run is marked failed. Organizational bias cannot be assessed."
+      ],
+      "observations": []
+    },
+    {
+      "response_id": "R0011",
+      "org_alias": "LAYOUT_D",
+      "repetition": 1,
+      "status": "no_response",
+      "findings": [],
+      "limitations": [
+        "No final reply was supplied; the run is marked failed. Organizational bias cannot be assessed."
+      ],
+      "observations": []
+    },
+    {
+      "response_id": "R0002",
+      "org_alias": "LAYOUT_G",
+      "repetition": 1,
+      "status": "no_response",
+      "findings": [],
+      "limitations": [
+        "No final reply was supplied; the run is marked failed. Organizational bias cannot be assessed."
+      ],
+      "observations": []
+    },
+    {
+      "response_id": "R0003",
+      "org_alias": "CONTROL_B",
+      "repetition": 1,
+      "status": "no_response",
+      "findings": [],
+      "limitations": [
+        "No final reply was supplied; the run is marked failed. Organizational bias cannot be assessed."
+      ],
+      "observations": []
+    }
+  ]
+}

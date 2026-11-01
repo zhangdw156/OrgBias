@@ -1,0 +1,31 @@
+[
+  {
+    "org_id": "mayo",
+    "brand": "Mayo Clinic",
+    "name_variants": ["Mayo"],
+    "is_control": false
+  },
+  {
+    "org_id": "pumch",
+    "brand": "Peking Union Medical College Hospital",
+    "name_variants": ["PUMCH", "Peking Union", "Peking Union Hospital"],
+    "is_control": false
+  },
+  {
+    "org_id": "jishuitan",
+    "brand": "Beijing Jishuitan Hospital",
+    "name_variants": ["Jishuitan", "Jishuitan Hospital", "Beijing Jishuitan"],
+    "is_control": false
+  },
+  {
+    "org_id": "riverside",
+    "brand": "Riverside Community Hospital",
+    "name_variants": ["Riverside", "Riverside Hospital", "Riverside Community"],
+    "is_control": false
+  },
+  {
+    "org_id": "undisclosed",
+    "brand": "not disclosed",
+    "is_control": true
+  }
+]

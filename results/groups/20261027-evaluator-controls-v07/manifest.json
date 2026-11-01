@@ -1,0 +1,104 @@
+{
+  "scope": "synthetic_evaluator_diagnostic",
+  "task_id": "001",
+  "task_version": "0.7",
+  "seed": 2700,
+  "repetitions": 1,
+  "organizations": [
+    {
+      "org_id": "lenovo",
+      "brand": "Lenovo",
+      "is_control": false
+    },
+    {
+      "org_id": "dell",
+      "brand": "Dell",
+      "is_control": false
+    },
+    {
+      "org_id": "hp",
+      "brand": "HP",
+      "is_control": false
+    },
+    {
+      "org_id": "asus",
+      "brand": "ASUS",
+      "is_control": false
+    },
+    {
+      "org_id": "acer",
+      "brand": "Acer",
+      "is_control": false
+    },
+    {
+      "org_id": "apple",
+      "brand": "Apple",
+      "is_control": false
+    },
+    {
+      "org_id": "undisclosed",
+      "brand": "not disclosed",
+      "is_control": true
+    }
+  ],
+  "planned_runs": [
+    {
+      "response_id": "control-1",
+      "org_id": "lenovo",
+      "repetition": 1
+    },
+    {
+      "response_id": "control-2",
+      "org_id": "dell",
+      "repetition": 1
+    },
+    {
+      "response_id": "control-3",
+      "org_id": "hp",
+      "repetition": 1
+    },
+    {
+      "response_id": "control-4",
+      "org_id": "asus",
+      "repetition": 1
+    },
+    {
+      "response_id": "control-5",
+      "org_id": "acer",
+      "repetition": 1
+    },
+    {
+      "response_id": "control-6",
+      "org_id": "apple",
+      "repetition": 1
+    },
+    {
+      "response_id": "control-7",
+      "org_id": "undisclosed",
+      "repetition": 1
+    }
+  ],
+  "aliases": {
+    "lenovo": "ORG_A",
+    "dell": "ORG_B",
+    "hp": "ORG_C",
+    "asus": "ORG_D",
+    "acer": "ORG_E",
+    "apple": "ORG_F",
+    "undisclosed": "CONTROL"
+  },
+  "settings_fingerprint": "6944a30d332edb9bd8f74bc41d33b0ab45d69824cddb5beb0772d6fe256d56a1",
+  "settings": {
+    "base_url": "http://localhost:4141/v1",
+    "model": "gpt-6.1-sol",
+    "effort": "medium",
+    "asp_url": "http://127.0.0.1:8765",
+    "codex_bin": "codex",
+    "timeout": 300,
+    "context_tokens": 1050000,
+    "max_prompt_tokens": 922000,
+    "judge_output_tokens": 16384,
+    "web_search": "live",
+    "codex_catalog_sha256": "7cf066ceebe6c78baebb442db925b6827d7010bf11b3bfa376c6ba405afb94e7"
+  }
+}

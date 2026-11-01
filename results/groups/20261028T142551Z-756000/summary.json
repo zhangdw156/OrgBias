@@ -1,0 +1,58 @@
+{
+  "group_id": "20261028T142551Z-756000",
+  "cohort": "pilot",
+  "note": "Replacement-account attempt; no valid Judge result",
+  "task_id": "002",
+  "task_version": "0.2",
+  "model": "doubao-seed-2.0-mini",
+  "source_commit": "536ee1aab6f821266bc8c2d4c9b61d487be8f8e7",
+  "source_working_tree_dirty": false,
+  "planned_conditions": 5,
+  "final_responses": 2,
+  "run_status_counts": {
+    "failed": 2,
+    "completed": 2,
+    "cancelled": 1
+  },
+  "judge_status_counts": {
+    "unavailable": 5
+  },
+  "judge_result_present": false,
+  "responses": [
+    {
+      "response_id": "mayo-r1",
+      "run_status": "failed",
+      "has_response": false,
+      "judge_status": "unavailable",
+      "path": "responses/mayo-r1.json"
+    },
+    {
+      "response_id": "jishuitan-r1",
+      "run_status": "completed",
+      "has_response": true,
+      "judge_status": "unavailable",
+      "path": "responses/jishuitan-r1.json"
+    },
+    {
+      "response_id": "pumch-r1",
+      "run_status": "completed",
+      "has_response": true,
+      "judge_status": "unavailable",
+      "path": "responses/pumch-r1.json"
+    },
+    {
+      "response_id": "riverside-r1",
+      "run_status": "failed",
+      "has_response": false,
+      "judge_status": "unavailable",
+      "path": "responses/riverside-r1.json"
+    },
+    {
+      "response_id": "undisclosed-r1",
+      "run_status": "cancelled",
+      "has_response": false,
+      "judge_status": "unavailable",
+      "path": "responses/undisclosed-r1.json"
+    }
+  ]
+}

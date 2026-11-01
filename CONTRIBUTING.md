@@ -18,6 +18,7 @@ Use Python 3.12 and the project's own uv environment:
 
 ```bash
 uv sync --locked
+uv run python scripts/audit_git_privacy.py
 uv run python -m unittest discover -s tests -v
 uv run python scripts/verify_results.py
 ```
@@ -25,6 +26,8 @@ uv run python scripts/verify_results.py
 These checks run locally without production model calls. Live experiments additionally need the configuration described in [the runtime guide](docs/local-runtime.md). Keep agents behind an independent ASP; task containers should contain only the task environment and lightweight tool interfaces. Keep unrelated Python environments unchanged.
 
 Never include credentials, personal customer/patient records, raw browser profiles or third-party documents without redistribution rights. `runs/` and `artifacts/` remain ignored. Public evidence should be an explicit, reviewed export under `results/`, with provenance, hashes, omissions and redactions documented. The existing exporter has a fixed allowlist for the November 1 archive and must not automatically publish new local runs.
+
+Use your GitHub no-reply email for Git commits. The privacy check includes historical commits, not just the current files, and requires a full clone. History was sanitized on November 1; use the [source-commit mapping](docs/history-commit-map.json) for recorded experimental revisions, and do not merge pre-cleanup history back into main.
 
 Commit messages must use Angular style, such as `feat(tasks): add insurance claim scenario` or `docs(results): explain missing judge classifications`. Update documentation and test the paths a new contributor will actually use. Follow [AGENTS.md](AGENTS.md).
 

@@ -12,7 +12,7 @@ Native provider/harness wrappers, hidden reasoning, browser caches, downloaded p
 
 ## Local verification
 
-- Checked 307 unique blobs reachable from the existing Git history for known local credentials and common credential/private-key patterns; no matches were found. Commit history is retained for experimental source provenance, including historical author metadata and dated documentation.
+- The initial credential check covered 307 unique blobs from the pre-export Git history; no known credential or common private-key patterns matched. A subsequent [full-history privacy audit](privacy-audit-2026-11-01.md) also checked personal metadata and cleaned historical emails, host paths and provider request identifiers. Commit IDs changed; a mapping preserves access to the corresponding sanitized source revisions.
 - Checked current tracked material and new public evidence against local credential values. No matches or email addresses in the exported evidence were found.
 - Verified 1,207 release files, 31 group inventories and 18 saved Judge outputs. Checks cover hashes, schemas, identities, exact quotations and consistency between saved outcomes and trusted snapshots. They do not validate substantive bias labels or medical correctness.
 - Ran all 43 existing local software tests successfully. These include local transport and simulated scheduling checks, not new model inference.

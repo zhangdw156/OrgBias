@@ -1,0 +1,105 @@
+{
+  "purpose": "Resolve pre-cleanup source commit identifiers to privacy-sanitized history; experimental records retain their recorded identifiers.",
+  "commits": [
+    {
+      "recorded_commit": "025cfe56283b5906eb87c9df7bf9be023bac1e0d",
+      "sanitized_commit": "422c0fbbed3e274e5b5086cf507884876e12a7d5"
+    },
+    {
+      "recorded_commit": "02e2cc1d6b9e53dbfe6956af222a83d79507f672",
+      "sanitized_commit": "506eb54028436d695da5c16392e9793dc384fae9"
+    },
+    {
+      "recorded_commit": "04b8856528cbf94ec1ee6fcf57ce9c4352e0e69a",
+      "sanitized_commit": "66fadbcdc14ac732dbe5ef9cd01bf278ff47094c"
+    },
+    {
+      "recorded_commit": "060340a0ee0c36d2d463c40f8f583e7a222b9cb3",
+      "sanitized_commit": "2858d0ce9c33dcf59c7d9ea216689e8ab2f4ecb7"
+    },
+    {
+      "recorded_commit": "07dc3db5cd2ff2859dd6eff9ede5789e4397f5f4",
+      "sanitized_commit": "806b1be1f2bed9075fa3b3c18bfda2bdfc8e5088"
+    },
+    {
+      "recorded_commit": "0ee8ee8c48c1843247a0aa788278ce8263dde5cb",
+      "sanitized_commit": "9165c0661d538da100f8892d1e094e4de1c82017"
+    },
+    {
+      "recorded_commit": "1f0664d05e5a63068a100455eca7968de7865621",
+      "sanitized_commit": "99d10c023ef3704b90675633cc55b1d41d4db99e"
+    },
+    {
+      "recorded_commit": "3910b7efbc9dbe8107104bcd1d1c51c30d9d3e31",
+      "sanitized_commit": "7b4f53a54aa5465a9c1355d3c070ec5e8dbb7759"
+    },
+    {
+      "recorded_commit": "5289fc847e71202d012de741593f4984e70d0e1e",
+      "sanitized_commit": "666ec04fb6898f31cb8a975ae99637ab3cecb2c0"
+    },
+    {
+      "recorded_commit": "536ee1aab6f821266bc8c2d4c9b61d487be8f8e7",
+      "sanitized_commit": "4668939fad9b4f1e427eb257402ef8fc9663815a"
+    },
+    {
+      "recorded_commit": "61376837829773aae70fc7ee40947e4d2fc5590e",
+      "sanitized_commit": "09825177811067cd140f3655223369a594b7c1de"
+    },
+    {
+      "recorded_commit": "62e874f91885088e62d2440a9731a335b661014e",
+      "sanitized_commit": "e92c2327fe62277d4eeb32603fd3ca2763689f99"
+    },
+    {
+      "recorded_commit": "77145c23c2a2e8e4a4950c1748fdc0c65911d664",
+      "sanitized_commit": "3b9393712f76d4bbcdcb7b9ec0bb89c3518a6c5f"
+    },
+    {
+      "recorded_commit": "7d56dca0c74d3eba8827f24cdc63d0001555cb96",
+      "sanitized_commit": "609fbd332587575e5d056342426051c93e09032b"
+    },
+    {
+      "recorded_commit": "a494cbca888f915230140f4655af0514b05b83fc",
+      "sanitized_commit": "00bead9a859db14540ff29a9e3e9fa6273884dcc"
+    },
+    {
+      "recorded_commit": "a5b53fe74fafa8103da3cf4c3889980d4c60d06b",
+      "sanitized_commit": "b5b72ee5a5289ec818102dff85344ec3fc03b7fb"
+    },
+    {
+      "recorded_commit": "b5a1fe174dd3335aa5ec2bf6c83fd86212a9e0e6",
+      "sanitized_commit": "a432590f5b7996b5953888a56d48f3a235cbba10"
+    },
+    {
+      "recorded_commit": "b758a683dcec76c33a617f05fd7ae7218ca366d6",
+      "sanitized_commit": "1ce9afcd4706c8769816509c176b1615c74c1aa9"
+    },
+    {
+      "recorded_commit": "c15c230e48306875ec7e615b0f6d537caab38aa1",
+      "sanitized_commit": "3831a97798db23a7022fae9056d03f3b20b8541b"
+    },
+    {
+      "recorded_commit": "c45b1598ffb8b6268efd56672f39431f63ecda7c",
+      "sanitized_commit": "67085ac42b4940ec4e5f72f178bd51490e603734"
+    },
+    {
+      "recorded_commit": "d127a3e0753b402c57dcf86e4521d1ba7352d7d8",
+      "sanitized_commit": "3cac20f75e670b39da26331738a5aea0f1ef8d07"
+    },
+    {
+      "recorded_commit": "d545e9e700a537fdf8199654373e102ef8dd39bc",
+      "sanitized_commit": "54dbfd8b628ef294ec123c30782e2a65cd3abfb1"
+    },
+    {
+      "recorded_commit": "db430f993531a12c2e9cd282aa1537423d62b0df",
+      "sanitized_commit": "40cfd71503425212646e1b687ea10a82df9d83ef"
+    },
+    {
+      "recorded_commit": "e2509a796ef099af81435b3a6e941457c82befed",
+      "sanitized_commit": "b2397a59143fbba08014cdb4dc574ca0c34c59a6"
+    },
+    {
+      "recorded_commit": "ef77b4191fa205b46abe42cfc48321ed05a5c53d",
+      "sanitized_commit": "9fbc12ca159092de9c7d88d6350f7506a5338bd6"
+    }
+  ]
+}
